@@ -1,0 +1,228 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\input{math_func}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%
+\title{Homework 1} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Aldo Riello} % Your teacher's name.
+\class{Classical Physics} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+\section{Quantum revivals}
+Consider a one-dimensionnal quantum harmonic oscillator with mass $m$, frequency $\omega$, momentum operator $p$ and position operator $x$. The hamiltonian governing the evolution of $x$ and $p$ in the Heisenberg picture is
+\begin{align*}
+    H=\frac{p^2(t)}{2 m}+\frac{1}{2} m \omega^2 x^2(t).
+\end{align*}
+\subsection{Operator time dependance}
+In the schrodinger picture, the time dependance of $x$, and $p$ is given by 
+\begin{align*}
+    &\dfrac{dx}{dt} =\dfrac{1}{i\hbar}  [x, H] = \dfrac{1}{i\hbar} \left([x, \frac{p^2(t)}{2 m}+\frac{1}{2} m \omega^2 x^2(t)]\right) = \dfrac{1}{2i\hbar m} \left([x, p(t)]p + p[x, p(t)]\right) = \dfrac{2}{2 i\hbar m} [x, p]\dfrac{p}{m} = \dfrac{p}{m}  \\
+    &\dfrac{dp}{dt} =\dfrac{1}{i\hbar}  [p, H] = \dfrac{1}{i\hbar} \left([p, \frac{p^2(t)}{2 m}+ x^2(t)]\right) = \dfrac{m \omega^2}{2i\hbar} \left([p, \frac{1}{2} m \omega^2 x(t)]x + x[p,  x(t)]\right) = \dfrac{2 m \omega^2}{2i\hbar} [p, x] = - m \omega^2 x
+\end{align*}
+because $[x, p] = -[p, x] = i\hbar \bf{1}$ is a multiple of the identity and commutes with $x$ and $p$. To solve for the time evolution of $x$ and $p$, we first differenciate the first equation to get 
+\begin{align*}
+    \dfrac{d^2 x}{dt^2} = \dfrac{1}{m} \dfrac{dp}{dt} =  -\omega^2 x. 
+\end{align*}
+The solution of this second order operator differential equation can be found componentwise because all coponent are decoupled from each other (the initial conditions will ensure $x$ is hermitian). For each component $\bra{x'} x(t) \ket{x"}$ in the eigenbasis of $x(0)$ We get a scalar harmonic oscillator equation
+\begin{align*}
+    \dfrac{d^2}{dt^2} \bra{x'} x(t) \ket{x"} = -\omega^2 \bra{x'} x(t) \ket{x"} \iff \bra{x'} x(t) \ket{x"} = A(x', x") \cos(\omega t) +  B(x', x") \dfrac{\sin(\omega t)}{\omega}
+\end{align*} 
+with $A, B$ determined by the initial conditions $x(t) = x(0)$. Evaluating the solution and its derivatives at $t = 0$ we have 
+\begin{align*}
+    \bra{x'} x(0) \ket{x"} = A(x', x"), \quad \text{and} \quad
+    \bra{x'} \dfrac{dx}{dt}(0) \ket{x"} = \dfrac{1}{m}\bra{x'} p(0) \ket{x"}  = B(x', x"). 
+\end{align*}
+The functions $A$ and $B$ are therefore components of the operators $x(0)$ and $p(0)/(m)$ (initial position and initial velocity respectively) leading to the explicit solution of the initial value problem $x(t) = x(0) \cos(\omega t) +  (p(0)/m) \dfrac{\sin(\omega t)}{\omega}$. To obtain $p(t)$ we use the expression found for the time derivative of $x$ to find 
+\begin{align*}
+    p(t) = m \dfrac{dx}{dt} =  -m\omega x(0) \sin(\omega t) +  p(0) \cos(\omega t).  
+\end{align*}
+
+\subsection{Correlation function}
+The position time-correlation function evaluated on the ground state $\ket{0}$ of the harmonic oscillator is given by 
+\begin{align*}
+    C(t) = \bra{0}x(0)x(t)\ket{0} &= \bra{0} \int \text{d}x' \ket{x'}\bra{x'} x(0)(x(0) \cos(\omega t) +  (p(0)/m) \dfrac{\sin(\omega t)}{\omega})\ket{0}\\
+    &= \int \text{d}x'  \left(x'^2 \vert\psi_0(x')\vert^2 \cos(\omega t) +  \dfrac{i\hbar}{m} \dfrac{\sin(\omega t)}{\omega} \psi_0 \dfrac{d}{dx'} (x' \psi_0^*) \right) \\
+    &= \cos(\omega t) \int \text{d}x'  \left(x'^2 \vert\psi_0(x')\vert^2  \right) + \dfrac{i\hbar}{m} \dfrac{\sin(\omega t)}{\omega} \int \text{d}x'   \vert\psi_0(x')\vert^2 + \dfrac{i \hbar}{m} \dfrac{\sin(\omega t)}{\omega} \int \text{d}x'  \left( \psi_0 x' \dfrac{d}{dx'} \psi_0^*  \right)\\
+    &= \cos(\omega t) \int \text{d}x'  \left(x'^2 \vert\psi_0(x')\vert^2  \right) + \dfrac{i\hbar}{m} \dfrac{\sin(\omega t)}{\omega} + \dfrac{i \hbar}{m} \dfrac{\sin(\omega t)}{\omega} \int \text{d}x'  \left( \psi_0 x' \dfrac{d}{dx'} \psi_0^*  \right)
+\end{align*}
+using the wavefunction $\psi_0(x') = \langle x'\vert 0\rangle $, $\bra{x'} x(0) = \bra{x'} x' $ and $ \bra{x'}p(0)\ket{0} = \dfrac{d}{dx'} \psi_0$. To evaluate the first integral, we use the explicit expression $$
+\psi_0(x') = \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{4}} \exp \left(-\frac{m \omega}{2 \hbar} x'^2\right) \implies \vert \psi_0(x')\vert^2 = \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}} \exp \left(-\frac{m \omega}{ \hbar} x'^2\right)$$
+to get 
+\begin{align*}
+    \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}} \cos(\omega t) \int \text{d}x' x'^2\exp \left(-\frac{m \omega}{ \hbar} x'^2\right) &= \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}} \cos(\omega t) \dfrac{-\hbar}{\omega}\dfrac{d}{dm}\int \text{d}x' \exp \left(-\frac{m \omega}{ \hbar} x'^2\right) \\&= \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}} \cos(\omega t) \dfrac{-\hbar}{\omega}\dfrac{d}{dm} \left(\dfrac{\pi \hbar}{m \omega}\right)^{\frac12}\\
+    &= \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}} \cos(\omega t) \dfrac{-\hbar}{2 m\omega}\left(\dfrac{\pi \hbar}{m \omega}\right)^{\frac12} = -\dfrac{\hbar}{2 m\omega}\cos(\omega t). 
+\end{align*}
+The last integral reads 
+\begin{align*}
+    \dfrac{i \hbar}{m} \dfrac{\sin(\omega t)}{\omega} \int \text{d}x'  \left( \psi_0 x' \dfrac{d}{dx'} \psi_0^*  \right) &= \frac{-m \omega}{\hbar}\dfrac{i \hbar}{m} \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}}  \dfrac{\sin(\omega t)}{\omega} \int \text{d}x'  \left(x'^2  \exp \left(-\frac{m \omega}{\hbar} x'^2\right)\right) \\
+    &= \frac{-m \omega}{\hbar}\dfrac{i \hbar}{m} \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}}  \dfrac{\sin(\omega t)}{\omega} \dfrac{-\hbar}{2 m\omega}\left(\dfrac{\pi \hbar}{m \omega}\right)^{\frac12} = i \sin(\omega t) \dfrac{-\hbar}{2 m\omega}. 
+\end{align*}
+Combining all terms, we get 
+$$
+C(t) = -\dfrac{\hbar}{2 m\omega}\cos(\omega t) +   \dfrac{i \hbar}{m} \dfrac{\sin(\omega t)}{\omega} + i \dfrac{-i\hbar}{2 m\omega} \sin(\omega t)  = - \dfrac{\hbar}{2 m\omega} e^{-i \omega t}.
+$$
+% luke integration trick insight on time reversal of correlation function through conjugation as a result of time translation symmetry.
+
+
+\section{Composite Spin}
+The Hilbert space $\mathcal{H}$ of two particles of spin $1/2$ with hilbert spaces $\mathcal{H}_1, \mathcal{H}_2$ is given by the tensor product $\mathcal{H}_1 \otimes \mathcal{H}_2$. We are interested on the maxtrix representation of the total spin component operators. In the tensor product basis $\{\ket{11}, \ket{01}, \ket{10}, \ket{00}\}$, they are expressed as  
+\begin{align*}
+    &\sigma_x := \sigma_x^{(1)} \otimes 1^{(2)} + 1^{(1)} \otimes \sigma_x^{(2)}\\
+    &\sigma_y := \sigma_y^{(1)} \otimes 1^{(2)} + 1^{(1)} \otimes \sigma_y^{(2)}\\
+    &\sigma_z := \sigma_z^{(1)} \otimes 1^{(2)} + 1^{(1)} \otimes \sigma_z^{(2)}
+\end{align*}
+where $1^{(i)}$ and $\sigma_{x, y, z}^{(i)}$ are respectively  the identity matrix and the pauli matrices in the ${\ket{1}, \ket{0}}$ basis of $\mathcal{H}_i$. The pauli matrices are given by 
+\begin{align*}
+    \begin{aligned}
+        & \sigma_{x}=\begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+        \end{pmatrix}, \quad 
+        & \sigma_{y}=
+        \begin{pmatrix}
+        0 & -i \\
+        i & 0
+        \end{pmatrix}, \quad \text{and} \quad 
+        & \sigma_{z}=\begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+        \end{pmatrix}
+        \end{aligned}
+\end{align*}
+
+The tensor product operation leads to the following $\sigma_{x, y, z}$ matrices : 
+\begin{align*}
+    &\sigma_x = \begin{pmatrix}1\cdot\sigma_x^{(1)} & 0\cdot\sigma_x^{(1)}\\0\cdot\sigma_x^{(1)} & 1\cdot\sigma_x^{(1)}\end{pmatrix} + \begin{pmatrix}(\sigma_{x})_{11}\cdot 1^{(1)} & (\sigma_{x})_{10}\cdot 1^{(1)}\\(\sigma_{x})_{01}\cdot 1^{(1)}& (\sigma_{x})_{00}\cdot 1^{(1)}\end{pmatrix} = 
+    \begin{pmatrix}
+        0 & 1 & 0 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & 1\\
+        0 & 0 & 1 & 0
+    \end{pmatrix} + 
+    \begin{pmatrix}
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0 & 1 & 1 & 0\\
+        1 & 0 & 0 & 1\\
+        1 & 0 & 0 & 1\\
+        0 & 1 & 1 & 0
+    \end{pmatrix}
+    \quad 
+    \begin{array}{ll}
+        \ket{11} \\ \ket{01}\\ \ket{10}\\ \ket{00}
+    \end{array}
+    \\
+    &\sigma_y = \begin{pmatrix}1\cdot\sigma_y^{(1)} & 0\cdot\sigma_y^{(1)}\\0\cdot\sigma_y^{(1)} & 1\cdot\sigma_y^{(1)}\end{pmatrix} + \begin{pmatrix}(\sigma_{y})_{11}\cdot 1^{(1)} & (\sigma_{y})_{10}\cdot 1^{(1)}\\(\sigma_{y})_{01}\cdot 1^{(1)}& (\sigma_{y})_{00}\cdot 1^{(1)}\end{pmatrix} =  
+    \begin{pmatrix}
+        0 & -i & 0 & 0\\
+        i & 0 & 0 & 0\\
+        0 & 0 & 0 & -i\\
+        0 & 0 & i & 0
+    \end{pmatrix} + 
+    \begin{pmatrix}
+        0 & 0 & i & 0\\
+        0 & 0 & 0 & i\\
+        -i & 0 & 0 & 0\\
+        0 & -i & 0 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0 & -i & i & 0\\
+        i & 0 & 0 & i\\
+        -i & 0 & 0 & -i\\
+        0 & -i & i & 0
+    \end{pmatrix}
+    \quad 
+    \begin{array}{ll}
+        \ket{11} \\ \ket{01}\\ \ket{10}\\ \ket{00}
+    \end{array}\\
+    &\sigma_z = \begin{pmatrix}1\cdot\sigma_z^{(1)} & 0\cdot\sigma_z^{(1)}\\0\cdot\sigma_y^{(1)} & 1\cdot\sigma_z^{(1)}\end{pmatrix} + \begin{pmatrix}(\sigma_{z})_{11}\cdot 1^{(1)} & (\sigma_{z})_{10}\cdot 1^{(1)}\\(\sigma_{z})_{01}\cdot 1^{(1)}& (\sigma_{z})_{00}\cdot 1^{(1)}\end{pmatrix}=
+    \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & -1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & -1
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & -1 & 0\\
+        0 & 0 & 0 & -1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        2 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & -2
+    \end{pmatrix}
+    \quad 
+    \begin{array}{ll}
+        \ket{11} \\ \ket{01}\\ \ket{10}\\ \ket{00}
+    \end{array}
+     \\
+\end{align*}
+
+
+\section{Free Path Integral}
+
+\section{Mach-Zehnder}
+
+
+\section{Acknowledgement}
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
