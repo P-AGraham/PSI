@@ -18,7 +18,7 @@ Would have to be fine tuned. Change the way causality works
 P(A|XY) = P(A|X)
 P(B|XY) = P(B|Y)
 (no faster than light)
-+ LF inequalities (violated). Charlie is entangled with his system and is in a full quantum superposition
++ LF inequalities (violated). Charlie is entangled with his system and is in a full quantum superposition 
 Alice can erase Charlie s memory steal his system and measure herself.  
 
 Use any kind of quantum memory. Local friendliness
@@ -28,7 +28,7 @@ can change structure to fined tuned structures associated to superluminal causat
 Quantum GPT causal model is not suited to explain violation of the LF inequalities 
 ----------------------------------------------------------------------------
 
-Gravity mediated entanglement.
+Gravity mediated entanglement. Lucien Hardy. 
 
 Operationnal quantum gravity : simple consistency relationship. Causal structures, circuits, results of reversed stern gerlach aparatus is an entabled state LOCC cant increase entanglement. B+MV, Gravity is non local channel or has local degree of freedom. Quantum degrees of freedom. VEry indirect detection of gravitons. QUantize space and time, quantum equivalence principle, 
 

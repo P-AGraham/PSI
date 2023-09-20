@@ -27,8 +27,8 @@
 %%%%%%%%%%%%%%
 \title{Homework 1} % Title of the assignement.
 \author{\PA} % Your name(s).
-\teacher{Aldo Riello} % Your teacher's name.
-\class{Classical Physics} % The class title.
+\teacher{Bindiya Arora} % Your teacher's name.
+\class{Quantum Mechanics} % The class title.
 
 \university{Perimeter Institute for Theoretical Physics} % University
 \faculty{Perimeter Scholars International} % Faculty
@@ -165,22 +165,18 @@ The tensor product operation leads to the following $\sigma_{x, y, z}$ matrices 
         0 & 0 & i & 0
     \end{pmatrix} + 
     \begin{pmatrix}
-        0 & 0 & i & 0\\
-        0 & 0 & 0 & i\\
-        -i & 0 & 0 & 0\\
-        0 & -i & 0 & 0
+        0 & 0 & -i & 0\\
+        0 & 0 & 0 & -i\\
+        i & 0 & 0 & 0\\
+        0 & i & 0 & 0
     \end{pmatrix}
     =
     \begin{pmatrix}
-        0 & -i & i & 0\\
-        i & 0 & 0 & i\\
-        -i & 0 & 0 & -i\\
-        0 & -i & i & 0
-    \end{pmatrix}
-    \quad 
-    \begin{array}{ll}
-        \ket{11} \\ \ket{01}\\ \ket{10}\\ \ket{00}
-    \end{array}\\
+        0 & -i & -i & 0\\
+        i & 0 & 0 & -i\\
+        i & 0 & 0 & -i\\
+        0 & i & i & 0
+    \end{pmatrix}\\
     &\sigma_z = \begin{pmatrix}1\cdot\sigma_z^{(1)} & 0\cdot\sigma_z^{(1)}\\0\cdot\sigma_y^{(1)} & 1\cdot\sigma_z^{(1)}\end{pmatrix} + \begin{pmatrix}(\sigma_{z})_{11}\cdot 1^{(1)} & (\sigma_{z})_{10}\cdot 1^{(1)}\\(\sigma_{z})_{01}\cdot 1^{(1)}& (\sigma_{z})_{00}\cdot 1^{(1)}\end{pmatrix}=
     \begin{pmatrix}
         1 & 0 & 0 & 0\\
@@ -202,20 +198,53 @@ The tensor product operation leads to the following $\sigma_{x, y, z}$ matrices 
         0 & 0 & 0 & 0\\
         0 & 0 & 0 & -2
     \end{pmatrix}
-    \quad 
-    \begin{array}{ll}
-        \ket{11} \\ \ket{01}\\ \ket{10}\\ \ket{00}
-    \end{array}
-     \\
+\end{align*}
+\newpage
+% cite wikipedia for both questions 
+\section{Free Path Integral}
+{\footnotesize
+The lagrangian of a free one-dimensionnal particle with mass $m$ described by a generalised coordinate $q$, is $L=\frac12 m \dot{q}$. To use the path integral formalism, we  need to discretize the trajectory $q(t)$ in $N$ steps. Each step is associated to an independant variable $q_n$ corresponding to the coordinate of the particle at time $n T/N$ where $T$ is the final time at which we wish to observe the particle. The time interval for a step is $\Delta t = T/N$ and we have $\dot{q} = \frac{q_{n+1}-q_{n}}{\Delta t}$. Going further, the action integral is replaced by a discrete sum expressed as 
+$$
+S = \sum_{n=0}^{N-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2 \Delta t.
+$$
+The path integral representation of the amplitude $A$ for the particule to scatter from $q_0$ to $q_{N}$ is given in the discretized picture by 
+\begin{align*}
+A &= C\left(\prod_{n = 1}^{N-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)
+\end{align*}
+To compute it, we consider the sequence
+\begin{align*}
+    S(r) &= C\left(\prod_{n = 1}^{N-r}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-r-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t + \frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{N-r}}{\Delta t r}\right)^2  \Delta tr\right)\\
+    &= C\left(\prod_{n = 1}^{N-r-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-r-2} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)  \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac12 m \left(\frac{q_{N}-q_{N-r}}{\Delta tr}\right)^2  \Delta tr + \frac12 m \left(\frac{q_{N-r}-q_{N-r-1}}{\Delta t}\right)^2  \Delta t\right)\\
+    &= C\left(\prod_{n = 1}^{N-(r+1)}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-(r+1)-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t + \frac{m i}{2\hbar} \left(\dfrac{q_{N}-q_{N-(r+1)}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right)  \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\\
+    &= \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2} S(r+1)
 \end{align*}
 
+where we used
 
-\section{Free Path Integral}
+\begin{align*}
+    &\int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{2\hbar} \left(\frac{q_{N}-q_{N-r}}{r\Delta t}\right)^2  r\Delta t + \frac{im}{2\hbar} \left(\frac{q_{N-r}-q_{N-r-1}}{\Delta t}\right)^2  \Delta t\right)\\
+    =& \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{2\hbar\Delta t} \left(\left(\dfrac{r+1}{r}\right)q_{N-r}^2 - 2\left(\dfrac{q_{M}}{r} + q_{N-r-1}\right)q_{N-r}\right) \right)\exp\left(\frac{im}{2\hbar\Delta t} \left(q_{N-r-1}^2 + \dfrac{q_{N}^2}{r}\right)\right)\\
+    =& \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{\hbar\Delta t} \left(\dfrac{r+1}{r}\right) \left(q_{N-r}^2 - \left(\dfrac{2}{r+1}\right)(q_{N} +  rq_{N-r-1})q_{N-r} +  \left(\dfrac{q_{N} + rq_{N-r-1}}{r+1}\right)^2\right) \right)\exp\left(\frac{im}{2\hbar\Delta t} \left(q_{N-r-1}^2 + \dfrac{q_{N}^2}{r} -  \left(\dfrac{r+1}{r}\right)\left(\dfrac{q_{N} + rq_{N-r-1}}{r+1}\right)^2\right)\right)\\
+    =& \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{im}{2\hbar\Delta t (r+1)} \left((r+1)q_{N-r-1}^2 + \dfrac{q_{N}^2(r+1)}{r} -\left(\dfrac{q_{N}^2}{r} + r q_{N-r-1}^2  + 2q_{N}q_{N-r-1}\right)\right)\right)\\
+    =& \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{im}{2\hbar\Delta t (r+1)} \left((r+1)q_{N-r-1}^2 + q_{N}^2 - r q_{N-r-1}^2 - 2q_{N}q_{N-r-1}\right)\right)\\
+    =& \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{m i}{2\hbar} \left(\dfrac{q_{N}-q_{N-r-1}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right) 
+\end{align*}
+Comparing $S$ with $A$ we see $A = S(1)$ and we also note that the maximal value for $r$ is provided by $N-r = 1 \iff N-1 = r$ which corresponds to 
+\begin{align*}
+    S(N-1)=C\left(\prod_{n = 1}^{1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{0+1}-q_{0}}{\Delta t}\right)^2  \Delta t + \frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{1}}{\Delta t (N-1)}\right)^2  \Delta t(N-1)\right) = C \left(\dfrac{\hbar\pi \Delta t (N-1)}{m i (N)}\right)^{1/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right).
+\end{align*}
+ Unpacking the telescopic expression for $S(0)$ we have 
+\begin{align*}
+    S(1) &= \left(\dfrac{\hbar\pi \Delta t (1)}{m i (1+1)}\right)^{1/2} S(1) = \left(\dfrac{\hbar\pi \Delta t 2}{m i (2+1)}\right)^{1/2} S(2) = \left(\dfrac{\hbar\pi \Delta t (1)}{m i (1+1)}\right)^{1/2}\left(\dfrac{\hbar\pi \Delta t (2)}{m i (2+1)}\right)^{1/2} S(3) = S(N-1)\prod_{r=1}^{N-2} \left(\dfrac{\hbar\pi \Delta t (r)}{m i (r+1)}\right)^{1/2} \\&=  C \left(\dfrac{\hbar\pi \Delta t (N-1)}{m i (N)}\right)^{1/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right) \left(\dfrac{\hbar\pi \Delta t}{m i}\right)^{(N-2)/2} \left(\dfrac{(1)}{(N-1)}\right)^{1/2}\\
+    &=  C \exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right) \left(\dfrac{\hbar\pi \Delta t}{m i}\right)^{(N-1)/2} \left(\dfrac{1}{N}\right)^{1/2}
+\end{align*} 
+}
 
 \section{Mach-Zehnder}
 
 
 \section{Acknowledgement}
+Thanks to Luke for pointing mistakes in my calculation for the first question and for a discussion about the time reversal effect of conjugating a correlation function.
 
 % References
 \makereferences
