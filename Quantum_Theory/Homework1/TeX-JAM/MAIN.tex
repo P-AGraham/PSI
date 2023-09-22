@@ -7,6 +7,7 @@
 
 \usepackage{page_format}
 \usepackage{special}
+\usepackage{hyperref}
 \input{math_func}
 
 % References
@@ -49,21 +50,21 @@
 
 % Assignment starts here ----------------------------
 \section{Quantum revivals}
-Consider a one-dimensionnal quantum harmonic oscillator with mass $m$, frequency $\omega$, momentum operator $p$ and position operator $x$. The hamiltonian governing the evolution of $x$ and $p$ in the Heisenberg picture is
+Consider a one-dimensionnal quantum harmonic oscillator with mass $m$, frequency $\omega$, momentum operator $p$ and position operator $x$. The Hamiltonian governing the evolution of $x$ and $p$ in the Heisenberg picture is
 \begin{align*}
     H=\frac{p^2(t)}{2 m}+\frac{1}{2} m \omega^2 x^2(t).
 \end{align*}
 \subsection{Operator time dependance}
-In the schrodinger picture, the time dependance of $x$, and $p$ is given by 
+In the Schrodinger picture, the time dependence of $x$, and $p$ is given by 
 \begin{align*}
     &\dfrac{dx}{dt} =\dfrac{1}{i\hbar}  [x, H] = \dfrac{1}{i\hbar} \left([x, \frac{p^2(t)}{2 m}+\frac{1}{2} m \omega^2 x^2(t)]\right) = \dfrac{1}{2i\hbar m} \left([x, p(t)]p + p[x, p(t)]\right) = \dfrac{2}{2 i\hbar m} [x, p]\dfrac{p}{m} = \dfrac{p}{m}  \\
     &\dfrac{dp}{dt} =\dfrac{1}{i\hbar}  [p, H] = \dfrac{1}{i\hbar} \left([p, \frac{p^2(t)}{2 m}+ x^2(t)]\right) = \dfrac{m \omega^2}{2i\hbar} \left([p, \frac{1}{2} m \omega^2 x(t)]x + x[p,  x(t)]\right) = \dfrac{2 m \omega^2}{2i\hbar} [p, x] = - m \omega^2 x
 \end{align*}
-because $[x, p] = -[p, x] = i\hbar \bf{1}$ is a multiple of the identity and commutes with $x$ and $p$. To solve for the time evolution of $x$ and $p$, we first differenciate the first equation to get 
+because $[x, p] = -[p, x] = i\hbar \bf{1}$ is a multiple of the identity and commutes with $x$ and $p$. To solve for the time evolution of $x$ and $p$, we first differentiate the first equation to get 
 \begin{align*}
     \dfrac{d^2 x}{dt^2} = \dfrac{1}{m} \dfrac{dp}{dt} =  -\omega^2 x. 
 \end{align*}
-The solution of this second order operator differential equation can be found componentwise because all coponent are decoupled from each other (the initial conditions will ensure $x$ is hermitian). For each component $\bra{x'} x(t) \ket{x"}$ in the eigenbasis of $x(0)$ We get a scalar harmonic oscillator equation
+The solution of this second-order operator differential equation can be found componentwise because all components are decoupled from each other (the initial conditions will ensure $x$ is hermitian). For each component $\bra{x'} x(t) \ket{x"}$ in the eigenbasis of $x(0)$ We get a scalar harmonic oscillator equation
 \begin{align*}
     \dfrac{d^2}{dt^2} \bra{x'} x(t) \ket{x"} = -\omega^2 \bra{x'} x(t) \ket{x"} \iff \bra{x'} x(t) \ket{x"} = A(x', x") \cos(\omega t) +  B(x', x") \dfrac{\sin(\omega t)}{\omega}
 \end{align*} 
@@ -105,13 +106,13 @@ $$
 
 
 \section{Composite Spin}
-The Hilbert space $\mathcal{H}$ of two particles of spin $1/2$ with hilbert spaces $\mathcal{H}_1, \mathcal{H}_2$ is given by the tensor product $\mathcal{H}_1 \otimes \mathcal{H}_2$. We are interested on the maxtrix representation of the total spin component operators. In the tensor product basis $\{\ket{11}, \ket{01}, \ket{10}, \ket{00}\}$, they are expressed as  
+The Hilbert space $\mathcal{H}$ of two particles of spin $1/2$ with hilbert spaces $\mathcal{H}_1, \mathcal{H}_2$ is given by the tensor product $\mathcal{H}_1 \otimes \mathcal{H}_2$. We are interested in the matrix representation of the total spin component operators. In the tensor product basis $\{\ket{11}, \ket{01}, \ket{10}, \ket{00}\}$, they are expressed as  
 \begin{align*}
     &\sigma_x := \sigma_x^{(1)} \otimes 1^{(2)} + 1^{(1)} \otimes \sigma_x^{(2)}\\
     &\sigma_y := \sigma_y^{(1)} \otimes 1^{(2)} + 1^{(1)} \otimes \sigma_y^{(2)}\\
     &\sigma_z := \sigma_z^{(1)} \otimes 1^{(2)} + 1^{(1)} \otimes \sigma_z^{(2)}
 \end{align*}
-where $1^{(i)}$ and $\sigma_{x, y, z}^{(i)}$ are respectively  the identity matrix and the pauli matrices in the ${\ket{1}, \ket{0}}$ basis of $\mathcal{H}_i$. The pauli matrices are given by 
+where $1^{(i)}$ and $\sigma_{x, y, z}^{(i)}$ are respectively the identity matrix and the Pauli matrices in the ${\ket{1}, \ket{0}}$ basis of $\mathcal{H}_i$. The Pauli matrices are given by 
 \begin{align*}
     \begin{aligned}
         & \sigma_{x}=\begin{pmatrix}
@@ -203,20 +204,20 @@ The tensor product operation leads to the following $\sigma_{x, y, z}$ matrices 
 % cite wikipedia for both questions 
 \section{Free Path Integral}
 {\footnotesize
-The lagrangian of a free one-dimensionnal particle with mass $m$ described by a generalised coordinate $q$, is $L=\frac12 m \dot{q}$. To use the path integral formalism, we  need to discretize the trajectory $q(t)$ in $N$ steps. Each step is associated to an independant variable $q_n$ corresponding to the coordinate of the particle at time $n T/N$ where $T$ is the final time at which we wish to observe the particle. The time interval for a step is $\Delta t = T/N$ and we have $\dot{q} = \frac{q_{n+1}-q_{n}}{\Delta t}$. Going further, the action integral is replaced by a discrete sum expressed as 
+The lagrangian of a free one-dimensional particle with mass $m$ described by a generalised coordinate $q$, is $L=\frac12 m \dot{q}$. To use the path integral formalism, we need to discretize the trajectory $q(t)$ in $N$ steps. Each step is associated with an independent variable $q_n$ corresponding to the coordinate of the particle at time $n T/N$ where $T$ is the final time at which we wish to observe the particle. The time interval for a step is $\Delta t = T/N$ and we have $\dot{q} = \frac{q_{n+1}-q_{n}}{\Delta t}$. Going further, the action integral is replaced by a discrete sum expressed as 
 $$
 S = \sum_{n=0}^{N-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2 \Delta t.
 $$
-The path integral representation of the amplitude $A$ for the particule to scatter from $q_0$ to $q_{N}$ is given in the discretized picture by 
+The path integral representation of the amplitude $A$ for the particle to scatter from $q_0$ to $q_{N}$ is given in the discretized picture by 
 \begin{align*}
-A &= C\left(\prod_{n = 1}^{N-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)
+A &= \left(\dfrac{im}{2\hbar \pi \Delta t}\right)^{N/2}\left(\prod_{n = 1}^{N-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)
 \end{align*}
 To compute it, we consider the sequence
 \begin{align*}
-    S(r) &= C\left(\prod_{n = 1}^{N-r}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-r-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t + \frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{N-r}}{\Delta t r}\right)^2  \Delta tr\right)\\
-    &= C\left(\prod_{n = 1}^{N-r-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-r-2} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)  \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac12 m \left(\frac{q_{N}-q_{N-r}}{\Delta tr}\right)^2  \Delta tr + \frac12 m \left(\frac{q_{N-r}-q_{N-r-1}}{\Delta t}\right)^2  \Delta t\right)\\
-    &= C\left(\prod_{n = 1}^{N-(r+1)}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-(r+1)-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t + \frac{m i}{2\hbar} \left(\dfrac{q_{N}-q_{N-(r+1)}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right)  \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\\
-    &= \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2} S(r+1)
+    S(r) &= \left(\dfrac{im}{2 \hbar \pi \Delta t}\right)^{N/2}\left(\prod_{n = 1}^{N-r}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-r-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t + \frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{N-r}}{\Delta t r}\right)^2  \Delta tr\right)\\
+    &= \left(\dfrac{im}{2\hbar \pi \Delta t}\right)^{N/2}\left(\prod_{n = 1}^{N-r-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-r-2} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)  \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac12 m \left(\frac{q_{N}-q_{N-r}}{\Delta tr}\right)^2  \Delta tr + \frac12 m \left(\frac{q_{N-r}-q_{N-r-1}}{\Delta t}\right)^2  \Delta t\right)\\
+    &= \left(\dfrac{im}{2\hbar \pi \Delta t}\right)^{N/2}\left(\prod_{n = 1}^{N-(r+1)}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-(r+1)-1} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t + \frac{m i}{2\hbar} \left(\dfrac{q_{N}-q_{N-(r+1)}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right)  \left(\dfrac{2\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\\
+    &= \left(\dfrac{im}{2\hbar \pi \Delta t}\right)^{N/2}\left(\dfrac{2\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2} S(r+1)
 \end{align*}
 
 where we used
@@ -224,27 +225,32 @@ where we used
 \begin{align*}
     &\int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{2\hbar} \left(\frac{q_{N}-q_{N-r}}{r\Delta t}\right)^2  r\Delta t + \frac{im}{2\hbar} \left(\frac{q_{N-r}-q_{N-r-1}}{\Delta t}\right)^2  \Delta t\right)\\
     =& \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{2\hbar\Delta t} \left(\left(\dfrac{r+1}{r}\right)q_{N-r}^2 - 2\left(\dfrac{q_{M}}{r} + q_{N-r-1}\right)q_{N-r}\right) \right)\exp\left(\frac{im}{2\hbar\Delta t} \left(q_{N-r-1}^2 + \dfrac{q_{N}^2}{r}\right)\right)\\
-    =& \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{\hbar\Delta t} \left(\dfrac{r+1}{r}\right) \left(q_{N-r}^2 - \left(\dfrac{2}{r+1}\right)(q_{N} +  rq_{N-r-1})q_{N-r} +  \left(\dfrac{q_{N} + rq_{N-r-1}}{r+1}\right)^2\right) \right)\exp\left(\frac{im}{2\hbar\Delta t} \left(q_{N-r-1}^2 + \dfrac{q_{N}^2}{r} -  \left(\dfrac{r+1}{r}\right)\left(\dfrac{q_{N} + rq_{N-r-1}}{r+1}\right)^2\right)\right)\\
-    =& \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{im}{2\hbar\Delta t (r+1)} \left((r+1)q_{N-r-1}^2 + \dfrac{q_{N}^2(r+1)}{r} -\left(\dfrac{q_{N}^2}{r} + r q_{N-r-1}^2  + 2q_{N}q_{N-r-1}\right)\right)\right)\\
-    =& \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{im}{2\hbar\Delta t (r+1)} \left((r+1)q_{N-r-1}^2 + q_{N}^2 - r q_{N-r-1}^2 - 2q_{N}q_{N-r-1}\right)\right)\\
-    =& \left(\dfrac{\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{m i}{2\hbar} \left(\dfrac{q_{N}-q_{N-r-1}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right) 
+    =& \int_{-\infty}^{\infty} \text{d} q_{N-r} \exp\left(\frac{im}{2\hbar\Delta t} \left(\dfrac{r+1}{r}\right) \left(q_{N-r}^2 - \left(\dfrac{2}{r+1}\right)(q_{N} +  rq_{N-r-1})q_{N-r} +  \left(\dfrac{q_{N} + rq_{N-r-1}}{r+1}\right)^2\right) \right)\exp\left(\frac{im}{2\hbar\Delta t} \left(q_{N-r-1}^2 + \dfrac{q_{N}^2}{r} -  \left(\dfrac{r+1}{r}\right)\left(\dfrac{q_{N} + rq_{N-r-1}}{r+1}\right)^2\right)\right)\\
+    =& \left(\dfrac{2\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{im}{2\hbar\Delta t (r+1)} \left((r+1)q_{N-r-1}^2 + \dfrac{q_{N}^2(r+1)}{r} -\left(\dfrac{q_{N}^2}{r} + r q_{N-r-1}^2  + 2q_{N}q_{N-r-1}\right)\right)\right)\\
+    =& \left(\dfrac{2\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{im}{2\hbar\Delta t (r+1)} \left((r+1)q_{N-r-1}^2 + q_{N}^2 - r q_{N-r-1}^2 - 2q_{N}q_{N-r-1}\right)\right)\\
+    =& \left(\dfrac{2\hbar\pi \Delta t r}{m i (r+1)}\right)^{1/2}\exp\left(\frac{m i}{2\hbar} \left(\dfrac{q_{N}-q_{N-r-1}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right) 
 \end{align*}
 Comparing $S$ with $A$ we see $A = S(1)$ and we also note that the maximal value for $r$ is provided by $N-r = 1 \iff N-1 = r$ which corresponds to 
 \begin{align*}
-    S(N-1)=C\left(\prod_{n = 1}^{1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{0+1}-q_{0}}{\Delta t}\right)^2  \Delta t + \frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{1}}{\Delta t (N-1)}\right)^2  \Delta t(N-1)\right) = C \left(\dfrac{\hbar\pi \Delta t (N-1)}{m i (N)}\right)^{1/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right).
+    S(N-1)&=\left(\dfrac{im}{2\hbar\pi \Delta t}\right)^{N/2}\left(\prod_{n = 1}^{1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{0+1}-q_{0}}{\Delta t}\right)^2  \Delta t + \frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{1}}{\Delta t (N-1)}\right)^2  \Delta t(N-1)\right) \\
+    &= \left(\dfrac{im}{2\hbar\pi \Delta t}\right)^{N/2} \left(\dfrac{\hbar\pi \Delta t (N-1)}{m i (N)}\right)^{1/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right).
 \end{align*}
  Unpacking the telescopic expression for $S(0)$ we have 
 \begin{align*}
-    S(1) &= \left(\dfrac{\hbar\pi \Delta t (1)}{m i (1+1)}\right)^{1/2} S(1) = \left(\dfrac{\hbar\pi \Delta t 2}{m i (2+1)}\right)^{1/2} S(2) = \left(\dfrac{\hbar\pi \Delta t (1)}{m i (1+1)}\right)^{1/2}\left(\dfrac{\hbar\pi \Delta t (2)}{m i (2+1)}\right)^{1/2} S(3) = S(N-1)\prod_{r=1}^{N-2} \left(\dfrac{\hbar\pi \Delta t (r)}{m i (r+1)}\right)^{1/2} \\&=  C \left(\dfrac{\hbar\pi \Delta t (N-1)}{m i (N)}\right)^{1/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right) \left(\dfrac{\hbar\pi \Delta t}{m i}\right)^{(N-2)/2} \left(\dfrac{(1)}{(N-1)}\right)^{1/2}\\
-    &=  C \exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right) \left(\dfrac{\hbar\pi \Delta t}{m i}\right)^{(N-1)/2} \left(\dfrac{1}{N}\right)^{1/2}
+    S(1) &= \left(\dfrac{2\hbar\pi \Delta t (1)}{m i (1+1)}\right)^{1/2} S(1) = \left(\dfrac{2\hbar\pi \Delta t 2}{m i (2+1)}\right)^{1/2} S(2) = \left(\dfrac{2\hbar\pi \Delta t (1)}{m i (1+1)}\right)^{1/2}\left(\dfrac{2\hbar\pi \Delta t (2)}{m i (2+1)}\right)^{1/2} S(3) = S(N-1)\prod_{r=1}^{N-2} \left(\dfrac{2\hbar\pi \Delta t (r)}{m i (r+1)}\right)^{1/2} \\&=  \left(\dfrac{im}{2\pi \Delta t}\right)^{N/2} \left(\dfrac{2\hbar\pi \Delta t (N-1)}{m i (N)}\right)^{1/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right) \left(\dfrac{2\hbar\pi \Delta t}{m i}\right)^{(N-2)/2} \left(\dfrac{(1)}{(N-1)}\right)^{1/2}\\
+    &=  \left(\dfrac{im}{2\hbar \pi \Delta t}\right)^{N/2}\exp\left(\frac{i}{\hbar}\frac12 m \left(\frac{q_{N}-q_{0}}{N\Delta t}\right)^2  N\Delta t\right) \left(\dfrac{2\hbar\pi \Delta t}{m i}\right)^{(N-1)/2} \left(\dfrac{1}{N}\right)^{1/2} = \exp\left(\frac{mi}{2\hbar T} \frac{(q_{N}-q_{0})^2}{2}\right) \left(\dfrac{m i}{2\hbar\pi T}\right)^{1/2}
 \end{align*} 
+This result coincides with the quantum mechanical free particle propagator $K(q_0, q_1, 0, T) = \bra{q_1} e^{-i H_{\text{free} T/\hbar}} \ket{q_0}$ (evolving with $H_{\text{free}}$) which is the imaginary time heat kernel (the free Schrodinger equation is a wick rotated heat equation so it makes sense that its propagator can be deduced by a wick rotation of the heat kernel). Furthermore, for fixed $q_0$ this propagator is the diffusing wave function of a free wave packet initially localized at $q_0$.
 }
 
-\section{Mach-Zehnder}
+\section{Mach-Zehnder Interferometer}
+The Mach-Zehnder interferometer is a sequence consisting of a beam splitter followed by a phase element on one of the split paths finally ending with a second beam splitter. In a quantum computer, we can represent the two paths with the orthogonal states $\ket{0}$ and $\ket{1}$ of a qubit. The first beam splitter is represented by the action of a Hadamard gate on $\ket{0}$ and the phase is represented by a phase gate leaving $\ket{0}$ unchanged while multiplying $\ket{1}$ by a phase. The final beam splitter is again represented with a Hadamard gate.  The probabilities to find the qubit in state $\ket{0}$ or $\ket{1}$ will oscillate as the phase shift applied increases (we get an interference pattern). To go further, we can implement the effect of a probe on the qubit. The probe is represented by a second qubit. After the first Hadamard gate, the state of the first qubit represents the path: it should activate the probe (flip its state from $\ket{0}$ to $\ket{1}$ state) only if the path is $\ket{1}$. The quantum computation gate that does this is the CNOT gate. It entangles the path with the probe state and no interference pattern is observed. 
+\href{https://quantum-computing.ibm.com/composer/files/new?initial=N4IgdghgtgpiBcIAKBLGAndMC0BBMALgPYpgwD6A4uhABbTlIDKAkgEwAMbAzCADQgAjhADOUBCADySAKIA5AIq4mAWQAEbAHQcA3AB0wpAMYAbAK4ATGGr1CYJlACMAjJuO39YA4KwBzNYIA2mwAup5GfmpGgQAsYQa0AYEc8WAADgAUaSgA9GwAlEkpnolBxQb8IFYiEShpBChEYBIgAL5AA}{Quantum circuit for Mach-Zehnder} 
+
 
 
 \section{Acknowledgement}
-Thanks to Luke for pointing mistakes in my calculation for the first question and for a discussion about the time reversal effect of conjugating a correlation function.
+Thanks to Luke for pointing out mistakes in my calculation for the first question and for a discussion about the time reversal effect of conjugating a correlation function.
 
 % References
 \makereferences
