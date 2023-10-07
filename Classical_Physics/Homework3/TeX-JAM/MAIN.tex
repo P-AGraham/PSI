@@ -1,0 +1,162 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\input{math_func}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%
+\title{Homework 3} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Aldo Riello} % Your teacher's name.
+\class{Classical Physics} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%t
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+\footnotesize{
+% Assignment starts here ----------------------------
+\section{Planar electromagnetic waves}
+\subsection{Maxwell equations for the four-potential}
+The components of the contravariant four potential are $A^{\mu} = (\varphi, \mathbf{A})$ ($A_{\mu} = (-\varphi, \mathbf{A})$ for the covariant components) where $\varphi$ is the electric potential and $\mathbf{A}$ is the magnetic potential vector. The sources generating each component of $A^{\mu}$ can be grouped in a current four vector $j^{\mu}=(\rho, \mathbf{j})$ ($j_{\mu} = (-\rho, \mathbf{j})$ for the covariant components) where $\rho$ is the charge density and  $\mathbf{j}$  is the current observed in the reference frame where we solve for $A^{\mu}$. In the lorentz gauge $0=\nabla_{\mu} A^{\mu}$, the Maxwell equations for $A^{\mu}$ with sources $j^{\mu}$ read $\Box A^{\mu} = -4\pi j^{\mu}$ ($\Box A_{\mu} = -4\pi j_{\mu}$ for the covariant components). 
+
+\subsection{Plane wave Ansatz}
+We now solve the Maxwell equations in the Lorentz gauge, by introducing the plane wave ansatz $A_\mu(t, \mathbf{x}) = a_\mu \exp \left(i k_\mu x^\mu\right)$ where $k^{\mu}= (\mu, \mathbf{k})$ is the four wave vector and $a^{\mu}$ is the four amplitude. On one hand, substituting this ansatz in the Lorentz gauge condition, we get 
+\begin{align*}
+    0 = \nabla_{\mu} A^{\mu} = \nabla_{\mu} \left(a^\mu \exp \left(i k_\nu x^\nu\right)\right) = a^\mu i\delta_\mu^\nu k_{\nu} \exp \left(i k_\nu x^\nu\right) = (a^{\mu} k_{\mu}) \exp \left(i k_\nu x^\nu\right) \iff  a^{\mu} k_{\mu} = 0.
+\end{align*}
+On the other hand, substituting the ansatz in the vacuum Maxwell equations ($ j_{\mu}$) yields 
+\begin{align*}
+    0 =  \nabla^{\mu}\nabla_{\mu} A_{\nu} =  i\delta_\mu^\rho k_{\rho} \nabla^{\mu} (\exp \left(i k^\rho x_\rho\right)) = -k^{\mu} k_{\mu} \exp \left(i k^\rho x_\rho\right) \iff k^{\mu} k_{\mu} = 0
+\end{align*}
+so the four wave vector is light-like in the vacuum. 
+
+\subsection{Electric and Magnetic fields}
+In terms of $A_\mu$, the electric and magnetic fields $\mathbf{E}, \mathbf{B}$ can be written as 
+\begin{align*}
+    &\mathbf{E} = \nabla_j A_0 -\nabla_0 \mathbf{A} = a_0\nabla_j\exp \left(i k_\mu x^\mu\right) - \mathbf{a} \nabla_0  \exp \left(i k_\mu x^\mu\right) = (i a_0 \mathbf{k} - i\mathbf{a} k_0)  \exp \left(i k_\mu x^\mu\right),\\
+    &\mathbf{B} =  \epsilon_i^{jk} \nabla_j A_{k} = i\epsilon_i^{\ jk} k_j a_k\exp \left(i k_\mu x^\mu\right) = i\mathbf{k} \times \mathbf{a}\exp \left(i k_\mu x^\mu\right) 
+\end{align*} with $\mathbf{A}$, $\mathbf{a}$ and $\mathbf{k}$ are respectively the spatial components of $A_{\mu}$, $a_{\mu}$ and $k_{\mu}$. We consider the projection of $\mathbf{E}, \mathbf{B}$ along $\mathbf{k}$. We define  $\mathbf{n} := \mathbf{k}/k$ to write the projections 
+\begin{align*}
+    &\mathbf{n} \cdot \mathbf{E} = \mathbf{k}/k \cdot \mathbf{E}= (i a_0 \mathbf{k}^2 - i\mathbf{k} \cdot \mathbf{a} k_0)  \exp \left(i k_\mu x^\mu\right)/k =  (i a_0 (k_0^2) - i(k_0 a_0) k_0)  \exp \left(i k_\mu x^\mu\right)/k = 0, \\
+    &\mathbf{n} \cdot \mathbf{B} = \mathbf{k} \cdot \left(i\mathbf{k} \times \mathbf{a}\exp \left(i k_\mu x^\mu\right)\right)/k = 0.
+\end{align*}
+Furthermore, we can relate $\mathbf{E}$ and $\mathbf{B}$ in the following way:
+\begin{align*}
+    \mathbf{k} \times \mathbf{B}/k_0 &= i \mathbf{k} \times (\mathbf{k} \times \mathbf{a})\exp \left(i k_\mu x^\mu\right)\\ &=  i\left((\mathbf{k} \cdot \mathbf{a})\mathbf{k} - (\mathbf{k} \cdot \mathbf{k})\mathbf{a}\right)\exp \left(i k_\mu x^\mu\right)/k_0 \\
+    &=  i\left((k_0 a_0)\mathbf{k} - (k_0^2)\mathbf{a}\right)\exp \left(i k_\mu x^\mu\right)/k_0\\
+    &= i\left(a_0\mathbf{k} - k_0\mathbf{a}\right)\exp \left(i k_\mu x^\mu\right) = \mathbf{E}.
+\end{align*}
+Since $k_0^2-\mathbf{k}^2 = 0$ and $\mathbf{n} = \mathbf{k}/\sqrt{\mathbf{k}^2}$, $\mathbf{k} \times \mathbf{B}/k_0 = \mathbf{n} \times \mathbf{B} = \mathbf{E}$. The conclusion of these calculations is that $\mathbf{E}, \mathbf{B}$ are orthogonal to each oother and to the direction of propagation of the wave given by $\mathbf{k}$. To analyse the phase difference between $\mathbf{E
+}$ and $\mathbf{B}$,  we notice that the global phase in $\mathbf{E}$ is the phase of the complex quantity $a_0\mathbf{k} - k_0\mathbf{a}$ and that the global phase in $\mathbf{B}$ is the phase in $\mathbf{a}$. 
+
+\subsection{Linearly polarized waves}
+
+In what follows, we set $A^0 = -\varphi = 0$, $a^0 = 0$ which corresponds to having a $0$ electric potential everywhere. The time derivative of the spatial components of four potential is
+\begin{align*} 
+    \dot{\mathbf{A}} = i k_0 \mathbf{a} \exp \left(i k_\mu x^\mu\right).
+\end{align*}
+It can be used to express $\mathbf{E}, \mathbf{B}$ when the $a^0 = 0$. Indeed
+\begin{align*}
+    \mathbf{E} =  -\mathbf{\dot{A}} =  (i (0) \mathbf{k} - i\mathbf{a} k_0)  \exp \left(i k_\mu x^\mu\right), \mathbf{B} =  \mathbf{n} \times \dot{\mathbf{A}}
+\end{align*}
+\subsection{Poynting vector}
+The energy-momentum transport associated to the electromagnetic field is described by the Poynting vector $\mathbf{S} = \mathbf{E} \times \mathbf{B}$. Here, we want to relate $\mathbf{S}$ to the electromagnetic energy density $\epsilon = (\mathbf{E}^2 +  \mathbf{B}^2)/2$. To do so, we differenciate $\epsilon$ with respect to time to get 
+\begin{align*}
+    \dfrac{\partial \epsilon}{\partial t} = \mathbf{E} \cdot \dfrac{\partial \mathbf{E}}{\partial t} + \mathbf{B} \cdot \dfrac{\partial \mathbf{B}}{\partial t} = \mathbf{E} \cdot \left(\nabla \times \mathbf{B}\right) - \mathbf{B} \cdot \left(\nabla \times \mathbf{E}\right) = - \nabla  \cdot \left(\mathbf{E} \times \mathbf{B}\right) \iff 0 = \dfrac{\partial \epsilon}{\partial t} + \nabla  \cdot \mathbf{S}
+\end{align*}
+where we have used the Faraday and Vacuum Ampere laws to express the partial derivatives. A continuity equation is found and we interpret $\mathbf{S}$ as the energy current density. 
+
+\subsection{Asymptotic Power}
+Following the analogy with the charge continuity equation, we can write an integral form of the energy continuity equation. We choose a spherical volume $V$ surrounded by a sphere surface $\partial V$ at radius $R$ with outward normal $\mathbf{n}$. Integrating he continuity equation for $\epsilon$ and $\mathbf{S}$, we get 
+\begin{align*}
+   0 = \int_V \text{d}^3 r \left(\dfrac{\partial \epsilon}{\partial t} + \nabla  \cdot \mathbf{S}\right) = \dfrac{\partial }{\partial t} \left(\int_V \text{d}^3 r \epsilon\right) + \int_V \text{d}^3 r \nabla  \cdot \mathbf{S} = \dfrac{d E}{d t}  + R^2\int_{\partial V} \sin(\theta) \text{d}\phi \text{d}\theta \mathbf{n} \cdot \mathbf{S}
+\end{align*}
+Where $E$ represents the total electromagnetic energy in $V$. If $R$ is big enough compared to the caracteristic siuze of the emitting system, only radiation directed to infinity goes trough it and $\frac{dE}{dt}$ represents the total radiation power of the system. 
+
+\subsection{Poynting vector for planar waves}
+For planar waves, we have the following poynting vector:
+\begin{align*}
+    \mathbf{S} &= \mathbf{E}\times\mathbf{B} = -\mathbf{B} \times (\mathbf{n} \times \mathbf{B}) =- (\mathbf{B} \cdot \mathbf{n}) \mathbf{B} + (\mathbf{B} \cdot \mathbf{B}) \mathbf{n} = \dfrac{\mathbf{B}^2 + \mathbf{E}^2}{2} \mathbf{n} = \epsilon \mathbf{n} 
+\end{align*}
+where we used $\mathbf{E} = \mathbf{n} \times \mathbf{B}$, $0 = \mathbf{n} \cdot \mathbf{B}$ and $\mathbf{B}^2 = (\mathbf{n} \times \mathbf{B})^2 =  \mathbf{E}^2$. 
+% thanks to Maita 
+\section{Radiation of an isolated system}
+\subsection{Lienard–Wiechert potential with isolated sources}
+The Lienard–Wiechert potential provides an expression for the four-potential generated by a charge moving on a world line. 
+
+Supposing the charges are moving slowly compared to the speed of light, the three potential $\mathbf{A}$ contribution at time $t$ and position $\mathbf{r}$ of a point charge charge $q$ with three-velocity $\mathbf{v}$ and three-position $\mathbf{r}'$ at time $t_R = t-|\mathbf{r} - \mathbf{r}'|$ reads: 
+\begin{align*}
+   \mathbf{A} =  \dfrac{q \mathbf{v}(t_R)}{|\mathbf{r} - \mathbf{r}'| - \mathbf{v}(t_R) \cdot (\mathbf{r} - \mathbf{r}')} \approx  \dfrac{q \mathbf{v}(t_R)}{|\mathbf{r} - \mathbf{r}'|} + O(|\mathbf{v}|^2)
+\end{align*}
+Here we are interested in the integrated potential generated by a continum of charges described by charge density $\rho(t, \mathbf{r})$ and a three-curent $\mathbf{j}(t, \mathbf{r})$ at time $t$ and cartesian three-position $\mathbf{r}$. In the limit of small velocities, the previous expression can be formulated in the charge continuum by replacing $q \mathbf{v}(t_R)$ by  the integral expression of the magnetic potential is given by $\mathbf{j}(t_R, \mathbf{r}')$ and integrating over a space-slice to combine the contribution of all sources. We have 
+\begin{align*}
+    \mathbf{A}(t, \mathbf{r}) = \int \text{d}^3r' \dfrac{\mathbf{j}(t_R, \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}.
+\end{align*}
+If the observation point $\mathbf{r}$ of the three-potential is far from the sources, we can write 
+\begin{align*}
+    \mathbf{A}(t, \mathbf{r}) &= \int_{\mathbf{j}(t_R, \mathbf{r}') \sim 0,\ |\mathbf{r}|\sim |\mathbf{r}'|} \text{d}^3r' \dfrac{\mathbf{j}(t_R, \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} + \int_{\mathbf{j}(t_R, \mathbf{r}') \not\sim 0,\ |\mathbf{r}|\gg |\mathbf{r}'|} \text{d}^3r' \dfrac{\mathbf{j}(t_R, \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} \\&\approx \dfrac{1}{|\mathbf{r}|}\int_{\mathbf{j}(t_R, \mathbf{r}') \sim 0,\ |\mathbf{r}|\sim |\mathbf{r}'|} \text{d}^3r' \underbrace{\mathbf{j}(t_R, \mathbf{r}')}_{\sim 0}+ \dfrac{1}{|\mathbf{r}|}\int_{\mathbf{j}(t_R, \mathbf{r}') \not\sim 0,\ |\mathbf{r}|\gg |\mathbf{r}'|} \text{d}^3r' \mathbf{j}(t_R, \mathbf{r}') =  \dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \mathbf{j}(t_R, \mathbf{r}')
+\end{align*}
+where we have used the expansion 
+\begin{align*}
+    &|\mathbf{r}-\mathbf{r}'| =   \left.|\mathbf{r}-\mathbf{r}'|\right|_{\mathbf{r}' = 0} + \mathbf{r}'\cdot \left.\dfrac{\partial}{\partial \mathbf{r}'} |\mathbf{r}-\mathbf{r}'|\right|_{\mathbf{r}' = 0} + O(|\mathbf{r}'|^2) = |\mathbf{r}| - \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|} + O(|\mathbf{r}'|^2, 1/|\mathbf{r}|^2)\\
+    &\dfrac{1}{|\mathbf{r}-\mathbf{r}'|} = \dfrac{1}{|\mathbf{r}| - \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|} + O(|\mathbf{r}'|^2)} = \dfrac{1}{\mathbf{|\mathbf{r}|}} \dfrac{1}{1 - \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|^2} + O(|\mathbf{r}'|^2)} = \dfrac{1}{\mathbf{|\mathbf{r}|}} \left(1 + \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|^2}\right) + O(|\mathbf{r}'|^2) = \dfrac{1}{|\mathbf{r}|} + O(|\mathbf{r}'|^2, 1/|\mathbf{r}|^2)\\
+    &\mathbf{j}(t_R, \mathbf{r}') = \mathbf{j}\left(t-|\mathbf{r}| + \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|}\right)=
+\end{align*}
+
+% Can we obtain the same result by writing the coulomb potential in the comoving rest frame of the particle and then boost the four potential to the frame where the particle is moving ?
+\subsection{}
+\subsection{}
+\subsection{}
+\subsection{}
+
+\section{Beyond radiation}
+\subsection{}
+\subsection{}
+\subsection{}
+
+
+\section{Acknowledgement}
+
+}
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
