@@ -63,4 +63,22 @@ Taking the vector product with $\mathbf{u}$ again leads to
 
 \mathbf{E}\times\mathbf{B} = (a_0 \mathbf{k} - \mathbf{a} k_0)  \cos\left(k_\mu x^\mu + \pi/2\right) \times \left(\mathbf{k} \times \mathbf{a}\cos\left(k_\mu x^\mu + \pi/2\right) \right) = (- \mathbf{a} k_0)   \times \left(\mathbf{k} \times \mathbf{a}\right) \cos^2\left(k_\mu x^\mu + \pi/2\right)
 
-\mathbf{S} = -\dot{\mathbf{A}} \times (\mathbf{n} \times \dot{\mathbf{A}})  = (\dot{\mathbf{A}} \cdot \dot{\mathbf{A}}) \mathbf{n} - (\dot{\mathbf{A}} \cdot \mathbf{n}) \mathbf{\dot{\mathbf{A}}} = 
+\mathbf{S} = -\dot{\mathbf{A}} \times (\mathbf{n} \times \dot{\mathbf{A}})  = (\dot{\mathbf{A}} \cdot \dot{\mathbf{A}}) \mathbf{n} - (\dot{\mathbf{A}} \cdot \mathbf{n}) \mathbf{\dot{\mathbf{A}}} =
+
+\dfrac{1}{|\mathbf{r}| - \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|} + O(|\mathbf{r}'|^2/|\mathbf{r}|^2)} =
+
+\dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \left[\nabla \cdot (\mathbf{r'} j_i(t', \mathbf{r}'))- \mathbf{r'} \cdot \nabla j_i(t', \mathbf{r}')\right]
+
+= -\dfrac{1}{|\mathbf{r}|^2}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times (\underbrace{\nabla \times \dot{\mathbf{d}}}_0) -\dfrac{1}{|\mathbf{r}|}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times (\nabla \dfrac{1}{|\mathbf{r}|} \times \dot{\mathbf{d}})  = \dfrac{1}{|\mathbf{r}|^4}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times ( \mathbf{r} \times \dot{\mathbf{d}}) = \dfrac{1}{|\mathbf{r}|^4}\left(\left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot \dot{\mathbf{d}}\right] \mathbf{r} - \left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot  \mathbf{r} \right] \dot{\mathbf{d}}\right)
+
+\dfrac{1}{|\mathbf{r}|^}\left(\left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot \dot{\mathbf{d}}\right] \mathbf{r} - \left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot  \mathbf{r} \right] \dot{\mathbf{d}}\right)
+
+= \dfrac{1}{|\mathbf{r}|^4}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times ( \mathbf{r} \times \dot{\mathbf{d}}) = \dfrac{1}{|\mathbf{r}|^4}\left(\left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot \dot{\mathbf{d}}\right] \mathbf{r} - \left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot  \mathbf{r} \right] \dot{\mathbf{d}}\right) 
+
+
+-\dfrac{1}{|\mathbf{r}|^2}\nabla_{\dot{\mathbf{d}}}\left[\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot \dot{\mathbf{d}}\right] + \dfrac{1}{|\mathbf{r}|^2}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \cdot \nabla \times (\nabla \times \dot{\mathbf{d}})  + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right] 
+
+\begin{align*}
+    \mathbf{S} = -\dfrac{|\mathbf{\ddot{d}}|}{|\mathbf{r}|^2} \mathbf{\ddot{d}} \times \mathbf{u}\cos(\theta) + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right] = \dfrac{|\mathbf{\ddot{d}}|^2}{|\mathbf{r}|^2}  \dfrac{\mathbf{r}}{|\mathbf{r}|} + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right].
+\end{align*}
+with $\mathbf{u} = (\mathbf{r} \times \mathbf{\ddot{d}})/|\mathbf{r} \times \mathbf{\ddot{d}}|$  and $\mathbf{\ddot{d}} \times \mathbf{u} =  $
