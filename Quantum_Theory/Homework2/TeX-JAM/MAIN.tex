@@ -1,0 +1,165 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz-feynman}
+\input{math_func}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%
+\title{Homework 2} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Bindiya Arora and Dan Wohns} % Your teacher's name.
+\class{Quantum Mechanics} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+\section{Two real scalars}
+
+\begin{enumerate}
+    \item[(a)] We are considering here perturbative results in the quantum field theory of two interacting real massive scalars $\varphi$, $\Phi$ with respective masses $m$ and $M$. The lagrangian density describing this theory is 
+    \begin{align*}
+        \mathcal{L} = \dfrac{1}{2}(\partial_\mu \varphi)^2 - \dfrac{1}{2} m^2 \varphi^2  + \dfrac{1}{2}(\partial_\mu \Phi)^2 - \dfrac{1}{2} M^2 \Phi^2 - \frac{g}{2! 1!} \Phi \varphi^2
+    \end{align*}
+    where $g$ descrives the coupling of the fields and is the parameter of our perturbative expansion. The position-space Feynman rules for perturbative computation of the interacting vacuum $\ket{\Omega}$ n-point functions $\bra{\Omega}T\varphi(x_1) \cdots \Phi(x_k) \cdots  \Phi(x_n)\ket{\Omega}$ for this theory are summed up graphically below:\\[0.3cm]
+    \begin{minipage}{0.45\textwidth}
+        \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+              % Vertex with a label
+              \vertex[label={[shift={(1cm, 0cm)}]right:$-ig \int \text{d}^4x$}] (v);
+              \vertex[label={[shift={(0cm, 0.1cm)}]above:$x$}] (v);
+              % External legs
+              \vertex [left=of v] (a);
+              \vertex [above right=of v] (b);
+              \vertex [below right=of v] (c);
+              \fill (v) circle (2pt);
+              % Dashed line
+              \diagram* {
+                (a) -- [dashed] (v),
+                (v) -- (b),
+                (v) -- (c),
+              };
+            \end{feynman}
+          \end{tikzpicture}
+        \end{center}
+    1. Every vertex in a diagram is associated to a four-position variable $x$. Its contribution to the symbolic representation of the amplitude is the integral $-ig \int \text{d}^4x$ acting on the propagators from the $x$ vertex to other vertices. \\[0.3cm]
+    3. Divide the amplitude by the symmetry factor of the diagram $S = 2/W$ where $W$ is the number of wick contraction producing the same symbolic diagram expression. $S$ is computed graphically as the order of the fixed end-points automorphism group of the diagram.
+    \end{minipage}%
+    \hspace{0.3cm}
+    \begin{minipage}{0.45\textwidth}
+        \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Vertex with a label
+                \vertex[label={[left=of v]:$x$}];
+                \vertex[label={[shift={(0cm, 0cm)}]right:$y$}];
+                \vertex[label={[shift={(-0.8cm, 0.1cm)}]above:$\Delta_{F}^{M}(x-y)$}];
+                \vertex[label={[shift={(-0.8cm, -0.9cm)}]above:$1$}];
+                % External legs
+                \vertex [left=of v] (a);
+                \vertex [below=1cm of v] (c); 
+                \vertex [below=1cm of a, label={left:$x_1$}] (d); % Adjust the vertical position here
+
+                \fill (a) circle (2pt);
+                \fill (v) circle (2pt);
+                \fill (d) circle (2pt);
+
+        
+                % Dashed line
+                \diagram* {
+                  (a) -- [dashed] (v),
+                  (c) -- [dashed] (d),
+                };
+              \end{feynman}
+          \end{tikzpicture}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Vertex with a label
+                \vertex[label={[left=of v]:$x$}];
+                \vertex[label={[shift={(0cm, 0cm)}]right:$y$}];
+                \vertex[label={[shift={(-0.8cm, 0.1cm)}]above:$\Delta_{F}^{m}(x-y)$}];
+                \vertex[label={[shift={(-0.8cm, -0.9cm)}]above:$1$}];
+                % External legs
+                \vertex [left=of v] (a);
+                \vertex [below=1cm of v] (c); 
+                \vertex [below=1cm of a, label={left:$x_1$}] (d); % Adjust the vertical position here
+
+                \fill (a) circle (2pt);
+                \fill (v) circle (2pt);
+                \fill (d) circle (2pt);
+
+        
+                % Dashed line
+                \diagram* {
+                  (a) -- (v),
+                  (c) -- (d),
+                };
+              \end{feynman}
+          \end{tikzpicture}
+        \end{center}
+          2. Each vertex is the source of two full lines and a dashed line free Klein-Gordon respectively representing a $\varphi$ Feynman propagator $\Delta^m_F(x-y)$ and  a $\Phi$ Feynman propagator $\Delta^M_F(x-y)$ between points $x$ and $y$ (vertices or external points $x_1\cdots x_n$ of the expanded n-point function). Each edge of the diagram is symbolically represented as a multiplication by its associated Feynman propagator. In scalar field theory the external points contribute a trivial factor of $1$ to the amplitude of the diagram. 
+    \end{minipage}
+    
+    \item[(b)] The three-point function $G(x, y, z)  = \bra{\Omega}T \Phi(x)\varphi(y)\varphi(z)\ket{\Omega}$ has no $O(1)$ contributions because the number of contracted fields is odd at this order and no full Wick contractions can be formed: the vacuum is anihilated. At $O(g)$, we have the diagrams 
+    \begin{center}
+        .
+    \end{center}
+    \item[(c)]
+    \item[(d)]
+    \item[(e)]
+    \item[(f)]
+    \item[(g)]
+    \item[(h)]  
+\end{enumerate}
+
+
+
+\section{Acknowledgement}
+
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

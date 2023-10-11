@@ -54,7 +54,7 @@
 The components of the contravariant four potential are $A^{\mu} = (\varphi, \mathbf{A})$ ($A_{\mu} = (-\varphi, \mathbf{A})$ for the covariant components) where $\varphi$ is the electric potential and $\mathbf{A}$ is the magnetic potential vector. The sources generating each component of $A^{\mu}$ can be grouped in a current four vector $j^{\mu}=(\rho, \mathbf{j})$ ($j_{\mu} = (-\rho, \mathbf{j})$ for the covariant components) where $\rho$ is the charge density and  $\mathbf{j}$  is the current observed in the reference frame where we solve for $A^{\mu}$. In the lorentz gauge $0=\nabla_{\mu} A^{\mu}$, the Maxwell equations for $A^{\mu}$ with sources $j^{\mu}$ read $\Box A^{\mu} = -4\pi j^{\mu}$ ($\Box A_{\mu} = -4\pi j_{\mu}$ for the covariant components). 
 
 \subsection{Plane wave Ansatz}
-We now solve the Maxwell equations in the Lorentz gauge, by introducing the plane wave ansatz $A_\mu(t, \mathbf{x}) = a_\mu \exp \left(i k_\mu x^\mu\right)$ where $k^{\mu}= (\mu, \mathbf{k})$ is the four wave vector and $a^{\mu}$ is the four amplitude. On one hand, substituting this ansatz in the Lorentz gauge condition, we get 
+We now solve the Maxwell equations in the Lorentz gauge, by introducing the plane wave ansatz $A_\mu(t, \mathbf{x}) = a_\mu \exp \left(i k_\mu x^\mu\right)$ where $k^{\mu}= (\mu, \mathbf{k})$ is the four-wave vector and $a^{\mu}$ is the four amplitude. On one hand, substituting this ansatz in the Lorentz gauge condition, we get 
 \begin{align*}
     0 = \nabla_{\mu} A^{\mu} = \nabla_{\mu} \left(a^\mu \exp \left(i k_\nu x^\nu\right)\right) = a^\mu i\delta_\mu^\nu k_{\nu} \exp \left(i k_\nu x^\nu\right) = (a^{\mu} k_{\mu}) \exp \left(i k_\nu x^\nu\right) \iff  a^{\mu} k_{\mu} = 0.
 \end{align*}
@@ -62,7 +62,7 @@ On the other hand, substituting the ansatz in the vacuum Maxwell equations ($ j_
 \begin{align*}
     0 =  \nabla^{\mu}\nabla_{\mu} A_{\nu} =  i\delta_\mu^\rho k_{\rho} \nabla^{\mu} (\exp \left(i k^\rho x_\rho\right)) = -k^{\mu} k_{\mu} \exp \left(i k^\rho x_\rho\right) \iff k^{\mu} k_{\mu} = 0
 \end{align*}
-so the four wave vector is light-like in the vacuum. 
+so the four-wave vector is light-like in the vacuum. 
 
 \subsection{Electric and Magnetic fields}
 In terms of $A_\mu$, the electric and magnetic fields $\mathbf{E}, \mathbf{B}$ can be written as 
@@ -80,12 +80,12 @@ Furthermore, we can relate $\mathbf{E}$ and $\mathbf{B}$ in the following way:
     &=  i\left((k_0 a_0)\mathbf{k} - (k_0^2)\mathbf{a}\right)\exp \left(i k_\mu x^\mu\right)/k_0\\
     &= i\left(a_0\mathbf{k} - k_0\mathbf{a}\right)\exp \left(i k_\mu x^\mu\right) = \mathbf{E}.
 \end{align*}
-Since $k_0^2-\mathbf{k}^2 = 0$ and $\mathbf{n} = \mathbf{k}/\sqrt{\mathbf{k}^2}$, $\mathbf{k} \times \mathbf{B}/k_0 = \mathbf{n} \times \mathbf{B} = \mathbf{E}$. The conclusion of these calculations is that $\mathbf{E}, \mathbf{B}$ are orthogonal to each oother and to the direction of propagation of the wave given by $\mathbf{k}$. To analyse the phase difference between $\mathbf{E
+Since $k_0^2-\mathbf{k}^2 = 0$ and $\mathbf{n} = \mathbf{k}/\sqrt{\mathbf{k}^2}$, $\mathbf{k} \times \mathbf{B}/k_0 = \mathbf{n} \times \mathbf{B} = \mathbf{E}$. These calculations conclude that $\mathbf{E}, \mathbf{B}$ are orthogonal to each other and to the direction of propagation of the wave given by $\mathbf{k}$. To analyze the phase difference between $\mathbf{E
 }$ and $\mathbf{B}$,  we notice that the global phase in $\mathbf{E}$ is the phase of the complex quantity $a_0\mathbf{k} - k_0\mathbf{a}$ and that the global phase in $\mathbf{B}$ is the phase in $\mathbf{a}$. 
 
 \subsection{Linearly polarized waves}
 
-In what follows, we set $A^0 = -\varphi = 0$, $a^0 = 0$ which corresponds to having a $0$ electric potential everywhere. The time derivative of the spatial components of four potential is
+In what follows, we set $A^0 = -\varphi = 0$, $a^0 = 0$ which corresponds to having a $0$ electric potential everywhere. The time derivative of the spatial components of four potentials is
 \begin{align*} 
     \dot{\mathbf{A}} = i k_0 \mathbf{a} \exp \left(i k_\mu x^\mu\right).
 \end{align*}
@@ -94,7 +94,7 @@ It can be used to express $\mathbf{E}, \mathbf{B}$ when the $a^0 = 0$. Indeed
     \mathbf{E} =  -\mathbf{\dot{A}} =  (i (0) \mathbf{k} - i\mathbf{a} k_0)  \exp \left(i k_\mu x^\mu\right),\quad \mathbf{B} =  \mathbf{n} \times \dot{\mathbf{A}}
 \end{align*}
 \subsection{Poynting vector}
-The energy-momentum transport associated to the electromagnetic field is described by the Poynting vector $\mathbf{S} = \mathbf{E} \times \mathbf{B}$. Here, we want to relate $\mathbf{S}$ to the electromagnetic energy density $\epsilon = (\mathbf{E}^2 +  \mathbf{B}^2)/2$. To do so, we differenciate $\epsilon$ with respect to time to get 
+The energy-momentum transport associated with the electromagnetic field is described by the Poynting vector $\mathbf{S} = \mathbf{E} \times \mathbf{B}$. Here, we want to relate $\mathbf{S}$ to the electromagnetic energy density $\epsilon = (\mathbf{E}^2 +  \mathbf{B}^2)/2$. To do so, we differentiate $\epsilon$ concerning time to get 
 \begin{align*}
     \dfrac{\partial \epsilon}{\partial t} = \mathbf{E} \cdot \dfrac{\partial \mathbf{E}}{\partial t} + \mathbf{B} \cdot \dfrac{\partial \mathbf{B}}{\partial t} = \mathbf{E} \cdot \left(\nabla \times \mathbf{B}\right) - \mathbf{B} \cdot \left(\nabla \times \mathbf{E}\right) = - \nabla  \cdot \left(\mathbf{E} \times \mathbf{B}\right) \iff 0 = \dfrac{\partial \epsilon}{\partial t} + \nabla  \cdot \mathbf{S}
 \end{align*}
@@ -105,10 +105,10 @@ Following the analogy with the charge continuity equation, we can write an integ
 \begin{align*}
    0 = \int_V \text{d}^3 r \left(\dfrac{\partial \epsilon}{\partial t} + \nabla  \cdot \mathbf{S}\right) = \dfrac{\partial }{\partial t} \left(\int_V \text{d}^3 r \epsilon\right) + \int_V \text{d}^3 r \ \nabla  \cdot \mathbf{S} = \dfrac{d E}{d t}  + R^2\int_{\partial V} \sin(\theta) \text{d}\phi \text{d}\theta (\mathbf{n}_P \cdot \mathbf{S})
 \end{align*}
-Where $E$ represents the total electromagnetic energy in $V$. If $R$ is big enough compared to the caracteristic size of the emitting system, only radiation directed to infinity goes trough it and $\frac{dE}{dt}$ represents the total radiation power of the system. 
+Where $E$ represents the total electromagnetic energy in $V$. If $R$ is big enough compared to the characteristic size of the emitting system, only radiation directed to infinity goes through it and $\frac{dE}{dt}$ represents the total radiation power of the system. 
 
 \subsection{Poynting vector for planar waves}
-For planar waves, we have the following poynting vector:
+For planar waves, we have the following Poynting vector:
 \begin{align*}
     \mathbf{S} &= \mathbf{E}\times\mathbf{B} = -\mathbf{B} \times (\mathbf{n} \times \mathbf{B}) =- (\mathbf{B} \cdot \mathbf{n}) \mathbf{B} + (\mathbf{B} \cdot \mathbf{B}) \mathbf{n} = \dfrac{\mathbf{B}^2 + \mathbf{E}^2}{2} \mathbf{n} = \epsilon \mathbf{n} 
 \end{align*}
@@ -118,11 +118,11 @@ where we used $\mathbf{E} = \mathbf{n} \times \mathbf{B}$, $0 = \mathbf{n} \cdot
 \subsection{Lienard–Wiechert potential with isolated sources}
 The Lienard–Wiechert potential provides an expression for the four-potential generated by a charge moving on a world line. 
 
-Supposing the charges are moving slowly compared to the speed of light, the three potential $\mathbf{A}$ contribution at time $t$ and position $\mathbf{r}$ of a point charge charge $q$ with three-velocity $\mathbf{v}$ and three-position $\mathbf{r}'$ at time $t_R = t-|\mathbf{r} - \mathbf{r}'|$ reads: 
+Supposing the charges are moving slowly compared to the speed of light, the three potential $\mathbf{A}$ contributions at time $t$ and position $\mathbf{r}$ of a point charge $q$ with three-velocity $\mathbf{v}$ and three-position $\mathbf{r}'$ at time $t_R = t-|\mathbf{r} - \mathbf{r}'|$ reads: 
 \begin{align*}
    \mathbf{A} =  \dfrac{q \mathbf{v}(t_R)}{|\mathbf{r} - \mathbf{r}'| - \mathbf{v}(t_R) \cdot (\mathbf{r} - \mathbf{r}')} \approx  \dfrac{q \mathbf{v}(t_R)}{|\mathbf{r} - \mathbf{r}'|} + O(|\mathbf{v}|^2)
 \end{align*}
-Here we are interested in the integrated potential generated by a continum of charges described by charge density $\rho(t, \mathbf{r})$ and a three-curent $\mathbf{j}(t, \mathbf{r})$ at time $t$ and cartesian three-position $\mathbf{r}$. In the limit of small velocities, the previous expression can be formulated in the charge continuum by replacing $q \mathbf{v}(t_R)$ by  the integral expression of the magnetic potential is given by $\mathbf{j}(t_R, \mathbf{r}')$ and integrating over a space-slice to combine the contribution of all sources. We have 
+Here we are interested in the integrated potential generated by a continuum of charges described by charge density $\rho(t, \mathbf{r})$ and a three-current $\mathbf{j}(t, \mathbf{r})$ at time $t$ and cartesian three-position $\mathbf{r}$. In the limit of small velocities, the previous expression can be formulated in the charge continuum by replacing $q \mathbf{v}(t_R)$ by the integral expression of the magnetic potential given by $\mathbf{j}(t_R, \mathbf{r}')$ and integrating over a space-slice to combine the contribution of all sources. We have 
 \begin{align*}
     \mathbf{A}(t, \mathbf{r}) = \int \text{d}^3r' \dfrac{\mathbf{j}(t_R, \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}.
 \end{align*}
@@ -138,17 +138,17 @@ where we have used the expansions
     &\mathbf{j}(t_R, \mathbf{r}') = \mathbf{j}\left(t-|\mathbf{r}| + \mathbf{r}'\cdot\dfrac{\mathbf{r}}{|\mathbf{r}|} + O(|\mathbf{r'}|^2), \mathbf{r}'\right)= \mathbf{j}(t', \mathbf{r}') + \mathbf{r}' \cdot \dfrac{\mathbf{r}}{|\mathbf{r}|} \left.\dfrac{\partial \mathbf{j}}{\partial t'} \right|_{(t', \mathbf{r'})} + O(|\mathbf{r'}|^2)\ \text{with}\ t' = t-|\mathbf{r}|.
 \end{align*}
 
-% Can we obtain the same result by writing the coulomb potential in the comoving rest frame of the particle and then boost the four potential to the frame where the particle is moving ?
+% Can we obtain the same result by writing the coulomb potential in the comoving rest frame of the particle and then boost the four potentials to the frame where the particle is moving?
 \subsection{Dipole moment}
 Using the divergence theorem we can write 
 \begin{align*}
     A_i(t, \mathbf{r}) &\approx \dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \left[\nabla(r_i') \cdot \mathbf{j}(t', \mathbf{r}')\right] = \dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \left[\nabla \cdot(r_i'  \mathbf{j}(t', \mathbf{r}'))\right]-\dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \left[r_i' \nabla \cdot \mathbf{j}(t', \mathbf{r}')\right]
 \end{align*}
-where we indexed the compenents of relevant three-vectors by $i$. We used the fact $\nabla(r_i')$ is the unit vector in the $i$ direction to project $\mathbf{j}$ to its $i$ component and extract the contribution to the $i$ component of $\mathbf{A}$. Using the divergence theorem for the first integral of the right hand side can be converted to an integral on a surface $S$ with unit outgoing normal $\mathbf{n}_S$ enclosing the three-volume of the current density system (our system is infinite so we imagine pushing $S$ to infinity). Since we are trying to approximate $\mathbf{A}$ far from regions with significant $\mathbf{j}$, we take $\mathbf{j} \sim 0$ on $S$ to write 
+where we indexed the components of relevant three-vectors by $i$. We used the fact $\nabla(r_i')$ is the unit vector in the $i$ direction to project $\mathbf{j}$ to its $i$ component and extract the contribution to the $i$ component of $\mathbf{A}$. Using the divergence theorem for the first integral of the right-hand side can be converted to an integral on a surface $S$ with unit outgoing normal $\mathbf{n}_S$ enclosing the three-volume of the current density system (our system is infinite so we imagine pushing $S$ to infinity). Since we are trying to approximate $\mathbf{A}$ far from regions with significant $\mathbf{j}$, we take $\mathbf{j} \sim 0$ on $S$ to write 
 \begin{align*}
     A_i(t, \mathbf{r}) &\approx \dfrac{1}{|\mathbf{r}|} \int_S \text{d}S [\mathbf{n}_S \cdot (r_i'  \underbrace{\mathbf{j}(t', \mathbf{r}')}_{\sim 0})]-\dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \left[r_i' \nabla \cdot \mathbf{j}(t', \mathbf{r}')\right] = -\dfrac{1}{|\mathbf{r}|} \int \text{d}^3r' \left[r_i' \nabla \cdot \mathbf{j}(t', \mathbf{r}')\right] 
 \end{align*}
-Using the continuity equation $-\nabla \cdot \mathbf{j}(t', \mathbf{r}') = \frac{\partial \rho(t', \mathbf{r}')}{\partial t}$, we relate the current density to the charge density to obtain
+Using the continuity equation $-\nabla \cdot \mathbf{j}(t', \mathbf{r}') = \frac{\partial \rho(t', \mathbf{r}')}{\partial t'}$ (The retarded charge and current densities appearing in this equation satisfy it because they represent continuity of charges and currents in a past distant enough to be received at $\mathbf{r}$ at approximate time $t$. This is equivalent to saying the change of variable $t \to t' = t-|\mathbf{r}|$ doesn't change the structure of the continuity equation), we relate the current density to the charge density to obtain
 \begin{align*}
     A_i(t, \mathbf{r}) &\approx +\dfrac{1}{|\mathbf{r}|} \dfrac{\partial}{\partial t'}\int \text{d}^3r' \left[r_i' \rho(t', \mathbf{r}')\right] \iff \mathbf{A}(t, \mathbf{r}) \approx \dfrac{1}{|\mathbf{r}|} \dfrac{\partial}{\partial t'}\int \text{d}^3r' \left[\mathbf{r}' \rho(t', \mathbf{r}')\right]= \dfrac{1}{|\mathbf{r}|}\dfrac{\partial\mathbf{d}(t')}{\partial t'} := \dfrac{\dot{\mathbf{d}}}{|\mathbf{r}|}
 \end{align*}
@@ -157,11 +157,11 @@ where we have introduced the time dependant electric dipole moment of the charge
 
 % div (j) r = 
 \subsection{Asymptotic power}
-The electromagnetic field far from sources will solve the vacuum Maxwell equations and our considerations of the previous question apply.  The total power $P$ emitted trough the spherical boundary (with outgoing unit vector $\mathbf{n}_P = \mathbf{r}(\phi, \theta)/R$) of ball with radius $R$ enclosing the system is obtained with the result of item F of the previous question. It reads 
+The electromagnetic field far from sources will solve the vacuum Maxwell equations and our considerations of the previous question apply.  The total power $P$ emitted through the spherical boundary (with outgoing unit vector $\mathbf{n}_P = \mathbf{r}(\phi, \theta)/R$) of the ball with radius $R$ enclosing the system is obtained with the result of item F of the previous question. It reads 
 \begin{align*}
     P = R^2 \int_{0}^{\pi} \text{d}\theta\ \sin(\theta)  \int_0^{2\pi} \text{d}\phi \ \mathbf{n}_P \cdot \mathbf{S} =  2\pi \int_{0}^{\pi} \text{d}\theta\ \sin(\theta)   \left(\left(1-\cos^2(\theta)\right)\dfrac{|\mathbf{\ddot{d}}|^2 R^2}{R^2} + \left[\sim \dfrac{R^2}{R^3}\right]\right) = 4 \pi \dfrac{2|\mathbf{\ddot{d}}|^2}{3}. 
 \end{align*}
-where $\theta$, $\phi$ are respectively the polar angle and longitudinal angles of a parametrisation of the boundary sphere. The poynting vector was computed assuming the electric potential decreases faster than $1/|\mathbf{r}|$ so that it doesn't contribute to the power at infinity (a decrease at rate $1/|\mathbf{r}|$ would beconsistant with the presence of net point charges which we do not consider here). Using the expression of the electric and magnetic fields in terms of $\mathbf{A}$, we can write
+where $\theta$, $\phi$ are respectively the polar angle and longitudinal angles of a parametrization of the boundary sphere. The Poynting vector was computed assuming the electric potential decreases faster than $1/|\mathbf{r}|$ so that it doesn't contribute to the power at infinity (a decrease at rate $1/|\mathbf{r}|$ would be consistent with the presence of net point charges which we do not consider here). Using the expression of the electric and magnetic fields in terms of $\mathbf{A}$, we can write
 \begin{align*}
     \mathbf{S} &= -\dfrac{\partial \mathbf{A}}{\partial t} \times (\nabla \times \mathbf{A})= -\dfrac{1}{|\mathbf{r}|^2}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times (\nabla \times \dot{\mathbf{d}}) -\dfrac{1}{|\mathbf{r}|}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times (\nabla \dfrac{1}{|\mathbf{r}|} \times \dot{\mathbf{d}})= -\dfrac{1}{|\mathbf{r}|^2}\dfrac{\partial \dot{\mathbf{d}}}{\partial t} \times (\nabla \times \dot{\mathbf{d}}) + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right]= -\dfrac{1}{|\mathbf{r}|^2}\ddot{\mathbf{d}}(t') \times \left(\dfrac{\mathbf{r}}{|\mathbf{r}|} \times \ddot{\mathbf{d}}(t')\right) + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right]
 \end{align*}
@@ -177,7 +177,7 @@ To compute the result of the double cross product, we set our spherical coordina
 \end{align*}
 \subsection{Discussion}
 \begin{enumerate}
-    \item[i.] The power previously calculated does not depend on the radius $R$ at which we collect the emmited radiation for sufficiently large $R$. This is because the power scales localy by an inverse square law in the radial distance. This is consistent with the fact that waves propagating towards infinity traverse spheres at all $R$ with the same velocity. The conservation of the energy density they carry implies that the same amount of energy must flow trought all spheres. Furthermore, the constance of their velocity in the vacuum implies the rate of the flow only depends on $R$ trough the raterded time $t'$ (we can follow waves by looking at $t, \mathbf{r}$ that make $t'$ and see that the rate at which their energy traverse spheres is constant). 
+    \item[i.] The power previously calculated does not depend on the radius $R$ at which we collect the emitted radiation for sufficiently large $R$. This is because the power scales locally by an inverse square law in the radial distance. This is consistent with the fact that waves propagating towards infinity traverse spheres at all $R$ with the same velocity. The conservation of the energy density they carry implies that the same amount of energy must flow through all spheres. Furthermore, the constance of their velocity in the vacuum implies the rate of the flow only depends on $R$ through the retarded time $t'$ (we can follow waves by looking at $t, \mathbf{r}$ that make $t'$ and see that the rate at which their energy traverse spheres is constant). 
     \item[ii.] For a system of $N$ point charges $q_\alpha$ with trajectories $\mathbf{r}'_\alpha(t')$, the retarded dipole moment has the following expression 
     \begin{align*}
         \mathbf{d}(t') = \sum_{\alpha=1}^N q_\alpha \mathbf{r}_\alpha'(t').  
@@ -186,15 +186,15 @@ To compute the result of the double cross product, we set our spherical coordina
     \begin{align*}
         \ddot{\mathbf{d}}(t') = \sum_{\alpha=1}^N q_\alpha \ddot{\mathbf{r}}_\alpha'(t').  
     \end{align*}
-    and we see that the radiated power vanished if no charge is moving on an accelerated trajectory. 
+    and we see that the radiated power vanishes if no charge is moving on an accelerated trajectory. 
     \item[iii.] Suppose we have a system of point charges that all have the same charge $q_\alpha$ to mass $m_\alpha$ ratio $s$ Using Newton's second law we find that for this system: 
     \begin{align*}
         \ddot{\mathbf{d}}(t') = \sum_{\alpha=1}^N q_\alpha \ddot{\mathbf{r}}_\alpha'(t') = \sum_{\alpha=1}^N \dfrac{q_\alpha}{m_\alpha} \mathbf{F}_\alpha(t') = s \sum_{\alpha=1}^N \mathbf{F}_\alpha(t') = 0.  
     \end{align*}
     The last sum vanished because no net external force is exerted on the system and the sum of internal forces must vanish by the action-reaction law.
-    \item[iv.] A system with equal mass ratio is not physically relevant because it necessarely contains only positive (or negative) charges making it very unstable in nature. 
+    \item[iv.] A system with an equal mass ratio is not physically relevant because it necessarily contains only positive (or negative) charges making it very unstable in nature. 
 \end{enumerate}
-
+\newpage
 
 \section{Beyond radiation}
 \subsection{Three-vector Potential Refinement}
@@ -203,24 +203,80 @@ We now work on the second term of the approximation of $\mathbf{A}$ obtained in 
     \mathbf{Q}_{ij} &= \int \text{d}^3r' \rho(\mathbf{r}', t')(3\mathbf{r}_i'\mathbf{r}_j' - \delta_{ij}|\mathbf{r}'|^2),\quad \textbf{Quadrupole Moment}\\
     \mathbf{m} &= \dfrac{1}{2}\int \text{d}^3r' \mathbf{r}' \times \mathbf{j}(\mathbf{r}', t').\quad \textbf{Magnetic Moment}
 \end{align*}
-Proceding in an analogous way to item B of the previous question we find
+Proceeding in an analogous way to item B of the previous question we find
 \begin{align*}
     \mathbf{A}^{r}_{j} &= \dfrac{\mathbf{r}_i}{|\mathbf{r}|^2} \cdot  \dfrac{\partial}{\partial t'}\int \text{d}^3r' \mathbf{r}'_i\  \mathbf{j}_j(t', \mathbf{r}') \\&= \dfrac{\mathbf{r}_i}{|\mathbf{r}|^2} \cdot  \dfrac{\partial}{\partial t'}\int \text{d}^3r' \mathbf{r}'_i \nabla(\mathbf{r}'_j)\ \cdot \  \mathbf{j}(t', \mathbf{r}') = \dfrac{\mathbf{r}_i}{|\mathbf{r}|^2} \cdot  \dfrac{\partial}{\partial t'}\int \text{d}^3r'  \left[\nabla \cdot (\mathbf{r}'_j \mathbf{r}'_i \ \mathbf{j}) - \mathbf{r}'_j \nabla \cdot (\mathbf{r}'_i \ \mathbf{j}(t', \mathbf{r}'))\right]\\
-     &=- \dfrac{\mathbf{r}_i}{|\mathbf{r}|^2} \cdot  \dfrac{\partial}{\partial t'}\int \text{d}^3r'  \left[ \mathbf{r}'_j \nabla (\mathbf{r}'_i) \ \mathbf{j}(t', \mathbf{r}') + \mathbf{r}'_j \mathbf{r}'_i\nabla \cdot \mathbf{j}(t', \mathbf{r}')\right] \quad  \textbf{Divergence theorem}\\
+     &=- \dfrac{\mathbf{r}_i}{|\mathbf{r}|^2} \cdot  \dfrac{\partial}{\partial t'}\int \text{d}^3r'  \left[ \mathbf{r}'_j \nabla (\mathbf{r}'_i) \cdot \mathbf{j}(t', \mathbf{r}') + \mathbf{r}'_j \mathbf{r}'_i\nabla \cdot \mathbf{j}(t', \mathbf{r}')\right] \quad  \textbf{Divergence theorem}\\
      &=- \dfrac{\mathbf{r}_i}{|\mathbf{r}|^2} \cdot \int \text{d}^3r'  \left[ \mathbf{r}'_j \ \dot{\mathbf{j}}_i(t', \mathbf{r}') - \mathbf{r}'_j \mathbf{r}'_i \ddot{\rho}(t', \mathbf{r}')\right]. \quad  \textbf{Continuity Equation}
 \end{align*}
-Then, adding the fist line to the last one yields
+Then, adding the first line to the last one yields
 \begin{align*}
     \mathbf{A}^{r}_{j} 
-     &=\dfrac{\mathbf{r}_i}{2|\mathbf{r}|^2} \cdot \int \text{d}^3r'  \left[ \mathbf{r}'_i\  \dot{\mathbf{j}}_j(t', \mathbf{r}')-\mathbf{r}'_j \ \dot{\mathbf{j}}_i(t', \mathbf{r}') + \mathbf{r}'_j \mathbf{r}'_i \ddot{\rho}(t', \mathbf{r}')\right] 
+     &=\dfrac{\mathbf{r}_i}{2|\mathbf{r}|^2} \cdot \int \text{d}^3r'  \left[ \mathbf{r}'_i\  \dot{\mathbf{j}}_j(t', \mathbf{r}')-\mathbf{r}'_j \ \dot{\mathbf{j}}_i(t', \mathbf{r}') + \mathbf{r}'_j \mathbf{r}'_i \ddot{\rho}(t', \mathbf{r}')\right] \\
+     &= \dfrac{1}{2|\mathbf{r}|^2} \cdot \int \text{d}^3r'  \left[ (\mathbf{r}' \cdot \mathbf{r})\  \dot{\mathbf{j}}_j(t', \mathbf{r}')-(\dot{\mathbf{j}}(t', \mathbf{r}') \cdot \mathbf{r})\mathbf{r}'_j + \mathbf{r}'_j \mathbf{r}'_i \mathbf{r}_i \ddot{\rho}(t', \mathbf{r}')\right]\\
+     &= \dfrac{1}{2|\mathbf{r}|^2} \cdot \int \text{d}^3r'  \left[ ((\mathbf{r}' \times  \dot{\mathbf{j}}(t', \mathbf{r}')) \times \mathbf{r})_j + \mathbf{r}'_j \mathbf{r}'_i \mathbf{r}_i \ddot{\rho}(t', \mathbf{r}')\right]
+     = \dfrac{(\dot{\mathbf{m}} \times \mathbf{r})_j}{|\mathbf{r}|^2} + \dfrac{\ddot{\mathbf{Q}}_{ij}^{\star} \mathbf{r}_i}{|\mathbf{r}|^2}.
 \end{align*}
-% USe reverse double cross product identity
-\subsection{}
-\subsection{}
+where ${Q}_{ij}^{\star} = \int \text{d}^3r' \rho(\mathbf{r}', t')(\mathbf{r}_i'\mathbf{r}_j')$
+I suspect that we do not get the $\delta_{ij}$ term because it is second order in $|\mathbf{r}'|/|\mathbf{r}|$ and is therefore hidden in truncated part of our expansion of $\mathbf{A}$. However, the procedure followed here allowed us to obtain the traceful quadrupole moment $\mathbf{Q}_{ij}^{\star}$ which is also second order. It could be obtained because the integration by parts step introduced another $\mathbf{r}_i'$ factor. A more complete expansion in terms of the traceless quadrupole moment is 
+\begin{align*}
+    \mathbf{A}^r_j = \dfrac{(\dot{\mathbf{m}} \times \mathbf{r})_j}{|\mathbf{r}|^2} + \dfrac{\ddot{\mathbf{Q}}_{ij} \mathbf{r}_i}{6|\mathbf{r}|^2}. 
+\end{align*}
+
+
+
+% Use reverse double cross product identity
+% thanks to maita for providing the gaussian unit fix 
+\subsection{Angular average}
+We now want to evaluate the total power radiated at infinity by a time dependent dipole, magnetic, and quadrupole moments. To simplify further computations, we define the angular averaging over the unit sphere $S$ by
+\begin{align*}
+   \langle \circ \rangle = \int_{S^2} (\circ) \sin(\theta)\ \text{d} \theta \text{d} \phi
+\end{align*}
+which can be used to rewrite the total power trough a radius $R$ shell as $P = R\langle \mathbf{S}_i  \mathbf n_i\rangle$ with $\mathbf{n} = \mathbf{r}/|\mathbf{r}|$. To express $P$, we start by writing the Poynting vector as 
+\begin{align*}
+    \mathbf{S} &= - \dfrac{\partial}{\partial t'}\left(\dfrac{\dot{\mathbf{d}}}{|\mathbf{r}|} + \dfrac{(\dot{\mathbf{m}} \times \mathbf{r})}{|\mathbf{r}|^2} + \dfrac{\ddot{\mathbf{Q}}_{ij} \mathbf{r}_i}{6|\mathbf{r}|^2}\right) \times \left(\nabla \times \left(\dfrac{\dot{\mathbf{d}}_j}{|\mathbf{r}|} + \dfrac{(\dot{\mathbf{m}} \times \mathbf{r})}{|\mathbf{r}|^2} + \dfrac{\ddot{\mathbf{Q}}_{ij} \mathbf{r}_i}{6|\mathbf{r}|^2}\right)\right)\\
+    &= -\dfrac{\partial}{\partial t'}\left(\dfrac{\dot{\mathbf{d}}}{|\mathbf{r}|} + \dfrac{(\dot{\mathbf{m}} \times \mathbf{r})}{|\mathbf{r}|^2} + \dfrac{\ddot{\mathbf{Q}}_{ij} \mathbf{r}_i}{6|\mathbf{r}|^2}\right) \times \left(\dfrac{1}{|\mathbf{r}|}\nabla \times \dot{\mathbf{d}} + \dfrac{1}{|\mathbf{r}|^2}  \nabla \times (\dot{\mathbf{m}} \times \mathbf{r}) + \dfrac{1}{6|\mathbf{r}|^2} \nabla \times (\ddot{\mathbf{Q}}_{ij} \mathbf{r}_i)+ \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right]\right) \\
+    &= \dfrac{1}{|\mathbf{r}|^2}\left(\ddot{\mathbf{d}} + \ddot{\mathbf{m}} \times \mathbf{n} + \dfrac{\dddot{\mathbf{Q}}_{ij} \mathbf{n}_i}{6}\right) \times \left(\mathbf{n} \times \ddot{\mathbf{d}} + \mathbf{n} \times (\ddot{\mathbf{m}} \times \mathbf{n}) + \dfrac{1}{6} \mathbf{n} \times (\dddot{\mathbf{Q}}_{ij} \mathbf{n}_i)+ \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right]\right)
+\end{align*} 
+where we used the result obtained in item C of question 2 for the action of the rotational operator on a function of $t-|\mathbf{r}|$ ($\nabla \times \circ \to -\mathbf{n} \times \dot{(\circ)} $). We also used the fact that any derivative acting on $\mathbf{r}$ contributions in $\dot{\mathbf{m}} \times \mathbf{r}$ and $\ddot{\mathbf{Q}}_{ij} \mathbf{r}_i$ would remove factors of order of $|\mathbf{r}|$ in the numerator of expressions $\sim 1/|\mathbf{r}|^2$ (making them  $\sim 1/|\mathbf{r}|^3$) and only terms $\sim 1/|\mathbf{r}|^2$ will affect the total power for big enough $R$. We can now write the projection of the Poynting vector on the outgoing normal as 
+\begin{align*}
+    \mathbf{S}_l \mathbf{n}_l &= \mathbf{n}_l\epsilon_{rq l}\dfrac{1}{|\mathbf{r}|^2}\left(\ddot{\mathbf{d}}_r + \epsilon_{sxr}\ddot{\mathbf{m}}_s \mathbf{n}_x + \dfrac{\dddot{\mathbf{Q}}_{wr} \mathbf{n}_w}{6}\right) \left(\epsilon_{kjq}\mathbf{n}_k \ddot{\mathbf{d}}_j + \epsilon_{npq} \mathbf{n}_n  (\epsilon_{kjp} \ddot{\mathbf{m}}_k \mathbf{n}_j) + \dfrac{1}{6} \epsilon_{kj q}\mathbf{n}_k \dddot{\mathbf{Q}}_{ij} \mathbf{n}_i + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right]\right)\\
+    &= \mathbf{n}_l\epsilon_{rq l}\dfrac{1}{|\mathbf{r}|^2}\left(\ddot{\mathbf{d}}_r + \epsilon_{sxr}\ddot{\mathbf{m}}_s \mathbf{n}_x + \dfrac{\dddot{\mathbf{Q}}_{wr} \mathbf{n}_w}{6}\right) \left(\epsilon_{kjq}\mathbf{n}_k \ddot{\mathbf{d}}_j + \epsilon_{npq} \epsilon_{kjp} \mathbf{n}_n \ddot{\mathbf{m}}_k \mathbf{n}_j + \dfrac{1}{6} \epsilon_{kj q}\mathbf{n}_k  \mathbf{n}_i \dddot{\mathbf{Q}}_{ij} + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right]\right)\\
+    &\approx \mathbf{n}_l\epsilon_{rq l}\dfrac{1}{|\mathbf{r}|^2}\left(\ddot{\mathbf{d}}_r + \epsilon_{sxr}\ddot{\mathbf{m}}_s \mathbf{n}_x + \dfrac{\dddot{\mathbf{Q}}_{wr} \mathbf{n}_w}{6}\right) \left(\epsilon_{kjq}\mathbf{n}_k \ddot{\mathbf{d}}_j + \epsilon_{npq} \epsilon_{kjp} \mathbf{n}_n \ddot{\mathbf{m}}_k \mathbf{n}_j + \dfrac{1}{6} \epsilon_{kj q}\mathbf{n}_k  \mathbf{n}_i \dddot{\mathbf{Q}}_{ij} \right)
+\end{align*}
+Knowing that the angular average of odd products of $\mathbf{n}$ component vanishes, we can identify terms that will contribute as follows: 
+% YALE :)
+\begin{align*}
+    \mathbf{S}_l \mathbf{n}_l &\approx \mathbf{n}_l\epsilon_{rq l}\dfrac{1}{|\mathbf{r}|^2}\left(\ddot{\mathbf{d}}_r\right) \left(\textcolor{blue}{\epsilon_{kjq}\mathbf{n}_k \ddot{\mathbf{d}}_j} + \epsilon_{npq} \epsilon_{kjp} \mathbf{n}_n \ddot{\mathbf{m}}_k \mathbf{n}_j + \dfrac{1}{6} \epsilon_{kj q}\mathbf{n}_k  \mathbf{n}_i \dddot{\mathbf{Q}}_{ij} \right)\\ 
+    &+ \mathbf{n}_l\epsilon_{rq l}\dfrac{1}{|\mathbf{r}|^2}\left(\epsilon_{sxr}\ddot{\mathbf{m}}_s \mathbf{n}_x\right) \left(\epsilon_{kjq}\mathbf{n}_k \ddot{\mathbf{d}}_j + \textcolor{blue}{\epsilon_{npq} \epsilon_{kjp} \mathbf{n}_n \ddot{\mathbf{m}}_k \mathbf{n}_j + \dfrac{1}{6} \epsilon_{kj q}\mathbf{n}_k  \mathbf{n}_i \dddot{\mathbf{Q}}_{ij}} \right)\\
+    &+ \mathbf{n}_l\epsilon_{rq l}\dfrac{1}{|\mathbf{r}|^2}\left(\dfrac{\dddot{\mathbf{Q}}_{wr} \mathbf{n}_w}{6}\right) \left(\epsilon_{kjq}\mathbf{n}_k \ddot{\mathbf{d}}_j + \textcolor{blue}{\epsilon_{npq} \epsilon_{kjp} \mathbf{n}_n \ddot{\mathbf{m}}_k \mathbf{n}_j + \dfrac{1}{6} \epsilon_{kj q}\mathbf{n}_k  \mathbf{n}_i \dddot{\mathbf{Q}}_{ij}} \right)
+\end{align*}
+and we can write 
+\begin{align*}
+    \langle \mathbf{S}_l \mathbf{n}_l \rangle &\approx \dfrac{1}{|\mathbf{r}|^2}\textcolor{blue}{\epsilon_{rq l}\epsilon_{kjq}\langle \mathbf{n}_k\mathbf{n}_l \rangle \ddot{\mathbf{d}}_r\ddot{\mathbf{d}}_j} \\ 
+    &+ \dfrac{1}{|\mathbf{r}|^2} \left(\textcolor{blue}{\epsilon_{rq l}\epsilon_{sxr}\epsilon_{npq} \epsilon_{kjp} \langle \mathbf{n}_n \mathbf{n}_x \mathbf{n}_l\mathbf{n}_j \rangle \ddot{\mathbf{m}}_s\ddot{\mathbf{m}}_k  + \dfrac{1}{6} \epsilon_{rq l}\epsilon_{sxr}\epsilon_{kj q} \langle \mathbf{n}_k \mathbf{n}_x \mathbf{n}_l  \mathbf{n}_i\rangle \dddot{\mathbf{Q}}_{ij}\ddot{\mathbf{m}}_s} \right)\\
+    &+ \dfrac{1}{6|\mathbf{r}|^2}\left( \textcolor{blue}{\epsilon_{rq l}\epsilon_{npq} \epsilon_{kjp} \langle \mathbf{n}_l \mathbf{n}_n \mathbf{n}_j \mathbf{n}_i \rangle \ddot{\mathbf{m}}_k \dddot{\mathbf{Q}}_{wr}  + \dfrac{1}{6} \epsilon_{rq l} \epsilon_{kj q}\langle \mathbf{n}_k \mathbf{n}_l \mathbf{n}_i \mathbf{n}_w \rangle \dddot{\mathbf{Q}}_{ij} \dddot{\mathbf{Q}}_{wr}} \right)\\
+    &\approx \dfrac{1}{3|\mathbf{r}|^2}\textcolor{blue}{\epsilon_{rq l}\epsilon_{kjq}\delta_{kl} \ddot{\mathbf{d}}_r\ddot{\mathbf{d}}_j} \\ 
+    &+ \dfrac{1}{15\cdot |\mathbf{r}|^2} \left(\textcolor{blue}{\epsilon_{rq l}\epsilon_{sxr}\epsilon_{npq} \epsilon_{kjp} \left[ \delta_{xn} \delta_{lj} + \delta_{xl} \delta_{nj} + \delta_{nl} \delta_{xj} \right] \ddot{\mathbf{m}}_s\ddot{\mathbf{m}}_k  + \dfrac{1}{6} \epsilon_{rq l}\epsilon_{sxr}\epsilon_{kj q} \left[ \delta_{kx} \delta_{li} + \delta_{xl}  \delta_{ki} + \delta_{kl} \delta_{xi}\right] \dddot{\mathbf{Q}}_{ij}\ddot{\mathbf{m}}_s} \right)\\
+    &+ \dfrac{1}{15 \cdot 6|\mathbf{r}|^2}\left( \textcolor{blue}{\epsilon_{rq l}\epsilon_{npq} \epsilon_{kjp} \left[ \delta_{ln} \delta_{ji} + \delta_{li} \delta_{nj} + \delta_{lj}\delta_{ni} \right] \ddot{\mathbf{m}}_k \dddot{\mathbf{Q}}_{wr}  + \dfrac{1}{6} \epsilon_{rq l} \epsilon_{kj q}\left[ \delta_{kl} \delta_{iw} + \delta_{kw} \delta_{li} + \delta_{ki}\delta_{lw} \right] \dddot{\mathbf{Q}}_{ij} \dddot{\mathbf{Q}}_{wr}} \right)\\
+    &\approx \dfrac{1}{3|\mathbf{r}|^2}\textcolor{blue}{2 \delta_{rj}  \ddot{\mathbf{d}}_r\ddot{\mathbf{d}}_j} \\ 
+    &+ \dfrac{1}{15\cdot |\mathbf{r}|^2} \left(\textcolor{blue}{ \left[ \epsilon_{rq j}\epsilon_{snr}\epsilon_{npq} \epsilon_{kjp} + \epsilon_{rq l}\epsilon_{slr}\epsilon_{jpq} \epsilon_{kjp} +\epsilon_{rq l}\epsilon_{sxr}\epsilon_{lpq} \epsilon_{kxp} \right] \ddot{\mathbf{m}}_s\ddot{\mathbf{m}}_k  + \dfrac{1}{6} \epsilon_{rq l}\epsilon_{sxr}\epsilon_{kj q} \left[ \epsilon_{rq i}\epsilon_{skr}\epsilon_{kj q}+  \epsilon_{rq x}\epsilon_{sxr}\epsilon_{ij q} + \epsilon_{rq k}\epsilon_{sir}\epsilon_{kj q}\right] \dddot{\mathbf{Q}}_{ij}\ddot{\mathbf{m}}_s} \right)\\
+    &+ \dfrac{1}{15 \cdot 6|\mathbf{r}|^2}\left( \textcolor{blue}{\epsilon_{rq l}\epsilon_{npq} \epsilon_{kjp} \left[ \delta_{ln} \delta_{ji} + \delta_{li} \delta_{nj} + \delta_{lj}\delta_{ni} \right] \ddot{\mathbf{m}}_k \dddot{\mathbf{Q}}_{wr}  + \dfrac{1}{6} \epsilon_{rq l} \epsilon_{kj q}\left[ \epsilon_{rq l} \epsilon_{lj q} \delta_{iw} + \epsilon_{rq l} \epsilon_{wj q} + \epsilon_{rq w} \epsilon_{ij q} \right] \dddot{\mathbf{Q}}_{ij} \dddot{\mathbf{Q}}_{wr}} \right)\\
+    &\approx \dfrac{1}{3|\mathbf{r}|^2}\textcolor{blue}{2 \delta_{rj}  \ddot{\mathbf{d}}_r\ddot{\mathbf{d}}_j} \\ 
+    &+ \dfrac{1}{15\cdot |\mathbf{r}|^2} \left(\textcolor{blue}{ \left[ \cdots + 4\delta_{sq}\delta_{kq} \right] \ddot{\mathbf{m}}_s\ddot{\mathbf{m}}_k  + \dfrac{1}{6}[ \cdots -\underbrace{(\delta_{ki}\delta_{kr} - \delta_{ki}\delta_{kr})}_0 \epsilon_{sir}] \dddot{\mathbf{Q}}_{ij}\ddot{\mathbf{m}}_s} \right)\\
+    &+ \dfrac{1}{15 \cdot 6|\mathbf{r}|^2}\left( \textcolor{blue}{ \left[ \cdots \right] \ddot{\mathbf{m}}_k \dddot{\mathbf{Q}}_{wr}  + \dfrac{1}{6} \left[2 \delta_{rj} \delta_{iw} + \cdots  \right] \dddot{\mathbf{Q}}_{ij} \dddot{\mathbf{Q}}_{wr}} \right)\\
+    &\approx  \dfrac{2}{3|\mathbf{r}|^2}  |\ddot{\mathbf{d}}|^2 + \dfrac{12}{15\cdot |\mathbf{r}|^2} |\ddot{\mathbf{m}}|^2 + \dfrac{3}{15 \cdot 36|\mathbf{r}|^2} \dddot{\mathbf{Q}} : \dddot{\mathbf{Q}}
+\end{align*}
+where we used $\langle \mathbf{n}_j \mathbf{n}_i \rangle = a \delta_{ij}$ (summing $i=j$) we get $1 = \langle \mathbf{n}_i \mathbf{n}_i \rangle = 3 a $. We also used $\langle \mathbf{n}_j \mathbf{n}_i \mathbf{n}_k \mathbf{n}_l \rangle = (\delta_{ij}\delta_{kl} + \delta_{ik}\delta_{jl} + \delta_{lj}\delta_{ki})/15$. The dipole moment is the most important contribution because the magnetic moment depends on velocity over $c$ so in sub-relativistic regimes it is weak and the quadrupole moment is affected by an even smaller sub-relativistic contribution. 
+
+
+\subsection{Quadrupole in same charge ratio}
+Possible in the gravitational case because gravitational mass systems attract each other and are therefore stable systems (as opposed to same charge ratio systems). 
+
 
 
 \section{Acknowledgement}
-
+Thanks to Maita for a hint at the end of question 1. Thanks to Yale for help computing the average value of products of components of $\mathbf{n}$. 
 }
 \makereferences
 %-------------------------------------------------------

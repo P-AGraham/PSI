@@ -82,3 +82,12 @@ Taking the vector product with $\mathbf{u}$ again leads to
     \mathbf{S} = -\dfrac{|\mathbf{\ddot{d}}|}{|\mathbf{r}|^2} \mathbf{\ddot{d}} \times \mathbf{u}\cos(\theta) + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right] = \dfrac{|\mathbf{\ddot{d}}|^2}{|\mathbf{r}|^2}  \dfrac{\mathbf{r}}{|\mathbf{r}|} + \left[\sim \dfrac{1}{|\mathbf{r}|^3}\right].
 \end{align*}
 with $\mathbf{u} = (\mathbf{r} \times \mathbf{\ddot{d}})/|\mathbf{r} \times \mathbf{\ddot{d}}|$  and $\mathbf{\ddot{d}} \times \mathbf{u} =  $
+
+
+a partial derivative with respect to $t'$ evaluated at $t' = t-|\mathbf{r}|$ is the same as a partial derivative with respect to $t$.
+
+
+Now we want to contract $\mathbf{Q}_{ij}$ with $\mathbf{r}_i$ to better relate the quadrupole moment to the previous result. We have 
+\begin{align*}
+    \mathbf{r}_i\mathbf{Q}_{ij} &= \int \text{d}^3r' \rho(\mathbf{r}', t')(3\mathbf{r}_i\mathbf{r}_i'\mathbf{r}_j' - \mathbf{r}_i\delta_{ij}|\mathbf{r}'|^2) = \int \text{d}^3r' \rho(\mathbf{r}', t')(2 \mathbf{r}_j'(\mathbf{r} \cdot \mathbf{r}) + \mathbf{r}_j'(\mathbf{r}' \cdot \mathbf{r}) - \mathbf{r}_j (\mathbf{r}' \cdot  \mathbf{r}'))
+\end{align*}
