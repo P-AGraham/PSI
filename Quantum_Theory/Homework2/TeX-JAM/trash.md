@@ -69,3 +69,58 @@ A &= C\left(\prod_{n = 1}^{N-1}\int_{-\infty}^{\infty} \text{d} q_n \right) e^{\
 
 
 &=C\left(\prod_{n = 1}^{N-r-1}\int_{-\infty}^{\infty} \text{d} q_n \right) \exp\left(\frac{i}{\hbar}\sum_{n=0}^{N-3} \frac12 m \left(\frac{q_{n+1}-q_{n}}{\Delta t}\right)^2  \Delta t\right)  \left(\dfrac{\hbar\pi \Delta t r}{m i(r+1)}\right)^{1/2}\exp\left(\frac{m i}{2\hbar} \left(\dfrac{q_{M}-q_{M-2}}{(r+1)\Delta t}\right)^2 (r+1)\Delta t\right)
+
++
+      \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{feynman}
+          % External legs
+          \vertex[label={left:$\mathbf{p}$}] (a) at (-1, 0);
+          \vertex[label={below right:$\mathbf{k}_1$}] (b) at (1, -1);
+          \vertex[label={above right:$\mathbf{k}_2$}] (c) at (1, 1);
+          
+
+          \vertex (e) at (0.3, 0.3);
+          \vertex (f) at (0.6, 0.6);
+
+          \fill (a) circle (2pt);
+          \fill (b) circle (2pt);
+          \fill (c) circle (2pt);
+          \fill (e) circle (2pt);
+          \fill (f) circle (2pt);
+    
+          \diagram* {
+            (a) -- [dashed] (v),
+            (v) -- (b),
+            (v) -- (e),
+            (e) -- [dashed, half left] (f) -- [half left] (e), 
+            (f) -- (c),
+          };
+        \end{feynman}
+      \end{tikzpicture}
+      +
+      \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{feynman}
+          % External legs
+          \vertex[label={left:$\mathbf{p}$}] (a) at (-1, 0);
+          \vertex[label={below right:$\mathbf{k}_1$}] (b) at (1, -1);
+          \vertex[label={above right:$\mathbf{k}_2$}] (c) at (1, 1);
+          
+
+          \vertex (e) at (0.3, -0.3);
+          \vertex (f) at (0.6, -0.6);
+
+          \fill (a) circle (2pt);
+          \fill (b) circle (2pt);
+          \fill (c) circle (2pt);
+          \fill (e) circle (2pt);
+          \fill (f) circle (2pt);
+    
+          \diagram* {
+            (a) -- [dashed] (v),
+            (v) -- (c),
+            (v) -- (e),
+            (e) -- [dashed, half left] (f) -- [half left] (e), 
+            (f) -- (b),
+          };
+        \end{feynman}
+      \end{tikzpicture}
