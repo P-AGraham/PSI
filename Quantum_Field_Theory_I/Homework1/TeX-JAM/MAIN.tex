@@ -54,11 +54,7 @@
 
 \section{The Poincaré Algebra}
 \begin{enumerate}
-  \item[(a)] The Poincaré is the group of transformation of minkowski space that preserve the spacetime interval between all events. This group contains spacetime translations and Lorentz transformation (boosts and rotations). In a coordinate system where events hapenning at $x$ with four-coordinate $x^{\mu}$, translation by a constant four-vector $a$ with components  $a^\mu$ reads $x' = x + a$ ($x^{\mu'} = x^{\mu} + a^{\mu}$). The lorentz transformation $\Lambda$ with components $\Lambda^{\nu}{}_{\mu}$ act as $x' = \Lambda x$ ($x^{\mu'} = \Lambda^{\mu}{}_{\nu} x^{\nu}$, following the matrix multiplication convention $x^\nu$ can be written as a column with $\nu$ as a row index and $\Lambda^{\mu}{}_{\nu}$ as a square matrix with $\mu$ row index and $\nu$ column index). 
-  
-  We want to find the caracteristic of the unitary operator $U$ representing Poincaré transformation near the identity $\delta$ (with components $\delta^{\mu}{}_{\nu}$). To do this, we write the first order Taylor expansions $\Lambda = \delta + \omega + O(\omega^2)$ and $a = \epsilon$ (exact even for large $\epsilon$) with respect to an infinitesimal Lorentz shift $\omega$ with components $\omega_{\mu \nu}$ (combining infinitesimal rotation angles, and boost angles) and translation $\epsilon$ with components $\epsilon^\mu$. The first order in $\omega$ and $\epsilon$ expansion of the unitary is $U(\delta+\omega, \epsilon)=\mathbf{1}+\frac{i}{2} \omega_{\mu \nu} J^{\mu \nu}+i \epsilon_\mu P^\mu + O(\omega^2, \epsilon^2)$ where $J^{\mu \nu}$, $P^\mu$ are the hermitian matrices generating the Poincaré transformation. 
-  
-  Since $\Lambda = \delta + \omega$ is a lorentz transformation, we have that it preserves space time intervals. The spacetime interval between events $x$ and $y$ is $(x_\mu-y_\mu)(x^\mu-y^\mu) = x_\mu x^\mu + y_\mu y^\mu - 2 y_\mu x^\mu $. Since the first two terms are themselves spacetime intervals between $x, y$ and $0$, they are individually preserved by a Poincaré transformation. This forces the invariance of the lorentzian product $y_\mu x^\mu$ for any $x, y$ under Poincaré transformations ($x^\mu y_\mu = x^{\mu'} y_\mu'$).
+  \item[(a)] The Poincaré is the group of transformation of minkowski space that preserve the spacetime interval between all events. This group contains spacetime translations and Lorentz transformation (boosts and rotations). In a coordinate system where events hapenning at $x$ with four-coordinate $x^{\mu}$, translation by a constant four-vector $a$ with components  $a^\mu$ reads $x' = x + a$ ($x^{\mu'} = x^{\mu} + a^{\mu}$). The lorentz transformation $\Lambda$ with components $\Lambda^{\nu}{}_{\mu}$ act as $x' = \Lambda x$ ($x^{\mu'} = \Lambda^{\mu}{}_{\nu} x^{\nu}$, following the matrix multiplication convention $x^\nu$ can be written as a column with $\nu$ as a row index and $\Lambda^{\mu}{}_{\nu}$ as a square matrix with $\mu$ row index and $\nu$ column index). We want to find the caracteristic of the unitary operator $U$ representing Poincaré transformation near the identity $\delta$ (with components $\delta^{\mu}{}_{\nu}$). To do this, we write the first order Taylor expansions $\Lambda = \delta + \omega + O(\omega^2)$ and $a = \epsilon$ (exact even for large $\epsilon$) with respect to an infinitesimal Lorentz shift $\omega$ with components $\omega_{\mu \nu}$ (combining infinitesimal rotation angles, and boost angles) and translation $\epsilon$ with components $\epsilon^\mu$. The first order in $\omega$ and $\epsilon$ expansion of the unitary is $U(\delta+\omega, \epsilon)=\mathbf{1}+\frac{i}{2} \omega_{\mu \nu} J^{\mu \nu}+i \epsilon_\mu P^\mu + O(\omega^2, \epsilon^2)$ where $J^{\mu \nu}$, $P^\mu$ are the hermitian matrices generating the Poincaré transformation. Since $\Lambda = \delta + \omega$ is a lorentz transformation, we have that it preserves space time intervals. The spacetime interval between events $x$ and $y$ is $(x_\mu-y_\mu)(x^\mu-y^\mu) = x_\mu x^\mu + y_\mu y^\mu - 2 y_\mu x^\mu $. Since the first two terms are themselves spacetime intervals between $x, y$ and $0$, they are individually preserved by a Poincaré transformation. This forces the invariance of the lorentzian product $y_\mu x^\mu$ for any $x, y$ under Poincaré transformations ($x^\mu y_\mu = x^{\mu'} y_\mu'$).
   
   In general, we can Taylor expand $x^{\mu'} y_\mu'$ around $x^\mu y_\mu$ in powers of $\omega$ as 
   \begin{align*}
@@ -90,14 +86,14 @@
 \newpage
   \item[(d)] Combining the hermitian generator expansion of $U(\delta + \omega, a)$ (we omit Landau order notation in the next calculations) given in item (a) to the expression for the transformed operator $O'$ of item (c), we find
   \begin{align*}
-    O' = U(\Lambda, a) U(\delta+\omega, \epsilon) U^\dagger(\Lambda, a)&=\mathbf{1}+\frac{i}{2} \omega_{\mu \nu} U(\Lambda, a)J^{\mu \nu}U^\dagger(\Lambda, a)+i \epsilon_\mu U(\Lambda, a)P^\mu U^\dagger(\Lambda, a)\\
+    O' &= U(\Lambda, a) U(\delta+\omega, \epsilon) U^\dagger(\Lambda, a)\tag{$\star$}\\&=\mathbf{1}+\frac{i}{2} \omega_{\mu \nu} U(\Lambda, a)J^{\mu \nu}U^\dagger(\Lambda, a)+i \epsilon_\mu U(\Lambda, a)P^\mu U^\dagger(\Lambda, a)\\
     &= \mathbf{1}+\frac{i}{2} (\Lambda \omega \Lambda^{-1})_{\mu \nu} J^{\mu \nu}+i (-\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)_\mu P^\mu\\
     &= \mathbf{1}+\frac{i}{2} (\Lambda_{\mu}{}^{\rho}  \omega_{\rho\sigma} \Lambda_{\nu}{}^{\sigma}) J^{\mu \nu}+i (-\Lambda_{\mu}{}^{\rho}   \Lambda_{\nu}{}^{\sigma} a^{\nu} \omega_{\rho\sigma} + \Lambda_{\mu}{}^{\nu} \epsilon_{\nu}) P^\mu \\
     &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i (-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho +  \epsilon_{\mu} \Lambda_{\nu}{}^{\mu} P^\nu)\\ 
     &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i \epsilon_{\mu} \Lambda_{\nu}{}^{\mu} P^\nu + \frac{i}{2}(-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho +\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\nu\mu} P^\rho)\\ 
-    &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i \epsilon_{\mu} \Lambda_{\nu}{}^{\mu} P^\nu + \frac{i}{2}(-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho + \Lambda_{\sigma}{}^{\nu}   \Lambda_{\rho}{}^{\mu} a^{\rho} \omega_{\mu\nu} P^\sigma)\tag{$\star$}
+    &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i \epsilon_{\mu} \Lambda_{\rho}{}^{\mu} P^\rho + \frac{i}{2}(-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho + \Lambda_{\sigma}{}^{\nu}   \Lambda_{\rho}{}^{\mu} a^{\rho} \omega_{\mu\nu} P^\sigma)
   \end{align*}
-  where we expanded the result of item (c) at $O(\omega, \epsilon)$ in the second line and used antisymmetry of $\omega_{\mu\nu}$ in the second last line. To obtain the component representation of the previous result, the vector/matrix multiplication was written and then converted to appropriated index structure:
+  where we expanded the result of item (c) at $O(\omega, \epsilon)$ in the third line and used antisymmetry of $\omega_{\mu\nu}$ in the second last line. To obtain the component representation of the previous result, the vector/matrix multiplication was written and then converted to appropriated index structure:
   \begin{align*}
     &(-\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)^\mu = -\Lambda^{\mu}{}_{\rho} \omega^{\rho}{}_{\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu} a^{\nu} + \Lambda^{\mu}{}_{\nu} \epsilon^{\nu}\\ &\iff (-\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)_\mu = -\Lambda_{\mu}{}^{\rho} \omega_{\rho\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu} a^{\nu} + \Lambda_{\mu}{}^{\nu} \epsilon_{\nu} =  -\Lambda_{\mu}{}^{\rho} \Lambda_{\nu}{}^{\sigma} a_{\nu} \omega_{\rho\sigma} + \Lambda_{\mu}{}^{\nu} \epsilon_{\nu}\\
     &(\Lambda \omega \Lambda^{-1})^{\mu}{}_{\nu} = \Lambda^{\mu}{}_{\rho}  \omega^{\rho}{}_{\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu}\\
@@ -109,13 +105,39 @@
     &\iff \eta_{\rho \sigma} (\Lambda^{-1})^{\sigma}{}_{\lambda}= \eta_{\mu \nu} \Lambda^{\mu}{}_{\rho} \Lambda^{\nu}{}_{\sigma} (\Lambda^{-1})^{\sigma}{}_{\lambda} = \eta_{\mu \lambda} \Lambda^{\mu}{}_{\rho}
     \iff (\Lambda^{-1})^{\nu}{}_{\lambda} = \eta^{\nu \rho}\eta_{\rho \sigma} (\Lambda^{-1})^{\sigma}{}_{\lambda}= \eta_{\mu \lambda} \eta^{\nu \rho} \Lambda^{\mu}{}_{\rho} = \Lambda_{\lambda}{}^{\nu}.
   \end{align*}
-  Equality of the first and last of $(\star)$ for all $\omega, \epsilon$ ensures that the tensors contracted with $\omega$ and $\epsilon$ are equal. Regrouping terms proportionnal to $\omega_{\mu\nu}$ and $\epsilon_\mu$ We have 
+  Equality of the second and last lines of $(\star)$ for all $\omega, \epsilon$ ensures that the tensors contracted with $\omega$ and $\epsilon$ are equal. Regrouping terms proportionnal to $\omega_{\mu\nu}$ and $\epsilon_\mu$ We have 
   \begin{align*}
-   U(\Lambda, a) J^\mu U^{\dagger}(\Lambda, a) & =\Lambda_\rho{ }^\mu \Lambda_o{ }^\nu\left(J^{\rho \sigma}+a^\rho P^\sigma-a^\sigma P^\rho\right) \\ U(\Lambda, a) P^\mu U^{\dagger}(\Lambda, a) & =\Lambda_\rho{ }^\mu P^\rho .
+   &U(\Lambda, a) J^{\mu\nu} U^{\dagger}(\Lambda, a) =\Lambda_\rho{ }^\mu \Lambda_\rho{ }^\nu\left(J^{\rho \sigma}+a^\rho P^\sigma-a^\sigma P^\rho\right), \\ &U(\Lambda, a) P^\mu U^{\dagger}(\Lambda, a) =\Lambda_\rho{ }^\mu P^\rho .
   \end{align*}
 
-  \item[(e)] 
-  \item[(f)]
+  \item[(e)] To extract the commutation relations of the generators $J^{\mu \nu}, P^{\mu}$, we start by setting $\Lambda = \delta + \omega$, $a = \epsilon$ in the final result of item (d). At first order in $\omega, \epsilon$, we get
+  \begin{align*}
+    P^\mu + \eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho = \Lambda_\rho{ }^\mu P^\rho = U(\Lambda, a) P^\mu U^{\dagger}(\Lambda, a) &= \left(\mathbf{1}+\frac{i}{2} \omega_{\lambda \epsilon} J^{\lambda \epsilon}+i \epsilon_\nu P^\nu\right) P^\mu \left(\mathbf{1}-\frac{i}{2} \omega_{\rho \sigma} J^{\rho \sigma}-i \epsilon_\sigma P^\sigma\right)\\
+    &= P^\mu + \frac{i}{2} \left(\omega_{\lambda \epsilon} J^{\lambda \epsilon}P^{\mu} - P^{\mu} \omega_{\rho \sigma}  J^{\rho \sigma}\right)+i (\epsilon_\nu P^\nu P^\mu - P^\mu \epsilon_\nu P^\nu)\\
+    &= P^\mu + \frac{i}{2} \omega_{\rho \sigma} [J^{\rho \sigma}, P^{\mu}]  +i \epsilon_\nu [P^{\nu}, P^{\mu}].
+   \end{align*}
+   where $U^{\dagger}(\Lambda, a) = U((\delta + \omega)^{-1}, -(\delta + \omega)^{-1} a) = U(\delta - \omega, -\epsilon + \omega \epsilon) = U(\delta - \omega, -\epsilon)$ was used. Invoquing the validity of the last set of equalities for all $\omega, \epsilon$, we find: 
+    \begin{align*}
+      [P^{\nu}, P^{\mu}] = 0 \quad \& \quad \dfrac{i}{2}[J^{\rho \sigma}, P^{\mu}] =  \dfrac{1}{2}\left(\eta^{\mu \sigma}P^\rho- \eta^{\mu \rho} P^\sigma\right).
+    \end{align*}
+    with the antisymmetry of $\omega$ used to write $$2\eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho = \eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho - \eta^{\mu \sigma}\omega_{\sigma \rho} P^\rho = \eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho - \eta^{\mu \rho}\omega_{\rho \sigma} P^\sigma. $$
+    The expanded transformation of $J^{\mu\nu}$ reads 
+    \begin{align*}
+      J^{\mu \nu} + \dfrac{i}{2} \omega_{\rho\sigma} [J^{\rho \sigma}, J^{\mu \nu}] + O(\epsilon) &= \left(\mathbf{1}+\frac{i}{2} \omega_{\lambda \epsilon} J^{\lambda \epsilon}+i \epsilon_\alpha P^\alpha\right) J^{\mu \nu} \left(\mathbf{1}-\frac{i}{2} \omega_{\rho \sigma} J^{\rho \sigma}-i \epsilon_\sigma P^\sigma\right)\\
+      &= U(\Lambda, a) J^{\mu\nu} U^{\dagger}(\Lambda, a)\\
+      &= \Lambda_\rho{ }^\mu \Lambda_\sigma{ }^\nu\left(J^{\rho \sigma}+\epsilon^\rho P^\sigma-\epsilon^\sigma P^\rho\right) \\
+      &= (\delta_\rho{ }^\mu + \omega_\rho{ }^\mu)(\delta_\sigma{ }^\nu+\omega_\sigma{ }^\nu) J^{\rho \sigma} + O(\epsilon)\\
+      &= J^{\mu \nu} + J^{\mu \sigma} \omega_\sigma{ }^\nu + J^{\rho \nu}\omega_\rho{ }^\mu + O(\epsilon)\\
+      &= J^{\mu \nu} + \dfrac{1}{2} \omega_{\rho\sigma} \left(\eta^{\nu \sigma}J^{\mu \rho} \omega_{\rho\sigma} -\eta^{\nu \rho}J^{\mu \sigma} + \eta^{\mu \sigma} J^{\rho \nu} - \eta^{\mu \rho} J^{\sigma \nu}\right) + O(\epsilon)
+    \end{align*}
+    The expansion in $\epsilon$ was not explicited because it only serves to determine $[J^{\rho \sigma}, P^{\mu}]$ which is already known at that point. Finally, using the fact $\eta$ is symmetric and $\omega$ aribtrary, we get 
+    \begin{align*}
+      \dfrac{i}{2} [J^{\rho \sigma}, J^{\mu \nu}] = \dfrac{1}{2} \left(\eta^{\nu \sigma} J^{\mu \rho} -\eta^{\nu \rho} J^{\mu \sigma} + \eta^{\sigma\mu} J^{\rho \nu} - \eta^{\rho\mu} J^{\sigma \nu}\right).
+    \end{align*}
+  \item[(f)] We now define the angular momentum vector $\mathbf{J} = (J^{23}, J^{31}, J^{12}) \equiv (J^1, J^2, J^3)$. We can also write $\epsilon_{ij}{}^k J^{ij} =  J^k$ where $-\epsilon_{ij}{}^k = \epsilon_{ijk}$ is the levi-civita tensor with one up index in our mostly minus signature. The commutation relation of these operators is given by
+  \begin{align*}
+    [J^k, J^n] = \epsilon_{ij}{}^{k} \epsilon_{lm}{}^{n} [J^{ij}, J^{lm}] = -i \epsilon_{ij}{}^{k} \epsilon_{lm}{}^{n} \left(\eta^{\nu j} J^{\mu i} -\eta^{\nu i} J^{\mu j} + \eta^{j\mu} J^{i \nu} - \eta^{i\mu} J^{j\nu}\right)
+  \end{align*}  
   \item[(g)]
 
 \end{enumerate}
