@@ -1,0 +1,239 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage[font=small,labelfont=bf,
+   justification=justified,
+   format=plain]{caption}
+\input{math_func}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%
+\title{Homework 1 : Equivalence principle at
+work: charge in a lab} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{David Kubiznak and Ghazal Geshnizjani} % Your teacher's name.
+\class{Relativity} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\section{Uniformly accelerated charge}
+Consider a charged particle of mass $m_0$ and charge $Q$ in a uniform constant electric field of magnitude $E$ aligned with the $x$ axis of an inertial frame associated to the cylindrical coordinate system $x^\mu = (t, x, \rho, \varphi)$ with spacetime interval $d s^2=-d t^2+d x^2+d \rho^2+\rho^2 d \varphi^2$. 
+\begin{enumerate}
+  \item[(a)] Denoting $u^{\mu}$ the four-velocity of the particle and $F^{\mu\nu}$ ($-E = F_{01} = -F_{10}$ and all other components are $0$) the Faraday tensor in the inertial coordinate system, we can write the relativistic second law with $k=Q / m_0$ as follows: 
+  \begin{align*}
+    \frac{d u_\mu}{d \tau}=k F_{\nu\mu} u^\nu &\iff 
+    \begin{cases}
+      \frac{d u_0}{d \tau}=k F_{\nu 0} u^\nu= k F_{1 0} u^1 = kE u^1,\\
+      \frac{d u_1}{d \tau}=k F_{\nu 1} u^\nu = k F_{0 1} u^0 = -kE u^{0},\\
+      \frac{d u_2}{d \tau}=k F_{\nu 2} u^\nu = 0,\\
+      \frac{d u_3}{d \tau}=k F_{\nu 3} u^\nu = 0
+    \end{cases}
+    \iff 
+    \begin{cases}
+      \frac{d u^0}{d \tau} = -kE u^1,\\
+      \frac{d u^1}{d \tau} = -kE u^{0},\\
+      \frac{d u^2}{d \tau}= 0,\\
+      \frac{d u^3}{d \tau} = 0.
+    \end{cases}
+  \end{align*} 
+  Supposing the four-velocity components $u^2, u^3$ are $0$ at $\tau = 0$, the last two equations imply that they stay $0$ for all futur times. The first two equations can be added/substracted to get 
+  \begin{align*}
+    &\frac{d (u^0 + u^{1})}{d \tau} = -kE (u^{0} + u^1) \impliedby u^{0} + u^1 = A e^{-kE \tau},\  A\in \mathbb{R}\\
+    &\frac{d (u^1-u^{0})}{d \tau} = kE (u^1 - u^{0}) \impliedby u^{1} - u^0 = B e^{kE \tau},\ B\in \mathbb{R}.
+  \end{align*}
+  wich combine into $u^0 = (A e^{-kE \tau} - B e^{kE \tau})/2$ and $u^1 = (A e^{-kE \tau} + B e^{kE \tau})/2$. The constants $A,B$ are fixed by taking $u^0 = 1,\ u^1 = 0$ at $\tau = 0$ (the charge is at rest in the lab frame at $\tau=0$) which leads to the solution $u^0 = \cosh(kE \tau),\ u^1 = \sinh(kE \tau)$. Integrating with respect to proper time, we get the following proper time parametrised trajectory of the charge:
+  \begin{align*}
+    t_Q = \dfrac{1}{kE}\sinh(kE \tau), \quad x_Q = \dfrac{1}{kE}\cosh(kE \tau),\quad \rho_Q = 0\quad \& \quad \varphi_Q = 0
+  \end{align*}
+  where we have supposed the particle is at , $x_Q = (kE)^{-1},\ \rho_Q = 0,\ \varphi = 0$ (a more carful treatment would not place the particle in the singular axis of our coordinate system where the chart map is degenrate, but here the dynamics of the particle can be extended to these degenerate points) and $t_Q = 0$ (clock synchronized with lab clock) at $\tau = 0$.
+  \item[(b)] The general definition of the four-acceleration in non-cartesian coordinates involves the Christoffel symbold of the coordinate system. However here the dynamics is restricted to the part of the coordinated that involves the cartesian coordinates $t, x$. We can therefore express the four-acceleration
+  \begin{align*}
+    a = \frac{d u_\mu}{d \tau}\frac{d u^\mu}{d \tau}=-\dfrac{(kE)^2}{kE}\sinh^2(kE \tau) + \dfrac{(kE)^2}{kE}\cosh^2(kE \tau) = kE
+  \end{align*}
+  which is constant (we have uniform acceleration).
+  % Thanks to Thiago for the insight on the generalisation of the four acceleration to arbitrary coordinates.
+  \newpage
+  \item[(c)] Trajectories for the same initial velocities but different $kE$ are represented and described in figure \ref{traj} (Left). 
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        restrict y to domain=-4:4,
+        xmin=0, xmax=1,
+        ymin=-0.5, ymax=0.5,
+        axis lines=center,
+        axis on top=true,
+        domain=0:2.5,
+        ylabel=$t$,
+        xlabel=$x$,
+        width=8cm,
+        height=8cm,
+        clip=true,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        ytick=\empty,
+        xtick=\empty
+        ]
+
+        \draw (3/6,0)  circle[radius=2pt];
+        \fill (3/6,0)  circle[radius=2pt];
+        \draw[->, blue] (0,0.05) -- (3/6,0.05) node [label=right:{\footnotesize $(kE)^{-1}$}] {};
+        \draw[->, blue] (5/6,0) -- (5/6, 0.25) node [label=above:{\footnotesize $u^{\mu}(0)$}] {};
+      \newcommand{\nMAX}{5};
+      %Below the red parabola is defined
+      
+      \foreach \n in {1, ..., \nMAX} 
+        {
+            \addplot [domain=-10:10, samples=200, black, variable=\x] ({\n * cosh(x)/6}, {\n * sinh(x)/6});
+        }
+        \addplot [domain=-5:5, samples=20, red, thick, variable=\x] ({x}, {x}) ;
+        \addplot [domain=-5:5, samples=20, red, thick, variable=\x] ({x}, {-x});
+        \node [label={[shift={(0.35,0.4)}]\textcolor{red}{\footnotesize $kE \to \infty$}}] {};
+
+      \end{axis}
+      \end{tikzpicture}
+      \begin{tikzpicture}
+        \begin{axis}[
+          restrict y to domain=-4:4,
+          xmin=-0.25, xmax=1,
+          ymin=-0.5, ymax=0.5,
+          axis lines=center,
+          axis on top=true,
+          domain=0:2.5,
+          ylabel=$t$,
+          xlabel=$x$,
+          width=9.5cm,
+          height=8cm,
+          clip=true,
+          yticklabel=\empty,
+          xticklabel=\empty,
+          ytick=\empty,
+          xtick=\empty
+          ]
+
+        
+        
+        \newcommand{\nMAX}{5};
+        
+        \foreach \n in {1, ..., \nMAX} 
+          {   
+
+              \ifthenelse{\n = 3}{\addplot [domain=-10:10, samples=200, blue, ultra thick, variable=\x] ({\n * cosh(x)/6}, {\n * sinh(x)/6});}{\addplot [domain=-10:10, samples=200, black, variable=\x] ({\n * cosh(x)/6}, {\n * sinh(x)/6})}
+              ;
+          }
+
+
+          \newcommand{\nMA}{5};
+          \foreach \n in {0, ..., \nMA} 
+          {   
+              \ifthenelse{\n = 2}{\addplot [domain=0:10, samples=200, ultra thick, blue, variable=\x] ({x}, {\n/\nMA *x})}{\addplot [domain=0:10, samples=200, black, variable=\x] ({x}, {\n/\nMA *x});};
+              \addplot [domain=0:10, samples=200, black, variable=\x] ({x}, {-\n/\nMA *x});
+          }
+
+          \draw (0.1+0.1, 0.15+0.1) -- (0.2+0.1, 0.25+0.1);
+          \draw (0.1+0.1, 0.15+0.1) -- (0.0+0.1, 0.25+0.1);
+          \draw (0.1+0.1, 0.15+0.1)  circle[radius=2pt];
+          \fill (0.1+0.1, 0.15+0.1)  circle[radius=2pt];
+
+          \addplot [domain=-5:5, samples=20, red, thick, variable=\x] ({x}, {x}) ;
+          \addplot [domain=-5:5, samples=20, red, thick, variable=\x] ({x}, {-x});
+          \node [label={[shift={(0.35,0.4)}]\textcolor{red}{\footnotesize $T \to \infty$}}] {};
+          \node [label={[shift={(0.35,-0.5)}]\textcolor{red}{\footnotesize $T \to -\infty$}}] {};
+
+
+          \node [label={[shift={(1-0.05,+0.5-0.2)}]\textcolor{red}{\footnotesize $\textcolor{blue}{T}$}}] {};
+
+          \node [label={[shift={(1-0.35,+0.5-0.1)}]\textcolor{red}{\footnotesize $\textcolor{blue}{\overline{X}}$}}] {};
+
+          
+
+          \node [label={[shift={(0.1,-0.25)}]\textcolor{red}{II}}] {};
+          \node [label={[shift={(0.1,+0.15)}]\textcolor{red}{I}}] {};
+
+          \node [label={[shift={(-0.2,0.05)}]\textcolor{red}{III}}] {};
+        \end{axis}
+        \end{tikzpicture}
+      \caption{(Left) Representation of trajectories for the uniformly accelerated charge at rest in the lab frame at $t=0$. Each trajectory corresponds to a different value of acceleration $kE$ decreasing from left to right (infinite acceleration corresponds to the red trajectory and coincides with light cone branches). The greater the acceleration, the faster (in time $t$) the trajectory approaches the speed of light. As opposed to uniformly accelerated non-relativistic particles wich move on a parabola with unbounded velocity, the relativistic charge approaches the speed of light asymptotically as $\tau \to \infty$. For small values of $kE$, the trajectory can be approximated as a parabola for large amounts of time and the classical solution is recovered. (Right) Constant coordinate $X$, $T$ curves for the Rindle coordinate system seen from the lab frame}
+      \label{traj}
+  \end{figure}
+  \item[(d)] To describe the particle from the point of view of an observer accelerating with it, we use a new (Rindler) coordinate system $(T, X, \rho, \varphi)$ where $T$ is the proper time of a uniformly accelerated observer crossing the $x$ axis at $\overline{X} = X+(kE)^{-1}$ at $T=t=0$. We notice that the spacetime interval between the origin and any point on the accelerated trajectory $(\overline{X}\sinh(kE T), \overline{X}\cosh(kE T), 0, 0)$ (lab frame) is $\overline{X}$ (constant). So $\overline{X}$ represents the proper distance between the accelerated observer and the origin. Indeed the spacetime interval giving this distance is orthogonal (in the lorentz sens) to the four-velocity along the hyperbolas and therefore links two simultaneous events in the instantaneous rest frame of the accelerated observer.
+  
+  A congruence of observers sweeping the left elswhere of the origin can be formed by regrouping observers moving trough all $X\in(-(kE)^{-1}, +\infty)$ with $T\in [-\infty, \infty]$ (light-like trajectories are not included since they are not parametrised by $T$). Expressing the lab coordinates in terms of the congruence coordinates, we get $$(t, x, \rho, \varphi) = (((kE)^{-1}+X)\sinh(kE T), ((kE)^{-1} + X)\cosh(kE T), \rho, \varphi).$$  Since $X$ represents a proper distance it can be extracted from the lab frame coordinates with the space time interval $-t^2 + x^2 = \overline{X}^{2} $. The proper time $T$ is related to $x, t$ trough an hyperbolic tangent as $\tanh(kE T) = t/x$. This indicates that constant $T$ curves are lines in the lab frame going trough the origin. We note that the $x=0$ line coincides with constant proper time $T=0$ and lab time $t=0$ (clock synchronization). The constant coordinate lines of the Rindler frame are represented in the lab frame in figure \ref{traj} (Right). The observers only sweep a quarter of minkowski spacetime. Any future light cone in region I$+$III has no overlap with the \textit{observed} region. This means that I$+$III can't influence the observers much like the content of the event horizon of a black hole. However the observers can send signals to I (not to II and III). This is analogous to the fact we can enter black holes but to outside observers the coordinate time at which we traverse is $T \to \infty$. Conversly, signals from region II can propagate to the observers from $T \to -\infty$,  but Rindler observers can never signal II$+$III. More formaly, the outside of the Rindler observed regions, the events are not mapped to any coordinte and are not part of the chart used to describe an open subset of spacetime. The boundary of the observed region is light-like and not included in the chart (the subset of $\mathbb{R}^{1+1}$ is open) and constitute event horizons. These horizons are present in the absolute spacetime as light-like hypersurfaces, but play a special role for the Rindler observer. To them they are the end of observable spacetime. We can add that $\overline{X}<0$ is not relevant to our analysis because it produced a trajectory behind the previously described future and past horizons.
+  \item[(e)] We can rewrite the minkowski spacetime element in the Rindler coordinates as 
+  \begin{align*}
+    ds^2  &= -dt^2 + dx^2 + d\rho^2 + \rho^2d\varphi^2 = -\left(\dfrac{\partial t}{\partial T} dT + \dfrac{\partial t}{\partial X} dX\right)^2 + \left(\dfrac{\partial x}{\partial T} dT + \dfrac{\partial x}{\partial X} dX\right)^2 + d\rho^2 + \rho^2d\varphi^2\\
+    &= -\left((1+X (kE))\sinh(kE T)dT + \cosh(kE T) dX\right)^2 + \left((1 + X(kE))\cosh(kE T) dT + \sinh(kE T) dX\right)^2 + d\rho^2 + \rho^2d\varphi^2\\
+    &= -(1+X (kE))^2\sinh^2(kE T)dT^2 - \cosh^2(kE T) dX^2 + (1 + X(kE))^2\cosh^2(kE T) dT^2 + \sinh^2(kE T) dX^2 + d\rho^2 + \rho^2d\varphi^2
+  \end{align*}
+\end{enumerate}
+
+\section{Field of a uniformly accelerated charge}
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)] 
+  \item[(c)]
+  \item[(d)]
+\end{enumerate}
+
+\section{Sitting on the charge}
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)] 
+  \item[(c)]
+  \item[(d)]
+  \item[(e)]   
+\end{enumerate}  
+
+\section{Acknowledgement}
+
+
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
