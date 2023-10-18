@@ -202,16 +202,52 @@ Consider a charged particle of mass $m_0$ and charge $Q$ in a uniform constant e
   \item[(e)] We can rewrite the minkowski spacetime element in the Rindler coordinates as 
   \begin{align*}
     ds^2  &= -dt^2 + dx^2 + d\rho^2 + \rho^2d\varphi^2 = -\left(\dfrac{\partial t}{\partial T} dT + \dfrac{\partial t}{\partial X} dX\right)^2 + \left(\dfrac{\partial x}{\partial T} dT + \dfrac{\partial x}{\partial X} dX\right)^2 + d\rho^2 + \rho^2d\varphi^2\\
-    &= -\left((1+X (kE))\sinh(kE T)dT + \cosh(kE T) dX\right)^2 + \left((1 + X(kE))\cosh(kE T) dT + \sinh(kE T) dX\right)^2 + d\rho^2 + \rho^2d\varphi^2\\
-    &= -(1+X (kE))^2\sinh^2(kE T)dT^2 - \cosh^2(kE T) dX^2 + (1 + X(kE))^2\cosh^2(kE T) dT^2 + \sinh^2(kE T) dX^2 + d\rho^2 + \rho^2d\varphi^2
+    &= -\left((1+X (kE))\cosh(kE T)dT + \sinh(kE T) dX\right)^2 + \left((1 + X(kE))\sinh(kE T) dT + \cosh(kE T) dX\right)^2 + d\rho^2 + \rho^2d\varphi^2\\
+    &= -(1+X (kE))^2\cosh^2(kE T)dT^2 - \sinh^2(kE T) dX^2 + (1 + X(kE))^2\sinh^2(kE T) dT^2 + \cosh^2(kE T) dX^2 + d\rho^2 + \rho^2d\varphi^2\\
+    &= -(1+X (kE))^2dT^2 + dX^2 + d\rho^2 + \rho^2d\varphi^2.
   \end{align*}
+
 \end{enumerate}
 
 \section{Field of a uniformly accelerated charge}
 \begin{enumerate}
-  \item[(a)]
-  \item[(b)] 
-  \item[(c)]
+  \item[(a)] We turn to the calculation of the electromagnetic field sourced by the charge in the inertial lab frame. More precisely, we look for the potential four-vector with components $A^{\mu}$ solving the Maxwell wave equations in the Lorenz gauge (neglecting backreaction). The source term of the wave equation consists in a point charge $Q$ with proper time $\tau$ moving with four-velocity $u^{\mu}(\tau)$ on a trajectory $\gamma^{\nu}(\tau) = (\gamma^0(\tau), \boldsymbol{\gamma}(\tau))$. At four-position $x^\nu = (t, \mathbf{x})$, the solution we look for is provided by the Lienard-Wiechert potential:
+  % Do we neglect back reaction on the charge ?
+  \begin{align*}
+    A^\mu(x)=-\left.\frac{Q u^\mu(\tau)}{\left(x^\nu-\gamma^\nu(\tau)\right) u_\nu(\tau)}\right|_{\tau=\tau_r}
+ \end{align*}
+ where retarded proper time $\tau_r$ is the proper time at which a light ray recieved at $x^{\nu}$ is emmited from the charge. If the emission and reception are connected by a light ray the associated spacetime interval vanishes and we have 
+ \begin{align*}
+  x^{\nu} - \gamma^\nu(\tau_r) = 0 \iff -(t-\gamma^0(\tau_r))^2+(\mathbf{x}-\boldsymbol{\gamma})^2 = 0 \iff t = \gamma^0(\tau_r) + |\mathbf{x}-\boldsymbol{\gamma}|.
+ \end{align*}
+ This relation allows to solve for $\tau_r$ as a function of $x^{\nu}$. 
+  \item[(b)] As shown above, the trajectory of a uniformly accelerated charge is given in cylindrical coordinates by
+  \begin{align*}
+    t_Q = \dfrac{1}{kE}\sinh(kE \tau) = \gamma^0(\tau), \quad x_Q = \dfrac{1}{kE}\cosh(kE \tau) = \gamma^1(\tau),\quad \rho_Q = 0 = \gamma^2(\tau)\quad \& \quad \varphi_Q = 0 = \gamma^3(\tau). 
+  \end{align*}
+  Comparing the four-position with four-velocity leads to 
+  \begin{align*}
+    u^\mu = (\cosh(kE \tau),\ \sinh(kE \tau), 0, 0) = kE (x_Q, t_Q, 0, 0), \quad u_\mu = kE (-x_Q, t_Q, 0, 0).
+  \end{align*}
+  Substituting this expression of the four-velocity and the trajectory $\gamma^\mu$ in the Lienard-Wiechert potential yields
+  \begin{align*}
+    A^\mu(x)&=-\frac{Q}{\left(x^0-t_Q, x^1-x_Q, x^2, x^3\right) \cdot kE (-x_Q, t_Q, 0, 0)} kE (-x_Q, t_Q, 0, 0)\\
+    &=-\frac{Q}{- x_Q x^0+ x_Qt_Q + t_Qx^1-x_Qt_Q}  (-x_Q, t_Q, 0, 0)\\
+    &=\frac{Q}{x_Q x^0 - t_Qx^1}  (-x_Q, t_Q, 0, 0) = \frac{Q}{\xi}  (-x_Q, t_Q, 0, 0), \quad \text{with $\xi = x_Q x^0 - t_Qx^1$}.
+ \end{align*}
+ where $t_Q, x_Q$ are evaluated at $\tau_r$.
+  \item[(c)] In terms of $t_Q,\ x_Q$ and cylindrical coordinates $(t, x, \rho, \varphi)$ for $x^{\nu}$, the retarded proper time condition reads $t=t_Q(\tau_r) + \sqrt{\rho^2 + (x-x_Q(\tau_r))^2}$. Because the trajectory is hyperbolic, we can form the relation 
+  \begin{align*}
+    x_Q^2 - t_Q^2 = \dfrac{1}{(kE)^2}\cosh^2(kE \tau) - \dfrac{1}{(kE)^2}\sinh^2(kE \tau) = \dfrac{1}{(kE)^2} \iff t_Q =\pm \sqrt{L^2 + x_Q^2}, \quad \text{with $L= (kE)^{-1}$}.
+  \end{align*}
+  \newpage
+  Substituting this relation in the proper time condition gives 
+  \begin{align*}
+    &t=\pm \sqrt{L^2 + x_Q^2} + \sqrt{\rho^2 + (x-x_Q)^2}\\
+    &\implies t^2-(L^2 + x_Q^2) - (\rho^2 + (x-x_Q)^2) = \pm 2\sqrt{L^2 + x_Q^2}\sqrt{\rho^2 + (x-x_Q)}\\
+    &\implies  (t^2-(L^2 + x_Q^2) - (\rho^2 + (x-x_Q)^2))^2 = 4(L^2 + x_Q^2)(\rho^2 + (x-x_Q)^2)\\
+    &\implies (t^2-(L^2 + x_Q^2))^2 -2(t^2-(L^2 + x_Q^2))(\rho^2 + (x-x_Q)^2) + (\rho^2 + (x-x_Q)^2)^2 = 4(L^2 + x_Q^2)(\rho^2 + (x-x_Q)^2)
+  \end{align*}
   \item[(d)]
 \end{enumerate}
 

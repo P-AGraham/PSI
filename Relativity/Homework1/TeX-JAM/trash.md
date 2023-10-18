@@ -133,3 +133,9 @@ We can also write $\epsilon_{ij}{}^k J^{ij} =  J^k$ where $-\epsilon_{ij}{}^k = 
 \epsilon_{ij}{}^{k} \epsilon_{lm}{}^{n} [J^{ij}, J^{lm}] &= -i \epsilon_{ij}{}^{k} \epsilon_{lm}{}^{n} \left(\eta^{m j} J^{l i} -\eta^{m i} J^{lj} + \eta^{jl} J^{im} - \eta^{il} J^{jm}\right)\\
     &= -i \left(- \epsilon_{i}{}^{mk} \epsilon_{lm}{}^{n} J^{l i} + \epsilon^{m}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{lj} - \epsilon_{i}{}^{lk} \epsilon_{lm}{}^{n} J^{im} + \epsilon^{l}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{jm}\right)\\
     &= -i \left(- \epsilon_{i}{}^{km} \epsilon_{l}{}^{nm} J^{l i} + \epsilon^{k}{}_{j}{}^{m} \epsilon_{l}{}^{n}{}_m J^{lj} - \epsilon_{i}{}^{lk} \epsilon_{lm}{}^{n} J^{im} + \epsilon^{l}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{jm}\right)
+
+setting $1+X(kE)$ to $0$ which implies $X = -(kE)^{-1}$ independently of $\rho$ and $\varphi$ : the horizon is an infinite wall for Rindler observers. In the lab coordinates the horizon is $-t^2 + x^2 = (kE)^{-2}$ which is the set of events at proper distance $(kE)^{-1}$ from the rindle observer. 
+
+As a bonus we want to find the $3D$ shape of the Rindler horizon. The horizon is a null hypersurface and rotation symmetry 
+
+  where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$
