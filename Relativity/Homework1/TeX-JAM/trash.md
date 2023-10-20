@@ -10,6 +10,13 @@ Suppose the trajectory is parametrised by $x$ so that it takes the form of a fun
     T[y(x)] = \int_{x_A}^{x_B} \text{d} x \dfrac{\sqrt{1 + \dot{y}(x)^2}}{\sqrt{2gy}}. 
 \end{align*}
 
+  \begin{align*}
+    &t=\pm \sqrt{L^2 + x_Q^2} + \sqrt{\rho^2 + (x-x_Q)^2}\\
+    &\implies t^2-(L^2 + x_Q^2) - (\rho^2 + (x-x_Q)^2) = \pm 2\sqrt{L^2 + x_Q^2}\sqrt{\rho^2 + (x-x_Q)}\\
+    &\implies  (t^2-(L^2 + x_Q^2) - (\rho^2 + (x-x_Q)^2))^2 = 4(L^2 + x_Q^2)(\rho^2 + (x-x_Q)^2)\\
+    &\implies (t^2-(L^2 + x_Q^2))^2 -2(t^2-(L^2 + x_Q^2))(\rho^2 + (x-x_Q)^2) + (\rho^2 + (x-x_Q)^2)^2 = 4(L^2 + x_Q^2)(\rho^2 + (x-x_Q)^2)
+  \end{align*}
+
 
 %\input{figures/P1_1.pdf}
 \subsection{Conserved quantity}
@@ -138,4 +145,41 @@ setting $1+X(kE)$ to $0$ which implies $X = -(kE)^{-1}$ independently of $\rho$ 
 
 As a bonus we want to find the $3D$ shape of the Rindler horizon. The horizon is a null hypersurface and rotation symmetry 
 
-  where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$
+where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$
+
+To find the retarded proper time effective at $x^\nu$, we can intersect the previous hyperbola equation with the past light cone at $x^{\mu}$ (equivalent formulation of the retarded time defining condition stated above).  
+
+x_Q &= \frac{1}{2} \sqrt{4 L^2+\frac{\left(L^2 t+\sqrt{x^2 \left(L^4+2
+   L^2 \left(\rho ^2+t^2-x^2\right)+\left(\rho
+   ^2-t^2+x^2\right)^2\right)}+\rho ^2 t-t^3+t
+   x^2\right)^2}{\left(t^2-x^2\right)^2}}\\
+
+
+  \item[(c)] Because the trajectory is hyperbolic, we can form the relation 
+  \begin{align*}
+    x_Q^2 - t_Q^2 = \dfrac{1}{(kE)^2}\cosh^2(kE \tau) - \dfrac{1}{(kE)^2}\sinh^2(kE \tau) = \dfrac{1}{(kE)^2} \impliedby x_Q = \sqrt{L^2 + t_Q^2},  \quad \text{with $L= (kE)^{-1}$}. \tag{$\star \star$} \label{hyper}
+  \end{align*}
+  where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$. Together with \eqref{cone intersect}, this relation forms a system of equations leading to the causal $t_Q$ solution 
+  \begin{align*}
+   t_Q 
+   &= \frac{-\sqrt{x^2 \left(L^4+2 L^2 \left(\rho
+   ^2+t^2-x^2\right)+\left(\rho ^2-t^2+x^2\right)^2\right)}+t(\rho
+   ^2 + x^2 + L^2 - t^2)}{2 \left(x^2-t^2\right)}\\
+   &= \frac{-2\sqrt{x^2 \left(L^4-2 L^2 \left(\rho
+   ^2-t^2+x^2\right)/4 + L^2 \rho^2+\left(\rho ^2-t^2+x^2\right)^2/4\right)}+t\delta^2}{2 \left(x^2-t^2\right)} = \frac{-2|x| \xi+t\delta}{2 \left(x^2-t^2\right)}
+  \end{align*}
+  where $\xi = \left(\left(L^2+t^2-\rho^2-x^2\right)^2 / 4+L^2 \rho^2\right)^{\frac{1}{2}}$ and $\delta = \rho^2 +x^2 +L^2-t^2$. Substituting this result and using $\xi^2 = (\delta - 2L^2)^2/4 + L^2 \rho^2$ in \eqref{hyper} we get 
+  \begin{align*}
+    x_Q &= \sqrt{L^2 + t_Q^2} \\
+    &=  \dfrac{\sqrt{4 L^2\left(x^2-t^2\right)^2 -4x^2 \xi^2+t^2\delta^2 -4|x|t \delta t }}{2 \left(x^2-t^2\right)}
+    &= \dfrac{\sqrt{4 L^2\left(x^4-t^2\right)^2 -4x^2 ((\delta - 2L^2)^2/4 + L^2 \rho^2)+t^2\delta^2 -4|x|t \delta t }}{2 \left(x^2-t^2\right)}
+  \end{align*}
+  The code used to obtain these results is:
+  \begin{lstlisting}[language=Mathematica,caption={Mathematica code for $t_Q$}]
+    eq1 = t - tQ - Sqrt[rho^2 + (x - xQ)^2] == 0;
+    eq1 = eq1 /. xQ -> Sqrt[L^2 + tQ^2] // Simplify;
+    tQs = tQ /. Solve[eq1, tQ][[2]] // Simplify;
+  \end{lstlisting}
+
+
+  where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$. Together with \eqref{cone intersect}, this relation forms a system of equations.
