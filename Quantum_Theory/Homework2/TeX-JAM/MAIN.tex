@@ -12,6 +12,36 @@
 \usepackage[compat=1.1.0]{tikz-feynman}
 \input{math_func}
 
+\usepackage[sep=3pt,offset=0.5ex]{simpler-wick}
+\newif\ifWickBelow
+\WickBelowfalse
+\pgfkeys{
+  /simplerwick/below/.code={\WickBelowtrue},
+}
+
+\makeatletter
+\def\swick@end#1#2{
+  \swick@setfalse@#1
+  \tikzexternaldisable
+  \begin{tikzpicture}[remember picture, baseline=(swick-close#1.base)]
+    \node[use as bounding box, inner sep=0pt, outer sep=0pt] (swick-close#1) {$\displaystyle #2$};
+  \end{tikzpicture}
+  \tikz[remember picture, overlay]
+{
+\ifWickBelow
+    \draw ($(swick-open#1.south) + (0, -3pt)$) 
+          -- ($(swick-open#1.base) + (0, -\swick@offset) + #1*(0, -\swick@sep)$) 
+          -- ($(swick-close#1.base) + (0, -\swick@offset) + #1*(0, -\swick@sep)$) 
+          -- ($(swick-close#1.south) + (0, -3pt)$);
+\else
+    \draw ($(swick-open#1.north) + (0, 3pt)$) 
+          -- ($(swick-open#1.base) + (0, \swick@offset) + #1*(0, \swick@sep)$) 
+          -- ($(swick-close#1.base) + (0, \swick@offset) + #1*(0, \swick@sep)$) 
+          -- ($(swick-close#1.north) + (0, 3pt)$);
+\fi}
+\tikzexternalenable}
+\makeatother
+
 % References
 \usepackage{biblatex}
 \addbibresource{ref.bib}
@@ -81,7 +111,7 @@
           \end{tikzpicture}
         \end{center}
     1. Every vertex in a diagram is associated to a four-position variable $x$. Its contribution to the symbolic representation of the amplitude is the integral $-ig \int \text{d}^4x$ acting on the propagators from the $x$ vertex to other vertices. \\[0.3cm]
-    3. Divide the amplitude by the symmetry factor of the diagram $S = 2/W$ where $W$ is the number of wick contraction producing the same symbolic diagram expression. $S$ is computed graphically as the order of the fixed end-points automorphism group of the diagram.
+    3. Divide the amplitude by the symmetry factor $S$ of the diagram. $S$ is computed graphically as the order of the fixed end-points automorphism group of the diagram.
     \end{minipage}%
     \hspace{0.3cm}
     \begin{minipage}{0.45\textwidth}
@@ -383,15 +413,15 @@
     \end{equation*}
     which maps to the scattering amplitude
     \begin{align*}
-      S(\mathbf{p} \to \mathbf{k}_1, \mathbf{k}_2) = \left(-i g  + (-ig)^3 \dfrac{1}{(2\pi)^4} \int \mathbf{d}^4 k \dfrac{i}{k^2 - M^2 + i\epsilon} \dfrac{i}{q_1^2 - m^2 + i\epsilon} \dfrac{i}{q_2^2 - M^2 + i\epsilon}\right) \delta^{(4)}(k_2 + k_1 - p)
+      S(\mathbf{p} \to \mathbf{k}_1, \mathbf{k}_2) = \left(-i g  + (-ig)^3 \dfrac{1}{(2\pi)^4} \int \mathbf{d}^4 k \dfrac{i}{k^2 - M^2 + i\epsilon} \dfrac{i}{q_1^2 - m^2 + i\epsilon} \dfrac{i}{q_2^2 - m^2 + i\epsilon}\right) \delta^{(4)}(k_2 + k_1 - p)
     \end{align*}
-    where we have used the momentum convention: $q_1, k, q_2$ go in a counter clockwise sens around the internal loop (and $k$ is associated to the $\Phi$ propagator), $p$ is flowing towards the loop and $k_1, k_2$ away from it.  Four-momentum conservation relates $q_1, q_2$ to $p, k_1, k_2$ as follows 
+    where we have used the momentum convention: $q_1, k, q_2$ go in a clockwise direction around the internal loop (and $k$ is associated to the $\Phi$ propagator), $p$ is flowing towards the loop and $k_1, k_2$ away from it.  Four-momentum conservation relates $q_1, q_2$ to $p, k_1, k_2$ as follows 
     \begin{align*}
       &p = q_1 - q_2,\quad  k_2 = q_1 - k\quad \& \quad k_1 = -q_2 + k.
     \end{align*}
     and we have 
     \begin{align*}
-      S(\mathbf{p} \to \mathbf{k}_1, \mathbf{k}_2) &= \left(-i g  + (-ig)^3 \dfrac{1}{(2\pi)^4} \int \mathbf{d}^4 k \dfrac{i}{k^2 - M^2 + i\epsilon} \dfrac{i}{(k_2 + k)^2 - m^2 + i\epsilon} \dfrac{i}{(-k_1+ k)^2 - M^2 + i\epsilon}\right) \delta^{(4)}(k_2 + k_1 - p).
+      S(\mathbf{p} \to \mathbf{k}_1, \mathbf{k}_2) &= \left(-i g  + (-ig)^3 \dfrac{1}{(2\pi)^4} \int \mathbf{d}^4 k \dfrac{i}{k^2 - M^2 + i\epsilon} \dfrac{i}{(k_2 + k)^2 - m^2 + i\epsilon} \dfrac{i}{(-k_1+ k)^2 - m^2 + i\epsilon}\right) \delta^{(4)}(k_2 + k_1 - p).
     \end{align*}
     Since the amputated external lines are associated to free propagators, they describe particles of free mass $M$ and $m$. This allows to write the amplitude in terms of three-momenta of the external particles with: 
     \begin{align*}
@@ -945,7 +975,23 @@
     \item[iii.] The subset of diagrams that contributes to the $\varphi \varphi \rightarrow \varphi \varphi$ matrix element $i \mathcal{M}\left(\varphi\left(\mathbf{k}_1\right) \varphi\left(\mathbf{k}_2\right) \rightarrow \varphi\left(\mathbf{p}_1\right) \varphi\left(\mathbf{p}_2\right)\right)$ at $O(g^2)$ is given by the first row since it contains the only diagrams that persist after amputation and removal of diagrams with vacuum subdiagrams. Indeed the second and thirs rows are mapped to free propagation by amputation and do not contribute to $O(g)$.  
   \end{enumerate}
   \item[(f)] In item (e) i. and ii. are related trough the relation between the free vacuum n-point function (has vacuum subdiagrams) and the interacting vaccuum n-point functions (has its vacuum subdiagram contributions canceled by the normalisation). Item (e) ii. and iii. are related trough the LSZ formula that leads to amputation of the bubbles on the external lines of the diagrams that contribute to the n-point functions of the interacting vacuum. 
-  \item[(g)] The second row first diagram of item (e) i. has a symmetry factor of $2$ because the internal loop end points can be exchanged while keeping the end point fixed and this operation is the only such symmetry of the diagram.
+  \newpage
+  \item[(g)] The second row first diagram of item (e) i. has a symmetry factor of $2$ because the internal loop end points can be exchanged while keeping the end point fixed and this operation is the only such symmetry of the diagram. Wicks theoreme can be used to recover the same symmetry factor from Wick contractions in the free vacuum n-point function apearing in the perturbative expansion of the LSZ reduction formula. Ignoring the normalisation of the vacuum (because our analysed diagram contains no vacuum subdiagrams), we start from the following free vacuum n-point function
+  \begin{align*}
+    \dfrac{(-ig)^2}{\textcolor{red}{2!}\textcolor{blue}{(2!1!)^2}}\bra{0}T \varphi(x_1)\varphi(x_2)\varphi(x_3)\varphi(x_4)\Phi(y) \varphi(y)\varphi(y)\Phi(x) \varphi(x)\varphi(x) \ket{0}
+  \end{align*}
+  where the blue factor comes from the Lagrangian density and the red one from the taylor expansion in powers of $g$. The blue factor is associated to the number of fields connecting to a vertex and the red one is associated to the number of verticies. Wick's theorem allows to write this n-point function as the sum of all fully contracted wick operators. Each wick contraction of same type fields corresponds to a Feynman diagram edge between the contracted points where the contracted fields are evaluated. In our case the contraction of $\varphi(x_3)$ and $\varphi(x_4)$ necessarely appears because $x_3$ and $x_4$ are joigned and disconnected from the rest of the diagram. The follwong full contractions all map to the same diagram:
+  \begin{align*}
+    &\wick[below]{\c2\varphi(x_1)\c3\varphi(x_2)\c1\varphi(x_3)\c1\varphi(x_4)\c4\Phi(y) \c2\varphi(y)\c3\varphi(y)\c4\Phi(x) \c2\varphi(x)\c2\varphi(x)}\\[0.3cm]
+    &\wick[below]{\c2\varphi(x_1)\c3\varphi(x_2)\c1\varphi(x_3)\c1\varphi(x_4)\c4\Phi(y) \c3\varphi(y)\c2\varphi(y)\c4\Phi(x) \c2\varphi(x)\c2\varphi(x)}\\[0.3cm]
+    &\wick[below]{\c5\varphi(x_1)\c2\varphi(x_2)\c1\varphi(x_3)\c1\varphi(x_4)\c3\Phi(y) \c4\varphi(y)\c4\varphi(y)\c3\Phi(x)\c5\varphi(x)\c2\varphi(x)}\\[0.3cm]
+    &\wick[below]{\c5\varphi(x_1)\c2\varphi(x_2)\c1\varphi(x_3)\c1\varphi(x_4)\c3\Phi(y) \c4\varphi(y)\c4\varphi(y)\c3\Phi(x)\c2\varphi(x)\c5\varphi(x)}.\\[0.3cm]
+  \end{align*}
+These $4$ contractions relating to the same diagram, the combinatorial factor in the amplitude becomes 
+\begin{align*}
+  \dfrac{4}{\textcolor{red}{2!}\textcolor{blue}{(2!1!)^2}} = \dfrac{1}{2} = \dfrac{1}{S}.
+\end{align*}
+The symmetry factor is linked to the number of wick contractions leading to the same diagram trough the combinatorial factors apearing in the lagrangian density and the perturbative expansion of the LSZ formula. 
 \end{enumerate}
 
 

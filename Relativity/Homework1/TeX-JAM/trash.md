@@ -183,3 +183,39 @@ x_Q &= \frac{1}{2} \sqrt{4 L^2+\frac{\left(L^2 t+\sqrt{x^2 \left(L^4+2
 
 
   where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$. Together with \eqref{cone intersect}, this relation forms a system of equations.
+
+
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \newcommand{\g}{1};
+      \begin{axis}[view={0}{90}]
+          \addplot3 [
+              contour lua
+          ] {1/sqrt(x**2 + y**2) * (1 + \g * x + \g ** 2 * (x**2 + y**2)/2)/sqrt(1 + \g * x + \g ** 2 * (x**2 + y**2)/4)};
+      \end{axis}
+      \end{tikzpicture}
+    \caption{.}
+  \end{figure}
+
+
+   \begin{align*}
+    \nabla \cdot ((1+gX)^2 \nabla \phi) = \Delta \phi + 2g(1+gX)\frac{\partial \phi}{\partial X}  = -\dfrac{Q}{4\pi} \delta(\mathbf{r})
+  \end{align*} 
+  where $\nabla$ is contains Rindler coordinate space derivatives and $\mathbf{r}$ represents space coordinates. In the limit where $g$ is large (in this limit, the charge gets closer to the horizon) this modified Laplace equation simplifies to 
+  \begin{align*}
+     \frac{\partial \phi}{\partial X}  = -\dfrac{Q}{8\pi (1+X g)} \delta(X) 
+  \end{align*} 
+
+  We now have 
+  \begin{align*}
+    \nabla \cdot ((1+gX)^{-2} \mathbf{E}) = -\dfrac{Q}{4\pi} \delta(\mathbf{r}) \iff \nabla \cdot \mathbf{E} = -\dfrac{Q}{4\pi}(1+gX)^2 \delta(\mathbf{r}) + \dfrac{2g}{1+gX}\mathbf{E}_X
+  \end{align*} 
+  where $\nabla$ is contains Rindler coordinate space derivatives, $\mathbf{r}$ represents space coordinates and $\mathbf{E}$ is the electric field vector. In the limit of large $g$, the equation reduces to 
+  \begin{align*}
+    \nabla \cdot \mathbf{E} = - \dfrac{2}{X}\mathbf{E}_X
+  \end{align*}
+  We have translationnal symmetry of this equation in $\rho$ and $\varphi$ and this implies $\mathbf{E}$ is independant of $\rho$ and $\varphi$. Using thissymmetry, the previous equation can be written as 
+  \begin{align*}
+    \dfrac{\partial \mathbf{E}_X}{\partial X} = - \dfrac{2}{X}\mathbf{E}_X \iff \mathbf{E}_X = \dfrac{C}{X^2} \impliedby \phi = -\dfrac{C}{X}. 
+  \end{align*}
