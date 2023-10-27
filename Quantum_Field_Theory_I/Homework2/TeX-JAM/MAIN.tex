@@ -28,7 +28,7 @@
 %%%%%%%%%%%%%%
 % Page titre %
 %%%%%%%%%%%%%%
-\title{Homework 1} % Title of the assignement.
+\title{Homework 2} % Title of the assignement.
 \author{\PA} % Your name(s).
 \teacher{Gang Xu} % Your teacher's name.
 \class{Quantum Field Theory I} % The class title.
@@ -52,111 +52,89 @@
 
 % Assignment starts here ----------------------------
 
-\section{The Poincaré Algebra}
-\begin{enumerate}
-  \item[(a)] The Poincaré is the group of transformation of Minkowski space that preserves the spacetime interval between all events. This group contains spacetime translations and Lorentz transformation (boosts and rotations). In a coordinate system where events hapenning at $x$ with four-coordinate $x^{\mu}$, translation by a constant four-vector $a$ with components  $a^\mu$ reads $x' = x + a$ ($x^{\mu'} = x^{\mu} + a^{\mu}$). The lorentz transformation $\Lambda$ with components $\Lambda^{\nu}{}_{\mu}$ act as $x' = \Lambda x$ ($x^{\mu'} = \Lambda^{\mu}{}_{\nu} x^{\nu}$, following the matrix multiplication convention $x^\nu$ can be written as a column with $\nu$ as a row index and $\Lambda^{\mu}{}_{\nu}$ as a square matrix with $\mu$ row index and $\nu$ column index). We want to find the characteristic of the unitary operator $U$ representing Poincaré transformation near the identity $\delta$ (with components $\delta^{\mu}{}_{\nu}$). To do this, we write the first order Taylor expansions $\Lambda = \delta + \omega + O(\omega^2)$ and $a = \epsilon$ (exact even for large $\epsilon$) with respect to an infinitesimal Lorentz shift $\omega$ with components $\omega_{\mu \nu}$ (combining infinitesimal rotation angles and boost angles) and translation $\epsilon$ with components $\epsilon^\mu$. The first order in $\omega$ and $\epsilon$ expansion of the unitary is $U(\delta+\omega, \epsilon)=\mathbf{1}+\frac{i}{2} \omega_{\mu \nu} J^{\mu \nu}+i \epsilon_\mu P^\mu + O(\omega^2, \epsilon^2)$ where $J^{\mu \nu}$, $P^\mu$ are the hermitian matrices generating the Poincaré transformation. Since $\Lambda = \delta + \omega$ is a Lorentz transformation, we have that it preserves space-time intervals. The spacetime interval between events $x$ and $y$ is $(x_\mu-y_\mu)(x^\mu-y^\mu) = x_\mu x^\mu + y_\mu y^\mu - 2 y_\mu x^\mu $. Since the first two terms are themselves spacetime intervals between $x, y$, and $0$, they are individually preserved by a Poincaré transformation. This forces the invariance of the lorentzian product $y_\mu x^\mu$ for any $x, y$ under Poincaré transformations ($x^\mu y_\mu = x^{\mu'} y_\mu'$).
-  
-  In general, we can Taylor expand $x^{\mu'} y_\mu'$ around $x^\mu y_\mu$ in powers of $\omega$ as 
-  \begin{align*}
-    x^{\mu'} y_\mu' = (x^\mu + \omega^{\mu \sigma} x_{\sigma} + O(\omega^2))(y_\mu + \omega_{\mu \nu} y^{\nu} + O(\omega^2)) = x^\mu y_\mu + \omega_{\mu \nu}x^{\mu}y^{\nu} + \omega^{\mu \sigma}x_{\sigma} y_{\mu} + O(\omega^2 )
-  \end{align*}
-  but we know that length is preserved, and the unique Taylor series stops at $O(1)$ forcing all other orders to vanish. This implies that  $0 = \omega_{\mu \nu}x^{\mu}y^{\nu} + \omega_{\mu \nu}x^{\nu} y^{\mu} = (\omega_{\mu \nu} + \omega_{\nu \mu})x^{\mu}y^{\nu}$. This finally implies that $\omega_{\mu \nu} = - \omega_{\nu \mu}$ since it is true for any $x, y$ which shows $\omega_{\nu \mu}$ is antisymmetric. 
+\section{The commutator/anti-commutator}
+The construction of the spinor field starts with creation (and associated anihilation) operators $(b_\mathbf{p}^s)^\dagger$, $(c_\mathbf{p}^s)^\dagger$ (respectively creating a spinor and an anti-spinor). They act on the free vacuum $\ket{0}$ to create eigenstates (respectively $\ket{\mathbf{p}, s}$ and $\ket{\overline{\mathbf{p}, s}}$) of the space translation generators (with eigenvalues $\mathbf{p}$) and intrinsic $z$ rotation generators (with eigenvalues $s$). Using the Casimir operator (mass $m$ times identity or four-norm of the translation generators) of the Poincare group, we can use the eigenvalues $\mathbf{p}$ to extract the energy $p^0$ to form the four-momentum $p$. 
 
-  \item[(b)] The unitary $U$ is meant to represent a Poincaré symmetry transformation of the quantum states of a module Hilbert space. In quantum mechanics, A symmetry transformation preserves all the statistical properties of observables $O$. This is equivalent to saying that for any two states $\ket{\phi}$ and $\ket{\psi}$ the quantities $\bra{\phi}O\ket{\psi}$ are left unchanged by the symmetry. We have the following transformation of states $\ket{\psi'} = U\ket{\psi}$ and $\bra{\phi'} =\bra{\phi} U^\dagger$. The transformed $O'$ operator is such that
-  \begin{align*}
-    \bra{\phi}O\ket{\psi} = \bra{\phi'}O'\ket{\psi'} = \bra{\phi} U^\dagger O' U\ket{\psi},\quad \forall \bra{\phi}, \ket{\psi} \iff  O = U^\dagger O' U \iff O' = U O U^{\dagger}.
-  \end{align*}
-  \item[(c)] Following the result of the previous item, we take $O = U(\delta + \omega, \epsilon)$ and compute the operator $O'$ associated to the general $U(\Lambda, a)$ unitary Poincaré transformation representing the combined Lorentz and translation transformation $T(\Lambda, a)$. With the same notation, we write $T(\delta + \omega, \epsilon)$ to reference the infinitesimal Poincaré transformation.  Because the representation is a homomorphism, we have 
-  \begin{align*}
-    O' = U(\Lambda, a) U(T(\delta + \omega, \epsilon)) U^{\dagger}(\Lambda, a) = U(T(\Lambda, a)  T(\delta + \omega, \epsilon) T^{-1}(\Lambda, a)). 
-  \end{align*}
-  To make this expression more precise, we look for $\Lambda'$ and $a'$ such that $T^{-1}(\Lambda, a) = T(\Lambda', a')$. Acting with the identity on an arbitrary four-vector $x$ leads to 
-  \begin{align*}
-    x &= T^{-1}(\Lambda, a) T(\Lambda, a) x = T(\Lambda', a') T(\Lambda, a) x = \Lambda'(\Lambda x + a) + a' \\
-    &= \Lambda'\Lambda x + \Lambda' a + a', \quad \forall x \iff \Lambda'\Lambda = 1\ \& \ \Lambda' a + a' = 0 
-  \end{align*}
-  With these relations in hand, the action on $x$ of the product Poincaré transformation represented by $O'$ is expanded as follows:
-  \begin{align*}
-    T(\Lambda, a)  T(\delta + \omega, \epsilon) T^{-1}(\Lambda, a)x &= T(\Lambda, a)  T(\delta + \omega, \epsilon)(\Lambda^{-1} x - \Lambda^{-1} a)\\
-    &= T(\Lambda, a) ((\Lambda^{-1} x - \Lambda^{-1} a) + \omega(\Lambda^{-1} x - \Lambda^{-1} a) + \epsilon)\\
-    &= T(\Lambda, a) ((\Lambda^{-1} + \omega \Lambda^{-1})  x -\omega \Lambda^{-1} a - \Lambda^{-1} a + \epsilon)\\
-    &= ((\delta + \Lambda \omega \Lambda^{-1})  x -\Lambda\omega \Lambda^{-1} a - a + \Lambda \epsilon + a) = T(\delta + \Lambda \omega \Lambda^{-1}, -\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon )x.
-  \end{align*}
-  This relation holds for all $x$ and we can finally write $O' = U(\delta + \Lambda \omega \Lambda^{-1}, -\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)$.
+The creation and anihilation operators can be linearly combined to form spinor components of creation and anihilation fields at four-position $x$ respectively denoted $\psi^{+}_\ell(x)$ and $\psi^{-}_\ell(x)$. The combination is done with coefficients $u_\ell^s(\mathbf{p}) e^{-i p \cdot x}$ and $v_\ell^s(\mathbf{p}) e^{+i p \cdot x}$ with momentum integrated with the Lorentz invariant measure $\text{d}V_\mathbf{p}$ and spin summed. It reads 
+\begin{align*}
+  \psi^{-}_\ell(x) = \sum_s \int \text{d}V_\mathbf{p} \ u_l^s(\mathbf{p}) e^{-i p \cdot x} b_\mathbf{p}^s  \quad \&\quad \psi^{+}_\ell(x) = \sum_s \int \text{d}V_\mathbf{p} \ v_l^s(\mathbf{p}) e^{+i p \cdot x} (c_\mathbf{p}^s)^\dagger.
+\end{align*}
+The coefficient of the decomposition of the fields are chosen so that the Poincare transformations of $(b_\mathbf{p}^s)^\dagger$, $(c_\mathbf{p}^s)^\dagger$ are consistent with a representation of the Poincare group acting on the spinor component space. More precisely, this imposes relations between the spinor index transformation of the coefficients and their spin index transformation inherited from operator transformations. Linear independance of the anihilation and creation operators (they create/anihilate a full basis of the Hilbert space) provides a relation for every pair $\mathbf{p}, s$ and each element of the lorentz group acting on the pair. Progress is made by restricting this relation to coefficients evaluated at $\mathbf{p} = 0$ (the same relation links $\mathbf{p} = 0$ to non-zero $\mathbf{p}$ through consistency of boost Poincare transformations) and to rotation transformations for these \textit{rest} coefficients. The fact the $\mathbf{p}=0$ vector transforms trivially under rotation leaves all the interesting transformation properties to the spin index. We get the relations 
+\begin{align*}
+  \sum_{s'} u_{\ell'}^{s'} \mathbf{J}_{s's}^{j} (R) = \sum_{\ell} \mathcal{J}_{\ell'\ell} (R) u_{\ell}^{s'}\quad \& \quad \sum_{s'} v_{\ell'}^{s'} \mathbf{J}_{s's}^{j\ \star} (R) = -\sum_{\ell} \mathcal{J}_{\ell'\ell} (R) u_{\ell}^{s'}
+\end{align*}
+where $\mathbf{J}^{j}$ is the matrix representing the effect of rotations on the spin $j$ index and $\mathcal{J}$ is the matrix representing the of rotations on the spinor index.  Here $\mathbf{J}^j$ is restricted to be the irreductible representation of complex dimension $2j+1$ of $\text{SU}(2)$ (because the created particles have spin the same $j$). Using matrix notation, the relation for $u_{m, \pm}^{s}$ becomes 
+$
+  \mathbf{U}\mathbf{J}^{j} = \mathcal{J}\mathbf{U}
+$
+with components $[\mathbf{U}] = u_\ell^s(0)$. 
+
+By Schur's lemma, $\mathbf{U}$ is either a square matrix or the representation $\mathcal{J}$ is reducible. If $\mathbf{U}$ was a square matrix, the spin index would have the same dimensionnality as the spinor index leading to $2j+1=4 \iff j = 3/2$. If $\mathcal{J}$ is reducible, we can find a basis where it is block diagonal with blocks $\mathcal{J}_+$, $\mathcal{J}_-$ (we select the Weyl block diagonal representation). The relation for $\pm$ blocks reads 
+$
+  \mathbf{U}_{\pm}\mathbf{J}^{j} = \mathcal{J}_\pm \mathbf{U}_{\pm}
+$
+where $\mathbf{U}_{\pm}$ restricts the $\mathbf{U}$ matrix to the blocks of the reducible representation $\mathcal{J}$. 
+
+Now, Schur's Lemma implies that $\mathbf{U}_{\pm}$ are square matrices and this forces $2(2j+1) = 4 \iff j = 1/2$ consistent with spin $1/2$. For the Dirac representation, we get
+$
+  \mathbf{U}_{\pm}\mathbf{\sigma} = \mathbf{\sigma} \mathbf{U}_{\pm}
+$
+where $\mathbf{\sigma}$ is any pauli matrix. The only matrix $U_{\pm}$ that commutes with all the pauli matrices is a constant $c_\pm$ multiple of the identity. Restoring the internal indices of $\mathbf{U}_{\pm}$ ($s$ spin index and $m$ internal block index) leads to $u_{m, \pm}^{s} = c_\pm \delta_{ms}$ and similar considerations lead to $v_{m, \pm}^{s} = -id_\pm (\sigma_2)_{ms}$ where $d_\pm$ is another proportionality constant. 
+
+% $\beta = i \gamma^0$
+Finally, we impose that the parity transformation of the spinor fields be compatible with the parity transformation of its constituant creation/anihilation operator (inherited from the parity transformation of the states). This constraint allows to make $c_\pm, d_\pm$ more precise by reducing them to sign factors $b_u, b_v$ (with $b_u^2 = b_v^2 = 1$). Explicitely, we can write 
+\begin{align*}
+  &u^{(1/2)}(0) = 
+  \begin{pmatrix}
+    1& 0& b_u& 0
+  \end{pmatrix}^T,\quad
+   u^{(-1/2)}(0) = 
+  \begin{pmatrix}
+    1& 0& 0& b_u
+  \end{pmatrix}^T\\
+  &v^{(1/2)}(0) = 
+  \begin{pmatrix}
+    1& 0& 0& b_v
+  \end{pmatrix}^T,\quad
+   v^{(-1/2)}(0) = 
+  \begin{pmatrix}
+    1& 0& b_v& 0
+  \end{pmatrix}^T.
+\end{align*}
 \newpage
-  \item[(d)] Combining the hermitian generator expansion of $U(\delta + \omega, a)$ (we omit Landau order notation in the next calculations) given in item (a) to the expression for the transformed operator $O'$ of item (c), we find
+\begin{enumerate}
+  \item[(a)] The next step in the construction of the spinor field consists in combining the anihilation and creation field to produce a total field $\psi_\ell(x) = \kappa \psi^-(x) + \lambda \psi^+(x)$ with $\kappa, \lambda \in \mathbb{C}$. Causality requires that the commutator/anti-commutator (respectively denoted $[\circ,\circ]_-$ and $[\circ,\circ]_+$) of the field at $x$ with its adjoint at $y$ vanishes for spacelike $x-y$. The commutator/anti-commutator is computed in general by using the fundamental commutator/anti-commutator
   \begin{align*}
-    O' &= U(\Lambda, a) U(\delta+\omega, \epsilon) U^\dagger(\Lambda, a)\tag{$\star$}\\&=\mathbf{1}+\frac{i}{2} \omega_{\mu \nu} U(\Lambda, a)J^{\mu \nu}U^\dagger(\Lambda, a)+i \epsilon_\mu U(\Lambda, a)P^\mu U^\dagger(\Lambda, a)\\
-    &= \mathbf{1}+\frac{i}{2} (\Lambda \omega \Lambda^{-1})_{\mu \nu} J^{\mu \nu}+i (-\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)_\mu P^\mu\\
-    &= \mathbf{1}+\frac{i}{2} (\Lambda_{\mu}{}^{\rho}  \omega_{\rho\sigma} \Lambda_{\nu}{}^{\sigma}) J^{\mu \nu}+i (-\Lambda_{\mu}{}^{\rho}   \Lambda_{\nu}{}^{\sigma} a^{\nu} \omega_{\rho\sigma} + \Lambda_{\mu}{}^{\nu} \epsilon_{\nu}) P^\mu \\
-    &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i (-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho +  \epsilon_{\mu} \Lambda_{\nu}{}^{\mu} P^\nu)\\ 
-    &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i \epsilon_{\mu} \Lambda_{\nu}{}^{\mu} P^\nu + \frac{i}{2}(-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho +\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\nu\mu} P^\rho)\\ 
-    &= \mathbf{1}+\frac{i}{2} (\Lambda_{\rho}{}^{\mu}  \omega_{\mu\nu} \Lambda_{\sigma}{}^{\nu}) J^{\rho \sigma}+i \epsilon_{\mu} \Lambda_{\rho}{}^{\mu} P^\rho + \frac{i}{2}(-\Lambda_{\rho}{}^{\mu}   \Lambda_{\sigma}{}^{\nu} a^{\sigma} \omega_{\mu\nu} P^\rho + \Lambda_{\sigma}{}^{\nu}   \Lambda_{\rho}{}^{\mu} a^{\rho} \omega_{\mu\nu} P^\sigma)
+    [b^{s}_\mathbf{p}, (b^{s'}_\mathbf{q})^\dagger]_{\pm} = E_\mathbf{q} (2\pi)^3 \delta(\mathbf{p} - \mathbf{q})\delta_{ss'} \quad \& \quad [c^{s}_\mathbf{p}, (c^{s'}_\mathbf{q})^\dagger]_{\pm} = E_\mathbf{q} (2\pi)^3 \delta(\mathbf{p} - \mathbf{q})\delta_{ss'} 
   \end{align*}
-  where we expanded the result of item (c) at $O(\omega, \epsilon)$ in the third line and used antisymmetry of $\omega_{\mu\nu}$ in the second last line. To obtain the component representation of the previous result, the vector/matrix multiplication was written and then converted to the appropriated index structure:
+  with all other combinations having $[\circ,\circ]_\pm = 0$. We have the expansion 
   \begin{align*}
-    &(-\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)^\mu = -\Lambda^{\mu}{}_{\rho} \omega^{\rho}{}_{\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu} a^{\nu} + \Lambda^{\mu}{}_{\nu} \epsilon^{\nu}\\ &\iff (-\Lambda\omega \Lambda^{-1} a + \Lambda \epsilon)_\mu = -\Lambda_{\mu}{}^{\rho} \omega_{\rho\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu} a^{\nu} + \Lambda_{\mu}{}^{\nu} \epsilon_{\nu} =  -\Lambda_{\mu}{}^{\rho} \Lambda_{\nu}{}^{\sigma} a_{\nu} \omega_{\rho\sigma} + \Lambda_{\mu}{}^{\nu} \epsilon_{\nu}\\
-    &(\Lambda \omega \Lambda^{-1})^{\mu}{}_{\nu} = \Lambda^{\mu}{}_{\rho}  \omega^{\rho}{}_{\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu}\\
-    &\iff (\Lambda \omega \Lambda^{-1})_{\mu\nu} = \eta_{\mu\lambda} (\Lambda \omega \Lambda^{-1})^{\lambda}{}_{\nu} = \Lambda_{\mu}{}^{\rho}  \omega_{\rho\sigma}  (\Lambda^{-1})^{\sigma}{}_{\nu} = \Lambda_{\mu}{}^{\rho}  \omega_{\rho\sigma} \Lambda_{\nu}{}^{\sigma}.
+    &[\kappa \psi^-_\ell(x) + \lambda \psi^+_\ell(x), \kappa^\star (\psi^-(y))_{\ell'}^{\dagger} + \lambda^\star (\psi^+(y))_{\ell'}^\dagger]_{\pm}\\
+    &= [\kappa \psi^-_{\ell}(x), \kappa^\star (\psi^-_{\ell'}(y))^{\dagger}]_{\pm} + [\kappa \psi^-_{\ell}(x),\lambda^\star (\psi^+_{\ell'}(y))^\dagger]_{\pm} + [\lambda \psi^+_{\ell}(x), \kappa^\star (\psi^-_{\ell'}(y))^{\dagger}]_{\pm} + [\lambda \psi^+_{\ell}(x), \lambda^\star (\psi^+(y)_{\ell'})^\dagger]_{\pm}\\
+    &=|\kappa|^2[\psi^-_{\ell}(x), (\psi^-_{\ell'}(y))^{\dagger}]_{\pm} + |\lambda|^2[ \psi^+_{\ell}(x), (\psi^+_{\ell'}(y))^\dagger]_{\pm} +\sim \left[ [b,c]_{\pm} + [c^\dagger, b^{\dagger}]_{\pm}\right]\\
+    &= 
   \end{align*}
-  The inverse transformation components could be related to the direct components because the Lorentz matrices preserve the Lorentzian product of arbitrary $x, y$. Indeed, this property implies 
-  \begin{align*}
-    &\eta_{\rho \sigma} x^{\rho} y^{\sigma}= \eta_{\mu \nu}(\Lambda^{\mu}{}_{\rho} x^\rho  \Lambda^{\nu}{}_{\sigma} y^{\sigma}), \ \forall x, y \iff \eta_{\rho \sigma}= \eta_{\mu \nu}(\Lambda^{\mu}{}_{\rho} \Lambda^{\nu}{}_{\sigma}) \\
-    &\iff \eta_{\rho \sigma} (\Lambda^{-1})^{\sigma}{}_{\lambda}= \eta_{\mu \nu} \Lambda^{\mu}{}_{\rho} \Lambda^{\nu}{}_{\sigma} (\Lambda^{-1})^{\sigma}{}_{\lambda} = \eta_{\mu \lambda} \Lambda^{\mu}{}_{\rho}
-    \iff (\Lambda^{-1})^{\nu}{}_{\lambda} = \eta^{\nu \rho}\eta_{\rho \sigma} (\Lambda^{-1})^{\sigma}{}_{\lambda}= \eta_{\mu \lambda} \eta^{\nu \rho} \Lambda^{\mu}{}_{\rho} = \Lambda_{\lambda}{}^{\nu}.
-  \end{align*}
-  Equality of the second and last lines of $(\star)$ for all $\omega, \epsilon$ ensures that the tensors contracted with $\omega$ and $\epsilon$ are equal. Regrouping terms proportional to $\omega_{\mu\nu}$ and $\epsilon_\mu$ We have 
-  \begin{align*}
-   &U(\Lambda, a) J^{\mu\nu} U^{\dagger}(\Lambda, a) =\Lambda_\rho{ }^\mu \Lambda_\rho{ }^\nu\left(J^{\rho \sigma}+a^\rho P^\sigma-a^\sigma P^\rho\right), \\ &U(\Lambda, a) P^\mu U^{\dagger}(\Lambda, a) =\Lambda_\rho{ }^\mu P^\rho .
-  \end{align*}
+  \item[(b)]
+  \item[(c)]
+  \item[(d)] 
+  \item[(e)]
+  \item[(f)]
+  \item[(g)]
+  \item[(h)]     
+\end{enumerate}
 
-  \item[(e)] To extract the commutation relations of the generators $J^{\mu \nu}, P^{\mu}$, we start by setting $\Lambda = \delta + \omega$, $a = \epsilon$ in the final result of item (d). At first order in $\omega, \epsilon$, we get
-  \begin{align*}
-    P^\mu + \eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho = \Lambda_\rho{ }^\mu P^\rho = U(\Lambda, a) P^\mu U^{\dagger}(\Lambda, a) &= \left(\mathbf{1}+\frac{i}{2} \omega_{\lambda \epsilon} J^{\lambda \epsilon}+i \epsilon_\nu P^\nu\right) P^\mu \left(\mathbf{1}-\frac{i}{2} \omega_{\rho \sigma} J^{\rho \sigma}-i \epsilon_\sigma P^\sigma\right)\\
-    &= P^\mu + \frac{i}{2} \left(\omega_{\lambda \epsilon} J^{\lambda \epsilon}P^{\mu} - P^{\mu} \omega_{\rho \sigma}  J^{\rho \sigma}\right)+i (\epsilon_\nu P^\nu P^\mu - P^\mu \epsilon_\nu P^\nu)\\
-    &= P^\mu + \frac{i}{2} \omega_{\rho \sigma} [J^{\rho \sigma}, P^{\mu}]  +i \epsilon_\nu [P^{\nu}, P^{\mu}].
-   \end{align*}
-   where $U^{\dagger}(\Lambda, a) = U((\delta + \omega)^{-1}, -(\delta + \omega)^{-1} a) = U(\delta - \omega, -\epsilon + \omega \epsilon) = U(\delta - \omega, -\epsilon)$ was used. Invoking the validity of the last set of equalities for all $\omega, \epsilon$, we find: 
-    \begin{align*}
-      [P^{\nu}, P^{\mu}] = 0 \quad \& \quad \dfrac{i}{2}[J^{\rho \sigma}, P^{\mu}] =  \dfrac{1}{2}\left(\eta^{\mu \sigma}P^\rho- \eta^{\mu \rho} P^\sigma\right).
-    \end{align*}
-    with the antisymmetry of $\omega$ used to write $$2\eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho = \eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho - \eta^{\mu \sigma}\omega_{\sigma \rho} P^\rho = \eta^{\mu \sigma}\omega_{\rho \sigma} P^\rho - \eta^{\mu \rho}\omega_{\rho \sigma} P^\sigma. $$
-    The expanded transformation of $J^{\mu\nu}$ reads 
-    \begin{align*}
-      J^{\mu \nu} + \dfrac{i}{2} \omega_{\rho\sigma} [J^{\rho \sigma}, J^{\mu \nu}] + O(\epsilon) &= \left(\mathbf{1}+\frac{i}{2} \omega_{\lambda \epsilon} J^{\lambda \epsilon}+i \epsilon_\alpha P^\alpha\right) J^{\mu \nu} \left(\mathbf{1}-\frac{i}{2} \omega_{\rho \sigma} J^{\rho \sigma}-i \epsilon_\sigma P^\sigma\right)\\
-      &= U(\Lambda, a) J^{\mu\nu} U^{\dagger}(\Lambda, a)\\
-      &= \Lambda_\rho{ }^\mu \Lambda_\sigma{ }^\nu\left(J^{\rho \sigma}+\epsilon^\rho P^\sigma-\epsilon^\sigma P^\rho\right) \\
-      &= (\delta_\rho{ }^\mu + \omega_\rho{ }^\mu)(\delta_\sigma{ }^\nu+\omega_\sigma{ }^\nu) J^{\rho \sigma} + O(\epsilon)\\
-      &= J^{\mu \nu} + J^{\mu \sigma} \omega_\sigma{ }^\nu + J^{\rho \nu}\omega_\rho{ }^\mu + O(\epsilon)\\
-      &= J^{\mu \nu} + \dfrac{1}{2} \omega_{\rho\sigma} \left(\eta^{\nu \sigma}J^{\mu \rho} \omega_{\rho\sigma} -\eta^{\nu \rho}J^{\mu \sigma} + \eta^{\mu \sigma} J^{\rho \nu} - \eta^{\mu \rho} J^{\sigma \nu}\right) + O(\epsilon)
-    \end{align*}
-    The expansion in $\epsilon$ was not explicit because it only serves to determine $[J^{\rho \sigma}, P^{\mu}]$ which is already known at that point. Finally, using the fact $\eta$ is symmetric and $\omega$ arbitrary, we get 
-    \begin{align*}
-      \dfrac{i}{2} [J^{\rho \sigma}, J^{\mu \nu}] = \dfrac{1}{2} \left(\eta^{\nu \sigma} J^{\mu \rho} -\eta^{\nu \rho} J^{\mu \sigma} + \eta^{\sigma\mu} J^{\rho \nu} - \eta^{\rho\mu} J^{\sigma \nu}\right).
-    \end{align*}
-  \item[(f)] We now define the angular momentum vector $\mathbf{J} = (J^{23}, J^{31}, J^{12}) \equiv (J^1, J^2, J^3)$.  The commutation relation of these operators is given by
-  \begin{align*}
-    &[J^1, J^2] = [J^{23}, J^{31}] = -i \left(\eta^{1 3} J^{3 2} -\eta^{1 2} J^{3 3} + \eta^{33} J^{2 1} - \eta^{23} J^{3 1}\right) = -i \left( \eta^{33} J^{2 1}\right) = -i (J^{12}) = -i J^3\\
-    &[J^2, J^3] = [J^{31}, J^{12}] =   -i\left(\eta^{2 1} J^{1 3} -\eta^{2 3} J^{1 1} + \eta^{1 1} J^{3 2} - \eta^{3 1} J^{1 2}\right) = -i\left( \eta^{1 1} J^{3 2}\right) = -i\left(J^{2 3}\right) = -i J^{1} \\
-    &[J^3, J^1] = [J^{12}, J^{23}] = -i\left(\eta^{3 2} J^{2 1} -\eta^{3 1} J^{2 2} + \eta^{2 2} J^{1 3} - \eta^{1 2} J^{2 3}\right) = -i\left(\eta^{2 2} J^{1 3}\right) = -i\left(J^{3 1}\right) = -iJ^2 
-  \end{align*}  
-  Combining these results with the antisymmetry of the commutator, we recover $\left[J^i, J^j\right]=-i \epsilon^{i j}{}_{k} J^k$.
-  \item[(g)] We finally consider the commutation of the contraction $P^2 = P^{\mu} P_\mu$ with all other generators of the Poincaré group. Since $[P^{\nu}, P^{\mu}] = 0$ the $P^2$ commutes with all translation generators. For Lorentz transformation generators, we get 
-  \begin{align*}
-    [P^{\mu} P_\mu, J^{\rho \sigma}] &= P^{\mu}[P_\mu, J^{\rho \sigma}] + [P^{\mu}, J^{\rho \sigma}] P_\mu\\
-    &= P_{\mu}[P^\mu, J^{\rho \sigma}] + [P^{\mu}, J^{\rho \sigma}] P_\mu\\
-    &=  -i \left(P_{\mu}\eta^{\mu \sigma}P^\rho- P_{\mu}\eta^{\mu \rho} P^\sigma\right) -i \left(\eta^{\mu \sigma}P^\rho P_{\mu}- \eta^{\mu \rho} P^\sigma P_{\mu}\right)\\
-    &= -i\left(P^{\sigma}P^\rho- P^{\rho} P^\sigma\right) -i \left(P^\rho P^{\sigma}- P^\sigma P^{\rho}\right) = 0
-  \end{align*} 
-  so $P^2$ commutes with all generators.  
-
+\section{Causality condition}
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)]
+  \item[(c)]
+  \item[(d)] 
+  \item[(e)]   
 \end{enumerate}
 
 
-
-
 \section{Acknowledgement}
-I worked on my own for this assignment.
+
 
 
 % References
