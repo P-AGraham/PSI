@@ -10,6 +10,13 @@ Suppose the trajectory is parametrised by $x$ so that it takes the form of a fun
     T[y(x)] = \int_{x_A}^{x_B} \text{d} x \dfrac{\sqrt{1 + \dot{y}(x)^2}}{\sqrt{2gy}}. 
 \end{align*}
 
+  \begin{align*}
+    &t=\pm \sqrt{L^2 + x_Q^2} + \sqrt{\rho^2 + (x-x_Q)^2}\\
+    &\implies t^2-(L^2 + x_Q^2) - (\rho^2 + (x-x_Q)^2) = \pm 2\sqrt{L^2 + x_Q^2}\sqrt{\rho^2 + (x-x_Q)}\\
+    &\implies  (t^2-(L^2 + x_Q^2) - (\rho^2 + (x-x_Q)^2))^2 = 4(L^2 + x_Q^2)(\rho^2 + (x-x_Q)^2)\\
+    &\implies (t^2-(L^2 + x_Q^2))^2 -2(t^2-(L^2 + x_Q^2))(\rho^2 + (x-x_Q)^2) + (\rho^2 + (x-x_Q)^2)^2 = 4(L^2 + x_Q^2)(\rho^2 + (x-x_Q)^2)
+  \end{align*}
+
 
 %\input{figures/P1_1.pdf}
 \subsection{Conserved quantity}
@@ -134,18 +141,81 @@ We can also write $\epsilon_{ij}{}^k J^{ij} =  J^k$ where $-\epsilon_{ij}{}^k = 
     &= -i \left(- \epsilon_{i}{}^{mk} \epsilon_{lm}{}^{n} J^{l i} + \epsilon^{m}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{lj} - \epsilon_{i}{}^{lk} \epsilon_{lm}{}^{n} J^{im} + \epsilon^{l}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{jm}\right)\\
     &= -i \left(- \epsilon_{i}{}^{km} \epsilon_{l}{}^{nm} J^{l i} + \epsilon^{k}{}_{j}{}^{m} \epsilon_{l}{}^{n}{}_m J^{lj} - \epsilon_{i}{}^{lk} \epsilon_{lm}{}^{n} J^{im} + \epsilon^{l}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{jm}\right)
 
-Since $\mathbf{J}^j$  same spin and w
+setting $1+X(kE)$ to $0$ which implies $X = -(kE)^{-1}$ independently of $\rho$ and $\varphi$ : the horizon is an infinite wall for Rindler observers. In the lab coordinates the horizon is $-t^2 + x^2 = (kE)^{-2}$ which is the set of events at proper distance $(kE)^{-1}$ from the rindle observer. 
 
-[(b^{s}_\mathbf{p})^\dagger, (b^{s}_\mathbf{q})^\dagger]_{\pm} = [c^{s}_\mathbf{p}, c^{s}_\mathbf{q}]_{\pm} = [(c^{s}_\mathbf{p})^\dagger, (c^{s}_\mathbf{q})^\dagger]_{\pm} = [(c^{s}_\mathbf{p})^\dagger, (c^{s}_\mathbf{q})^\dagger]_{\pm} = 0
+As a bonus we want to find the $3D$ shape of the Rindler horizon. The horizon is a null hypersurface and rotation symmetry 
+
+where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$
+
+To find the retarded proper time effective at $x^\nu$, we can intersect the previous hyperbola equation with the past light cone at $x^{\mu}$ (equivalent formulation of the retarded time defining condition stated above).  
+
+x_Q &= \frac{1}{2} \sqrt{4 L^2+\frac{\left(L^2 t+\sqrt{x^2 \left(L^4+2
+   L^2 \left(\rho ^2+t^2-x^2\right)+\left(\rho
+   ^2-t^2+x^2\right)^2\right)}+\rho ^2 t-t^3+t
+   x^2\right)^2}{\left(t^2-x^2\right)^2}}\\
 
 
-\footnote{$\mathcal{J}$ being an irreductible representation of the spin subgroup would correspond to irreductible representations $(a, b)$ of the $\text{SU}(2)\times \text{SU}(2)$ Lorentz group with $3/2 = a+b = |a-b| \impliedby a = 3/2, b = 0$ which are not compatible with a representation of parity inversion. Parity being important for the compatibility of spinor index transformation and operator transformation, we ignore these possibilities.}
+  \item[(c)] Because the trajectory is hyperbolic, we can form the relation 
+  \begin{align*}
+    x_Q^2 - t_Q^2 = \dfrac{1}{(kE)^2}\cosh^2(kE \tau) - \dfrac{1}{(kE)^2}\sinh^2(kE \tau) = \dfrac{1}{(kE)^2} \impliedby x_Q = \sqrt{L^2 + t_Q^2},  \quad \text{with $L= (kE)^{-1}$}. \tag{$\star \star$} \label{hyper}
+  \end{align*}
+  where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$. Together with \eqref{cone intersect}, this relation forms a system of equations leading to the causal $t_Q$ solution 
+  \begin{align*}
+   t_Q 
+   &= \frac{-\sqrt{x^2 \left(L^4+2 L^2 \left(\rho
+   ^2+t^2-x^2\right)+\left(\rho ^2-t^2+x^2\right)^2\right)}+t(\rho
+   ^2 + x^2 + L^2 - t^2)}{2 \left(x^2-t^2\right)}\\
+   &= \frac{-2\sqrt{x^2 \left(L^4-2 L^2 \left(\rho
+   ^2-t^2+x^2\right)/4 + L^2 \rho^2+\left(\rho ^2-t^2+x^2\right)^2/4\right)}+t\delta^2}{2 \left(x^2-t^2\right)} = \frac{-2|x| \xi+t\delta}{2 \left(x^2-t^2\right)}
+  \end{align*}
+  where $\xi = \left(\left(L^2+t^2-\rho^2-x^2\right)^2 / 4+L^2 \rho^2\right)^{\frac{1}{2}}$ and $\delta = \rho^2 +x^2 +L^2-t^2$. Substituting this result and using $\xi^2 = (\delta - 2L^2)^2/4 + L^2 \rho^2$ in \eqref{hyper} we get 
+  \begin{align*}
+    x_Q &= \sqrt{L^2 + t_Q^2} \\
+    &=  \dfrac{\sqrt{4 L^2\left(x^2-t^2\right)^2 -4x^2 \xi^2+t^2\delta^2 -4|x|t \delta t }}{2 \left(x^2-t^2\right)}
+    &= \dfrac{\sqrt{4 L^2\left(x^4-t^2\right)^2 -4x^2 ((\delta - 2L^2)^2/4 + L^2 \rho^2)+t^2\delta^2 -4|x|t \delta t }}{2 \left(x^2-t^2\right)}
+  \end{align*}
+  The code used to obtain these results is:
+  \begin{lstlisting}[language=Mathematica,caption={Mathematica code for $t_Q$}]
+    eq1 = t - tQ - Sqrt[rho^2 + (x - xQ)^2] == 0;
+    eq1 = eq1 /. xQ -> Sqrt[L^2 + tQ^2] // Simplify;
+    tQs = tQ /. Solve[eq1, tQ][[2]] // Simplify;
+  \end{lstlisting}
 
-If $\mathbf{U}$ was a square matrix, the spin index would have the same dimensionnality as the spinor index leading to $2j+1=4 \iff j = 3/2$.
 
-$\partial_{\mu, x-y}$ differenciates with respect to components of $x-y$. Using the chain rule, we have $\partial_{\mu, x-y} D(x-y) = \partial_{\mu, x} D(x-y)$ and $\partial_{\mu, x-y} D(y-x) = -\partial_{\mu, x} D(x-y)$
+  where the positive solution for $x_Q$ is selected since the trajectory solution presented above has $x_Q \geq 0$. Together with \eqref{cone intersect}, this relation forms a system of equations.
 
 
-&=  \left(|\kappa|^2 \ \dfrac{1}{m}\left(\dfrac{1}{-i}\gamma^\mu \partial_\mu + b_u m\right)\beta D(x-y) \pm |\lambda|^2 \ \dfrac{1}{m}\left(\dfrac{1}{i}\gamma^\mu \partial_\mu + b_v m\right)\beta  D(y-x)\right) \beta\\
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \newcommand{\g}{1};
+      \begin{axis}[view={0}{90}]
+          \addplot3 [
+              contour lua
+          ] {1/sqrt(x**2 + y**2) * (1 + \g * x + \g ** 2 * (x**2 + y**2)/2)/sqrt(1 + \g * x + \g ** 2 * (x**2 + y**2)/4)};
+      \end{axis}
+      \end{tikzpicture}
+    \caption{.}
+  \end{figure}
 
-&=\int \text{d}V_\mathbf{p} \ \left(|\kappa|^2 \ \dfrac{1}{m}\left(\dfrac{1}{-i}\gamma^\mu \partial_\mu + b_u m\right)\beta e^{-i p \cdot (x - y)} \pm |\lambda|^2 \ \dfrac{1}{m}\left(\dfrac{1}{i}\gamma^\mu \partial_\mu + b_v m\right) \beta e^{+i p \cdot (x - y)}\right) \\
+
+   \begin{align*}
+    \nabla \cdot ((1+gX)^2 \nabla \phi) = \Delta \phi + 2g(1+gX)\frac{\partial \phi}{\partial X}  = -\dfrac{Q}{4\pi} \delta(\mathbf{r})
+  \end{align*} 
+  where $\nabla$ is contains Rindler coordinate space derivatives and $\mathbf{r}$ represents space coordinates. In the limit where $g$ is large (in this limit, the charge gets closer to the horizon) this modified Laplace equation simplifies to 
+  \begin{align*}
+     \frac{\partial \phi}{\partial X}  = -\dfrac{Q}{8\pi (1+X g)} \delta(X) 
+  \end{align*} 
+
+  We now have 
+  \begin{align*}
+    \nabla \cdot ((1+gX)^{-2} \mathbf{E}) = -\dfrac{Q}{4\pi} \delta(\mathbf{r}) \iff \nabla \cdot \mathbf{E} = -\dfrac{Q}{4\pi}(1+gX)^2 \delta(\mathbf{r}) + \dfrac{2g}{1+gX}\mathbf{E}_X
+  \end{align*} 
+  where $\nabla$ is contains Rindler coordinate space derivatives, $\mathbf{r}$ represents space coordinates and $\mathbf{E}$ is the electric field vector. In the limit of large $g$, the equation reduces to 
+  \begin{align*}
+    \nabla \cdot \mathbf{E} = - \dfrac{2}{X}\mathbf{E}_X
+  \end{align*}
+  We have translationnal symmetry of this equation in $\rho$ and $\varphi$ and this implies $\mathbf{E}$ is independant of $\rho$ and $\varphi$. Using thissymmetry, the previous equation can be written as 
+  \begin{align*}
+    \dfrac{\partial \mathbf{E}_X}{\partial X} = - \dfrac{2}{X}\mathbf{E}_X \iff \mathbf{E}_X = \dfrac{C}{X^2} \impliedby \phi = -\dfrac{C}{X}. 
+  \end{align*}

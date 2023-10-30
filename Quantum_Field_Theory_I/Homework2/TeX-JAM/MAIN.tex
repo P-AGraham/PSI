@@ -53,15 +53,15 @@
 % Assignment starts here ----------------------------
 
 \section{The commutator/anti-commutator}
-The construction of the spinor field starts with creation (and associated anihilation) operators $(b_\mathbf{p}^s)^\dagger$, $(c_\mathbf{p}^s)^\dagger$ (respectively creating a spinor and an anti-spinor). They act on the free vacuum $\ket{0}$ to create eigenstates (respectively $\ket{\mathbf{p}, s}$ and $\ket{\overline{\mathbf{p}, s}}$) of the space translation generators (with eigenvalues $\mathbf{p}$) and intrinsic $z$ rotation generators (with eigenvalues $s$). Using the Casimir operator (mass $m$ times identity or four-norm of the translation generators) of the Poincare group, we can use the eigenvalues $\mathbf{p}$ to extract the energy $p^0$ to form the four-momentum $p$. 
+The construction of the spinor field starts with creation (and associated anihilation) operators $(b_\mathbf{p}^s)^\dagger$, $(c_\mathbf{p}^s)^\dagger$ respectively creating a spinor and an anti-spinor. They act on the free vacuum $\ket{0}$ to create respective eigenstates $\ket{\mathbf{p}, s}$ and $\ket{\overline{\mathbf{p}, s}}$. They are eigenstates of space translation generators with eigenvalues $\mathbf{p}$ and intrinsic $z$ rotation generators with eigenvalues $s$. Using the Casimir operator (mass $m$ times identity or four-norm of the translation generators) of the Poincare group, we can use the eigenvalues $\mathbf{p}$ to extract the energy $p^0$ to form the four-momentum $p$. 
 
 The creation and anihilation operators can be linearly combined to form spinor components of creation and anihilation fields at four-position $x$ respectively denoted $\psi^{+}_\ell(x)$ and $\psi^{-}_\ell(x)$. The combination is done with coefficients $u_\ell^s(\mathbf{p}) e^{-i p \cdot x}$ and $v_\ell^s(\mathbf{p}) e^{+i p \cdot x}$ with momentum integrated with the Lorentz invariant measure $\text{d}V_\mathbf{p}$ and spin summed. It reads 
 \begin{align*}
-  \psi^{-}_\ell(x) = \sum_s \int \text{d}V_\mathbf{p} \ u_l^s(\mathbf{p}) e^{-i p \cdot x} b_\mathbf{p}^s  \quad \&\quad \psi^{+}_\ell(x) = \sum_s \int \text{d}V_\mathbf{p} \ v_l^s(\mathbf{p}) e^{+i p \cdot x} (c_\mathbf{p}^s)^\dagger.
+  \psi^{-}_\ell(x) = \sum_s \int \text{d}V_\mathbf{p} \ u_l^s(\mathbf{p}) e^{-i p \cdot x} b_\mathbf{p}^s  \quad \&\quad \psi^{+}_\ell(x) = \sum_s \int \text{d}V_\mathbf{p} \ v_\ell^s(\mathbf{p}) e^{+i p \cdot x} (c_\mathbf{p}^s)^\dagger.
 \end{align*}
 The coefficient of the decomposition of the fields are chosen so that the Poincare transformations of $(b_\mathbf{p}^s)^\dagger$, $(c_\mathbf{p}^s)^\dagger$ are consistent with a representation of the Poincare group acting on the spinor component space. More precisely, this imposes relations between the spinor index transformation of the coefficients and their spin index transformation inherited from operator transformations. Linear independance of the anihilation and creation operators (they create/anihilate a full basis of the Hilbert space) provides a relation for every pair $\mathbf{p}, s$ and each element of the lorentz group acting on the pair. Progress is made by restricting this relation to coefficients evaluated at $\mathbf{p} = 0$ (the same relation links $\mathbf{p} = 0$ to non-zero $\mathbf{p}$ through consistency of boost Poincare transformations) and to rotation transformations for these \textit{rest} coefficients. The fact the $\mathbf{p}=0$ vector transforms trivially under rotation leaves all the interesting transformation properties to the spin index. We get the relations 
 \begin{align*}
-  \sum_{s'} u_{\ell'}^{s'} \mathbf{J}_{s's}^{j} (R) = \sum_{\ell} \mathcal{J}_{\ell'\ell} (R) u_{\ell}^{s'}\quad \& \quad \sum_{s'} v_{\ell'}^{s'} \mathbf{J}_{s's}^{j\ \star} (R) = -\sum_{\ell} \mathcal{J}_{\ell'\ell} (R) u_{\ell}^{s'}
+  \sum_{s'} u_{\ell'}^{s'} \mathbf{J}_{s's}^{j} (R) = \sum_{\ell} \mathcal{J}_{\ell'\ell} (R) u_{\ell}^{s'}\quad \& \quad \sum_{s'} v_{\ell'}^{s'} \mathbf{J}_{s's}^{j\ \star} (R) = -\sum_{\ell} \mathcal{J}_{\ell'\ell} (R) v_{\ell}^{s'}
 \end{align*}
 where $\mathbf{J}^{j}$ is the matrix representing the effect of rotations on the spin $j$ index and $\mathcal{J}$ is the matrix representing the of rotations on the spinor index.  Here $\mathbf{J}^j$ is restricted to be the irreductible representation of complex dimension $2j+1$ of $\text{SU}(2)$ (because the created particles have spin the same $j$). Using matrix notation, the relation for $u_{m, \pm}^{s}$ becomes 
 $
@@ -69,17 +69,17 @@ $
 $
 with components $[\mathbf{U}] = u_\ell^s(0)$. 
 
-By Schur's lemma, $\mathbf{U}$ is either a square matrix or the representation $\mathcal{J}$ is reducible. If $\mathbf{U}$ was a square matrix, the spin index would have the same dimensionnality as the spinor index leading to $2j+1=4 \iff j = 3/2$. If $\mathcal{J}$ is reducible, we can find a basis where it is block diagonal with blocks $\mathcal{J}_+$, $\mathcal{J}_-$ (we select the Weyl block diagonal representation). The relation for $\pm$ blocks reads 
+By Schur's lemma, $\mathbf{U}$ is either a square matrix or the representation $\mathcal{J}$ is reducible. The spinor representation of the Lorentz group (and the associated $\mathcal{J}$) is reductible so we can't see $\mathbf{U}$ as a square matrix at this stage. However, we can find a find a basis (Weyl repesentation) where $\mathcal{J}$ is block diagonal with blocks $\mathcal{J}_+$, $\mathcal{J}_-$. The relation for $\pm$ blocks reads 
 $
   \mathbf{U}_{\pm}\mathbf{J}^{j} = \mathcal{J}_\pm \mathbf{U}_{\pm}
 $
 where $\mathbf{U}_{\pm}$ restricts the $\mathbf{U}$ matrix to the blocks of the reducible representation $\mathcal{J}$. 
 
-Now, Schur's Lemma implies that $\mathbf{U}_{\pm}$ are square matrices and this forces $2(2j+1) = 4 \iff j = 1/2$ consistent with spin $1/2$. For the Dirac representation, we get
+Now, Schur's Lemma implies that $\mathbf{U}_{\pm}$ are square matrices and this forces $2(2j+1) = 4 \iff j = 1/2$ consistent with spin $1/2$ transformation for our particles. Furthemore, in the Weyl representation, we get
 $
   \mathbf{U}_{\pm}\mathbf{\sigma} = \mathbf{\sigma} \mathbf{U}_{\pm}
 $
-where $\mathbf{\sigma}$ is any pauli matrix. The only matrix $U_{\pm}$ that commutes with all the pauli matrices is a constant $c_\pm$ multiple of the identity. Restoring the internal indices of $\mathbf{U}_{\pm}$ ($s$ spin index and $m$ internal block index) leads to $u_{m, \pm}^{s} = c_\pm \delta_{ms}$ and similar considerations lead to $v_{m, \pm}^{s} = -id_\pm (\sigma_2)_{ms}$ where $d_\pm$ is another proportionality constant. 
+where $\mathbf{\sigma}$ is any Pauli matrix. The only matrix $U_{\pm}$ that commutes with all the pauli matrices is a constant $c_\pm$ multiple of the identity. Restoring the internal indices of $\mathbf{U}_{\pm}$ ($s$ spin index and $m$ internal block index) leads to $u_{m, \pm}^{s} = c_\pm \delta_{ms}$ and similar considerations lead to $v_{m, \pm}^{s} = -id_\pm (\sigma_2)_{ms}$ where $d_\pm$ is another proportionality constant. 
 
 % $\beta = i \gamma^0$
 Finally, we impose that the parity transformation of the spinor fields be compatible with the parity transformation of its constituant creation/anihilation operator (inherited from the parity transformation of the states). This constraint allows to make $c_\pm, d_\pm$ more precise by reducing them to sign factors $b_u, b_v$ (with $b_u^2 = b_v^2 = 1$). Explicitely, we can write 
@@ -90,11 +90,11 @@ Finally, we impose that the parity transformation of the spinor fields be compat
   \end{pmatrix}^T,\quad
    u^{(-1/2)}(0) = 
   \begin{pmatrix}
-    1& 0& 0& b_u
+    0& 1& 0& b_u
   \end{pmatrix}^T\\
   &v^{(1/2)}(0) = 
   \begin{pmatrix}
-    1& 0& 0& b_v
+    0& 1& 0& b_v
   \end{pmatrix}^T,\quad
    v^{(-1/2)}(0) = 
   \begin{pmatrix}
@@ -105,35 +105,164 @@ Finally, we impose that the parity transformation of the spinor fields be compat
 \begin{enumerate}
   \item[(a)] The next step in the construction of the spinor field consists in combining the anihilation and creation field to produce a total field $\psi_\ell(x) = \kappa \psi^-(x) + \lambda \psi^+(x)$ with $\kappa, \lambda \in \mathbb{C}$. Causality requires that the commutator/anti-commutator (respectively denoted $[\circ,\circ]_-$ and $[\circ,\circ]_+$) of the field at $x$ with its adjoint at $y$ vanishes for spacelike $x-y$. The commutator/anti-commutator is computed in general by using the fundamental commutator/anti-commutator
   \begin{align*}
-    [b^{s}_\mathbf{p}, (b^{s'}_\mathbf{q})^\dagger]_{\pm} = E_\mathbf{q} (2\pi)^3 \delta(\mathbf{p} - \mathbf{q})\delta_{ss'} \quad \& \quad [c^{s}_\mathbf{p}, (c^{s'}_\mathbf{q})^\dagger]_{\pm} = E_\mathbf{q} (2\pi)^3 \delta(\mathbf{p} - \mathbf{q})\delta_{ss'} 
+    [b^{s}_\mathbf{p}, (b^{s'}_\mathbf{q})^\dagger]_{\pm} = 2E_\mathbf{q} (2\pi)^3 \delta(\mathbf{p} - \mathbf{q})\delta_{ss'} \quad \& \quad [c^{s}_\mathbf{p}, (c^{s'}_\mathbf{q})^\dagger]_{\pm} = 2E_\mathbf{q} (2\pi)^3 \delta(\mathbf{p} - \mathbf{q})\delta_{ss'} 
   \end{align*}
   with all other combinations having $[\circ,\circ]_\pm = 0$. We have the expansion 
   \begin{align*}
     &[\kappa \psi^-_\ell(x) + \lambda \psi^+_\ell(x), \kappa^\star (\psi^-(y))_{\ell'}^{\dagger} + \lambda^\star (\psi^+(y))_{\ell'}^\dagger]_{\pm}\\
     &= [\kappa \psi^-_{\ell}(x), \kappa^\star (\psi^-_{\ell'}(y))^{\dagger}]_{\pm} + [\kappa \psi^-_{\ell}(x),\lambda^\star (\psi^+_{\ell'}(y))^\dagger]_{\pm} + [\lambda \psi^+_{\ell}(x), \kappa^\star (\psi^-_{\ell'}(y))^{\dagger}]_{\pm} + [\lambda \psi^+_{\ell}(x), \lambda^\star (\psi^+(y)_{\ell'})^\dagger]_{\pm}\\
     &=|\kappa|^2[\psi^-_{\ell}(x), (\psi^-_{\ell'}(y))^{\dagger}]_{\pm} + |\lambda|^2[ \psi^+_{\ell}(x), (\psi^+_{\ell'}(y))^\dagger]_{\pm} +\sim \left[ [b,c]_{\pm} + [c^\dagger, b^{\dagger}]_{\pm}\right]\\
-    &= 
+    &= |\kappa|^2  \sum_s \sum_{s'} \int \int \text{d}V_\mathbf{p} \text{d}V_\mathbf{q} \ u_l^s(\mathbf{p}) u_{l'}^{s'\star}(\mathbf{q}) e^{-i p \cdot x + i q \cdot y} [b_\mathbf{p}^s, (b_\mathbf{q}^{s'})^{\dagger}] + |\lambda|^2  \sum_s \sum_{s'} \int \int \text{d}V_\mathbf{p} \text{d}V_\mathbf{q} \ v_l^s(\mathbf{p}) v_{l'}^{s'\star}(\mathbf{q}) e^{+i p \cdot x - i q \cdot y} [(c_\mathbf{p}^s)^{\dagger}, c_\mathbf{q}^{s'}]\\
+    &= |\kappa|^2  \sum_s \int \text{d}V_\mathbf{p} \ u_l^s(\mathbf{p}) u_{l'}^{s\star}(\mathbf{p}) e^{-i p \cdot (x - y)} \pm |\lambda|^2  \sum_s \int \text{d}V_\mathbf{p} \ v_l^s(\mathbf{p}) v_{l'}^{s\star}(\mathbf{p}) e^{+i p \cdot (x - y)}\\
+    &=   \int \text{d}V_\mathbf{p} \ \left(|\kappa|^2 \ N_{\ell \ell'}(\mathbf{p}) e^{-i p \cdot (x - y)} \pm |\lambda|^2 \ M_{\ell \ell'}(\mathbf{p}) e^{+i p \cdot (x - y)}\right), \quad N_{\ell \ell'}(\mathbf{p}) = \sum_{s} u_l^s(\mathbf{p}) u_{l'}^{s\star}(\mathbf{p}), \ M_{\ell \ell'}(\mathbf{p}) = \sum_{s} v_l^s(\mathbf{p}) v_{l'}^{s\star}(\mathbf{p}).
   \end{align*}
-  \item[(b)]
-  \item[(c)]
-  \item[(d)] 
-  \item[(e)]
-  \item[(f)]
-  \item[(g)]
-  \item[(h)]     
+  \item[(b)] Using the explicit expressions for $u^s(0)$ and $v^s(0)$, we can evaluate $N_{\ell \ell'} (0)$ (components of a matrix $N$) as follows: 
+  \begin{align*}
+    N(0) &= \begin{pmatrix}
+      1& 0& b_u& 0
+    \end{pmatrix} \begin{pmatrix}
+      1\\ 0\\ b_u\\ 0
+    \end{pmatrix}  + 
+    \begin{pmatrix}
+      0& 1& 0& b_u
+    \end{pmatrix} \begin{pmatrix}
+      0\\ 1\\ 0\\ b_u
+    \end{pmatrix}\\
+    &= 
+    \begin{pmatrix}
+      1 & 0 & b_u & 0\\
+      0 & 0 & 0 & 0\\
+      b_u & 0 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}
+    + \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 0 & b_u\\
+      0 & 0 & 0 & 0\\
+      0 & b_u & 0 & 1
+    \end{pmatrix}= 
+    \begin{pmatrix}
+      1 & 0 & 0 & 0\\
+      0 & 1 & 0 & 0\\
+      0 & 0 & 1 & 0\\
+      0 & 0 & 0 & 1
+    \end{pmatrix}
+    + \begin{pmatrix}
+      0 & 0 & b_u & 0\\
+      0 & 0 & 0 & b_u\\
+      b_u & 0 & 0 & 0\\
+      0 & b_u & 0 & 0
+    \end{pmatrix} =  1 + b_u \beta 
+  \end{align*}
+  with $\beta = \begin{pmatrix}
+    0 & \mathbf{1}\\
+    \mathbf{1} & 0 
+  \end{pmatrix}$.
+  \item[(c)] To obtain the $\mathbf{p}$ dependance of the coefficients $u^s$ and $v^s$, we can apply the spinor representation $\mathbf{D}(L(p))$ (with matrix components $D_{\ell' \ell}$) of the Lorentz boost $L(p)$ from the refrence four-momentum to the four-momentum $p$ with three-momentum $\mathbf{p}$. For $u^s$ and $u^{s\star}$, this corresponds to the relations 
+  \begin{align*}
+    &u^s_{\ell'}(\mathbf{p}) = \sum_{\ell} D_{\ell' \ell} (L(p)) u_{\ell}^{s}(0) \iff u^s(\mathbf{p}) = \mathbf{D}(L(p))u^s(\mathbf{0}),\\
+    &u^{s\star}_{\ell'}(\mathbf{p}) = \sum_{\ell} D_{\ell \ell'}^\dagger (L(p)) u_{\ell}^{s\star}(0) \iff (u^{s\star}(\mathbf{p}))^T =  (u^{s\star}(\mathbf{0}))^T \mathbf{D}^\dagger(L(p)).
+  \end{align*}
+  \item[(d)] Using the definition of $N(\mathbf{p})$ and the previous boost transformation of the $u^s$ vector, we have 
+  \begin{align*}
+    N(\mathbf{p}) =  \sum_s  u^{s}(\mathbf{p}) (u^{s\star}(\mathbf{p}))^T =  \sum_s  \mathbf{D} u^{s}(0) (u^{s\star}(0))^T \mathbf{D}^\dagger = \mathbf{D}(L(p)) (1 + b_u \beta) \mathbf{D}^\dagger(L(p)).
+  \end{align*} 
+  \newpage
+  \item[(e)] To compute the action of $\mathbf{D}(L(p))$ on $N(0)$, we use expand it to first order in Lorentz group generators $\mathbf{J}^{\mu \nu}$ ($\mathbf{J}^{0\nu}$ are the boost generators) with real expansion coefficients $\omega_{\mu\nu}$ as $\mathbf{D}(L(p)) = 1 + i \omega_{\mu\nu} \mathbf{J}^{\mu\nu} + O(\omega^2)$. In the spinor representation emerging from the clifford algebra of $\gamma^\mu$ matrices, we have $\mathbf{J}^{\mu\nu} = -\frac{i}{4}[\gamma^\mu, \gamma^\nu]$. We note that $\beta = \gamma^0$ and $\beta (\gamma^\mu)^\dagger \beta = \gamma^\mu$ to write 
+  \begin{align*}
+    (\mathbf{J}^{\mu\nu})^{\dagger} = +\frac{i}{4}(\gamma^\mu\gamma^\nu - \gamma^\nu \gamma^\mu)^\dagger = +\frac{i}{4}(\beta \gamma^\nu \beta \beta \gamma^\mu \beta - \beta \gamma^\mu \beta \beta\gamma^\nu\beta) = -\frac{i}{4}\beta( \gamma^\mu \gamma^\nu - \gamma^\nu \gamma^\mu )\beta = \beta \mathbf{J}^{\mu\nu} \beta.
+  \end{align*}
+  Then, we can relate $\mathbf{D}^{\dagger}(L(p))$ and $\mathbf{D}^{-1}(L(p)) = 1 - i \omega_{\mu\nu} \mathbf{J}^{\mu\nu} + O(\omega^2)$ with 
+  \begin{align*}
+    \mathbf{D}^\dagger(L(p)) = 1 - i \omega_{\mu\nu} (\mathbf{J}^{\mu\nu})^\dagger + O(\omega^2) =  \beta^2 - i \omega_{\mu\nu} \beta \mathbf{J}^{\mu\nu}\beta + O(\omega^2) = \beta \mathbf{D}^{-1}(L(p)) \beta.
+  \end{align*} 
+  \item[(f)] Applying the previous result to the expression for $N(\mathbf{p})$, we get 
+  \begin{align*}
+    N(\mathbf{p}) = \mathbf{D}(L(p)) (1 + b_u \beta) \beta \mathbf{D}^{-1}(L(p)) \beta = \mathbf{D}(L(p)) \beta \mathbf{D}^{-1}(L(p)) \beta + b_u \beta. 
+  \end{align*}
+  The conjugation of the $\gamma^\mu$ matrices by the $\mathbf{D}(L(p))$ can be expressed as $\mathbf{D}(L(p)) \gamma^\mu \mathbf{D}^{-1}(L(p)) = L_{\rho}{}^{\mu}(p)\gamma^\rho$ where $L^{\mu}{}_{\rho}(p)$ are the components of the boost (to $\mathbf{p}$) matrices. Since $\beta = \gamma^0$, it follows that 
+  \begin{align*}
+    \mathbf{D}(L(p)) \beta \mathbf{D}^{-1}(L(p)) = \mathbf{D}(L(p)) \gamma^0 \mathbf{D}^{-1}(L(p)) = L^{0}{}_{\rho}(p)\gamma^\rho. 
+  \end{align*}
+  The effect of $\mathbf{D}(L(p))$ conjugaison on $\gamma^\mu$ is the same as the effet of a basis transformation for a reference frame. This allows to interpret $1\gamma^0 + 0\gamma^i$ as the  the dual four-velocity of a rest observer. The active boost $L(p)$ sends it to the dual  four-velocity $L^{0}{}_{\mu}(p)\gamma^\mu = p_\mu \gamma^\mu/m$ (associated to the three-velocity $\mathbf{p}/m$). 
+  \item[(g)] The final expressions for $N(\mathbf{p})$ and $M(\mathbf{p})$ (obtained replacing $b_u$ by $b_v$) can be written as 
+  \begin{align*}
+    N(\mathbf{p})= \mathbf{D}(L(p)) \beta \mathbf{D}^{-1}(L(p)) \beta + b_u \beta = \dfrac{1}{m}(p_\mu \gamma^\mu + b_u m) \beta \quad \& \quad M(\mathbf{p})= \dfrac{1}{m}(p_\mu \gamma^\mu + b_v m) \beta.  
+  \end{align*}
+  \item[(h)] Defining $D(u) = \int \text{d}V_\mathbf{p} \ e^{-ip\cdot u}$, we have $i\partial_\mu D(u) = \int \text{d}V_\mathbf{p} \ p_{\mu} e^{-ip\cdot u}$ where $\partial_\mu$ differenciates with respect to $u$. With this in mind, the commutator/anti-commutator of spinor field components becomes
+  \begin{align*}
+    [\psi_\ell(x), \psi_{\ell'}^\dagger(y)]_\pm &= \int \text{d}V_\mathbf{p} \ \left(|\kappa|^2 \ N_{\ell \ell'}(\mathbf{p}) e^{-i p \cdot (x - y)} \pm |\lambda|^2 \ M_{\ell \ell'}(\mathbf{p}) e^{+i p \cdot (x - y)}\right)\\
+    &=\int \text{d}V_\mathbf{p} \ \left(|\kappa|^2 \ \dfrac{1}{m}(p_\mu \gamma^\mu + b_u m) \beta e^{-i p \cdot (x - y)} \pm |\lambda|^2 \ \dfrac{1}{m}(p_\mu \gamma^\mu + b_v m) \beta e^{+i p \cdot (x - y)}\right)\\
+    &= |\kappa'|^2 \ \left(i\gamma^\mu \partial_{\mu} + b_u m\right)\beta D(u)|_{u=x-y} \pm |\lambda'|^2 \ \left(i\gamma^\mu \partial_{\mu} + b_v m\right)\beta D(u)|_{u=y-x}.
+  \end{align*}
+  where $\kappa' = \kappa/\sqrt{m}$ and $\lambda' = \lambda/\sqrt{m}$. The evaluation of $D(u)$ is taken after the differenciation (it is really an evaluation of the derivative). 
 \end{enumerate}
 
 \section{Causality condition}
 \begin{enumerate}
-  \item[(a)]
-  \item[(b)]
-  \item[(c)]
-  \item[(d)] 
-  \item[(e)]   
+  \item[(a)] For $y-x$ spacelike, we can find a reference frame where the time component of $x-y$ vanishes. In this reference frame, we can use the change of variable $\mathbf{p} = -\mathbf{p'}$ (which switches the bounds of integration) to get
+  \begin{align*}
+    D(u) = \int \text{d}V_\mathbf{p} \ e^{-i\mathbf{p} \cdot \mathbf{u}} = -\int \text{d}V_{-\mathbf{p'}} \ e^{i\mathbf{p'}\cdot \mathbf{u}}  = \int \text{d}V_{\mathbf{p'}} \ e^{i\mathbf{p'}\cdot (-\mathbf{u})} = D(-u), \quad \text{d}V_{-\mathbf{p'}} = \dfrac{-\text{d}^3 p}{(2\pi)^3 2p^0(-\mathbf{p'})} = -\text{d}V_{\mathbf{p'}}
+  \end{align*}
+  where $\mathbf{u}$ are the non-vanishing space components of $u$. Since $D(u)$ is even for spacelike separation, we have 
+  \begin{align*}
+   \partial_\mu D(u)|_{u=u'} = \left. \frac{\partial}{\partial v^\mu} D(v)\right|_{v = u'}  = \left. \frac{\partial}{\partial v^\mu} D(-v)\right|_{v=u'} =   \left. -\frac{\partial}{\partial u^\mu} D(u)\right|_{u=-u'} = -\partial_\mu D(u)|_{u=-u'}
+  \end{align*}
+  impliying the derivatives are odd at spacelike seperations. With this parity property of the derivatives, the derivative terms of commutator/anti-commutator of spinor field components read
+  \begin{align*}
+    [\psi_\ell(x), \psi_{\ell'}^\dagger(y)]_{\pm, \partial}
+    &= |\kappa'|^2 \ i\gamma^\mu \partial_{\mu}  D(u)|_{u=x-y}\beta \pm |\lambda'|^2 \ i\gamma^\mu \partial_{\mu}  D(u)|_{u=y-x} \beta = \left(|\kappa'|^2 \ \mp |\lambda'|^2 \right) i\gamma^\mu \partial_{\mu}  D(u)|_{u=x-y} \beta.
+  \end{align*}
+  We can impose that this group of term vanishes independantly of the other because they contain $\beta \gamma^\mu$ matrices and the remaining term is proportionnal to $\beta$. The $\gamma^{\mu}$ matrices have vanishing trace and we have orthogonality of derivative and non-derivative terms by ($\text{Tr}(\beta \times \beta\gamma^{\mu}) = \text{Tr}(1 \times \gamma^{\mu})= 0$). This contribution to the commutator (resp. anti-commutator) will vanish if $|\kappa'|^2 + |\lambda'|^2  = 0$ (resp. $|\kappa'|^2 - |\lambda'|^2  = 0$). Since $|\kappa'|^2, |\lambda'|^2 \geq 0$ either the field vanished everywhere and commutes at spacelike seperations of anti-commutes with $|\kappa'| = |\lambda'| \iff |\kappa| = |\lambda|$. This means that any non-vanishing spinor field is quantized to fermions. For what follows, we choose the scale $|\kappa'| =  |\lambda'| = 1$.
+  \item[(b)] The spacelike vanishing of the remaining terms in what is now known to be an anti-commutator requires 
+  \begin{align*}
+    0 = [\psi_\ell(x), \psi_{\ell'}^\dagger(y)]_{+, \cdots} = \left(b_u + b_v \right)\beta m D(u)|_{u=y-x} \impliedby b_u + b_v = 0 
+  \end{align*}
+  where we used the even parity of $D(u)$ for spacelike $u$. 
+  \item[(c)] For what follows, we take $b_u = 1, b_v = -1$ and $\lambda = \kappa = 1$. We can express the total spinor field as 
+  \begin{align*}
+    \psi(x) = \sum_s \int \text{d}V_\mathbf{p} \ \left(u^s(\mathbf{p}) e^{-i p \cdot x} b_\mathbf{p}^s +  v^s(\mathbf{p}) e^{+i p \cdot x} (c_\mathbf{p}^s)^\dagger\right)
+  \end{align*}
+  with
+  \begin{align*}
+    &u^{(1/2)}(0) = 
+    \begin{pmatrix}
+      1& 0& 1& 0
+    \end{pmatrix}^T,\quad
+     u^{(-1/2)}(0) = 
+    \begin{pmatrix}
+      0& 1& 0& 1
+    \end{pmatrix}^T\\
+    &v^{(1/2)}(0) = 
+    \begin{pmatrix}
+      0& 1& 0& -1
+    \end{pmatrix}^T,\quad
+     v^{(-1/2)}(0) = 
+    \begin{pmatrix}
+      1& 0& -1& 0
+    \end{pmatrix}^T.
+  \end{align*}
+  We note that $u^s(0)$ and $v^s(0)$ satisfy 
+  \begin{align*}
+    \beta u^s(0) = (+1)u^s(0) \quad \& \quad \beta v^s(0) = (-1)v^s(0).
+  \end{align*}
+  \item[(d)] The conjugation of $\beta$ by $\mathbf{D}(L(p))$ is now applied to $u^s(\mathbf{p})$ and $v^s(\mathbf{p})$ to get
+  \begin{align*}
+    \frac{1}{m}p_\mu \gamma^{\mu} u^s(\mathbf{p}) = \mathbf{D}(L(p)) \beta \mathbf{D}^{-1}(L(p)) u^s(\mathbf{p}) = \mathbf{D}(L(p)) \beta u^s(\mathbf{0}) = \mathbf{D}(L(p))  u^s(\mathbf{0}) = u^s(\mathbf{p}) \iff (p_\mu \gamma^{\mu} -m) u^s(\mathbf{p}) = 0,\\
+    \frac{1}{m}p_\mu \gamma^{\mu} v^s(\mathbf{p}) = \mathbf{D}(L(p)) \beta \mathbf{D}^{-1}(L(p)) v^s(\mathbf{p}) = \mathbf{D}(L(p)) \beta v^s(\mathbf{0}) = -\mathbf{D}(L(p))  v^s(\mathbf{0}) = -v^s(\mathbf{p}) \iff (p_\mu \gamma^{\mu} + m) v^s(\mathbf{p}) = 0.
+  \end{align*}
+  
+  \item[(e)] We finally apply the dirac equation operator to the spinor field expression obtained above. We have 
+  \begin{align*}
+    (i \gamma^\mu \partial_\mu - m) \psi(x) &= \sum_s \int \text{d}V_\mathbf{p} \ \left((i \gamma^\mu \partial_\mu - m)u^s(\mathbf{p}) e^{-i p \cdot x} b_\mathbf{p}^s + (i \gamma^\mu \partial_\mu - m) v^s(\mathbf{p}) e^{+i p \cdot x} (c_\mathbf{p}^s)^\dagger\right)\\
+    &=\sum_s \int \text{d}V_\mathbf{p} \ \left((\gamma^\mu p^\mu - m)u^s(\mathbf{p}) e^{-i p \cdot x} b_\mathbf{p}^s + (-\gamma^\mu p^\mu \partial_\mu - m) v^s(\mathbf{p}) e^{+i p \cdot x} (c_\mathbf{p}^s)^\dagger\right) = 0
+  \end{align*}
+  which show that the spinor field satisfies the Dirac equation. 
 \end{enumerate}
 
 
 \section{Acknowledgement}
+I worked on my own for this assignment
 
 
 
