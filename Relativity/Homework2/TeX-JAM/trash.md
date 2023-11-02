@@ -219,3 +219,6 @@ x_Q &= \frac{1}{2} \sqrt{4 L^2+\frac{\left(L^2 t+\sqrt{x^2 \left(L^4+2
   \begin{align*}
     \dfrac{\partial \mathbf{E}_X}{\partial X} = - \dfrac{2}{X}\mathbf{E}_X \iff \mathbf{E}_X = \dfrac{C}{X^2} \impliedby \phi = -\dfrac{C}{X}. 
   \end{align*}
+
+
+  Shifting to curvilinear coordinates inherited from flat spacetime would have to restore terms that were canceled by coordinate derivatives in the derivation of the linearized Einstein equations. However, the tensor components involving those terms transform only trough linear tensor contractions and $0$ contributions remain $0$. 
