@@ -222,3 +222,8 @@ x_Q &= \frac{1}{2} \sqrt{4 L^2+\frac{\left(L^2 t+\sqrt{x^2 \left(L^4+2
 
 
   Shifting to curvilinear coordinates inherited from flat spacetime would have to restore terms that were canceled by coordinate derivatives in the derivation of the linearized Einstein equations. However, the tensor components involving those terms transform only trough linear tensor contractions and $0$ contributions remain $0$. 
+
+  \frac{d^2 x^{\mu}(t)}{d t^2} + \Gamma^{\mu}{}_{\alpha \beta} \frac{dx^\alpha(t)}{dt} \frac{dx^\beta(t)}{dt} = \frac{d^2 x^{\mu}(t)}{d t^2} + \Gamma^{\mu}{}_{00} \frac{dt}{dt} \frac{dt}{dt} + 2\Gamma^{\mu}{}_{\alpha i} \frac{dx^\alpha(t)}{dt} \frac{d x^i(t)}{dt} 
+
+  where we used . 
+  We notice that the gravitationnal dilation effects do not contribute in the first term at $O(\lambda)$ because $x_1^{\mu}$ is already at first order and all other terms involving $O(\lambda)$ factors are neglected.

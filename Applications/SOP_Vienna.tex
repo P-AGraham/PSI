@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 10.5in}]{geometry}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+\makeatletter% since there's an at-sign (@) in the command name
+\renewcommand{\@maketitle}{%
+  \parindent=0pt% don't indent paragraphs in the title block
+  \centering
+  {\Large \bfseries\textsc{\@title}}
+  \HRule\par%
+  \textit{\@author \hfill \@date}
+  \par
+}
+\makeatother% resets the meaning of the at-sign (@)
+
+\title{Cover Letter}
+\author{Pierre-Antoine Graham}
+\date{Vienna physics PhD}
+
+\begin{document} 
+
+\maketitle
+\vspace{0.5cm}
+
+Dear Prof. Schuch, 
+
+
+Sincerely,
+
+\vspace{0.4cm}
+Pierre-Antoine Graham
+
+\end{document}

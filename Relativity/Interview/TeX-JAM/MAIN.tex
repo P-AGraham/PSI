@@ -1,0 +1,258 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage[font=small,labelfont=bf,
+   justification=justified,
+   format=plain]{caption}
+\input{math_func}
+
+\usepackage{listings,xcolor}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+\lstset{language=Mathematica}
+\lstset{basicstyle={\sffamily\footnotesize},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt,
+  breaklines=true,
+  captionpos={t},
+  frame={lines},
+  rulecolor=\color{black},
+  framerule=0.5pt,
+  columns=flexible,
+  tabsize=2
+}
+
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}}
+
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%
+\title{Homework 2 : Linearized gravity
+} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{David Kubiznak and Ghazal Geshnizjani} % Your teacher's name.
+\class{Relativity} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\section{Linearized field equations}
+\footnotesize{
+Weak gravitational effects can be modeled as a perturbation of the flat Minkowski metric $\eta$. On the level of manifolds, this perturbation can be seen as a diffeomorphism $\phi : M \to M'$ mapping flat spacetime $M$ into a weakly curved manifold $M'$. A global coordinate chart $\psi : M \to \mathbb{R}^4$ on the flat spacetime can be converted to a coordinate chart $\psi'$ on the disformed manifold as $\psi' = \psi \circ \phi^{-1} : M' \to \mathbb{R}^4$. Taking the coordinates on $M$ to be cartesian, we work with the inherited coordinates on $M'$ as a starting point. In these coordinates, the full metric $g_{\mu\nu}$ can be Taylor expanded in a small parameter $\lambda$ as $g_{\mu\nu} = \eta_{\mu \nu} + h_{\mu \nu} + O(\lambda^2)$ where $h_{\mu \nu}$ is the perturbation depending linearly on $\lambda$. For all the following calculations, we drop the $O(\lambda^2)$ but keep in mind that everything represents a first-order expansion in $\lambda$.
+
+To write the first-order contribution to the Einstein equations arising from this perturbation, we first compute the inverse metric. Expanding it in $\lambda$ around the inverse Minkowski metric, we have $g_{\mu\nu} = \eta^{\mu \nu} + f^{\mu \nu}$ and 
+\begin{align*}
+ \delta_{\rho}^{\nu} = g_{\rho \mu} g^{\mu\nu} = \eta_{\rho \mu}\eta^{\mu \nu} + h_{\rho \mu} \eta^{\mu \nu} + \eta_{\rho \mu} f^{\mu \nu} \iff f_\rho{}^{\nu} = -h_{\rho}{}^{\nu} \iff f^{\rho\nu} = -h^{\rho\nu}. 
+\end{align*}
+Then the expansion of the Christoffel symbols read
+\begin{align*}
+  \Gamma^{\sigma}{}_{\mu\nu} = \dfrac{1}{2}g^{\sigma \rho}(g_{\mu \rho, \nu}+g_{\rho \nu, \mu}-g_{\mu \nu, \rho}) = \dfrac{1}{2}(\eta^{\sigma \rho}-h^{\sigma \rho})(h_{\mu \rho, \nu}+h_{\rho \nu, \mu}-h_{\mu \nu, \rho}) = \dfrac{1}{2}\eta^{\sigma \rho}(h_{\mu \rho, \nu}+h_{\rho \nu, \mu}-h_{\mu \nu, \rho})
+\end{align*}
+because $\eta_{\mu\nu, \rho} = 0$ in cartesian coordinates. The Riemann tensor can now be expressed as 
+\begin{align*}
+  R^{\rho}{}_{\sigma\mu\nu} &= \Gamma^{\rho}{}_{\nu\sigma, \mu} - \Gamma^{\rho}{}_{\mu\sigma, \nu} + \Gamma^{\rho}{}_{\mu\lambda}\Gamma^{\lambda}{}_{\nu\sigma} - \Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\mu\sigma}\\ &= \Gamma^{\rho}{}_{\nu\sigma, \mu} - \Gamma^{\rho}{}_{\mu\sigma, \nu} = \dfrac{1}{2}\eta^{\rho \lambda}(h_{\nu \lambda, \sigma \mu}+h_{\lambda \sigma, \nu \mu}-h_{\nu \sigma, \lambda \mu}) - \dfrac{1}{2}\eta^{\rho \lambda}(h_{\mu \lambda, \sigma \nu}+h_{\lambda \sigma, \mu \nu}-h_{\mu \sigma, \lambda \nu})\\
+  &= \dfrac{1}{2}\eta^{\rho \lambda}(h_{\nu \lambda, \sigma \mu}-h_{\nu \sigma, \lambda \mu} - h_{\mu \lambda, \sigma \nu} + h_{\mu \sigma, \lambda \nu}).
+\end{align*}
+Contracting the $\rho$ and $\mu$ indices, we get the following Ricci tensor:
+\begin{align*}
+  R_{\sigma \nu} &= \dfrac{1}{2}\eta^{\mu \lambda}(h_{\nu \lambda, \sigma \mu}-h_{\nu \sigma, \lambda \mu} - h_{\mu \lambda, \sigma \nu} + h_{\mu \sigma, \lambda \nu}) = \dfrac{1}{2}(h_{\nu}{}^{\mu}{}_{, \sigma \mu}-h_{\nu \sigma, \lambda}{}^{\lambda} - h^{\lambda}{}_{\lambda, \sigma \nu} + h^\mu{}_{\sigma, \mu \nu})\\
+  &= \dfrac{1}{2}(h_{\nu}{}^{\mu}{}_{, \sigma \mu} + h^\mu{}_{\sigma, \mu \nu}-\square h_{\nu \sigma} - h_{, \sigma \nu} ), \quad h = h^{\lambda}{}_{\lambda} 
+\end{align*}
+where we used the fact raising indices with $g^{\mu\nu}$ for tensors proportionnal to $\lambda$ reduces to contracting them with $\eta^{\mu\nu}$ at first order in $\lambda$ (the $-h^{\mu \nu}$ term only contributes to second order). Contracting the remaining indices (with the Minkowski) metric yields the Ricci scalar 
+\begin{align*}
+  R = \eta^{\sigma \nu} R_{\sigma \nu} = \dfrac{1}{2}(h^{\sigma\mu}{}_{, \sigma \mu} + h^{\sigma \mu}{}_{, \mu \sigma}-\square h^{\nu}{}_{\nu} - h_{, \nu}{}^{\nu} ) = h^{\sigma\mu}{}_{, \sigma \mu} -\square h.
+\end{align*}
+Combining all the previous results, the linearised Einstein tensor can be written as 
+\begin{align*}
+  G_{\sigma \nu} = R_{\sigma \nu} - \frac{1}{2} \eta_{\sigma\nu} R = \dfrac{1}{2}(h_{\nu}{}^{\mu}{}_{, \sigma \mu} + h^\mu{}_{\sigma, \mu \nu}-\square h_{\nu \sigma} - h_{, \sigma \nu} - \eta_{\sigma\nu} h^{\rho\mu}{}_{, \rho \mu} + \eta_{\sigma\nu} \square h).
+\end{align*}
+We define $\bar{h}_{\sigma \nu} = h_{\sigma \nu} - \frac{1}{2}\eta_{\sigma \nu} h$ with trace  $\bar{h} = \eta^{\sigma \nu}\bar{h}_{\sigma \nu} = h - \frac{4}{2} h = -h$. With this in mind, the perturbation can be written as $h_{\sigma \nu} =  \bar{h}_{\sigma \nu} + \frac{1}{2}\eta_{\sigma \nu} (-\bar{h})$. Substitution of this form in the Einstein tensor leads to 
+\begin{align*}
+  G_{\sigma \nu} &= \dfrac{1}{2}(h_{\nu}{}^{\mu}{}_{, \sigma \mu} + h^\mu{}_{\sigma, \mu \nu}-\square h_{\nu \sigma} - h_{, \sigma \nu} - \eta_{\sigma\nu} h^{\rho\mu}{}_{, \rho \mu} + \eta_{\sigma\nu} \square h)\\
+  &= \dfrac{1}{2}(\bar{h}_{\nu}{}^{\mu}{}_{, \sigma \mu}- \textcolor{blue}{\frac{1}{2} \bar{h}_{, \sigma \nu}} + \bar{h}^\mu{}_{\sigma, \mu \nu} - \textcolor{blue}{\frac{1}{2}\bar{h}_{, \sigma \nu}}-\square\bar{h}_{\sigma\nu} + \textcolor{red}{\frac{1}{2}\eta_{\sigma\nu} \square \bar{h}} + \textcolor{blue}{\bar{h}_{, \sigma \nu}}-\eta_{\sigma\nu}\bar{h}^{\rho\mu}{}_{, \rho \mu} + \textcolor{red}{\frac{1}{2}\eta_{\sigma\nu} \square\bar{h}} - \textcolor{red}{\eta_{\sigma\nu} \square \bar{h}})\\
+  &= \dfrac{1}{2}(\bar{h}_{\nu}{}^{\mu}{}_{, \sigma \mu}+ \bar{h}^\mu{}_{\sigma, \mu \nu} -\square\bar{h}_{\sigma\nu} -\eta_{\sigma\nu}\bar{h}^{\rho\mu}{}_{, \rho \mu})
+\end{align*}
+with
+\begin{align*}
+  &h_{\nu}{}^{\mu}{}_{, \sigma \mu} = \bar{h}_{\nu}{}^{\mu}{}_{, \sigma \mu} - \frac{1}{2} \eta_{\nu}{}^{\mu} \bar{h}_{, \sigma \mu} = \bar{h}_{\nu}{}^{\mu}{}_{, \sigma \mu}- \frac{1}{2} \bar{h}_{, \sigma \nu}, \quad h^\mu{}_{\sigma, \mu \nu} = \bar{h}^\mu{}_{\sigma, \mu \nu} - \frac{1}{2}\eta^\mu{}_{\sigma} \bar{h}_{, \mu \nu} = \bar{h}^\mu{}_{\sigma, \mu \nu} - \frac{1}{2}\bar{h}_{, \sigma \nu}\\
+  &\square h_{\sigma\nu} = \bar{h}_{\sigma\nu} - \frac{1}{2}\eta_{\sigma\nu} \square \bar{h}, \quad h_{, \sigma \nu} = -\bar{h}_{, \sigma \nu}, \quad \eta_{\sigma\nu} h^{\rho\mu}{}_{, \rho \mu} = \eta_{\sigma\nu}\bar{h}^{\rho\mu}{}_{, \rho \mu} - \frac{1}{2}\eta_{\sigma\nu}\eta^{\rho\mu} \bar{h}_{, \rho \mu} = \eta_{\sigma\nu}\bar{h}^{\rho\mu}{}_{, \rho \mu} - \frac{1}{2}\eta_{\sigma\nu} \square\bar{h}.
+\end{align*}
+Finally, the relation between the Einstein tensor and the stress-energy tensor $T_{\mu\nu}$ is provided by Einstein equations. We take $T_{\mu\nu}$ to be of the order of $\lambda$ consistently with the weak field on almost flat space ($T_{\mu\nu}$ has no zeroth order contribution) assumptions. The perturbation satisfies the equation 
+\begin{align*}
+  \dfrac{1}{2}(\bar{h}^{\mu}{}_{\nu, \sigma \mu}+ \bar{h}^\mu{}_{\sigma, \nu \mu} -\square\bar{h}_{\sigma\nu} -\eta_{\sigma\nu}\bar{h}^{\rho\mu}{}_{, \rho \mu}) = \dfrac{1}{2}( 2\bar{h}^\mu{}_{(\sigma, \nu) \mu} -\square\bar{h}_{\sigma\nu} -\eta_{\sigma\nu}\bar{h}^{\rho\mu}{}_{, \rho \mu}) = 8\pi G T_{\sigma \nu}
+\end{align*}
+with gravitational coupling strength $G$.
+}
+
+
+\section{Let’s simplify our lives}
+
+\begin{enumerate}
+  \item[(a)] Since coordinate transformations locally transform the metric components without changing the spacetime it describes, we can interpret them as gauge transformations on a tensor component field $g_{\mu\nu}$. To preserve the validity of our linearized expansion, we consider the effect of infinitesimal coordinate transformations $x^{\mu}{}'(x) = x^{\mu} - \xi^{\mu}(x)$ with $\xi$ at order in $\lambda$. This ensures that a coordinate change preserves $\eta_{\mu\nu}$ at zeroth order and sends $h_{\mu\nu}$ to a perturbation in the range satisfying the linearized Einstein equations.  The transformed components $h_{\mu\nu}'(x')$ will satisfy the equation and we recover a notion of linearized covariance. Relating the $g_{\mu\nu}(x)$ components and the gauge transformed components $g_{\mu\nu}'(x')$ at first order, we have 
+  \begin{align*}
+    \eta_{\mu\nu} + h_{\mu\nu}(x) = g_{\mu\nu}(x) &= x^{\mu}{}_{,\mu}' x^{\nu}{}_{,\nu'}' g_{\mu\nu}'(x'(x))\\
+    &= (\delta^{\sigma}_\mu - \xi^{\sigma}{}_{,\mu}(x))(\delta^{\rho}_\nu- \xi^{\rho}{}_{,\nu}(x))(\eta_{\sigma\rho} + h_{\sigma\rho}'(x'(x)))\\
+    &= \eta_{\mu\nu} + h_{\mu\nu}'(x'(x)) - \delta^{\sigma}_\mu \eta_{\sigma \rho} \xi^{\rho}{}_{,\nu}(x) - \delta^{\rho}_\nu \eta_{\sigma \rho} \xi^{\sigma}{}_{,\mu}(x)\\
+    &= \eta_{\mu\nu} + h_{\mu\nu}'(x'(x)) - \xi_{\mu,\nu} - \xi_{\nu,\mu}
+  \end{align*}
+  Comparing the right and left-hand sides of this expression yields $h_{\mu\nu}'(x'(x)) = h_{\mu\nu}(x) + \xi_{\mu,\nu}(x) + \xi_{\nu,\mu}(x)$. To bring the dependency of $h_{\mu\nu}'$ to $x$ explicitly, we write the expansion $h_{\mu\nu}'(x'(x)) = h_{\mu\nu}'(x) + \xi^{\sigma}(x) h_{\mu\nu, \sigma}'(x)$ where the second term is second order in $\lambda$ and does not contribute so $h_{\mu\nu}'(x'(x)) = h_{\mu\nu}'(x)$.
+  \item[(b)] Using the previous result, the gauge transformation of $\bar{h}_{\sigma \nu}$ to $\bar{h}_{\sigma \nu}'$ reads
+  \begin{align*}
+    \bar{h}_{\mu \nu}'(x) &= h_{\mu\nu}(x) + \xi_{\mu,\nu}(x) + \xi_{\nu,\mu}(x) - \frac{1}{2}\eta_{\mu \nu} \eta^{\sigma \rho} (h_{\sigma\rho}(x) + \xi_{\sigma,\rho}(x) + \xi_{\sigma,\rho}(x))\\
+    &= \bar{h}_{\mu\nu}(x) + \xi_{\mu,\nu}(x) + \xi_{\nu,\mu}(x) - \eta_{\mu \nu} \xi_{\sigma,}{}^{\sigma}(x).
+  \end{align*}
+  Now we contract the $\mu$ index of $\bar{h}_{\mu \nu}$ with a derivative and get
+  \begin{align*}
+    \bar{h}'{}_{\mu \nu,}{}^{\mu}(x) &=  \bar{h}{}_{\mu \nu,}{}^{\mu}(x) + \xi_{\mu,\nu}{}^{\mu}(x) + \xi_{\nu,\mu}{}^{\mu}(x) - \eta_{\mu \nu}{}^{\mu} \xi_{\sigma,}{}^{\sigma}(x)\\
+    &=  \bar{h}{}_{\mu \nu,}{}^{\mu}(x) + \xi_{\mu,\nu}{}^{\mu}(x) + \xi_{\nu,\mu}{}^{\mu}(x) -  \xi_{\sigma,\nu}{}^{\sigma}(x)\\
+    &= \bar{h}{}_{\mu \nu,}{}^{\mu}(x) + \square \xi_{\nu}(x). 
+  \end{align*} 
+Choosing $\xi_\nu$ to make $\bar{h}'{}_{\mu \nu,}{}^{\mu}(x)$ vanish constitutes a choice of gauge called the \textit{De Donder gauge}. The coordinate transforms leading to this gauge are constrained by 
+\begin{align*}
+  \square \xi_{\nu}(x) = -\bar{h}{}_{\mu \nu,}{}^{\mu}(x) 
+\end{align*}
+which is a wave equation with $-\bar{h}{}_{\mu \nu,}{}^{\mu}(x)$ sources for each $\nu$. Given any starting $\bar{h}_{\mu \nu}$, we can compute the associated source and solve the wave equation to go to the De Donder gauge. In this gauge, the Einstein equations derived above become 
+\begin{align*}
+  8\pi G T_{\sigma \nu} = \dfrac{1}{2}(\bar{h}'_{\mu\sigma,}{}^\mu{}_\nu + \bar{h}'_{\mu\nu,}{}^\mu{}_\sigma -\square\bar{h}'_{\sigma\nu} -\eta_{\sigma\nu}(\bar{h}'_{\rho\mu,}{}^{\mu}){}^{\rho}) = -\frac{1}{2}\square\bar{h}'_{\sigma\nu} \iff \square\bar{h}'_{\sigma\nu} = -16\pi G T_{\sigma \nu}.
+\end{align*}
+In the following steps, we work in De Donder gauge and drop $'$ to simplify notation. 
+\end{enumerate}
+
+
+\newpage
+\section{Gravitomagnetism}
+\begin{enumerate}
+  \item[(a)] The linearization of gravity works for $T_{\sigma \nu}$ of the order of $\lambda$ which is realised far from sources. Going further, the Newtonian limit is taken by approximating that the only significant $T_{\sigma \nu}$ component is mass density $\rho = T_{00}$. Then, all other components of Einstein equations have no significant sources at all times and vanish in the Newtonian limit. We can identify the Newtonian gravitationnal potential $\phi$ with $-\frac{1}{4} \bar{h}_{00}$ (or $h_{00} = \bar{h}_{00} - \frac{1}{2}\bar{h}_{00} = -2\phi$, $\bar{h} = \eta^{\mu\nu}\bar{h}_{\mu\nu} =-\bar{h}_{00}$ because only one diagonal element is non-zero). The Einstein equation associated with this component reads 
+  \begin{align*}
+    \square\bar{h}_{00} = -16\pi G T_{00} \iff 4\pi G \rho = -\left(-\frac{\partial^2}{\partial t^2} + \nabla^2 \right) \phi
+  \end{align*}
+  and in the quasi-static field limit (slowly changing $\phi$, not enough to emit considerable gravitational radiation, of the order of the field variations in celestial mechanics) we recover $\nabla^2 \phi = 4\pi G \rho$. The solution for $h_{\mu\nu}$ consistent with $\bar{h}_{\mu \nu}$ is 
+  \begin{align*}
+    h_{\mu \nu} =  \bar{h}_{\mu \nu} + \frac{1}{2}\eta_{\mu \nu} (-\bar{h}) = \begin{cases}
+    \frac{1}{2}\bar{h}_{00}\delta_{ij}, \quad  (\mu, \nu) = (i, j)\\
+    0, \quad (\mu, \nu) = (i, 0)\\
+    \frac{1}{2}\bar{h}_{00}, \quad (\mu, \nu) = (0, 0).
+    \end{cases}
+  \end{align*}
+  which leads to the linearized metric 
+  \begin{align*}
+    ds^2 = \left(-1+\frac{1}{2}\bar{h}_{00}\right)dt^2 + \left(1+\frac{1}{2}\bar{h}_{00}\right)(dx^2 + dy^2 + dz^2).
+  \end{align*}
+  We make sense of the $g_{ij}$ elements by comparing them to the weak field limit of the Schwarzschild for spherically symmetric energy density $\rho$. 
+  
+  We consider a point mass moving on a curve $\gamma: \mathbb{R} \to M'$. Its points are represented in the coordinate chart inherited from cartesian coordinates on $M$ by $x^\mu(\tau)$ parametrized by proper time $\tau$ (Lorentzian arc length for timelike velocities).  In the Newtonian limit, an infinitesimal proper time change on $\gamma$ reads 
+  \begin{align*}
+    -d\tau^2 =  -(1- 2\phi)dt^2 + \left(1+2\phi\right)\left(dx^2 + dy^2 + dz^2\right) \implies -1 =  -(1- 2\phi)\left(\frac{dt}{d\tau}\right)^2 + \left(1+2\phi\right)\left(\left(\frac{dx}{d\tau}\right)^2 + \left(\frac{dy}{d\tau}\right)^2 + \left(\frac{dz}{d\tau}\right)^2\right).
+  \end{align*} 
+  At leading order in $\lambda$ ($\sim$ neglecting gravitational time dilation and associated space effect) the proper time parametrization behaves the same way it does in Minkowski space. To go from Minkowsk-like proper time to Galilean-like absolute time we take $\frac{dx}{d\tau}, \frac{dy}{d\tau}, \frac{dz}{d\tau}$ to be small (neglecting special relativistic time dilation). This means that the Minkowski-like coordinate system is such that the three-velocity of the mass stays close to the time direction for all $\tau$ where the Newtonian limit applies. This three-velocity constraint reduces the previous equation to $1 = \frac{dt}{d\tau}$ implying parametrizing by proper time is equivalent to parametrizing by coordinate time $t$. A schematic way to write this conclusion is $x^{\mu}(\tau(t)) = x^{\mu}(t+ O(v^2) + O(\lambda)) = x_0^{\mu}(t) + O(v^2) + O(\lambda)$ and $\frac{d}{d\tau} = \frac{dt}{d\tau} \frac{d}{dt} = (1 + O(\lambda) + O(v^2)) \frac{d}{dt}$ where $v$ represents three-velocity (the dependency starts at $O(v^2)$ because of the Minkowski lorentz factor expansion). With this conclusion in mind, we can write the geodesic equation describing the free trajectory in $M'$ as follows
+  \begin{align*}
+    0 &= \frac{d^2 x^{\mu}(\tau)}{d \tau^2} + \Gamma^{\mu}{}_{\alpha \tau} \frac{dx^\alpha(\tau)}{d\tau} \frac{dx^\beta(\tau)}{d\tau}\\
+    &= (1 + O(\lambda) + O(v^2))^2 \frac{d^2 x_0^{\mu}(t) + O(v^2) + O(\lambda)}{dt^2} + \Gamma^{\mu}{}_{\alpha \beta} (1 + O(\lambda) + O(v^2))^2\frac{dx_0^\alpha(t) + O(v^2) + O(\lambda)}{dt} \frac{dx_0^\beta(t)+O(\lambda) + O(v^2)}{dt}.
+  \end{align*}
+  Since $\Gamma^{\mu}{}_{\alpha \tau}$ is first order in $\lambda$ (see linearized expression given above), the leading order in $v$ and $\lambda$ of the geodesic equation is $0 = \frac{d^2 x^{\mu}(\tau)}{d t^2}$ (Newton's principle of inertia). To retrieve the dominant gravitationnal effets we go to first order in $\lambda$ and define $x^{\mu}(\tau(t)) = x_1^{\mu}(t) + O(v^2) + O(\lambda^2)$ to get 
+  \begin{align*}
+    0
+    &\textcolor{blue}{=} (1 + O(\lambda) + O(v^2))^2 \frac{d^2 x_1^{\mu}(t) + O(v^2) + O(\lambda^2)}{dt^2} + \Gamma^{\mu}{}_{\alpha \beta} (1 + O(\lambda) + O(v^2))^2\frac{dx_1^\alpha(t) + O(v^2) + O(\lambda^2)}{dt} \frac{dx_1^\beta(t)+O(\lambda^2) + O(v^2)}{dt}\\
+    &\text{Gravitationnal dilation effects vanish in the first term at $O(\lambda)$ because $x_1^{\mu}$ is already at $O(\lambda)$ and all other $O(\lambda)$ factors are neglected}\\
+    &\textcolor{blue}{=} \frac{d^2 x_1^{\mu}(t)}{dt^2} + \Gamma^{\mu}{}_{\alpha \beta} \frac{dx_0^\alpha(t)}{dt} \frac{dx_0^\beta(t)}{dt}, \quad \text{For the $\Gamma^{\mu}{}_{\alpha \beta} = O(\lambda)$ term, only the zeroth order contributions $x_0^\mu$ are preserved}\\
+    &\textcolor{blue}{=} \frac{d^2 x_1^{\mu}(t)}{dt^2} + \Gamma^{\mu}{}_{00} \frac{dx_0^0(t)}{dt} \frac{dx_0^0(t)}{dt}, \quad \text{$dx^i/d\tau = (1 + O(\lambda) + O(v^2))dx^i/dt = O(v) + O(\lambda)$ : spacial velocities factors vanish at $O(v^0)$}\\
+    &\textcolor{blue}{=} \frac{d^2 x_1^{\mu}(t)}{dt^2} + \dfrac{1}{2}\eta^{\mu \rho}(h_{0 \rho, 0}+h_{\rho 0, 0}-h_{0 0, \rho}), \quad \text{principle of inertia at $O(\lambda^0) \impliedby x_0^0 = t$}\\
+    &\textcolor{blue}{\implies} 0 = \frac{d^2 x_{1, i}(t)}{dt^2} - \dfrac{1}{2}h_{0 0,i} = \frac{d^2 x_{1, i}(t)}{dt^2} + \phi_{,i},\quad \text{lowering the index to get a gradient, $h_{00} = \bar{h}_{00} - \frac{1}{2}\bar{h}_{00} = -2\phi$}
+  \end{align*}
+  \item[(b)] If we allow significant energy flux ($T_{0i} = T_{i0}$ components) while keeping the stress ($T_{ij}$ components) negligible, the non-vanishing components of $\bar{h}_{\mu\nu}$ becomes $\bar{h}_{\mu0} = \bar{h}_{0\mu}$. These components can be associated with a four-potential $A_\mu = -\bar{h}_{\mu 0}/4$ sourced by the four-courent $J_\mu = -T_{0\mu}$. Writing Einstein's equations and the De Donder gauge condition for the nonzero components gives 
+  \begin{align*}
+  -4\square A_{\mu} = \square\bar{h}_{0\mu} = -16\pi G T_{0\mu} = 16\pi G J_{\mu} \iff \square A_{\mu} = -4\pi G J_{\mu}, \quad \bar{h}{}_{0\mu,}{}^{\mu} = -4A_{\mu,}{}^{\mu} = 0 \iff A_{\mu,}{}^{\mu} = 0
+  \end{align*}
+  which is analogous to Maxwell's equations for electromagnetism (an important difference remains through energy conditions that forbid negative charge densities $T_{00}$). As before we work in the quasi-static field limit where $A_{\mu, 0}$ is taken negligible. Again, the Newtonian limit is used to write the geodesic equation for a point mass up to $O(\lambda)$ and $O(v)$ (we go further than to extract leading order gravitomagnetic effects) as 
+  \begin{align*}
+    0
+    &\textcolor{blue}{=} (1 + O(\lambda) + O(v^2))^2 \frac{d^2 x_1^{\mu}(t) + O(v^2) + O(\lambda^2)}{dt^2} + \Gamma^{\mu}{}_{\alpha \beta} (1 + O(\lambda) + O(v^2))^2\frac{dx_1^\alpha(t) + O(v^2) + O(\lambda^2)}{dt} \frac{dx_1^\beta(t)+O(\lambda^2) + O(v^2)}{dt}\\
+    &\textcolor{blue}{=} \frac{d^2 x_1^{\mu}(t)}{dt^2} + \Gamma^{\mu}{}_{\alpha \beta} \frac{dx_0^\alpha(t)}{dt} \frac{dx_0^\beta(t)}{dt} =  \frac{d^2 x_1^{\mu}(t)}{dt^2} + \Gamma^{\mu}{}_{00} \frac{dx_0^0(t)}{dt} \frac{dx_0^0(t)}{dt} + \Gamma^{\mu}{}_{0i} \frac{dx_0^0(t)}{dt} v^i(t), \quad \text{with $v^i = \frac{dx_0^i(t)}{dt}$}\\
+    &\textcolor{blue}{=} \frac{d^2 x_1^{\mu}(t)}{dt^2} + \dfrac{1}{2}\eta^{\mu \rho}(h_{0 \rho, 0}+h_{\rho 0, 0}-h_{0 0, \rho}) + \eta^{\mu \rho}(h_{\rho i, 0}+h_{\rho 0, i}-h_{0 i, \rho})v^i = \frac{d^2 x_1^{\mu}(t)}{dt^2} - \dfrac{1}{2}h_{0 0,} {}^\mu -4 (A^{\mu}{}_{, i}-A_{i,}{}^{\mu
+    })v^i, \,\, h_{0i} = \bar{h}_{0i} - \frac{1}{2}\eta_{0i}\bar{h} = \bar{h}_{0i} \\
+    &\textcolor{blue}{\implies} 0 = \frac{d^2 x_{1, j}(t)}{dt^2} - E_j - 4(\epsilon_{ij}{}^k B_k)v^i = \frac{d^2 x_{1, j}(t)}{dt^2} - E_j + 4 \epsilon_i {}^k{}_{j} v^i B_k.
+  \end{align*}
+  where we identified $\epsilon_{ij}{}^k B_k = A_{j, i}-A_{i, j}$ and $E_i = -\phi_{, i} - A_{i, 0} = -\phi_{, i} $ in analogy with the electromagnetic field extracted from the four-potential. The equivalent of Lorentz force was recovered. Its associated \textit{electric} charge $q$ equals the inertial mass $m$ of the particle and cancels with it. The coefficient of the magnetic term is $4$ times as big as the coefficient in electromagnetism and has a reversed sign.  
+\end{enumerate}
+
+\section{Acknowledgement}
+Thanks to Nikhil for a discussion about the interpretation of the $h_{\mu\nu}$ solution obtained from the $\bar{h}_{\mu\nu}$.
+
+
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
