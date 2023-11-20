@@ -1,13 +1,40 @@
 # Plan 
 
+Send toefl (Not needed since I am re-applying)
+
 Write the emails 
 
-Get the research essay agreeent signed 
+Get the research essay agreement signed (Email sent, aggreement will be signed!)
 
 Send all the emails
 
+get the transcripts (UdeS done, UW missing) (UW is unofficial and grades are empty... It is just a list of courses)
 
+Go see Dan for advice (when? Tomorrow)
 
+# CV changes 
+
+**Add a the seminar for the end of my T1**
+
+**Add the writting contest**
+
+**Add backpack travelling and yoga to hobies**
+
+**Swap sections**
+
+**Put project euler in a better location**
+
+# Application info 
+
+## MIT
+
+https://physics.mit.edu/academic-programs/graduate-students/graduate-admissions/
+
+https://physics.mit.edu/academic-programs/graduate-students/graduate-admissions-additional-guidance/
+
+https://physvals.mit.edu/pvs (Values)
+
+https://mitcommlab.mit.edu/broad/commkit/graduate-school-personal-statement/ (SOP guide)
 
 # Get my PSI transcript 
 
@@ -48,17 +75,47 @@ PI: https://apply.perimeterinstitute.ca/prog/phd/
 
 # SOP Ideas
 
-Last winter I worked with Professor Alexander Blais's group on a quantum Chaos based single qubit gate. The core of my work was about understanding mixed regular/chaotic dynamics of the classical limit of a superconducting cat qubit subjected to time dependant forcing. The final goal was to establish a relation between rate of tunneling of cat states and the caracteristics of classical chaos. 
+I am very determinated as a researcher and I really like the thrill of facing the unknown and put every method I learned to work. I like a challenge and I am very perseverent. I want to produce ideas I will be proud of. I always challenge myself to produce better ideas and go further than the lectures ... asking what is next? I like building analogies between concepts I know to strengthen intuition and make every peice of knowledge I have more meaningful. I like thinking about algorithms and feel great satisfaction in the spped up they can provide. I am precise and give importance to consistency of all details. 
 
 
-Keeping an eye on all the interesting fields I have explored, I am starting to specialize to intersections of condensed matter and quantum information. The decisive element that brought me closer to these disciplines is the connection to technological progress and connections to experiments.
+Last winter I worked with Professor Alexander Blais's group on a quantum Chaos based single qubit gate. The core of my work was about understanding mixed regular/chaotic dynamics of the classical limit of a superconducting cat qubit subjected to time dependant forcing. The final goal was to establish a relation between rate of tunneling of cat states and the caracteristics of classical chaos.  
+
+
+Keeping an eye on all the interesting fields I have explored, I am starting to specialize to intersections of condensed matter and quantum information. The decisive element that brought me closer to these disciplines is the connection to technological progress and experiments.
 
 Use the winter project and Essay project to convince I will be doing condensed matter. 
 
 I am currently studying as a Perimeter scholars internationnal (PSI program) master student. For completion of my degree, I will work on an essay about the fuzzy sphere method for 3D CFTs under the supervision of its **inventor?** Yin-Chen He. I will also take part in an intensive winter shcool where to work on **an adaptation of the belief propagation algorithm to Tensor networks (maybe)**.  
 
+MIT is a stepping stone for my career 
+
+
+SOP Structure: 
+1. Introduction (second quantum revolution) **At the age of 14, I won a writting contest about career ambitions by communicating a dream I had to become a leader in the physics community. This dream stayed with me and at the dawn of specialization, working at MIT makes it a reality.**
+
+2. History of my interest (outreach, tutoring, observatory, more outreach commitment to the communication of scientific ideas to my academic peers and my people from the general public to form a richer more diverse future generation of scientists) (Link with MIT values) **I gained appreciation for applied physics topics with**
+
+3.  Coursework, Project Euler, work ethic and philosophie (Link with MIT PhD courses, challenges) Collaborative environnement of Perimeter. **I always start studying a subject with the intention of grasping it so well I can predict the next chapter. This made me eager to do actual research where it really pays off to imagine the next steps.** 
+
+4. Internships  (Should I mention Valerio?) (Link with MIT research) End with the essay and winter school I am going to do do this winter. 
+
+5. Proffessors I would like to work with (Include with Internships to connect them... connect the strange metal internship with the work of Senthil, Yin-Chen)
+   
+
 ## Updated paragraphs
 
+### MIT 1
+
+When I was 14 years old, my school held a writting competition about passions and career ambitions. In my entry, I told about my fascination for the fundamental nature of things and my theoretical physics aspirations. This fascination would lead me to participate in outreach contests for four consecutive years. Each projects brought me closer to the foundations of theoretical physics. Concrete applications and corroboration of theory became of utmost importance to me As my undergraduate research exploration unfolded. I had the chance to collaborate with four different research groups in the context of four-month internships. Each research project helped me refine my aspirations and build confidence as a scientist. This confidence and experiences brought me to Perimeter Institute where I am gaining independance as a researcher striving to access the cutting edge of theoretical physics. I am appliying to MIT to continue moving in this direction and honnor the passion that led the 14 year old version of me to win the writting contest.  
+
+Is it possible to work at the frontier of theory and experiment and still explore very abstract mathematical ideas? I think we live in a golden age of physics where technology opens up to the craziest ideas and I plan to take advantage of this in my career. Initially driven by outreach contests, I focused on communicating abstract theoretical ideas ranging from special relativity to classical electromagnetism. Then I had the chance to collaborate with four different research groups in the context of four-month internships. Each research project helped me build confidence as a scientist and define my aspirations. While the first three increased my appreciation of experiments and technological prospects, the last one confirmed my interest in abstract ideas. When I picture the career ahead of me, I see a scientist striving to contribute to technology while trying to make unsuspected connections between different areas of physics. 
+
+https://arxiv.org/ftp/quant-ph/papers/0206/0206091.pdf (Second quantum revolution)
+
+Interaction between quantum matter and quantum information have sparked countless ideas shaping a second quantum revolution. These ideas reached me as my journey trough academia started and they showed me how modern technology can build on the full elegant machinery of theoretical physics. I aim to become a leader participating in the second quantum revolution with no compromise between practical application and theoretical sophisication. At the age of 14, I won a writting contest about career ambitions by describing a future where I would play an important role in the developpement of physics. This dream stayed with me and at the dawn of specialization, working at MIT would make it a reality. 
+
+
+My intent to become a leader brings me to apply to MIT to collaborate with the scientists guiding the revolution. 
 
 # EDI ideas 
 
@@ -66,9 +123,90 @@ My classmates from the PSI program are exceptionnal physicists from __ different
 
 ## Specific ideas 
 
-MIT: 
+MIT:
 
-Caltech: 
+Caltech:
+
+# Emails
+
+## Senthil
+
+Hi Dr Senthil,
+
+My name is Pierre-Antoine Graham, I am a Perimeter Institute master student interested to contribute to your research for my PhD.
+
+My background is very diverse including quantum many-body physics of cuprates, Weyl semimetals and chaos in quantum computing. This winter, I will be working with Prof. He on a project about the fuzzy sphere method to study conformal symmetry. 
+
+The conclusion of my scattered exploration is that I want to specialize to the intersection of quantum matter and quantum information. One of my prefered topics of research is criticality and non-fermi liquids as a result of my work on cuprates and I feel could produce interesting ideas under your supervision. 
+
+I have attached my CV and would be happy to discuss the current state of your research in a zoom meeting.
+ 
+Sincerely, 
+Pierre-Antoine 
+
+
+## Soonwon Choi
+
+Dear Prof. Choi,
+
+My name is Pierre-Antoine Graham, I am a Perimeter Institute master student interested to contribute to your research for my PhD.
+
+My background is very diverse including quantum many-body physics of cuprates, out of equillibrium Weyl semimetals and chaos in quantum computing. This winter, I will be working with Prof. He on a project about the fuzzy sphere method to study conformal symmetry. 
+
+My scattered exploration made it clear I have a passion for the intersection of quantum matter and quantum information and sparked my desire to specialize in this area of physics. My exposition to quantum chaos left me with a deep curiosity about this subject and I feel could gain great insight and produce interesting ideas under your supervision. 
+
+I have attached my CV and would be happy to discuss the current state of your research in a zoom meeting.
+ 
+Sincerely, 
+Pierre-Antoine 
+
+
+## Kitaev 
+
+Dear Prof. Kitaev,
+
+My name is Pierre-Antoine Graham, I am a Perimeter Institute master student interested to contribute to your research for my PhD.
+
+My background is very diverse including quantum many-body physics of cuprates, Weyl semimetals and chaos in quantum computing. This winter, I will be working with Prof. He on a project about the fuzzy sphere method to study conformal symmetry. 
+
+The conclusion of my scattered exploration is that I want to specialize to the intersection of quantum matter and quantum information. I feel that you are a leader in the combination of these fields and 
+
+I have attached my CV and would be happy to discuss the current state of your research in a zoom meeting.
+ 
+Sincerely, 
+Pierre-Antoine 
+
+
+## Preskill
+
+Dear Prof. Preskill,
+
+My name is Pierre-Antoine Graham, I am a Perimeter Institute master student interested to contribute to your research for my PhD.
+
+My background is very diverse including quantum many-body physics of cuprates, Weyl semimetals and chaos in quantum computing. This winter, I will be working with Prof. He on a project about the fuzzy sphere method to study conformal symmetry. 
+
+The conclusion of my scattered exploration is that I want to specialize to the intersection of quantum matter and quantum information. 
+
+I have attached my CV and would be happy to discuss the current state of your research in a zoom meeting.
+ 
+Sincerely, 
+Pierre-Antoine 
+
+## Norbert Schuch
+
+Dear Prof. Schuch,
+
+My name is Pierre-Antoine Graham, I am a Perimeter Institute master student interested to contribute to your research for my PhD.
+
+My background is very diverse including quantum many-body physics of cuprates, Weyl semimetals and chaos in quantum computing. This winter, I will be working with Prof. He on a project about the fuzzy sphere method to study conformal symmetry. 
+
+The conclusion of my scattered exploration is that I want to specialize to the intersection of quantum matter and quantum information. Your work is a good combination of these fields and the diversity of mehtods used in your group aligns with my curiosity. I feel could produce interesting ideas under your supervision. 
+
+I have attached my application material and would be happy to discuss the current state of your research in a zoom meeting.
+
+Sincerely, 
+Pierre-Antoine 
+
 
 # Interview 
 
