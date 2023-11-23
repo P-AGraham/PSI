@@ -12,6 +12,8 @@ get the transcripts (UdeS done, UW missing) (UW is unofficial and grades are emp
 
 Go see Dan for advice (when? Tomorrow)
 
+Ask Ion, Senech for letters (Send SOP)
+
 # CV changes 
 
 **Add a the seminar for the end of my T1**
@@ -24,6 +26,13 @@ Go see Dan for advice (when? Tomorrow)
 
 **Put project euler in a better location**
 
+**Add PSIminar website**
+
+**https://tex.stackexchange.com/questions/297365/how-to-use-bibtex-for-putting-a-nice-publication-list-in-resume-with-document-cl (BibTeX publication)**
+
+**Mention which project was done with manim**
+
+**Put publication section below education**
 # Application info 
 
 ## MIT
@@ -93,7 +102,7 @@ MIT is a stepping stone for my career
 SOP Structure: 
 1. Introduction (second quantum revolution) **At the age of 14, I won a writting contest about career ambitions by communicating a dream I had to become a leader in the physics community. This dream stayed with me and at the dawn of specialization, working at MIT makes it a reality.**
 
-2. History of my interest (outreach, tutoring, observatory, more outreach commitment to the communication of scientific ideas to my academic peers and my people from the general public to form a richer more diverse future generation of scientists) (Link with MIT values) **I gained appreciation for applied physics topics with**
+2. History of my interest (outreach, tutoring, observatory, more outreach commitment to the communication of scientific ideas to my academic peers and my people from the general public to form a richer more diverse future generation of scientists) **My first contact with science took the form of four participations to the science fair, followed by a summer job at an astronomical observatory. These opportunities to share my growing passion with the general public made me value scitentifc collaboration deeply. This was reflected trough my three participations and organization of populariszation events at Universite de Sherbrooke as a member of the EDI commitee. I also joined tutoring programs where I helped students individually and in groups troughout undergrad. I plan to carry my desire for excellence in scientific communicatoon as I become a TA at MIT.** (Link with MIT values) **I gained appreciation for applied physics topics with**
 
 3.  Coursework, Project Euler, work ethic and philosophie (Link with MIT PhD courses, challenges) Collaborative environnement of Perimeter. **I always start studying a subject with the intention of grasping it so well I can predict the next chapter. This made me eager to do actual research where it really pays off to imagine the next steps.** 
 
@@ -112,10 +121,24 @@ Is it possible to work at the frontier of theory and experiment and still explor
 
 https://arxiv.org/ftp/quant-ph/papers/0206/0206091.pdf (Second quantum revolution)
 
-Interaction between quantum matter and quantum information have sparked countless ideas shaping a second quantum revolution. These ideas reached me as my journey trough academia started and they showed me how modern technology can build on the full elegant machinery of theoretical physics. I aim to become a leader participating in the second quantum revolution with no compromise between practical application and theoretical sophisication. At the age of 14, I won a writting contest about career ambitions by describing a future where I would play an important role in the developpement of physics. This dream stayed with me and at the dawn of specialization, working at MIT would make it a reality. 
+https://science.mit.edu/diversity-and-inclusion/outreach-programs/ (outreach at MIT) 
 
+https://catalog.mit.edu/subjects/8/ (courses)
 
-My intent to become a leader brings me to apply to MIT to collaborate with the scientists guiding the revolution. 
+Interaction between quantum matter and quantum information have sparked countless ideas shaping a second quantum revolution. From high temperature superconducors to superconducting qubits, these ideas reached me as my journey trough academia started and they showed me how modern technology can build on the full elegant machinery of theoretical physics. I aim to become a leader participating in the second quantum revolution with no compromise between practical application and theoretical sophisication. At the age of 14, I won a writting contest about career ambitions by describing a future where I would play an important role in the developpement of physics. This dream stayed with me and at the dawn of specialization, working at MIT would make it a reality. 
+
+My first contact with science took the form of four participations to the Hydro-Québec science fair, followed by a summer job at an astronomical observatory. These opportunities to share my growing passion with the general public made me value scitentifc collaboration deeply. This was reflected trough my three participations and organization of populariszation events at Universite de Sherbrooke as a member of the diversity commitee. I also joined tutoring programs where I helped students individually and in groups troughout undergrad. Lately, I am contributing to the organization of a seminar series for students of my program to share their interests. I plan to carry my desire for excellence in scientific communicaton by contributing to the impressive outreach programs at MIT notably material sciences related.   
+
+While outreach projects fostered my interest in the foundations of modern physics, internships made me explore and refine my aspirations. Eager to go beyond courses and start contributing to science directly, I took an internship during the first summer of undergraduate. I joined Prof. Jeffrey Quilliam's group to conceive an interface treating nuclear magnetic resonance data generated by experiments on frustrated Kagome crystals at high pressure. Troughout the summer, I developped a rigorous work ethic as I implemented Fourier analysis of spin echos, curve fitting tools and efficient data storing. Along the way, interactions with experimentalists tainted my theorist view of physics with an appreciation of the work behind data.
+
+With the reality of experimentalists in mind, My theoretical physics journey journey started in Prof. André-Marie Tremblay's group. I was tasked to produce and analyse data from two-particle self-consistent approach simulations of electron-doped cuprates. At the beginning of the project, I demonstrated efficient self-learning by rapidly gaining working understanding of Matsubara frequencies and their role in the evaluation of many-body functions. Meticulousely exploring simulation data, I devised a procedure to locate the quantum critical point of the electron-dopped phase diagram using an approximate temperature for antiferromagnetic pseudogap appearence. My analysis allowed me to qualify the effect of a simple implementation of disorder on the quantum critical point and helped orient further research that would lead to a publication in Physical Review B. Looking back, I see this internship as the origin of my current ambitions in the material sciences. It is the idea that my work could lead to new technologies that made it so engaging for me. 
+
+The thrill of material sciences became even more vivid with my next internship project. This time, I was working with Prof. Ion Garate on an adaptation of the Van Roosbroeck system of partial differential equations providing a semi-classical description of Weyl semimetals. The goal of the project was to solve the equations to gain insight into the semi-classical role of the chiral anomaly. Having more independance, I produced animations of the numerical evolution of charge densities through time and found a way to decouple the equations using Ampère's law. In the end, we identified the presence of photoinduced plasma oscillations leading to a publication in Physical Review B. This internship introduced me to the intricacies of non-equillibrium phenomenas and the challenging task of bringing a theoretical model closer to experiment. 
+
+As my interest for condensed matter became more established, I felt the need to take a detour to explore other areas of physics. To satisfy my curiosity towards gravitationnal physics, I worked with Prof. Valerio Faraoni's group on a map scalar-tensor gravity to a dissipative fluid with an associated temperature. In the first half of the internship, I used perturbation theory to explain why a family of cosmological solutions have ill-defined temperatures. The analysis led to a Physical Review D paper. In the second half, I proposed an extension of the formalism to multi-scalar tensor gravity, by introducing the idea of an effective multi-fluid described in publication in The European Physical Journal Plus. Group discussion at the root of these results made me a more confident scientist.
+
+As a second contact with non-equillibrium physics, I worked with a student from Prof. Alexander's group on the mixed regular/chaotic dynamics of a driven superconducting cat qubit and its classical limit. Writting multiple algorithms to analyse chaos, non-linear resonnances and their quantum signatures made me realize how stimulated I was by algorthms 
+
 
 # EDI ideas 
 
@@ -131,7 +154,7 @@ Caltech:
 
 ## Senthil
 
-Hi Dr Senthil,
+Hi Prof. Senthil,
 
 My name is Pierre-Antoine Graham, I am a Perimeter Institute master student interested to contribute to your research for my PhD.
 
@@ -141,7 +164,7 @@ The conclusion of my scattered exploration is that I want to specialize to the i
 
 I have attached my CV and would be happy to discuss the current state of your research in a zoom meeting.
  
-Sincerely, 
+Best, 
 Pierre-Antoine 
 
 
@@ -210,4 +233,4 @@ Pierre-Antoine
 
 # Interview 
 
-I like entanglement because it has a very strong explicative power: it makes statistical ensemble for a system in a bath more intuitive. It is a quantum game theory ressource to share correlations but no information.
+I like entanglement because it has a very strong explicative power: it makes statistical ensemble for a system in a bath more intuitive. It is a quantum game theory ressource to share correlations but no information. (There will be group practice)
