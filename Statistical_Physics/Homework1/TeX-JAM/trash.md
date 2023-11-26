@@ -133,3 +133,13 @@ We can also write $\epsilon_{ij}{}^k J^{ij} =  J^k$ where $-\epsilon_{ij}{}^k = 
 \epsilon_{ij}{}^{k} \epsilon_{lm}{}^{n} [J^{ij}, J^{lm}] &= -i \epsilon_{ij}{}^{k} \epsilon_{lm}{}^{n} \left(\eta^{m j} J^{l i} -\eta^{m i} J^{lj} + \eta^{jl} J^{im} - \eta^{il} J^{jm}\right)\\
     &= -i \left(- \epsilon_{i}{}^{mk} \epsilon_{lm}{}^{n} J^{l i} + \epsilon^{m}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{lj} - \epsilon_{i}{}^{lk} \epsilon_{lm}{}^{n} J^{im} + \epsilon^{l}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{jm}\right)\\
     &= -i \left(- \epsilon_{i}{}^{km} \epsilon_{l}{}^{nm} J^{l i} + \epsilon^{k}{}_{j}{}^{m} \epsilon_{l}{}^{n}{}_m J^{lj} - \epsilon_{i}{}^{lk} \epsilon_{lm}{}^{n} J^{im} + \epsilon^{l}{}_{j}{}^{k} \epsilon_{lm}{}^{n} J^{jm}\right)
+
+
+To preserve the validity of our previous truncations, we need to have $y \propto x$ ($x$ and $y$ are close deviations) so that all the terms pushed beyond $O(x^3)$ stay truncated. A constant term in the expansion of $y$ would shift terms from higher orders to our truncated expansion and \eqref{3} would not hold. We can also conclude $y \propto x$ from the fact $x=0 \implies y=0$ since the two transition lines are joined at the critical point. Substituting $y = d(T) x + e(T) x^2 + f(T) x^3 + O(x^4)$ in a second order expansion in $x$ of \eqref{3} yields 
+  \begin{align*}
+    0 = 3a(T) (d(T)^2 x^2 - x^2) + 4 b(T) (d(T)^3 x^3 + x^3) + O(x^4) \iff d(T) = \pm 1 \quad \& \quad d(T) . 
+  \end{align*}
+  We finally have $d(T) > 0$ because $x$ 
+
+
+(1-2x + 4x^2 - 8x^3) \exp\left(2-2 (1-x)\right) \approx (1-2x + 4x^2 - 8x^3) \left(1+2x + \frac{4}{2}x^2 - \frac{8}{6}x^3\right) 

@@ -135,10 +135,18 @@ With the reality of experimentalists in mind, My theoretical physics journey jou
 
 The thrill of material sciences became even more vivid with my next internship project. This time, I was working with Prof. Ion Garate on an adaptation of the Van Roosbroeck system of partial differential equations providing a semi-classical description of Weyl semimetals. The goal of the project was to solve the equations to gain insight into the semi-classical role of the chiral anomaly. Having more independance, I produced animations of the numerical evolution of charge densities through time and found a way to decouple the equations using Ampère's law. In the end, we identified the presence of photoinduced plasma oscillations leading to a publication in Physical Review B. This internship introduced me to the intricacies of non-equillibrium phenomenas and the challenging task of bringing a theoretical model closer to experiment. 
 
-As my interest for condensed matter became more established, I felt the need to take a detour to explore other areas of physics. To satisfy my curiosity towards gravitationnal physics, I worked with Prof. Valerio Faraoni's group on a map scalar-tensor gravity to a dissipative fluid with an associated temperature. In the first half of the internship, I used perturbation theory to explain why a family of cosmological solutions have ill-defined temperatures. The analysis led to a Physical Review D paper. In the second half, I proposed an extension of the formalism to multi-scalar tensor gravity, by introducing the idea of an effective multi-fluid described in publication in The European Physical Journal Plus. Group discussion at the root of these results made me a more confident scientist.
+As my interest for condensed matter became more established, I started exploring other areas of physics. To satisfy my curiosity towards gravitationnal physics, I worked with Prof. Valerio Faraoni's group on a map from scalar-tensor gravity to a dissipative fluid with an associated temperature. This final undergrad research experience brought me to a bigger research group where I gained confidence as a collaborating scientist. My contribution to the discussions led to papers in in Physical Review C and The European Journal Plus. 
 
-As a second contact with non-equillibrium physics, I worked with a student from Prof. Alexander's group on the mixed regular/chaotic dynamics of a driven superconducting cat qubit and its classical limit. Writting multiple algorithms to analyse chaos, non-linear resonnances and their quantum signatures made me realize how stimulated I was by algorthms 
+The next step in my exploration unfolded in Prof. Alexander Blais's group where I worked with a master's student on the mixed regular/chaotic dynamics of a driven superconducting cat qubit and its classical limit. This project introduced my to the hardware challenges a quantum computer presents. This winter, I will work on a new qubit implementation relying on the Unruh effect. 
 
+In a general sense, I look forward to making meaningful connections with the great minds of MIT. Collaboration and exchange are central to launching a stimulating career I will be proud of. I would be honored to take part in the cutting-edge research happening at MIT and I am convinced MIT's professors and students will allow me to reach my full potential in this century of great scientific opportunities.
+
+Sincerely,
+
+Pierre-Antoine Graham
+
+
+...In the first half of the internship, I used perturbation theory to explain why a family of cosmological solutions have ill-defined temperatures leading to a Physical Review D paper. In the second half, I proposed an extension of the formalism to multi-scalar tensor gravity, by introducing the idea of an effective multi-fluid described in a publication in The European Physical Journal Plus. 
 
 # EDI ideas 
 
