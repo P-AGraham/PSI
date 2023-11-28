@@ -26,8 +26,10 @@ Pg = Pg.subs({y : x + c * x ** 2})
 
 Eq = (Pg-Pl).simplify().removeO()
 
-sp.solve(Eq, x)[1].series(t, 0, 2)
+sp.print_latex(Eq)
 
-#sp.print_latex(P)
+X = sp.solve(Eq, x)[1].series(t, 0, 2)
+
+sp.print_latex(X)
 
 # %%

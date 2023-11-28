@@ -45,6 +45,16 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+
+
 \section{Gross-Neveu Model}
 
 \begin{enumerate}
@@ -58,21 +68,39 @@
     \mathcal{L}_{\mathrm{GN}}=-\bar{\phi}_a \gamma^5 i \slashed{\partial} \gamma^5 \phi^a+\frac{g^2}{2 N}\left(-\bar{\phi}_a \gamma^5 \gamma^5 \phi^a\right)^2 = \bar{\phi}_a i \slashed{\partial}  \phi^a+\frac{g^2}{2 N}\left(\bar{\phi}_a \phi^a\right)^2  
   \end{align*}
   where we used $\{\gamma^5, \gamma^\mu\} = 0$ in the first term and $\gamma^5 = 1$ in the second term. We notice that the new lagrangian density is identical to the $\psi^a$ one and the transformation from $\psi^a$ to $\phi^a$ is a discrete symmetry. A mass $m$ term $m \bar{\psi}_a \psi^a$ would transform to $-m \bar{\phi}_a \gamma^5 \gamma^5 \phi^a = -m \bar{\phi}_a \phi^a$ which is not identical to the initial term and therefore breaks the considered symmetry. 
-  \item[(c)]
+  \item[(c)] The interaction term implies that the scattering amplitudes can be computed using Feynman digragmatic for a $4$ particle vertex. Expanding the square of the interaction term we see that the vertex involves one (self-interaction) or two colors. For each color, it has an ingoing fermion and an outgoing fermion (arising from wick contractions with $\bar{\psi}_a$ and $\psi^a$). The coefficient of each term in the expansion is $g^2/N$ because the factor of $2$ is canceled by the binomial coefficient of the square expansion. We are interested in the two point function $\langle \bar{\psi}_b \psi_a\rangle$. At on loop order the only there is only one vertex and it has two of its fields contracted together to close the loop. The only non-vanishing one-loop contribution contracts fields sharing the same type and the effective interaction term is of the form $\bar{\psi}_a \psi^a \bar{\psi}_a \psi^a$ (with no summation implied). This implies that the incomming and outgoing fields are contracted with the same color forcing them to share this color. Therefore, the one-loop correction only consitutes a self-interaction correction. The position space diagram associated to this process and its amplitude are 
+  \begin{equation*}
+    \langle \bar{\psi}_a \psi_a \rangle_{\text{one \ loop}} = 
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+      
+      \begin{feynman}
+        % External legs
+
+        \vertex[label={left:$x, a$}]  (a) at (-2, 0);
+        \vertex[label={right:$y, a$}] (b) at (2, 0);
+
+        \vertex[label={below:$z, a$}]  (p) at (0, 0);
+        \vertex (q) at (0, 1); 
+
+        %\fill (a) circle (2pt);
+  
+        \diagram* {
+          (a) --[fermion] (p),
+          (p) --[fermion] (b),
+          (p) --[fermion, half right] (q),
+          (q) --[fermion, half right] (p),
+        };
+      \end{feynman}
+    \end{tikzpicture}
+    = -i \frac{g^2}{\hbar N} \int \ \text{d}^4 z \  \hbar (\slashed{\partial})^{-1}_{xz} \hbar (\slashed{\partial})^{-1}_{zz} \hbar (\slashed{\partial})^{-1}_{zy}
+  \end{equation*} 
+  where $(\slashed{\partial})^{-1}_{xz}$ denotes the free massless fermionic propagator between points $x$ and $z$. We note that the amplitude takes the form of a matrix in spinor index consistently with the supressed spinor indices in $\langle \bar{\psi}_a \psi_a \rangle_{\text{one \ loop}}$.
   \item[(d)]
   \item[(e)]
   \item[(f)] 
   \item[(g)]
   \item[(h)]
 \end{enumerate}
-
-% Make the title page.
-\maketitlepage
-
-% Make table of contents
-\maketableofcontents
-
-% Assignment starts here ----------------------------
 
 
 
