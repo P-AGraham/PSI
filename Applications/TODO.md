@@ -149,6 +149,19 @@ I am currently studying as a Perimeter scholars internationnal master student. M
 3. Excellence in education 
 4. Ressources 
 5. Make links with MIT community values
+6. connecting abilities with branching specialisation 
+7. overview in the beginning
+8. Keep it brief 
+9. make it interesting
+10. Vienna put more technical terms, explain with reformulation 
+11. mention a paper from the person you apply with (even for a department)
+12. Why that school (at least a paragraph) research
+13. Why shouldnt I do? : reference about early career, too bland convey personnality why did I do stuff I did not a CV
+14. Most important accomplishments repeated a few places, not too much or too little repetition : repetition is good 
+15. less than 1000 words: say the same thing in fewer words
+16. more material --> each part is read less carefully
+17. Alignment is at the end or beginning
+18. Short list vs offer : SOP 
 
 For completion of my degree, I will work on an essay about the fuzzy sphere method for 3D CFTs under the supervision of its **inventor?** Prof. Yin-Chen He. 
 
