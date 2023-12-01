@@ -143,3 +143,6 @@ To preserve the validity of our previous truncations, we need to have $y \propto
 
 
 (1-2x + 4x^2 - 8x^3) \exp\left(2-2 (1-x)\right) \approx (1-2x + 4x^2 - 8x^3) \left(1+2x + \frac{4}{2}x^2 - \frac{8}{6}x^3\right) 
+
+
+ Maybe because the meaningful solution to the cubic equations \eqref{1}, \eqref{2} for $y$ in terms of $x$ is close to the solution of the equations with $a(T) = 0$ ($y \sim x$, close to the critical temperature) making the solution accessed by perturbative expansion around  
