@@ -73,18 +73,25 @@ import numpy as np
 def creation(m, N):
     c0 = np.array([[0, 1], [0, 0]])
     cz = np.array([[-1, 0], [0, 1]])
-    c = np.kron(np.kron([np.eye(2**(N-m-1)), c0]), np.eye(2**m))
+
+    c = np.kron(np.kron(np.eye(2**(N-m-1)), c0), np.eye(2**m))
+
+    string = 1
+
+    for i in range(0,N-m):
+        string = np.kron(string, cz)
+        #print(string) 
+
+    string = np.kron(string, np.eye(2**m))
     
-    for i in range(0, m-1):
-        string = np.kron(string, cz) 
-
-    string = np.kron(string, np.eye(2**(N-m+1)))
-
-    return string * c
+    return string @ c
 
 
-c1 = creation(0, 2)
+c0 = creation(0, 10).T
+c1 = creation(1, 10).T
 
-c1 @ np.array([1, 0, 0, 0])
+print(c0 @ c1 + c1 @ c0)
+
+#c1 @ np.array([0, 0, 1, 0])
 # %%
 # ask about local and ultra local, ask about the coupling depending on the number of electrons
