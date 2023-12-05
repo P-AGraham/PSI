@@ -1,0 +1,151 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage[font=small,labelfont=bf,
+   justification=justified,
+   format=plain]{caption}
+\input{math_func}
+
+\usepackage{listings,xcolor}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+\lstset{language=Mathematica}
+\lstset{basicstyle={\sffamily\footnotesize},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt,
+  breaklines=true,
+  captionpos={t},
+  frame={lines},
+  rulecolor=\color{black},
+  framerule=0.5pt,
+  columns=flexible,
+  tabsize=2
+}
+
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\footnotesize,
+morekeywords={self},              % Add keywords here
+keywordstyle=\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}}
+
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%
+\title{Homework 2} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Emilie Huffman and Giuseppe Sellaroli} % Your teacher's name.
+\class{Statistical Physics} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\footnotesize{
+\section{Gaussian model for $T<T_c$}
+\begin{enumerate}
+  \item[(a)] The Ising model can be formulated as a statistical field theory on a lattice using the Hubbard–Stratonovich transformation. The auxiliary field takes values $\phi_i$ (organized in a vector $\phi$) on sites $i$ at position $x_i$ of a square lattice containing a total of $N$ sites. The connectivity of the Ising interaction is encoded in a translationaly symmetric matrix with elements $B_{ij} = B(x_i - x_j)$. At zero magnetic field, the theory is parameterized by inverse temperature $\beta$ and a constant $A$. The statistical field theory is given by the following partition function and action:
+  \begin{align*}
+    Z=\sqrt{\operatorname{det}\left(\frac{2 \beta A^2 B}{\pi}\right)} \int_{\mathbb{R}^N} \mathrm{~d}^N \phi e^{-S(\phi)}, \quad S(\phi)=\frac{\beta A^2}{2} \phi^{\mathrm{t}} B \phi-\sum_i \ln \left(\cosh \left(\beta A(B \phi)_i\right)\right).
+  \end{align*}
+  We are interested in the model resulting from a gaussian approximation of $S(\phi)$ around its minimizing field configuration given at each site by $\psi_j$. Up to second order in deviations form this minimum, the expansion of the discrete field reads
+  \begin{align*}
+    S(\phi) \approx S(\psi)+\frac{1}{2} \sum_{i, j}(\phi-\psi)_i(\phi-\psi)_j \frac{\partial^2 S}{\partial \phi_i \partial \phi_j}(\psi). 
+  \end{align*}
+  Because $B$ encodes translationaly symmetric nearest neighbour interaction, $B_{ij}$ can be expressed \cite{CitekeyBook} as a Fourier sum on a single crystal momentum $k$. We have 
+  \begin{align*}
+    B_{i, j} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot (x_i - x_j)}  \implies \sum_{i} B_{i, j} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} N\delta_{k, 0} = B_0.
+  \end{align*}
+  where we used the exponential sum representation of the $\delta_{k, 0}$ \cite{CitekeyBook}. A similar result holds for the inverse of $B$. Indeed
+  \begin{align*}
+    (B^{-1})_{i, j} = \frac{1}{N} \sum_k \frac{1}{B_k} e^{i k \cdot\left(x_i-x_j\right)}  \implies \sum_{i} (B^{-1})_{i, j} = \frac{1}{N}\sum_{k} \frac{1}{B_k} e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} \frac{1}{B_0} e^{-k \cdot x_j} N\delta_{k, 0} = \frac{1}{B_0}
+  \end{align*}
+  We note that $B_0$ is related to the critical temperature of the gaussian model by $B_0 = k_B T_c$.  
+  \item[(b)] Using the fact $S(\phi)$ is a function of $N$ real variables $\phi_i$, we have that its minimal is realized for $\phi_i = \psi_i$ such that the derivatives $\left.\frac{\partial S}{\partial \phi}\right|_{\psi}$ simultaneously vanish. This corresponds to 
+  \begin{align*}
+    0 = \left.\dfrac{\partial S}{\partial \phi_k}\right|_{\psi} &= \frac{\beta A^2}{2} \sum_{i, j} \phi_j B_{ij} \delta_{ik} + \frac{\beta A^2}{2} \sum_{i, j} \delta_{jk} B_{ij} \phi_i -\sum_i \tanh \left(\beta A(B \phi)_i\right) \sum_j \beta A B_{ij} \delta_{jk}\\
+    &=  \frac{\beta A^2}{2} \sum_{j} \phi_j B_{kj} + \frac{\beta A^2}{2} \sum_{i} B_{ik} \phi_i -\sum_i \tanh \left(\beta A(B \phi)_i\right) \sum_k \beta A B_{ik} \\
+    &=  \beta A^2 \sum_{i} \phi_i B_{ki}- B_0 \beta A \sum_i \tanh \left(\beta A(B \phi)_i\right)\quad \text{(using (a) and $B_{i, j} = B_{j, i}$)}\\
+    &\iff  \sum_{i} A \phi_i B_{ki} = B_0 \sum_i \tanh \left(A\frac{1}{T}(B \phi)_i\right).
+  \end{align*}
+  Since the right hand side of the previous expression is independant of $k$ the left hand side also is implying there exists a number $\bar{\psi}$ such that $B_0 \bar{\psi} = \sum_{i} \phi_i B_{ki}$. This constitutes a linear systems of equations and, since $B_{ki}$ has non-zero determinant, we have the solution $\phi_i = \sum_{k} B_0 \bar{\psi} (B^{-1})_{ki} = \bar{\psi} B_0/B_0$ (same minimizing field value at all sites). Denoting $M = A \bar{\psi}$ we recover the familiar mean field theory self-consistency relation 
+  \begin{align*}
+    M \sum_{i} B_{ki} = B_0 \sum_i \tanh \left(\frac{1}{k_B T}M \sum_j B_{ij}\right) \iff M = \sum_i \tanh \left(\frac{T_c}{T}M\right). 
+  \end{align*}
+  \item[(c)] 
+  \item[(d)] 
+  \item[(e)]
+  \item[(f)]
+\end{enumerate}
+
+\section{Acknowledgement}
+
+}
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
