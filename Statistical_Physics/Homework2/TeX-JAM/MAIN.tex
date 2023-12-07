@@ -102,7 +102,7 @@ showstringspaces=false
 \footnotesize{
 \section{Gaussian model for $T<T_c$}
 \begin{enumerate}
-  \item[(a)] The Ising model can be formulated as a statistical field theory on a lattice using the Hubbard–Stratonovich transformation. The auxiliary field takes values $\phi_i$ (organized in a vector $\phi$) on sites $i$ at position $x_i$ of a square lattice containing a total of $N$ sites. The connectivity of the Ising interaction is encoded in a translationaly symmetric matrix with elements $B_{ij} = B(x_i - x_j)$. At zero magnetic field, the theory is parameterized by inverse temperature $\beta$ and a constant $A$. The statistical field theory is given by the following partition function and action:
+  \item[(a)] The Ising model can be formulated as a statistical field theory on a lattice using the Hubbard–Stratonovich transformation. The auxiliary field takes values $\phi_i$ (organized in a vector $\phi$) on sites $i$ at position $x_i$ of a square lattice containing a total of $N$ sites. The connectivity of the Ising interaction is encoded in a translationaly symmetric matrix with elements $B_{ij} = B(x_i - x_j)$. At zero magnetic field, the theory is parameterized by inverse temperature $\beta$ and a positive constant $A$. The statistical field theory is given by the following partition function and action:
   \begin{align*}
     Z=\sqrt{\operatorname{det}\left(\frac{2 \beta A^2 B}{\pi}\right)} \int_{\mathbb{R}^N} \mathrm{~d}^N \phi e^{-S(\phi)}, \quad S(\phi)=\frac{\beta A^2}{2} \phi^{\mathrm{t}} B \phi-\sum_i \ln \left(\cosh \left(\beta A(B \phi)_i\right)\right).
   \end{align*}
@@ -112,26 +112,53 @@ showstringspaces=false
   \end{align*}
   Because $B$ encodes translationaly symmetric nearest neighbour interaction, $B_{ij}$ can be expressed \cite{CitekeyBook} as a Fourier sum on a single crystal momentum $k$. We have 
   \begin{align*}
-    B_{i, j} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot (x_i - x_j)}  \implies \sum_{i} B_{i, j} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} N\delta_{k, 0} = B_0.
+    B_{ij} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot (x_i - x_j)}  \implies \sum_{i} B_{i, j} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} N\delta_{k, 0} = B_0.
   \end{align*}
-  where we used the exponential sum representation of the $\delta_{k, 0}$ \cite{CitekeyBook}. A similar result holds for the inverse of $B$. Indeed
-  \begin{align*}
-    (B^{-1})_{i, j} = \frac{1}{N} \sum_k \frac{1}{B_k} e^{i k \cdot\left(x_i-x_j\right)}  \implies \sum_{i} (B^{-1})_{i, j} = \frac{1}{N}\sum_{k} \frac{1}{B_k} e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} \frac{1}{B_0} e^{-k \cdot x_j} N\delta_{k, 0} = \frac{1}{B_0}
-  \end{align*}
-  We note that $B_0$ is related to the critical temperature of the gaussian model by $B_0 = k_B T_c$.  
+  where we used the exponential sum representation of the $\delta_{k, 0}$ \cite{CitekeyBook}. We note that $B_0$ is related to the critical temperature of the gaussian model by $B_0 = k_B T_c$. 
+
   \item[(b)] Using the fact $S(\phi)$ is a function of $N$ real variables $\phi_i$, we have that its minimal is realized for $\phi_i = \psi_i$ such that the derivatives $\left.\frac{\partial S}{\partial \phi}\right|_{\psi}$ simultaneously vanish. This corresponds to 
   \begin{align*}
-    0 = \left.\dfrac{\partial S}{\partial \phi_k}\right|_{\psi} &= \frac{\beta A^2}{2} \sum_{i, j} \phi_j B_{ij} \delta_{ik} + \frac{\beta A^2}{2} \sum_{i, j} \delta_{jk} B_{ij} \phi_i -\sum_i \tanh \left(\beta A(B \phi)_i\right) \sum_j \beta A B_{ij} \delta_{jk}\\
-    &=  \frac{\beta A^2}{2} \sum_{j} \phi_j B_{kj} + \frac{\beta A^2}{2} \sum_{i} B_{ik} \phi_i -\sum_i \tanh \left(\beta A(B \phi)_i\right) \sum_k \beta A B_{ik} \\
-    &=  \beta A^2 \sum_{i} \phi_i B_{ki}- B_0 \beta A \sum_i \tanh \left(\beta A(B \phi)_i\right)\quad \text{(using (a) and $B_{i, j} = B_{j, i}$)}\\
-    &\iff  \sum_{i} A \phi_i B_{ki} = B_0 \sum_i \tanh \left(A\frac{1}{T}(B \phi)_i\right).
+    0 = \left.\dfrac{\partial S}{\partial \phi_k}\right|_{\psi} &= \frac{\beta A^2}{2} \sum_{i, j} \psi_j B_{ij} \delta_{ik} + \frac{\beta A^2}{2} \sum_{i, j} \delta_{jk} B_{ij} \psi_i -\sum_i \tanh \left(\beta A(B \psi)_i\right) \sum_j \beta A B_{ij} \delta_{jk}\\
+    &=  \frac{\beta A^2}{2} \sum_{j} \psi_j B_{kj} + \frac{\beta A^2}{2} \sum_{i} B_{ik} \psi_i -\sum_i \tanh \left(\beta A(B \psi)_i\right) \beta A B_{ik} \\
+    &=  \beta A^2 \sum_{i} \psi_i B_{ki}-\beta A \sum_i \tanh \left(\beta A(B \psi)_i\right) B_{ik}\quad \text{(using (a) and $B_{ij} = B_{ji}$)}.
   \end{align*}
-  Since the right hand side of the previous expression is independant of $k$ the left hand side also is implying there exists a number $\bar{\psi}$ such that $B_0 \bar{\psi} = \sum_{i} \phi_i B_{ki}$. This constitutes a linear systems of equations and, since $B_{ki}$ has non-zero determinant, we have the solution $\phi_i = \sum_{k} B_0 \bar{\psi} (B^{-1})_{ki} = \bar{\psi} B_0/B_0$ (same minimizing field value at all sites). Denoting $M = A \bar{\psi}$ we recover the familiar mean field theory self-consistency relation 
+  Since the lattice is translational symmetric, the minimizing field is uniform with $\psi_i = \bar{\psi}$. This allows us to express the minimization condition in terms of the average field $\bar{\psi}$ as 
   \begin{align*}
-    M \sum_{i} B_{ki} = B_0 \sum_i \tanh \left(\frac{1}{k_B T}M \sum_j B_{ij}\right) \iff M = \sum_i \tanh \left(\frac{T_c}{T}M\right). 
+    0 = \beta A^2 \bar{\psi} B_0 -\beta A \sum_i \tanh \left(\beta A \bar{\psi} B_0\right) B_{ik} = \beta A^2 \bar{\psi} B_0 -\beta A \tanh \left(\beta A \bar{\psi} B_0\right) B_0 \iff A \bar{\psi} = \tanh \left(\beta A\bar{\psi} B_0\right) 
   \end{align*}
-  \item[(c)] 
-  \item[(d)] 
+  Denoting $M = A \bar{\psi}$ and using $B_0 = k_B T_c$ we recover the familiar mean field theory self-consistency relation $M = \tanh \left(\frac{T_c}{T}M\right)$. 
+  
+  \item[(c)]  The hessian matrix of $S(\phi)$ at the minimizing field configuration is given by 
+  \begin{align*}
+    \left.\dfrac{\partial^2 S}{\partial \phi_k \partial \phi_m}\right|_{\psi} &= \beta A^2 \sum_{i} \delta_{im} B_{ki}-\beta A \sum_i \text{sech}^2 \left(\beta A(B \psi)_i\right) B_{ik} \beta A \sum_{p}B_{i p} \delta_{mp} \\
+    &= \beta A^2  B_{km}-(\beta A)^2 \sum_i \text{sech}^2 \left(\beta A(B \psi)_i\right) B_{ik} B_{i m} \\
+    &= \beta A^2  B_{km}-(\beta A)^2 \text{sech}^2 \left(\beta A B_0 \bar{\psi}\right) (B^2)_{k m} = \beta A^2  B_{km}-(\beta A)^2 \text{sech}^2 \left(\beta B_0 M\right) (B^2)_{k m}.
+  \end{align*}
+  Using the mean field condition on $M$, the hessian becomes 
+  \begin{align*}
+    \left.\dfrac{\partial^2 S}{\partial \phi_k \partial \phi_m}\right|_{\psi} = \beta A^2  B_{km}-(\beta A)^2 \text{sech}^2 \left(\tanh^{-1}(M)\right) (B^2)_{k m} = \beta A^2  B_{km}-(\beta A)^2 (1-M^2) (B^2)_{k m}.
+  \end{align*}
+  To show the resulting matrix is positive definite we can move to the eigenbasis of $B_{ij}$ where $B_{ij}$ is diagonal with eigenvalues $B_k$ \cite{CitekeyBook}. The hessian is diagonal in this eigenbasis and its eigenvalues are $H_k = B_k(\beta A^2 -(\beta A)^2 (1-M^2) B_k)$. More can be said by noting that for nearest neighbour positive coupling, the eigenvalues $B_{ij}$ are ordered as $B_0 \ge B_k \ge 0$. From this ordering, the positive definiteness of the hessian matrix reduces to $\beta A^2 -(\beta A)^2 (1-M^2) B_k > 0$. Then, because $- < \tanh \left(\frac{T_c}{T}M\right) < 1$, we have $1-M^2 > 0$ leading to the refinement $H_k > 1 - \beta (1-M^2) B_0 > 0$ (the coefficient of $B_k$ is negative and $H_k$ is lower bounded by $H_0$). For a deviation $t$ from $T_c = B_0/k_B$, $\beta = (1-t)/B_0$ and $H_k > 1 - (1-t) (1-M^2) =  (1-t) M^2 + t> 0$. We finally see that positive definiteness is satisfied on both sides of the critical temperature because of the structure of the solution of the mean field condition on $M$. Indeed
+  \begin{align*}
+    \begin{cases}
+      M = 0, \quad t > 0 \\
+      M \sim \sqrt{-3t}, \quad t < 0 \quad \text{(tutorial 3)}
+     \end{cases} 
+     \implies M^2 > -\frac{t}{1-t} \sim -t \quad (t \to 0).
+  \end{align*} 
+  \item[(d)] The correction to $S(\phi)$ provided by the hessian takes the form 
+  \begin{align*}
+    \frac{1}{2} \sum_{k, m}(\phi-\psi)_k(\phi-\psi)_m \frac{\partial^2 S}{\partial \phi_k \partial \phi_m}(\psi) &=  
+    \begin{cases}
+      \frac{A^2}{2} \phi_k \phi_m (\beta B_{km}-\beta^2 (B^2)_{k m}), \quad T > T_c \\
+      \frac{A^2}{2}  (\phi-M/A)_k(\phi-M/A)_m (\beta B_{km}-\beta^2 \text{sech}^2 \left(\beta B_0 M\right)(B^2)_{k m}), \quad T < T_c
+    \end{cases}\\
+    &=
+    \begin{cases}
+      \frac{1}{2} A\phi_k A\phi_m (\beta B_{km}-\beta^2 (B^2)_{k m}), \quad T > T_c \\
+      \frac{1}{2}  (A\phi-M)_k(A\phi-M)_m (\beta B_{km}-\beta^2 \text{sech}^2 \left(\beta B_0 M\right)(B^2)_{k m}), \quad T < T_c
+    \end{cases}
+  \end{align*}
   \item[(e)]
   \item[(f)]
 \end{enumerate}

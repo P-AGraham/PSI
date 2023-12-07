@@ -146,3 +146,28 @@ To preserve the validity of our previous truncations, we need to have $y \propto
 
 
  Maybe because the meaningful solution to the cubic equations \eqref{1}, \eqref{2} for $y$ in terms of $x$ is close to the solution of the equations with $a(T) = 0$ ($y \sim x$, close to the critical temperature) making the solution accessed by perturbative expansion around  
+
+
+ right hand side of the previous expression is independant of $k$ the left hand side also is implying there exists a number $\bar{\psi}$ such that $B_0 \bar{\psi} = \sum_{i} \phi_i B_{ki}$. This constitutes a linear systems of equations and, since $B_{ki}$ has non-zero determinant, we have the solution $\phi_i = \sum_{k} B_0 \bar{\psi} (B^{-1})_{ki} = \bar{\psi} B_0/B_0$ (same minimizing field value at all sites).
+
+
+ we have 
+  \begin{align*}
+    \sum_{j} \psi_j B_{ij} = \dfrac{1}{N}\sum_k \sum_{j} \psi(x_j) B(x_i + x_k, x_j + x_k) =  \dfrac{1}{N}\sum_k \sum_{j} \psi(x_j-x_k) B(x_i + x_k, x_j) = \dfrac{1}{N} \sum_m \psi(x_m) B_0 := \bar{\psi} B_0
+  \end{align*}
+  where addition of $x_k$ is done modulo the lattice boundary (implementing translational symmetry trough periodic boundary conditions). Furthermore, $x_j + x_k$ will reach all sites once in a sum over $k$ and we replace the sum on $k$ by a sum on the shifted sites. We can extract further information about $\psi_i$ by inverting this relation ($\text{det}(B) \neq 0$) to write 
+  \begin{align*}
+     \psi_j = \sum_{j} () \bar{\psi} B_0
+  \end{align*}
+
+For $(B^{-1})_{ij}$ we have the similar relation 
+  \begin{align*}
+    (B^{-1})_{ij} = \frac{1}{N}\sum_{k} \frac{1}{B_k} e^{-k \cdot (x_i - x_j)}  \implies \sum_{i} B_{i, j} = \frac{1}{N}\sum_{k} \frac{1}{B_k} e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} \frac{1}{B_k} e^{-k \cdot x_j} N\delta_{k, 0} = \frac{1}{B_0}.
+  \end{align*}
+
+
+  Note : To show $\psi_i = \bar{\psi}$, we can apply the inverse of $B$ ($\text{det} (B) \neq 0$) on both sides of the minimization condition to get 
+  \begin{align*}
+   0 &= A \psi_0- \tanh \left(\beta A(B \psi)_0\right) = A \psi_i - \tanh \left(\beta A B_{00} \psi_0 + \beta A \sum_{j}(B_{ij} - B_{00} \delta_{0j}\delta_{i0}) \psi_{j} \right)\\
+  &\iff \beta A\sum_{j}(B_{ij} - B_{ii} \delta_{ij}) \psi_{j} = \text{tanh}^{-1}(A \psi_0) - \beta A B_{00} \psi_0 = \text{only depends on $\psi_0$} 
+  \end{align*}
