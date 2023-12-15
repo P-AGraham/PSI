@@ -171,3 +171,19 @@ For $(B^{-1})_{ij}$ we have the similar relation
    0 &= A \psi_0- \tanh \left(\beta A(B \psi)_0\right) = A \psi_i - \tanh \left(\beta A B_{00} \psi_0 + \beta A \sum_{j}(B_{ij} - B_{00} \delta_{0j}\delta_{i0}) \psi_{j} \right)\\
   &\iff \beta A\sum_{j}(B_{ij} - B_{ii} \delta_{ij}) \psi_{j} = \text{tanh}^{-1}(A \psi_0) - \beta A B_{00} \psi_0 = \text{only depends on $\psi_0$} 
   \end{align*}
+
+  where a magnetic field $h_i$ at site $i$ was introduced as an integration trick to calculate the expectation value. Adapting result (3.5.3) from \cite{CitekeyBook}, we get 
+  \begin{align*}
+    Z'(h) = \int_{\mathbb{R}^N} \mathrm{~d}^N \delta \phi e^{-\frac{1}{2}\delta \phi^{\mathrm{t}} \partial^2 S(\psi)\delta \phi + \beta A h^{\mathrm{t}} \delta \phi} = \sqrt{\operatorname{det}\left(\frac{2 \pi B^{-1}(\mathbb{I}-\beta \text{sech}^2 \left(\beta B_0 M\right) B)^{-1}}{\beta A^2}\right)} e^{\frac{\beta h^2}{2} \sum_{i j}\left[B^{-1}(\mathbb{I}-\beta \text{sech}^2 \left(\beta B_0 M\right) B)^{-1}\right]_{i j}}
+  \end{align*}
+  Since this function has a vanishing first derivative at $h=0$, we find that $\left\langle\sigma_i\right\rangle = A \psi = M$ which is consistent with a critical exponent $\beta = 1/2$. Going further we can calculate the two point correlation function 
+  \begin{align*}
+    \left\langle\phi_i\phi_j\right\rangle_S = \psi \langle\delta \phi_i\rangle_S + \psi \langle\delta \phi_j\rangle_S + \langle\delta \phi_i \delta \phi_j\rangle_S=  \frac{\partial^2}{\partial h_i\partial h_j}e^{\frac{\beta h^2}{2} \sum_{i j}\left[B^{-1}(\mathbb{I}-\beta \text{sech}^2 \left(\beta B_0 M\right) B)^{-1}\right]_{i j}}
+  \end{align*}
+
+To show it we note that cyclic permutations $P$ on a lattice axis of $\phi_i$ lead to the same value of the action. The total number of such permutations is $N$ (product of all the number of cyclic permutations for individual axis is the number of sites) so they can be indexed with $i$ as $P_i$. We can write 
+  \begin{align*}
+    \frac{N}{N} S(\phi) = \frac{1}{N} \sum_{i} S(P_i(\phi))
+  \end{align*}
+  because each value shows up twice in 
+  

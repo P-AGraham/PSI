@@ -102,19 +102,19 @@ showstringspaces=false
 \footnotesize{
 \section{Gaussian model for $T<T_c$}
 \begin{enumerate}
-  \item[(a)] The Ising model can be formulated as a statistical field theory on a lattice using the Hubbard–Stratonovich transformation. The auxiliary field takes values $\phi_i$ (organized in a vector $\phi$) on sites $i$ at position $x_i$ of a square lattice containing a total of $N$ sites. The connectivity of the Ising interaction is encoded in a translationaly symmetric matrix with elements $B_{ij} = B(x_i - x_j)$. At zero magnetic field, the theory is parameterized by inverse temperature $\beta$ and a positive constant $A$. The statistical field theory is given by the following partition function and action:
+  \item[(a)] The Ising model can be formulated as a statistical field theory on a lattice using the Hubbard–Stratonovich transformation. The auxiliary field takes values $\phi_i$ (organized in a vector $\phi$) on sites $i$ at position $x_i$ of a square lattice containing a total of $N$ sites. The connectivity of the Ising interaction is encoded in a translationally symmetric matrix with elements $B_{ij} = B(x_i - x_j)$. At zero magnetic field, the theory is parameterized by inverse temperature $\beta$ and a positive constant $A$. The statistical field theory is given by the following partition function and action:
   \begin{align*}
     Z=\sqrt{\operatorname{det}\left(\frac{2 \beta A^2 B}{\pi}\right)} \int_{\mathbb{R}^N} \mathrm{~d}^N \phi e^{-S(\phi)}, \quad S(\phi)=\frac{\beta A^2}{2} \phi^{\mathrm{t}} B \phi-\sum_i \ln \left(\cosh \left(\beta A(B \phi)_i\right)\right).
   \end{align*}
-  We are interested in the model resulting from a gaussian approximation of $S(\phi)$ around its minimizing field configuration given at each site by $\psi_j$. Up to second order in deviations form this minimum, the expansion of the discrete field reads
+  We are interested in the model resulting from a Gaussian approximation of $S(\phi)$ around its minimizing field configuration given at each site by $\psi_j$. Up to the second order in deviations from this minimum, the expansion of the discrete field reads
   \begin{align*}
     S(\phi) \approx S(\psi)+\frac{1}{2} \sum_{i, j}(\phi-\psi)_i(\phi-\psi)_j \frac{\partial^2 S}{\partial \phi_i \partial \phi_j}(\psi). 
   \end{align*}
-  Because $B$ encodes translationaly symmetric nearest neighbour interaction, $B_{ij}$ can be expressed \cite{CitekeyBook} as a Fourier sum on a single crystal momentum $k$. We have 
+  Because $B$ encodes translationally symmetric nearest neighbor interaction, $B_{ij}$ can be expressed \cite{CitekeyBook} as a Fourier sum on a single crystal momentum $k$. We have 
   \begin{align*}
     B_{ij} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot (x_i - x_j)}  \implies \sum_{i} B_{i, j} = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} \left(\sum_i e^{-k \cdot x_i}\right) = \frac{1}{N}\sum_{k} B_k e^{-k \cdot x_j} N\delta_{k, 0} = B_0.
   \end{align*}
-  where we used the exponential sum representation of the $\delta_{k, 0}$ \cite{CitekeyBook}. We note that $B_0$ is related to the critical temperature of the gaussian model by $B_0 = k_B T_c$. 
+  where we used the exponential sum representation of the $\delta_{k, 0}$ \cite{CitekeyBook}. We note that $B_0$ is related to the critical temperature of the Gaussian model by $B_0 = k_B T_c$. 
 
   \item[(b)] Using the fact $S(\phi)$ is a function of $N$ real variables $\phi_i$, we have that its minimal is realized for $\phi_i = \psi_i$ such that the derivatives $\left.\frac{\partial S}{\partial \phi}\right|_{\psi}$ simultaneously vanish. This corresponds to 
   \begin{align*}
@@ -134,11 +134,11 @@ showstringspaces=false
     &= \beta A^2  B_{km}-(\beta A)^2 \sum_i \text{sech}^2 \left(\beta A(B \psi)_i\right) B_{ik} B_{i m} \\
     &= \beta A^2  B_{km}-(\beta A)^2 \text{sech}^2 \left(\beta A B_0 \bar{\psi}\right) (B^2)_{k m} = \beta A^2  B_{km}-(\beta A)^2 \text{sech}^2 \left(\beta B_0 M\right) (B^2)_{k m}.
   \end{align*}
-  Using the mean field condition on $M$, the hessian becomes 
+  Using the mean-field condition on $M$, the hessian becomes 
   \begin{align*}
     \left.\dfrac{\partial^2 S}{\partial \phi_k \partial \phi_m}\right|_{\psi} = \beta A^2  B_{km}-(\beta A)^2 \text{sech}^2 \left(\tanh^{-1}(M)\right) (B^2)_{k m} = \beta A^2  B_{km}-(\beta A)^2 (1-M^2) (B^2)_{k m}.
   \end{align*}
-  To show the resulting matrix is positive definite we can move to the eigenbasis of $B_{ij}$ where $B_{ij}$ is diagonal with eigenvalues $B_k$ \cite{CitekeyBook}. The hessian is diagonal in this eigenbasis and its eigenvalues are $H_k = B_k(\beta A^2 -(\beta A)^2 (1-M^2) B_k)$. More can be said by noting that for nearest neighbour positive coupling, the eigenvalues $B_{ij}$ are ordered as $B_0 \ge B_k \ge 0$. From this ordering, the positive definiteness of the hessian matrix reduces to $\beta A^2 -(\beta A)^2 (1-M^2) B_k > 0$. Then, because $- < \tanh \left(\frac{T_c}{T}M\right) < 1$, we have $1-M^2 > 0$ leading to the refinement $H_k > 1 - \beta (1-M^2) B_0 > 0$ (the coefficient of $B_k$ is negative and $H_k$ is lower bounded by $H_0$). For a deviation $t$ from $T_c = B_0/k_B$, $\beta = (1-t)/B_0$ and $H_k > 1 - (1-t) (1-M^2) =  (1-t) M^2 + t> 0$. We finally see that positive definiteness is satisfied on both sides of the critical temperature because of the structure of the solution of the mean field condition on $M$. Indeed
+  To show the resulting matrix is positive definite we can move to the eigenbasis of $B_{ij}$ where $B_{ij}$ is diagonal with eigenvalues $B_k$ \cite{CitekeyBook}. The hessian is diagonal in this eigenbasis and its eigenvalues are $H_k = B_k(\beta A^2 -(\beta A)^2 (1-M^2) B_k)$. More can be said by noting that for nearest neighbor positive coupling, the eigenvalues $B_{ij}$ are ordered as $B_0 \ge B_k \ge 0$. From this ordering, the positive definiteness of the hessian matrix reduces to $\beta A^2 -(\beta A)^2 (1-M^2) B_k > 0$. Then, because $-1 < \tanh \left(\frac{T_c}{T}M\right) < 1$, we have $1-M^2 > 0$ leading to the refinement $H_k > 1 - \beta (1-M^2) B_0 > 0$ (the coefficient of $B_k$ is negative and $H_k$ is lower bounded by $H_0$). For a deviation $t$ from $T_c = B_0/k_B$, $\beta = (1-t)/B_0$ and $H_k > 1 - (1-t) (1-M^2) =  (1-t) M^2 + t> 0$. We finally see that positive definiteness is satisfied on both sides of the critical temperature because of the structure of the solution of the mean field condition on $M$. Indeed
   \begin{align*}
     \begin{cases}
       M = 0, \quad t > 0 \\
@@ -155,15 +155,34 @@ showstringspaces=false
     \end{cases}\\
     &=
     \begin{cases}
-      \frac{1}{2} A\phi_k A\phi_m (\beta B_{km}-\beta^2 (B^2)_{k m}), \quad T > T_c \\
-      \frac{1}{2}  (A\phi-M)_k(A\phi-M)_m (\beta B_{km}-\beta^2 \text{sech}^2 \left(\beta B_0 M\right)(B^2)_{k m}), \quad T < T_c
+      \frac{\beta}{2} A\phi_k A\phi_m (B_{km}-\beta \text{sech}^2 \left(\beta B_0 M\right)(B^2)_{k m}), \quad T > T_c, \quad \text{sech}^2 \left(\beta B_0 0\right) = 1 \\
+      \frac{\beta}{2}  (A\phi-M)_k(A\phi-M)_m ( B_{km}-\beta \text{sech}^2 \left(\beta B_0 M\right)(B^2)_{k m}), \quad T < T_c
     \end{cases}
   \end{align*}
-  \item[(e)]
-  \item[(f)]
+  We notice that for $T>T_c$, we recover the result from \cite{CitekeyBook} because it is derived from a small $\phi$ expansion of the logarithm contribution to the action. Here, we recover this approximation in the phase where $\bar{\psi} = 0$ (expanding around this field configuration is the same as doing a small $\phi$ expansion).  
+  \item[(e)] In the absence of a magnetic field, the expectation value of spin $\sigma_i$ on site $i$ of the Ising model is proportional to the expectation value of the auxiliary field value $\phi_i$ at site $i$. Using the quadratic approximation of the action obtained above, we can write 
+  \begin{align*}
+    \left\langle\sigma_i\right\rangle=A\left\langle\phi_i\right\rangle_S \approx A \frac{e^{-S(\psi)}\int_{\mathbb{R}^N} \mathrm{~d}^N \phi e^{-\frac{1}{2}(\phi-\psi)^{\mathrm{t}} \partial^2 S(\psi)(\phi-\psi)} \phi_i}{e^{-S(\psi)}\int_{\mathbb{R}^N} \mathrm{~d}^N \phi e^{-\frac{1}{2}(\phi-\psi)^{\mathrm{t}} \partial^2 S(\psi)(\phi-\psi)}}
+  \end{align*}
+  where $\partial^2 S(\psi)$ represents the hessian matrix eveluated at the minimizing field configuration $\psi$.
+  Then we define the fluctuation variable $\delta \phi_i = \phi_i - \psi$ and make it the integration variable (shift associated to a $1$ Jacobian factor) to obtain 
+  \begin{align*}
+    \left\langle\sigma_i\right\rangle=A\left\langle\phi_i\right\rangle_S \approx A \frac{\int_{\mathbb{R}^N} \mathrm{~d}^N \delta \phi e^{-\frac{1}{2}\delta \phi^{\mathrm{t}} \partial^2 S(\psi)\delta \phi} (\delta \phi_i + \bar{\psi})}{\int_{\mathbb{R}^N} \mathrm{~d}^N \delta \phi e^{-\frac{1}{2}\delta \phi^{\mathrm{t}} \partial^2 S(\psi)\delta \phi}} = A\bar{\psi} + A\frac{ \int_{\mathbb{R}^N} \mathrm{~d}^N \delta \phi e^{-\frac{1}{2}\delta \phi^{\mathrm{t}} \partial^2 S(\psi)\delta \phi} \delta \phi_i}{\int_{\mathbb{R}^N} \mathrm{~d}^N \delta \phi e^{-\frac{1}{2}\delta \phi^{\mathrm{t}} \partial^2 S(\psi)\delta \phi}}.
+  \end{align*}
+  Because the exponential only features terms quadratic in $\delta \phi_i$ it is left unchanged by the transformation $\delta \phi_i \to -\delta \phi_i$. The integration measure is also left unchanged by this transformation. Indeed changing the sign of $\delta \phi_i$ flips the integration bounds $N$ times: restoring the bounds to their original order adds a factor of $(-1)^N$. This factor combines with the $(-1)^N$ jacobian transforming the measure to yield no net change. Therefore, the integral equals its additive inverse and must be $0$.  From this result, we can show concretely that the magnetization is related to $\psi$ by $M = \frac{1}{N}\sum_{i} \left\langle\sigma_i\right\rangle = A \bar{\psi}$. Knowing that the magnetization critical exponent for mean field theory results is $\beta = 1/2$, it follows that the Gaussian model has a $\beta = 1/2$ critical exponent.
+  \item[(f)] The minimal action associated with $\psi$ is 
+  \begin{align*}
+    S(\psi) &= \frac{\beta A^2}{2} \psi^{\mathrm{t}} B \psi-\sum_i \ln \left(\cosh \left(\beta A(B \psi)_i\right)\right)\\
+    &= \frac{\beta A^2}{2}  \sum_{i,j} B_{ij} \bar{\psi}^2-\sum_i \ln \left(\cosh \left(\beta A B_0 \bar{\psi}\right)\right)\\
+    &= \frac{\beta A^2}{2}  N B_0 \bar{\psi}^2 - N \ln \left(\cosh \left(\beta A B_0 \bar{\psi}\right)\right).
+  \end{align*} 
+  Seeing that it scales with $N$, we notice that the original action scales approximately linearly with $N$ for field configurations $\phi_i$ that are roughly uniform. If this scaling by $N$ held in all $\mathbb{R}^n$, we could use Laplace expansion to replace the integral on the full action by the result of a Gaussian integration (from an expansion around the minimum $\bar{\psi}$). Doing so would implicitly assume fluctuations are either very small or uniform on all sites. The subspace of $\mathbb{R}^n$ where this is true becomes infinitely small ($0$ measure) when $N \to \infty$ and the scaling law of $S(\phi)$ is not aligned with the Laplace method in general. The assumption of restricted fluctuations seems to force truncation of exact results to Gaussian model results in the limit of large $N$ (including mean field theory critical exponents for $M$ which makes sens because the mean field neglects correlations and builds from a uniform ansatz). Another way to see that the Laplace method should not work is to note that even if the action is scaled in the right way, the number of variables is also scaling (this is not taken into account in the derivation of the Laplace method). 
+
 \end{enumerate}
 
 \section{Acknowledgement}
+
+Thanks to Nikhil, Maitá, and Thiago for discussions about the nuances of the Laplace method. 
 
 }
 
