@@ -143,3 +143,5 @@ Supposing there exists a change of variables from $z, z'$ to $y, y'$  bringing $
    &\sim \frac{1}{(4\pi)^2}\left[\frac{1}{u}-\frac{m_R^2}{2u^2}\right]_{m_R^2}^{(\Lambda/p)^2 + m_R^2} = \frac{1}{(4\pi)^2}\left[\frac{1}{(\Lambda/p)^2 + m_R^2}-\frac{m_R^2}{2((\Lambda/p)^2 + m_R^2)^2}\right]_{m_R^2}^{(\Lambda/p)^2 + m_R^2} 
 
    Since the derivative in $m_R$ is finite, it is $\sim 0$ from the point of view of UV divergence and the integral divergence behaves as a constant (the same constant as for $m_R = 0$ found in (a)).
+
+   Decomposing $B_1$ in a term $B_{1, 0}$ (independant of $m_R$) and a term $m_R^2 B_{1, 1}$ (proportionnal to $m_R^2$), we get $B_{1, 0} = -\frac{g_R}{2} \frac{1}{(4\pi)^2} \Lambda^2$ and $B_{1, 1} = \frac{g_R}{2} \frac{1}{(4\pi)^2}\ln\left(\frac{\Lambda^2}{m_R^2}\right)$

@@ -268,7 +268,7 @@
   \end{align*}
   taking the momentums to be at reference scale $\mu$ removes the logarithm term vanish and we recover the desired result. If we instead solve for the beta function, we get 
   \begin{align*}
-    \beta_g(g_R(\mu)) = \hbar g_R^2 \frac{1}{(4\pi)^2 \mu} \dfrac{1}{1-\hbar g_R\frac{1}{(4\pi)^2}\ln\left(\frac{\mu^2}{(p_1 + p_2)^2}+ \cdots\right)} + O(\hbar^2).
+    \beta_g(g_R(\mu)) = \hbar g_R^2 \frac{1}{(4\pi)^2 \mu} \dfrac{1}{1-\hbar g_R\frac{1}{(4\pi)^2}\left(\ln\left(\frac{\mu^2}{(p_1 + p_2)^2}\right)+ \cdots\right)} + O(\hbar^2).
    \end{align*}
   Note that the $g_R$ expansion of this result truncated at $O(g_R^2)$ gives the right result. The additionnal terms are also $O(\hbar^2)$ and do not contribute at one-loop. 
 
@@ -287,8 +287,8 @@
       \begin{feynman}
         % External legs
 
-        \vertex[label={left:$p_1$}]  (a) at (-1, 0);
-        \vertex[label={right:$p_2$}] (b) at (1, 0);
+        \vertex[label={left:$p$}]  (a) at (-1, 0);
+        \vertex[label={right:$p$}] (b) at (1, 0);
 
         \vertex (v) at (0, 0);
 
@@ -308,8 +308,8 @@
       \begin{feynman}
         % External legs
 
-        \vertex[label={left:$p_1$}]  (a) at (-1, 0);
-        \vertex[label={right:$p_2$}] (b) at (1, 0);
+        \vertex[label={left:$p$}]  (a) at (-1, 0);
+        \vertex[label={right:$p$}] (b) at (1, 0);
 
         \vertex (v) at (0, 0);
 
@@ -335,8 +335,8 @@
       \begin{feynman}
         % External legs
 
-        \vertex[label={left:$p_1$}]  (a) at (-1, 0);
-        \vertex[label={right:$p_2$}] (b) at (1, 0);
+        \vertex[label={left:$p$}]  (a) at (-1, 0);
+        \vertex[label={right:$p$}] (b) at (1, 0);
 
         \vertex (v) at (0, 0);
 
@@ -352,7 +352,7 @@
     \end{tikzpicture}
   \end{equation*}
   \begin{equation*}
-    = \Gamma^{2}_R(p_i) = m_R^2 + p^2 + \hbar \frac{g_R}{2} T(m_R) + \hbar B_1 + O(\hbar^2)
+    = \Gamma^{2}_R(p) = m_R^2 + p^2 + \hbar \frac{g_R}{2} T(m_R) + \hbar B_1 + O(\hbar^2)
   \end{equation*}
   where the full line represents a propagator associated to mass $m_R$ (in principle it involves the bare mass $m_R^2 + \hbar B_1$, but the counter term contribution is shifted out of the one-loop expansion by the factor of $\hbar$ from the loop) and the dashed lines are truncated propagators. A symmetry factor of $1/2$ is included for the loop diagram. The first and last terms are doubly truncated and are respectively associated to mass $m_R$ (marked with $\bullet$) and $\hbar B_1$ (marked with $\circ$). These two diagrams represent the bare mass doubly truncated propagator $m_R^2 + \hbar B_1 + p^2$. The loop integral $T$ is given by 
   \begin{align*}
@@ -383,20 +383,50 @@
   \begin{align*}
     T(m_R, \Lambda) &= \frac{2}{(4\pi)^2} \int_0^{\Lambda} \text{d}k \frac{k^3}{k^2 + m_R^2}\\
     &= \frac{2}{(4\pi)^2} \int_{m_R^2}^{\Lambda^2 + m_R^2} \text{d}u \frac{u-m_R^2}{2u}, \quad \text{with} \quad u = k^2 + m_R^2, \quad \text{d}u/2 = k \ \text{d}k\\
-    &= \frac{2}{(4\pi)^2} \left[\frac{1}{2}u - \frac{m_R^2}{2} \ln|u|\right]_{m_R^2}^{\Lambda^2 + m_R^2} = \frac{1}{(4\pi)^2} \left(\Lambda^2 - \frac{m_R^2}{2} \ln\left(\frac{\Lambda^2 + m_R^2}{m_R^2}\right)\right)\\& \sim \frac{1}{(4\pi)^2} \left(\Lambda^2 - \frac{m_R^2}{2} \ln\left(\frac{\Lambda^2}{m_R^2}\right)\right)\quad (\Lambda/m_R \to \infty).
+    &= \frac{2}{(4\pi)^2} \left[\frac{1}{2}u - \frac{m_R^2}{2} \ln|u|\right]_{m_R^2}^{\Lambda^2 + m_R^2} = \frac{1}{(4\pi)^2} \left(\Lambda^2 - \frac{m_R^2}{2} \ln\left(\frac{\Lambda^2 + m_R^2}{m_R^2}\right)\right)\\& \sim \frac{1}{(4\pi)^2} \left(\Lambda^2 - m_R^2 \ln\left(\frac{\Lambda^2}{m_R^2}\right)\right)\quad (\Lambda/m_R \to \infty).
   \end{align*}
   We have identified two UV divergent terms: one is quadratic and the other is logarithmic.
-  \item[(l)]
-  \item[(m)]
-  \item[(n)]
-  \item[(o)]
-  \item[(p)] 
+  \item[(l)] We now impose that the two-point has a zero at $p^2 = -m_{p}^2$ where $m_{p}$ is the physical mass which is independant of the scale $\mu$ associated to $m_R$ and $g_R$. In the one-loop expression for the two-point function, $p$ only appears as a quadratic term. The positive zero of the two-point function is realised when $p^2$ equals the oposite of the remaining terms and these $p$-independant terms are therefore the physical mass squared. To extract them, we can set $p=0$ (we note that even if the coupling $g_R$ runs with change in scale, we are working at a fixed scale here and $g_R(\mu)$ is fixed). Setting $m_p = m_R$ at scale such that $\mu^2 = m_R^2 = (p_i^{\text{ref}})^2$ then corresponds to the condition
+  \begin{align*}
+    \Gamma^{2}_R(0, m_R(\mu), g_R(\mu), \mu) &= m_R^2 + \hbar \frac{g_R}{2} T(m_R) + \hbar B_1  = m_R^2\\
+    & \iff B_1(m_R = \mu, g_R(\mu), \mu) = \frac{g_R(\mu)}{2} \frac{1}{(4\pi)^2} \left(-\Lambda^2 + \mu^2 \ln\left(\frac{\Lambda^2}{\mu^2}\right)\right).
+  \end{align*}
+  There are multiple choices of counter term that satisfy this condition. Imposing the decomposition $B_1 = B_{1, 0}(\mu, g_R, \Lambda) + m_R(\mu)^2 B_{1, 0}(\mu, g_R, \Lambda)$ linear in $m_R^2$ leads to the choice 
+  \begin{align*}
+    B_1 = \frac{g_R}{2} \frac{1}{(4\pi)^2} \left(-\Lambda^2 + m_R(\mu)^2 \ln\left(\frac{\Lambda^2}{\mu^2}\right)\right).
+  \end{align*}
+  \item[(m)] With the counter terms found in (l), the two-point function becomes
+  \begin{align*}
+    \Gamma^{2}_R(p, m_R(\mu), g_R(\mu), \mu) &= p^2 + m_R^2 + \hbar \frac{g_R}{2} \frac{1}{(4\pi)^2} \left(\Lambda^2 - m_R(\mu)^2 \ln\left(\frac{\Lambda^2}{m_R(\mu)^2}\right)\right) + \hbar \frac{g_R}{2} \frac{1}{(4\pi)^2} \left(-\Lambda^2 + m_R(\mu)^2 \ln\left(\frac{\Lambda^2}{\mu^2}\right)\right)\\
+    &= p^2 + m_R^2 + \hbar \frac{g_R}{2} \frac{1}{(4\pi)^2} \left( m_R(\mu)^2 \ln\left(\frac{ m_R(\mu)^2}{\mu^2}\right)\right)
+  \end{align*}
+  which is UV finite since all dependance on the cutoff $\Lambda$ has been removed by the counterterm. We see that the limiting value of the two point function when $m_R \to 0$ is $0$ (we get the limit $\lim_{m_R \to 0} m_R^2 \ln (m_R^2/\mu^2) = 0$), and we conclude that the two-point function found is finite for all finite $m_R$ and $p$.
+  \item[(n)] Since the two point-function values are independant of scale, given two scales $\mu'$ and $\mu$, we can write 
+  \begin{align*}
+    &\Gamma^{2}_R(p, m_R(\mu), g_R(\mu), \mu) = \Gamma^{2}_R(p, m_R(\mu'), g_R(\mu'), \mu')\\
+    &\iff 
+    p^2 + m_R(\mu)^2 + \hbar \frac{g_R(\mu)}{2} \frac{1}{(4\pi)^2} \left( m_R(\mu)^2 \ln\left(\frac{ m_R(\mu)^2}{\mu^2}\right)\right) = p^2 + m_R(\mu')^2 + \hbar \frac{g_R(\mu')}{2} \frac{1}{(4\pi)^2} \left( m_R(\mu')^2 \ln\left(\frac{ m_R(\mu')^2}{(\mu')^2}\right)\right)\\
+    &\iff 0= m_R(\mu')^2 + \hbar \frac{1}{2(4\pi)^2} g_R(\mu') m_R(\mu')^2 \ln\left(\frac{ m_R(\mu')^2}{(\mu')^2}\right) - m_R(\mu)^2  - \hbar \frac{1}{2(4\pi)^2} g_R(\mu) m_R(\mu)^2 \ln\left(\frac{ m_R(\mu)^2}{\mu^2}\right)
+  \end{align*}
+  Supposing $m_R(\mu) = a(\mu', \mu) +  b(\mu', \mu)\hbar$ \footnote{Formaly this is a perturbative ansatz for a functional equation. It is justified by the fact $m_R(\mu)$ can be expressed as a function of $\mu'$ with a Taylor expansion $m_R(\mu) = m_R(\mu') + c(\mu')(\mu - \mu') + \cdots$ where the terms are also regrouped by powers of $\hbar$}, using $g_R(\mu) = g_R(\mu') + (\cdots)\hbar$ and keeping only terms up to $O(\hbar)$, we get 
+  \begin{align*}
+    &O(\hbar^0): \quad a(\mu', \mu)^2 = m_R(\mu')^2 \implies a(\mu') = \pm m_R(\mu') \quad \text{($+$ because $\hbar=0 \to$ classical solution $\to m_R(\mu) = m_R(\mu') = \text{cst}$)}\\
+    &O(\hbar^1): \quad \hbar \frac{1}{2(4\pi)^2} g_R(\mu') m_R(\mu')^2 \ln\left(\frac{ m_R(\mu')^2}{(\mu')^2}\right) - 2\hbar m_R(\mu') b(\mu', \mu) - \hbar \frac{1}{2(4\pi)^2} g_R(\mu') m_R(\mu')^2 \ln\left(\frac{ m_R(\mu')^2}{\mu^2}\right)\\
+    &\implies b(\mu', \mu) = \frac{1}{4(4\pi)^2} g_R(\mu') m_R(\mu') \ln\left(\frac{\mu^2}{(\mu')^2}\right),\ a(\mu', \mu) = m_R(\mu').  
+  \end{align*}
+  Combining the two orders studied, we have the relation $m_R(\mu) = m_R(\mu') + \hbar \frac{1}{4(4\pi)^2} g_R(\mu') m_R(\mu') \ln\left(\frac{\mu^2}{(\mu')^2}\right)$.
+  \item[(o)] When $\mu = m_R$, the two-point function reduces to $\Gamma^{2}_R(p) = p^2 + m_R^2 + O(\hbar^2)$ and has a zero at $p^2 = -m_p^2 = -m_R^2$ implying that the renormalized mass coincides with the physical mass at this scale. 
+  \item[(p)] Starting from the result found in (n) and setting the $\mu = \mu' +\delta \mu$ (with $\delta \mu$ small), the anomalous dimension $\gamma_{m^2}$ can be expressed as follows:
+  \begin{align*}
+    &m_R(\mu'+\delta \mu) - m_R(\mu') = \hbar \frac{1}{4(4\pi)^2} g_R(\mu') m_R(\mu') \ln\left(\frac{(\mu')^2 + 2 \mu' \delta \mu}{(\mu')^2}\right) = \hbar \frac{1}{4(4\pi)^2} g_R(\mu') m_R(\mu') \left(\frac{2\delta \mu}{\mu'}\right)\\
+    &\implies \gamma_{m^2} := \mu' \frac{d \ln(m_R(\mu')^2)}{d \mu'}= \mu' \frac{2}{m_R(\mu')}\lim_{\delta\mu \to 0} \dfrac{m_R(\mu'+\delta \mu) - m_R(\mu')}{\delta \mu} = \hbar \frac{1}{(4\pi)^2} g_R(\mu')
+  \end{align*}
 \end{enumerate}
 
 
 \section{Acknowledgement}
 
-Thanks to Dan for guidance in the interview which is related to my answer to (f)
+Thanks to Dan for guidance in the interview which is related to my answer to (f) and (n)
 
 
 
