@@ -141,3 +141,119 @@ def wigner_3j(j1, j2, j3, m1, m2, m3):
         S += (-1) ** k /(factorial(k) * np.sqrt(f4 * f5 * f6))
 
     return (-1) ** (j1 - j2 - m3) * np.sqrt(f1/f2) * np.sqrt(f3) * S
+
+
+ new_i = 0
+    for i in range(dim):
+        
+        new_j = 0
+        if bin(i).count('1') == N:
+            for j in range(dim):
+                if bin(j).count('1') == N:
+                    H_hfill[new_i, new_j] += H_matrix[i, j]
+                    
+                    new_j += 1
+            new_i += 1
+
+def test_sector(n, N):
+    n_bin = bin(n)[2:]
+    test = True
+    for i in range(n//2):
+        test_i = n_bin[2*i:2*i+1].count('1') <= 1
+        test = test and test_i
+    
+    return test and n_bin.count('1')
+
+
+bin_i = bin(i)[2:][::-1] 
+            bin_i = bin_i + '0' * (2 * N - len(bin_i))
+            states_label.append(bin_i)
+
+
+def L(N):
+    s = (N - 1)/2
+    dim = 2 ** (2 * N) 
+
+    Lx_matrix = np.zeros((dim, dim), dtype=complex)
+    Ly_matrix = np.zeros((dim, dim), dtype=complex)
+    Lz_matrix = np.zeros((dim, dim), dtype=complex)
+
+    m = np.arange(-s, s+1, 1)
+
+    cU, cD, cUdag, cDdag = c_wrap_list(N)
+
+    X_srep = np.zeros((int(2*s+1), int(2*s+1)), dtype=complex)
+    Y_srep = np.zeros((int(2*s+1), int(2*s+1)), dtype=complex)
+    Z_srep = np.zeros((int(2*s+1), int(2*s+1)), dtype=complex)
+
+    for b in range(int(2*s+1)):
+        Z_srep[b, b] = s - b
+
+    for b in range(int(2*s)):
+        X_srep[b, b + 1] =  np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/2
+        X_srep[b + 1, b] =  np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/2
+        Y_srep[b, b + 1] = -np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/(2j)
+        Y_srep[b + 1, b] =  np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/(2j)
+
+
+    Pair = zip([X_srep, Y_srep, Z_srep], [Lx_matrix, Ly_matrix, Lz_matrix])
+
+    for axis, matrix in Pair:
+        for m1 in m:
+            for m2 in m:
+                n1, n2 = int(m1+s), int(m2+s)
+                for b in range(dim):
+
+                    new_bDD, sign_bDD = cDdag[n2](*cD[n1](b, 1))
+                    matrix[b, new_bDD] += axis[n1, n2] * sign_bDD
+
+                    new_bUU, sign_bUU = cUdag[n2](*cU[n1](b, 1))
+                    matrix[b, new_bUU] += axis[n1, n2] * sign_bUU
+
+    Lx_hfill, _ = hfill_sector(Lx_matrix, N)
+    Ly_hfill, _ = hfill_sector(Ly_matrix, N)
+    Lz_hfill, _ = hfill_sector(Lz_matrix, N)
+
+    return Lx_hfill, Ly_hfill, Lz_hfill
+
+
+count = 0
+for i in range(len(L2)):
+    #print(L2[i, i])
+    if (L2[i, i]-6)**2 < 1:
+        A = L2[i, i]
+        J = np.real(j(A))
+        print(L2[i, i], J, "\t", np.real(Lz_hfill[i, i]))
+        count += 1
+
+print(count)
+
+
+# %%
+N = 5
+s = (N - 1)/2
+dim = 2 ** (2 * N) 
+
+Lx_matrix = np.zeros((dim, dim), dtype=complex)
+Ly_matrix = np.zeros((dim, dim), dtype=complex)
+Lz_matrix = np.zeros((dim, dim), dtype=complex)
+
+m = np.arange(-s, s+1, 1)
+
+X_srep = np.zeros((int(2*s+1), int(2*s+1)), dtype=complex)
+Y_srep = np.zeros((int(2*s+1), int(2*s+1)), dtype=complex)
+Z_srep = np.zeros((int(2*s+1), int(2*s+1)), dtype=complex)
+
+for b in range(int(2*s+1)):
+    Z_srep[b, b] = s - b
+
+for b in range(int(2*s)):
+    X_srep[b, b + 1] =  np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/2
+    X_srep[b + 1, b] =  np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/2
+    Y_srep[b, b + 1] = -np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/(2j)
+    Y_srep[b + 1, b] =  np.sqrt(2 * (s + 1) * (b + 1) - (b + 2) * (b + 1))/(2j)
+
+print(X_srep)
+print(Y_srep)
+print(Z_srep)
+print(X_srep @ X_srep + Y_srep @ Y_srep + Z_srep @ Z_srep)
