@@ -293,3 +293,59 @@ Pierre-Antoine
 # Interview 
 
 I like entanglement because it has a very strong explicative power: it makes statistical ensemble for a system in a bath more intuitive. It is a quantum game theory ressource to share correlations but no information. (There will be group practice)
+
+
+
+# Perimeter Institute PhD
+
+Hi Yin-Chen,
+
+Hope you had a great winter break. I have been working on the code reproducing the results of table XI of arXiv:2210.13482. I attached my current results consisting in a calculation of energy, Casimir operator and Z2 eigenvalues which agree with the benchmark values provided by Zheng. My Z2 eigenvalues are still fractional numbers close to +1 or -1 and I was wondering if this was normal. I have accumulated small questions and curiosities including:
+
+Above eq. 8 of arXiv:2210.13482 it says that the kinetic energy of the LLL is quenched. After exploring the uses of the term "quenched" in the quantum Hall effect literature, I did not find a satisfying explanation of this effect. 
+Is there frustration on the Fuzzy sphere ?  Trying to naively visualize the h = 0 (and V0 = 0) ground state of the model, I noticed that placing a Bloch sphere at each point on the sphere and associating the Z axis of the Bloch sphere with the radial direction on the fuzzy sphere (and with the direction of the magnetic field h) possibly leads to frustration of the spins if they lie on the X and Y axis of the Bloch sphere. Does the fuzzification of the sphere remove the frustration? 
+It is not possible to put a lattice on a sphere in general, but what about platonic solids? Since the finite-size effects are small, would the results for the triangular Ising model on an icosahedron be accurate? I am aware that this is a different model, and that there might not be a CFT associated to it.
+ 
+and implementation challenges I have encountered in my code. When are you available for a meeting to discuss these questions and the direction of my project? 
+
+I was also wondering if you had openings for a PhD starting next fall. I am interested to work with your group on the fuzzy sphere for my PhD. 
+
+Thank you for your time and happy new year!
+Pierre-Antoine
+
+
+Why Fuzzy sphere method 
+
+Opening paragraph
+
+Quantum matter holds bridges to all fields of physics so by choosing to specialize in it I keep the freedom to explore so much of practically relevant options
+Phase transitions: fascinating, emergence, ubiquitous
+Multidisciplinary: topology, statistical mechanics, criticality, universality, Ising model, simplicity and rich structure, emergence
+
+Add a link between all my research experience and the projects I target
+Photonics and quantum information courses
+
+Ion and research on topology, landau levels, different context Weyl semi metals, simulations 
+
+
+After an insightful exploration combining research internships and courses from undergraduate to the PSI program, I have decided to specialize in quantum matter and quantum information. At first, my need for interdisciplinary methods reaching all corners of modern physics seemed irreconciliable with any choice, but I realized the phenomena of strongly correlated systems lead back to diverse tools from quantum field theory to general relativiy. I am now determined to advance our understanding and control of quantum materials while making no compromise between theoretical sophistication and practical application. This brings me to apply to Perimeter institute's PhD residency award because it provides an environnement where I have strived as a theoretical physicist and person like never before with researchers that will lead me to the cutting edge theoretical research I want to be part of. Specifically, I want to join Prof. Yin-Chen He's group to produce new results about emergent conformal symmetry with the fuzzy sphere method. I am also interested in working with Prof. Timothy Hsieh to work on the rich structure emerging from entanglement at the intersection of quantum matter and quantum information. 
+
+My theoretical research journey started in Prof. André-Marie Tremblay's group. My role was to produce and analyze data from two-particle self-consistent approach simulations of electron-doped cuprates. At the beginning of the project, I demonstrated efficient self-learning by rapidly gaining a working understanding of Matsubara frequencies and their role in the evaluation of many-body functions. Meticulously exploring simulation data, I devised a procedure to locate the quantum critical point of the electron-doped phase diagram by approximating temperature for antiferromagnetic pseudogap appearance. My analysis allowed me to qualify the effect of a simple implementation of disorder on the quantum critical point. These results lead to a publication in Physical Review B. Looking back, I see this internship as the origin of my current ambitions in quantum matter. It is the idea that my work could lead to new superconductivity-related technologies that made it so engaging for me. This project also introduced me to the mysteries of phase transitions. The statistical physics course from the PSI program then strenghtened my grasp and curiosity for this subject by connecting it to renormalization, conformal field theory and universality. For my PSI essay, I will study emergent conformal symmetry of second order phase transitions trough the fuzzy sphere lens with prof. Yin-Chen He. I would be thrilled to continue unfolding the potential I see in this method troughout my PhD. It is tied to topology, relativity and quantum field theory while targetting deep questions on phase transitions which is exactly the multidisciplinary research I was looking for. 
+
+My determination to understand and control exotic quantum materials became even more vivid with my second theoretical research internship. I worked with Prof. Ion Garate on an adaptation of the Van Roosbroeck system of partial differential equations to describe Weyl semimetals interacting with light. The goal of the project was to solve the equations to gain insight into the semi-classical role of the chiral anomaly. I found a way to decouple the equations further using an adaptation of Ampère's law and animated the evolution of charge densities through time. In the end, we identified the presence of photoinduced plasma oscillations, leading to a publication in Physical Review B. This internship brought me to the mysterious properties of topological materials which I pushed forther with a small review of the litterature on topological insulators. Computationnal aspects of theoretical research align directly with my passion for recreationnal programming challenges.
+
+ I learned how to use the Cedar supercomputer to produce and analyse data for my research project in Prof. André-Marie Tremblay's group
+teached me how to implement various algorithms for simulating physical systems. It is clear that . A PhD in prof Yin-Chen He's group provides exciting scientific programming challenges which I can't wait to tackle with creativity and elegance. Having performed cuprate simulations on the Cedar supercomputer, I am exicted to take my computer science skills further and make the most out of the computationnal resources of Perimeter Institute. 
+
+
+
+paragraph on entanglement (tim)
+
+mental health
+
+My first contact with science took the form of four participations at the Hydro-Québec science fair, followed by a summer job at an astronomical observatory. These opportunities to share my growing passion with the general public made me value scientific communication deeply. This was reflected through my three participations and organization of outreach events at Universite de Sherbrooke as a member of the diversity committee. I also joined tutoring programs where I helped students individually and in groups throughout undergrad. Lately, I have been contributing to the organization of a seminar series for students of the PSI program to share their interests. I plan to carry my desire for excellence in scientific communication to the outreach programs at Perimeter Institute. 
+
+valerio paragraph
+
+
+My first contact with science took the form of four participations at the Hydro-Québec science fair, followed by a summer job at an astronomical observatory. These opportunities to share my growing passion with the general public made me value scientific communication deeply. This was reflected through my three participations and organization of outreach events at Universite de Sherbrooke as a member of the diversity committee. I also joined tutoring programs where I helped students individually and in groups throughout undergrad. Lately, I have been contributing to the organization of a seminar series for students of the PSI program to share their interests. I plan to carry my desire for excellence in scientific communication to the outreach programs at Perimeter Institute. 

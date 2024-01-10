@@ -236,12 +236,18 @@ def H(N, h, V0, V1 = 1):
 
 
 def solve(N, h, V0, V1 = 1, k = 70):
+    print(locals())
+    
     # Creating the Hamiltonian matrix in the half filling sector
     H_hfill, _ = H(N, h, V0, V1 = V1)
 
-    # Sparse Exact Diagonalization
-    eig_val, eig_vec = eigsh(H_hfill, k = k, which='SR')
+    v0 = np.random.rand(int(comb(2 * N, N)))
 
+    # Sparse Exact Diagonalization
+    eig_val, eig_vec = eigsh(H_hfill, k = k, which='SR', v0=v0)
+
+    
+    
     # Eigen value sorting index
     eig_val = np.real(eig_val)
     idx = eig_val.argsort()
@@ -266,71 +272,44 @@ def solve(N, h, V0, V1 = 1, k = 70):
 
     i = 0
     while i < k: 
-        Z2_val = np.zeros(k)
-        stop_i = int(2*ell[i] + 1)
+        stop_i = int(2*ell[i]+1)
 
-        cluster = np.zeros(stop_i)
-        Z2_val_cluster = np.zeros(stop_i)
-        Z2_cluster = np.zeros((stop_i, stop_i))
-        Z2_hfill = Z2(N)
-
-        cluster = eig_vec_sort[i : i+stop_i]
-        cluster = np.array([c/np.sqrt(np.conj(c) @ c) for c in cluster])
+        cluster = eig_vec_sort[i:i+stop_i]
+        cluster = np.array([c/np.sqrt(np.dot(np.conj(c), c)) for c in cluster])
+    
         Z2_cluster = np.conj(cluster) @ Z2_hfill @ cluster.T
-        Z2_cluster = np.conj(cluster) @ Z2_hfill @ cluster.T
-
         Z2_val_cluster, _ = np.linalg.eigh(Z2_cluster)
-        print(Z2_val_cluster)
-
-        Z2_val[i : i+stop_i] = Z2_val_cluster
-
-
-        del cluster
-        del Z2_val_cluster 
-        del Z2_cluster 
-        del Z2_hfill
+        Z2_val[i:i+stop_i] = Z2_val_cluster
         
         i += stop_i
+    
 
     # Particle-hole symmetry
-    P = [0]*k
+    #P = [0]*k
 
-    # Scaling dimension
-    Delta = [0]*k
+    # Scaling dimension (Rescale the spectrum shifts so that the SET energy gap is 3 (3D CFT))
+        
+    Delta = np.zeros(k)
 
+    #SET_loc = np.where((ell == 2) & (Z2_val > 0))[0][0]
+    #E_shift = [eig_val_sort[i+1] - eig_val_sort[i] for i in range(k-1)]
+    #SET_E_shift = E_shift[SET_loc]
+
+    #Delta[:-1] = E_shift/SET_E_shift*3
+    
 
     table = pd.DataFrame({
         "Energy"           : eig_val_sort, 
         "Orbital Momentum" : ell, 
         "Ising Z2"         : Z2_val, 
-        "Particle-Hole"    : P,
+        #"Particle-Hole"    : P,
         "Scaling Dimension": Delta,
         })
-
+    
     return table
 
 if __name__ == "__main__":
-    table = solve(4, 3.16, 4.75, k = 20)
+    table = solve(4, 3.16, 4.75, k = 40)
     display(table)
-    del table 
-
-
-# Rescale the spectrum so that the SET energy gap is 3 (3D CFT)
-
-
-# %%
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-
-
-fig = plt.figure()
-ax = fig.add_subplot(211)
-ax.imshow(np.real((Z2_hfill @ H_hfill - H_hfill @ Z2_hfill)), interpolation='nearest', cmap=cm.Greys_r)
-
-plt.show()
-
-
-# %%
-eigsh(Z2(6), k = 20)[0]
+    
 # %%
