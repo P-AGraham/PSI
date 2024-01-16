@@ -91,3 +91,21 @@ surface(
     -1..1, -1..1, z,
     colormap = :Spectral
 )
+
+
+
+using BenchmarkTools
+
+xs = [1, 2, 3, 4]
+@benchmark ys = sin.(xs)
+
+using LinearAlgebra
+using SparseArrays
+
+sprand(10, 10, 0.2)
+sprand(100, 100, 0.2) # special representation
+
+# Inverting a sparse matris is not 
+spzeros(10, 10)
+sparse(Diagonal(1:10))
+sparse(Tridiagonal(2:10, 1:10, 3:11)) # entries lower/diagonal/upper

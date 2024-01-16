@@ -106,6 +106,8 @@ def hfill_sector(matrix, N):
 
     return matrix_hfill, states_label
 
+import numpy as np
+
 def Z2(N):
     dim = 2 ** (2 * N)
 
@@ -119,10 +121,11 @@ def Z2(N):
 
         sign = 0
         for i in range(0, 2 * N - 1, 2):
+            # Construct the string with spin up and down on site i exchanged
             new_bin_b += bin_b[i+1]
             new_bin_b += bin_b[i]
-            sign += (int(bin_b[i]) * int(bin_b[i+1]))
-        #print(sign)
+            # Get a minus if the swaped states are both occupied
+            sign += (int(bin_b[i]) * int(bin_b[i+1])) 
 
         new_b = int("0b"+new_bin_b, 2)
         Z2_matrix[b, new_b] += (-1) ** sign
@@ -272,7 +275,9 @@ def solve(N, h, V0, V1 = 1, k = 70):
 
     i = 0
     while i < k: 
+        
         stop_i = int(2*ell[i]+1)
+        print(i, i +  stop_i)
 
         cluster = eig_vec_sort[i:i+stop_i]
         cluster = np.array([c/np.sqrt(np.dot(np.conj(c), c)) for c in cluster])
@@ -282,8 +287,14 @@ def solve(N, h, V0, V1 = 1, k = 70):
         Z2_val[i:i+stop_i] = Z2_val_cluster
         
         i += stop_i
-    
 
+    Z2_val = np.round(Z2_val, 4)
+
+    print(np.all(Z2_hfill.T == Z2_hfill))
+    #print(np.round(eigsh(Z2_hfill, k = k, which='SR', v0=v0)[0]))
+    #print(np.all(np.round(Z2_hfill @ L2 - L2 @ Z2_hfill, 3)==0))
+    #print(np.all(np.round(Z2_hfill @ H_hfill - H_hfill @ Z2_hfill, 3)==0))
+    #print(np.all(np.round(Z2_hfill @ Lz_hfill - Lz_hfill @ Z2_hfill, 3)==0))
     # Particle-hole symmetry
     #P = [0]*k
 
@@ -309,7 +320,7 @@ def solve(N, h, V0, V1 = 1, k = 70):
     return table
 
 if __name__ == "__main__":
-    table = solve(4, 3.16, 4.75, k = 40)
+    table = solve(4, 3.16, 4.75, k = 50)
     display(table)
     
 # %%
