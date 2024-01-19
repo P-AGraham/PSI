@@ -137,9 +137,45 @@
     &[\cdots] \underline{\omega}^1 = \underline{\theta}^3{ }_{1} = -\underline{\theta}^1{ }_{3} = -\frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1 - [\cdots]\underline{\omega}^3 \iff \underline{\theta}^3{ }_{1} = -\frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1, \quad \underline{\theta}^1{ }_{3} = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1
   \end{align*}
   
-  \item[(c)] The curvature two-forms are computed from the connection one-forms calculated above with the relation 
+  \item[(c)] The curvature two-forms are obtained from the connection one-forms calculated above with the relation $\underline{R}^a{}_b=\underline{d \theta}^a{}_b+\underline{\theta}^a{}_c \wedge \underline{\theta}^c{}_b$. Using $H = a'(t)/a(t)$, $A = \frac{1}{a(t)r}\sqrt{1-k r^2}$ and $B = \frac{1}{a(t)r}\cot \theta$ the connection one form can be organised as 
   \begin{align*}
-    \underline{R}_b^a=\underline{d \theta}_b^a+\underline{\theta}_c^a \wedge \underline{\theta}_b^c
+    [\underline{\theta}^{a}{}_{b}] = 
+    = 
+    \begin{pmatrix}
+      0 & H\underline{\omega}^1 & H\underline{\omega}^2 & H\underline{\omega}^3\\
+      H\underline{\omega}^1 & 0 & B\underline{\omega}^2 & A\underline{\omega}^1\\
+      H\underline{\omega}^2 & -B \underline{\omega}^2 & 0 & A\underline{\omega}^2\\
+      H\underline{\omega}^3 & -A\underline{\omega}^1 & -A\underline{\omega}^2 & 0
+    \end{pmatrix} 
+  \end{align*}
+  and the second term in the curvature two-forms can be expressed as a matrix multiplication where the elementwise multiplication is a $\wedge$. We have 
+  \begin{align*}
+    &[\underline{\theta}^a{}_c \wedge \underline{\theta}^c{}_b]\\
+    &= \begin{pmatrix}
+      0 & H\underline{\omega}^1 & H\underline{\omega}^2 & H\underline{\omega}^3\\
+      H\underline{\omega}^1 & 0 & B\underline{\omega}^2 & A\underline{\omega}^1\\
+      H\underline{\omega}^2 & -B \underline{\omega}^2 & 0 & A\underline{\omega}^2\\
+      H\underline{\omega}^3 & -A\underline{\omega}^1 & -A\underline{\omega}^2 & 0
+    \end{pmatrix} \wedge \begin{pmatrix}
+      0 & H\underline{\omega}^1 & H\underline{\omega}^2 & H\underline{\omega}^3\\
+      H\underline{\omega}^1 & 0 & B\underline{\omega}^2 & A\underline{\omega}^1\\
+      H\underline{\omega}^2 & -B \underline{\omega}^2 & 0 & A\underline{\omega}^2\\
+      H\underline{\omega}^3 & -A\underline{\omega}^1 & -A\underline{\omega}^2 & 0
+    \end{pmatrix} \\
+    &=
+    \begin{pmatrix}
+      0 & H\underline{\omega}^2 \wedge(-B \underline{\omega}^2) + H\underline{\omega}^3 \wedge (-A\underline{\omega}^1)  & H\underline{\omega}^1 \wedge(B \underline{\omega}^2) + H\underline{\omega}^3 \wedge(-A \underline{\omega}^2) & 0\\
+      A\underline{\omega}^1 \wedge(H\underline{\omega}^3) & 0 & H\underline{\omega}^1 \wedge(H\underline{\omega}^2) + A\underline{\omega}^1 \wedge(-A \underline{\omega}^2) & H \underline{\omega}^1\wedge(H \underline{\omega}^3)\\
+      -B \underline{\omega}^2\wedge(H\underline{\omega}^1) + A\underline{\omega}^2 \wedge(H \underline{\omega}^3) & H \underline{\omega}^2\wedge(H \underline{\omega}^1) + A\underline{\omega}^2\wedge(-A \underline{\omega}^1) & 0 & H\underline{\omega}^2\wedge(H \underline{\omega}^3) -B \underline{\omega}^2 \wedge(A \underline{\omega}^1)\\
+      0 & H\underline{\omega}^3\wedge(H \underline{\omega}^1) & H \underline{\omega}^3\wedge(H\underline{\omega}^2) - A\underline{\omega}^1\wedge(B\underline{\omega}^2) & 0
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      0 & (HA)\underline{\omega}^1 \wedge \underline{\omega}^3  & (HB)\underline{\omega}^1 \wedge\underline{\omega}^2 - (HA)\underline{\omega}^3 \wedge\underline{\omega}^2 & 0\\
+      (HA)\underline{\omega}^1 \wedge \underline{\omega}^3 & 0 & (H^2-A^2)\underline{\omega}^1 \wedge \underline{\omega}^2 & (H^2) \underline{\omega}^1\wedge \underline{\omega}^3\\
+      (HB) \underline{\omega}^1\wedge \underline{\omega}^2 - (HA)\underline{\omega}^3 \wedge\underline{\omega}^2 & -(H^2-A^2) \underline{\omega}^1\wedge\underline{\omega}^2 & 0 & (H^2)\underline{\omega}^2\wedge \underline{\omega}^3 - (AB) \underline{\omega}^2 \wedge \underline{\omega}^1\\
+      0 & -(H^2)\underline{\omega}^1 \wedge \underline{\omega}^3 & -((H^2) \underline{\omega}^2\wedge \underline{\omega}^3 - (AB)\underline{\omega}^2\wedge\underline{\omega}^1) & 0
+    \end{pmatrix}
   \end{align*}
   \item[(d)]    
 \end{enumerate}
@@ -148,6 +184,7 @@
 
 Thanks to Luke for help reviewing and understanding the concepts used in this assignement
 
+Thanks to Thomas for a discussion about the subtleties of "reading" connection one-froms from Cartan's structure equation
 
 }
 
