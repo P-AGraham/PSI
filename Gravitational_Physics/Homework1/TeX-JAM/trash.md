@@ -183,3 +183,17 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
       \underline{\theta}^3{ }_b \wedge \underline{\omega}^b 
     \end{cases}
   \end{align*}
+
+
+  Reversing the order of the wedge products used to read the connection one-form, we get
+  \begin{align*}
+    \begin{cases}
+    \underline{\theta}^1{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^1 + [\cdots] \underline{\omega}^0,\quad \underline{\theta}^1{ }_3 = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1 + [\cdots] \underline{\omega}^3\\
+    \underline{\theta}^2{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^2 + [\cdots]\underline{\omega}^0,\quad \underline{\theta}^2{ }_3 = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^2 + [\cdots]\underline{\omega}^3,\quad \underline{\theta}^2{ }_1 = \frac{1}{a(t)r}\cot \theta \underline{\omega}^2 + [\cdots]\underline{\omega}^1\\
+    \underline{\theta}^3{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^0 + [\cdots]\underline{\omega}^3, \quad \underline{\theta}^3{ }_0 = [\cdots]\underline{\omega}^3, \quad  \underline{\theta}^3{ }_0 = [\cdots]\underline{\omega}^3
+    \end{cases}
+    
+  \end{align*} 
+    \begin{align*}
+    \eta_{ca}\underline{\theta}^c{ }_b + \eta_{ca} \underline{\theta}_b{ }^c = 0 \iff  \eta_{ca}\eta^{ad}\underline{\theta}^c{ }_b + \eta_{ca}\eta^{ad} \underline{\theta}_b{ }^c = \underline{\theta}^d{ }_b + \underline{\theta}_b{ }^d = 0.
+  \end{align*}

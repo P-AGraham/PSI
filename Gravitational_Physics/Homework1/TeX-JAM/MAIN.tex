@@ -53,18 +53,18 @@
 
 % Assignment starts here ----------------------------
 
-
+\footnotesize{
 
 \section{Cartan in a FLRW universe}
 \begin{enumerate}
   \item[(a)] The Friedmann-Lemaitre-Robinson-Walker (FLRW) metric two-form describes a spacetime with spacelike foliation in homogeneous and isotropic hypersurfaces. In a coordinate chart with coordinates $x^\mu = \{t, \theta, \phi, r\}$ making the isotropy and foliation manifest, this metric reads 
+  \vspace{-0.4cm}
   \begin{align*}
     g_{\mu \nu} \underline{d} x^\mu \otimes \underline{d} x^\nu \equiv  \underline{d} t \otimes \underline{d} t -a^2(t)\left(\frac{\underline{d} r \otimes \underline{d} r }{1-k r^2}+r^2\left(\underline{d} \theta \otimes \underline{d} \theta +\sin ^2 \theta \underline{d} \phi \otimes \underline{d} \phi \right) \right)
   \end{align*}
   where $\{\underline{d}x^\mu\}_{\mu = 0}^3 = \{\underline{d}t, \underline{d}\theta, \underline{d}\phi, \underline{d}r\}$ are the coordinate on-forms dual to the vector basis $\underline{e}_{a} = \{\partial_{t}, \partial_{\theta}, \partial_{\phi}, \partial_{r}\}$,  $a(t)> 0$ is the scale factor and $k = 0, -1, 1$ gives the sign of the curvature of the spacelike hypersurfaces (respectively flat, Anti-de Sitter, de Sitter). In what follows, the tensor products are implicit. At every point in our chart, we define an orthonormal basis of one-forms $\underline{\omega}^a = c_\mu^a \underline{d}x^\mu$ such that $g_{\mu \nu} \underline{d} x^\mu \underline{d} x^\nu = \eta_{ab} \underline{\omega}^a \underline{\omega}^b$ where $\eta_{ab}$ is the Minkowski metric components with signature $(+, -, -, -)$. We can write 
   \begin{align*}
-    &g_{\mu \nu} \underline{d} x^\mu \underline{d} x^\nu\\
-     &=  \underline{d} t \underline{d} t -\left(\frac{a(t)\underline{d} r}{\sqrt{1-k r^2}}\right)\left(\frac{a(t)\underline{d} r}{\sqrt{1-k r^2}}\right)-\left(a(t) r\underline{d} \theta\right)\left(a(t) r\underline{d} \theta\right) -(a(t) r\sin \theta \underline{d} \phi) (a(t) r \sin \theta\underline{d} \phi)\\
+    g_{\mu \nu} \underline{d} x^\mu \underline{d} x^\nu &=  \underline{d} t \underline{d} t -\left(\frac{a(t)\underline{d} r}{\sqrt{1-k r^2}}\right)\left(\frac{a(t)\underline{d} r}{\sqrt{1-k r^2}}\right)-\left(a(t) r\underline{d} \theta\right)\left(a(t) r\underline{d} \theta\right) -(a(t) r\sin \theta \underline{d} \phi) (a(t) r \sin \theta\underline{d} \phi)\\
      &= \underline{\omega}^0 \underline{\omega}^0 - \underline{\omega}^1 \underline{\omega}^1 - \underline{\omega}^2 \underline{\omega}^2 - \underline{\omega}^3 \underline{\omega}^3 
   \end{align*}
   where $\{\underline{\omega}^a\}_{a=0}^{3} = \{\underline{d} t, \ a(t) r\underline{d} \theta, \ a(t) r\sin \theta \underline{d} \phi, \ \frac{a(t)}{\sqrt{1-k r^2}} \underline{d} r\}$ is shown to satisfy the orthonormality condition. We note that the resulting choice of basis is unique up to a local lorentz transformation (which preserves orthonormality). 
@@ -76,8 +76,7 @@
      -\partial_{\mu}(a(t) r)\ \underline{d} x^\mu \wedge \underline{d} \theta\\
      -\partial_{\mu}(a(t) r\sin \theta)\ \underline{d} x^\mu \wedge \underline{d} \phi\\
      -\partial_{\mu}\left(\frac{a(t)}{\sqrt{1-k r^2}}\right)\ \underline{d} x^\mu \wedge \underline{d} r
-    \end{cases}\\
-    &=
+    \end{cases}=
     \begin{cases}
       0\\
      -a'(t) r\underline{d} t \wedge \underline{d} \theta - a(t)\underline{d} r \wedge \underline{d} \theta\\
@@ -85,12 +84,12 @@
      -\frac{a'(t)}{\sqrt{1-k r^2}}\underline{d} t \wedge \underline{d} r - [\cdots]\underline{d} r \wedge \underline{d} r 
     \end{cases}
     \\
-    &= 
+    &=
     \begin{cases}
       0\\
      \frac{a'(t)}{a(t)} \underline{\omega}^1 \wedge \underline{\omega}^0 + \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1 \wedge \underline{\omega}^3\\
      \frac{a'(t)}{a(t)} \underline{\omega}^2 \wedge \underline{\omega}^0 +  \frac{1}{a(t)r}\sqrt{1-k r^2} \underline{\omega}^2 \wedge \underline{\omega}^3 + \frac{1}{a(t)r}\cot \theta \underline{\omega}^2 \wedge \underline{ \omega}^1\\
-     \frac{a'(t)}{a(t)}\underline{\omega}^0 \wedge \underline{\omega}^3
+     \frac{a'(t)}{a(t)}\underline{\omega}^3 \wedge \underline{\omega}^0
     \end{cases} 
     = \begin{cases}
       \underline{\theta}^0{ }_b \wedge \underline{\omega}^b \\
@@ -102,19 +101,46 @@
   Since the $\wedge$ product with $\underline{\omega}^b$ maps $\underline{\omega}^{c\neq b}$ to linearly independant two-forms, we can read the coefficients of $\underline{\omega}^{c\neq b}$ preceeding the $\wedge$ product in the previous expressions. We have
   \begin{align*}
     \begin{cases}
-    \underline{\theta}^1{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^1 + [\cdots] \underline{\omega}^0,\quad \underline{\theta}^1{ }_3 = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1 + [\cdots] \underline{\omega}^3\\
-    \underline{\theta}^2{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^2,\quad \underline{\theta}^2{ }_3 = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^2,\quad \underline{\theta}^2{ }_1 = \frac{1}{a(t)r}\cot \theta \underline{\omega}^2\\
-    \underline{\theta}^3{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^3
+    \underline{\theta}^0{ }_{1} =  [\cdots] \underline{\omega}^1, \quad \underline{\theta}^0{ }_{2} =  [\cdots] \underline{\omega}^2, \quad \underline{\theta}^0{ }_{3} =  [\cdots] \underline{\omega}^3\\
+    \underline{\theta}^1{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^1 + [\cdots] \underline{\omega}^0,\quad \underline{\theta}^1{ }_{2} = [\cdots] \underline{\omega}^2, \quad \underline{\theta}^1{ }_3 = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1 + [\cdots] \underline{\omega}^3\\
+    \underline{\theta}^2{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^2 + [\cdots]\underline{\omega}^0,\quad \underline{\theta}^2{ }_3 = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^2 + [\cdots]\underline{\omega}^3,\quad \underline{\theta}^2{ }_1 = \frac{1}{a(t)r}\cot \theta \underline{\omega}^2 + [\cdots]\underline{\omega}^1\\
+    \underline{\theta}^3{ }_0 = \frac{a'(t)}{a(t)}\underline{\omega}^3 + [\cdots]\underline{\omega}^0,\quad \underline{\theta}^3{ }_1 = [\cdots]\underline{\omega}^1, \quad \underline{\theta}^3{ }_2 = [\cdots]\underline{\omega}^2
     \end{cases}
   \end{align*} 
-  where $[\cdots]$ terms represent the terms mapped to $0$ by the $\wedge$ product from which information about $\underline{\theta}^a{ }_b$ was read. 
+  where $[\cdots]$ terms represent the terms mapped to $0$ by the $\wedge$ product from which information about $\underline{\theta}^a{ }_b$ was read. From the first line we can also read $\underline{\theta}^0{ }_{1, 2, 3} = [\cdots] \underline{\omega}^{1, 2, 3}$
   
-  To extract the connection one-forms components from these relations, we invoke the antisymmetry relation $g_{ca} \underline{\theta}^c{ }_b + g_{ca} \underline{\theta}_b{ }^c = \underline{d}g_{ab}$. Recalling that in our orthonormal basis $g_{ab} = \eta_{ab}$,  we have 
+  To fully determine the one-forms components from these relations, we invoke the relation $\underline{\theta}_{ab} + \underline{\theta}_{ba} = \underline{d}g_{ab}$ where $\underline{\theta}_{ba} = g_{bc}\underline{\theta}^{c}{}_a$. Recalling that in our orthonormal basis $g_{ab} = \eta_{ab}$, we get the antisymmetry relation $\underline{\theta}_{ab} + \underline{\theta}_{ba}$. It follows that $\underline{\theta}^{a}{}_{a} = 0, \ \forall a$ and we can use it to determine $[...]$. Expliciting the relation between $\underline{\theta}^{b}{}_a$ and  $\underline{\theta}^{a}{}_b$ yields
   \begin{align*}
-    \eta_{ca}\underline{\theta}^c{ }_b + \eta_{ca} \underline{\theta}_b{ }^c = 0 \iff  \eta_{ca}\eta^{ad}\underline{\theta}^c{ }_b + \eta_{ca}\eta^{ad} \underline{\theta}_b{ }^c = \underline{\theta}^d{ }_b + \underline{\theta}_b{ }^d = 0
+    \begin{cases}
+      b \ \text{spacelike} \implies 
+      \underline{\theta}^{b}{}_a = \eta^{bc}\underline{\theta}_{ca} = (-1) \underline{\theta}_{ba} = \underline{\theta}_{ab} \implies 
+      \begin{cases}
+        a \ \text{spacelike} \implies \underline{\theta}^{b}{}_a = -\underline{\theta}^{a}{}_b\\
+        a \ \text{timelike} \implies \underline{\theta}^{b}{}_a =   \underline{\theta}^{a}{}_b
+      \end{cases}
+        \\
+      b \ \text{timelike} \implies 
+      \underline{\theta}^{b}{}_a = \eta^{bc}\underline{\theta}_{ca} = \underline{\theta}_{ba} = -\underline{\theta}_{ab}  \implies 
+      \begin{cases}
+        a \ \text{spacelike} \implies \underline{\theta}^{b}{}_a = \underline{\theta}^{a}{}_b\\
+        a \ \text{timelike} \implies \underline{\theta}^{b}{}_a = -\underline{\theta}^{a}{}_b \quad \text{never happens ($a \neq b$)}
+      \end{cases}
+    \end{cases}
+  \end{align*}
+  Comparing $\underline{\theta}^{a}{}_b$ with $\underline{\theta}^{b}{}_a$, we finally see 
+  \begin{align*}
+    &[\cdots] \underline{\omega}^1 = \underline{\theta}^0{ }_{1} = \underline{\theta}^1{ }_{0} = \frac{a'(t)}{a(t)}\underline{\omega}^1 + [\cdots] \underline{\omega}^0 \iff \underline{\theta}^1{ }_{0} = \frac{a'(t)}{a(t)}\underline{\omega}^1, \quad \underline{\theta}^0{ }_{1} = \frac{a'(t)}{a(t)}\underline{\omega}^1\\
+    &[\cdots] \underline{\omega}^2 = \underline{\theta}^0{ }_{2} = \underline{\theta}^2{ }_{0} = \frac{a'(t)}{a(t)}\underline{\omega}^2 + [\cdots] \underline{\omega}^0 \iff \underline{\theta}^2{ }_{0} = \frac{a'(t)}{a(t)}\underline{\omega}^2, \quad \underline{\theta}^0{ }_{2} = \frac{a'(t)}{a(t)}\underline{\omega}^2\\
+    &[\cdots] \underline{\omega}^3 = \underline{\theta}^0{ }_{3} = \underline{\theta}^3{ }_{0} = \frac{a'(t)}{a(t)}\underline{\omega}^3 + [\cdots] \underline{\omega}^0 \iff \underline{\theta}^3{ }_{0} = \frac{a'(t)}{a(t)}\underline{\omega}^3, \quad \underline{\theta}^0{ }_{3} = \frac{a'(t)}{a(t)}\underline{\omega}^3\\
+    &[\cdots] \underline{\omega}^2 = \underline{\theta}^1{ }_{2} = -\underline{\theta}^2{ }_{1} = -\frac{1}{a(t)r}\cot \theta \underline{\omega}^2 - [\cdots]\underline{\omega}^1 \iff \underline{\theta}^1{ }_{2} = -\frac{1}{a(t)r}\cot \theta \underline{\omega}^2, \quad \underline{\theta}^2{ }_{1} = \frac{1}{a(t)r}\cot \theta \underline{\omega}^2\\
+    &[\cdots] \underline{\omega}^2 = \underline{\theta}^3{ }_{2} = -\underline{\theta}^2{ }_{3} = -\frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^2 - [\cdots]\underline{\omega}^3 \iff \underline{\theta}^3{ }_{2} = -\frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^2, \quad \underline{\theta}^3{ }_{2} = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^2\\
+    &[\cdots] \underline{\omega}^1 = \underline{\theta}^3{ }_{1} = -\underline{\theta}^1{ }_{3} = -\frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1 - [\cdots]\underline{\omega}^3 \iff \underline{\theta}^3{ }_{1} = -\frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1, \quad \underline{\theta}^1{ }_{3} = \frac{1}{a(t)r}\sqrt{1-k r^2}\underline{\omega}^1
   \end{align*}
   
-  \item[(c)]
+  \item[(c)] The curvature two-forms are computed from the connection one-forms calculated above with the relation 
+  \begin{align*}
+    \underline{R}_b^a=\underline{d \theta}_b^a+\underline{\theta}_c^a \wedge \underline{\theta}_b^c
+  \end{align*}
   \item[(d)]    
 \end{enumerate}
 
@@ -123,7 +149,7 @@
 Thanks to Luke for help reviewing and understanding the concepts used in this assignement
 
 
-
+}
 
 % References
 \makereferences

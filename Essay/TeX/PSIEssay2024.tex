@@ -1,0 +1,75 @@
+%======================================================%
+% Perimeter Scholars International Essay Template 2024 %
+% Author: Agata Branczyk, January 2019                 %
+% Last updated: 16 January 2024 by Giuseppe Sellaroli %
+%======================================================%
+
+\documentclass[12pt,twoside]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EDIT THE FILE BELOW TO REFLECT YOUR ESSAY PROJECT       %%
+%% (this will automatically populate the entire document)  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./essay_info}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TEMPLATE FILES - DO NOT EDIT %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./style_files/PSI_packages}
+\include{./style_files/PSI_formatting}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITLE PAGE - DO NOT EDIT %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setcounter{page}{1} % sets the page number for the book compilation (ignore this)
+\input{./style_files/PSI_front_matter_essay}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ESSAY ABSTRACT - EDIT THIS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quote}
+The abstract is an important component of your essay. It is likely the first substantive description of your work read by an external examiner. You should view it as an opportunity to set accurate expectations. The abstract is a summary of the whole thesis. It presents all the major elements of your work in a highly condensed form. An abstract is not merely an introduction in the sense of a preface, preamble, or advance organizer that prepares the reader for the thesis. It must also be capable of substituting for the whole thesis when there is insufficient time and space for the full text.
+\end{quote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% YOUR ESSAY CHAPTERS - EDIT THESE FILES %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./statementoriginal}
+
+% comment out the following line if you want don't want to include a climate impact statement
+\include{./climate}
+
+\pagestyle{header} %% Don't change this
+
+\input{./chapters/chapter1}
+\input{./chapters/chapter2}
+\input{./chapters/chapter3}
+\input{./chapters/chapter4}
+% You can add/remove chapters
+
+\input{./acknowledgements}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THE REFERENCES - EDIT THESE FILES %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{style_files/utphys}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THE APPENDICES - EDIT THESE FILES %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{subappendices} % DO NOT EDIT THIS LINE
+\renewcommand\thesection{\Alph{section}} % DO NOT EDIT THIS LINE
+
+\input{./chapters/appendix1}
+\input{./chapters/appendix2}
+% You can add/remove appendices
+
+\end{subappendices} % DO NOT EDIT THIS LINE
+
+% \cleardoublepage % makes sure there is an even number of pages for the book compilation (ignore this)
+
+\end{document}
