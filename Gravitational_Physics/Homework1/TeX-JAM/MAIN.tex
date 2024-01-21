@@ -67,7 +67,7 @@
     g_{\mu \nu} \underline{d} x^\mu \underline{d} x^\nu &=  \underline{d} t \underline{d} t -\left(\frac{a(t)\underline{d} r}{\sqrt{1-k r^2}}\right)\left(\frac{a(t)\underline{d} r}{\sqrt{1-k r^2}}\right)-\left(a(t) r\underline{d} \theta\right)\left(a(t) r\underline{d} \theta\right) -(a(t) r\sin \theta \underline{d} \phi) (a(t) r \sin \theta\underline{d} \phi)\\
      &= \underline{\omega}^0 \underline{\omega}^0 - \underline{\omega}^1 \underline{\omega}^1 - \underline{\omega}^2 \underline{\omega}^2 - \underline{\omega}^3 \underline{\omega}^3 
   \end{align*}
-  where $\{\underline{\omega}^a\}_{a=0}^{3} = \{\underline{d} t, \ a(t) r\underline{d} \theta, \ a(t) r\sin \theta \underline{d} \phi, \ \frac{a(t)}{\sqrt{1-k r^2}} \underline{d} r\}$ is shown to satisfy the orthonormality condition. We note that the resulting choice of basis is unique up to a local lorentz transformation (which preserves orthonormality). 
+  where $\{\underline{\omega}^a\}_{a=0}^{3} = \{\underline{d} t, \ a(t) r\underline{d} \theta, \ a(t) r\sin \theta \underline{d} \phi, \ \frac{a(t)}{\sqrt{1-k r^2}} \underline{d} r\}$ is shown to satisfy the orthonormality condition. We note that the resulting choice of basis is unique up to a local Lorentz transformation (which preserves orthonormality). 
   \item[(b)] To calculate the connection one-forms $\underline{\theta}^a{}_b$, we use the orthonormal basis found in (a) and Cartan's first structure equation for vanishing torsion to get 
   \begin{align*}
     \underline{\theta}^a{ }_b \wedge \underline{\omega}^b = -\underline{d \omega}^a &= 
@@ -98,7 +98,7 @@
       \underline{\theta}^3{ }_b \wedge \underline{\omega}^b 
     \end{cases}
   \end{align*}
-  Since the $\wedge$ product with $\underline{\omega}^b$ maps $\underline{\omega}^{c\neq b}$ to linearly independant two-forms, we can read the coefficients of $\underline{\omega}^{c\neq b}$ preceeding the $\wedge$ product in the previous expressions. We have
+  Since the $\wedge$ product with $\underline{\omega}^b$ maps $\underline{\omega}^{c\neq b}$ to linearly independent two-forms, we can read the coefficients of $\underline{\omega}^{c\neq b}$ preceding the $\wedge$ product in the previous expressions. We have
   \begin{align*}
     \begin{cases}
     \underline{\theta}^0{ }_{1} =  [\cdots] \underline{\omega}^1, \quad \underline{\theta}^0{ }_{2} =  [\cdots] \underline{\omega}^2, \quad \underline{\theta}^0{ }_{3} =  [\cdots] \underline{\omega}^3\\
@@ -109,7 +109,7 @@
   \end{align*} 
   where $[\cdots]$ terms represent the terms mapped to $0$ by the $\wedge$ product from which information about $\underline{\theta}^a{ }_b$ was read. From the first line we can also read $\underline{\theta}^0{ }_{1, 2, 3} = [\cdots] \underline{\omega}^{1, 2, 3}$
   
-  To fully determine the one-forms components from these relations, we invoke the relation $\underline{\theta}_{ab} + \underline{\theta}_{ba} = \underline{d}g_{ab}$ where $\underline{\theta}_{ba} = g_{bc}\underline{\theta}^{c}{}_a$. Recalling that in our orthonormal basis $g_{ab} = \eta_{ab}$, we get the antisymmetry relation $\underline{\theta}_{ab} + \underline{\theta}_{ba}$. It follows that $\underline{\theta}^{a}{}_{a} = 0, \ \forall a$ and we can use it to determine $[...]$. Expliciting the relation between $\underline{\theta}^{b}{}_a$ and  $\underline{\theta}^{a}{}_b$ yields
+  To fully determine the one-forms components from these relations, we invoke the relation $\underline{\theta}_{ab} + \underline{\theta}_{ba} = \underline{d}g_{ab}$ where $\underline{\theta}_{ba} = g_{bc}\underline{\theta}^{c}{}_a$. Recalling that in our orthonormal basis $g_{ab} = \eta_{ab}$, we get the antisymmetry relation $\underline{\theta}_{ab} + \underline{\theta}_{ba}$. It follows that $\underline{\theta}^{a}{}_{a} = 0, \ \forall a$ and we can use it to determine $[...]$. Making the relation between $\underline{\theta}^{b}{}_a$ and  $\underline{\theta}^{a}{}_b$ more explicit yields
   \begin{align*}
     \begin{cases}
       b \ \text{spacelike} \implies 
@@ -140,7 +140,6 @@
   \item[(c)] The curvature two-forms are obtained from the connection one-forms calculated above with the relation $\underline{R}^a{}_b=\underline{d \theta}^a{}_b+\underline{\theta}^a{}_c \wedge \underline{\theta}^c{}_b$. Using $H = a'(t)/a(t)$, $A = \frac{1}{a(t)r}\sqrt{1-k r^2}$ and $B = \frac{1}{a(t)r}\cot \theta$ the connection one form can be organised as 
   \begin{align*}
     [\underline{\theta}^{a}{}_{b}] = 
-    = 
     \begin{pmatrix}
       0 & H\underline{\omega}^1 & H\underline{\omega}^2 & H\underline{\omega}^3\\
       H\underline{\omega}^1 & 0 & B\underline{\omega}^2 & A\underline{\omega}^1\\
@@ -177,14 +176,70 @@
       0 & -(H^2)\underline{\omega}^1 \wedge \underline{\omega}^3 & -((H^2) \underline{\omega}^2\wedge \underline{\omega}^3 - (AB)\underline{\omega}^2\wedge\underline{\omega}^1) & 0
     \end{pmatrix}
   \end{align*}
-  \item[(d)]    
+  Then, the first term in the curvature two-forms reads
+  \begin{align*}
+    &[\underline{d \theta}^a{}_b] = \begin{pmatrix}
+      0 & H'\underline{d}t \wedge \underline{\omega}^1 + H \underline{d\omega}^1 & H'\underline{d}t \wedge \underline{\omega}^2 + H\underline{d\omega}^2  &H'\underline{d}t \wedge \underline{\omega}^3 + H\underline{d\omega}^3\\
+      +[\cdots] & 0 & (\partial_r B \underline{d}r + \partial_\theta B \underline{d}\theta + \partial_t B \underline{d}t) \wedge \underline{\omega}^2 + B \underline{d\omega}^2 & (\partial_r A \underline{d}r + \partial_t A \underline{d}t) \wedge \underline{\omega}^1 + A \underline{d\omega}^1\\
+      +[\cdots] & -[\cdots] & 0 & (\partial_r A \underline{d}r  + \partial_t A \underline{d}t) \wedge \underline{\omega}^2 + A \underline{d\omega}^2\\
+      +[\cdots] & -[\cdots] & -[\cdots] & 0
+    \end{pmatrix}\\
+    &
+    \begin{cases}
+      H'\underline{d}t \wedge \underline{\omega}^1 + H \underline{d\omega}^1 = H'\underline{\omega}^0 \wedge \underline{\omega}^1 + H^2\underline{\omega}^0 \wedge \underline{\omega}^1 + (HA)\underline{\omega}^3 \wedge \underline{\omega}^1\\
+      %
+      H'\underline{d}t \wedge \underline{\omega}^2 + H\underline{d\omega}^2 = H'\underline{\omega}^0 \wedge \underline{\omega}^2 + H^2\underline{\omega}^0 \wedge \underline{\omega}^2 + (HA)\underline{\omega}^3 \wedge \underline{\omega}^2 + (HB) \underline{\omega}^1 \wedge \underline{\omega}^2\\ 
+      %
+      H'\underline{d}t \wedge \underline{\omega}^3 + H\underline{d\omega}^3 = H'\underline{\omega}^0 \wedge \underline{\omega}^3 + H^2 \underline{\omega}^0 \wedge \underline{\omega}^3\\
+      %
+      (\partial_r B \underline{d}r + \partial_\theta B \underline{d}\theta + \partial_t B \underline{d}t) \wedge \underline{\omega}^2 + B \underline{d\omega}^2 = -(AB) \underline{\omega}^3\wedge \underline{\omega}^2 - \frac{\csc^2(\theta)}{r^2 a(t)^2} \underline{\omega}^1\wedge \underline{\omega}^2  -(BH)  \underline{\omega}^0 \wedge \underline{\omega}^2 + (BH) \underline{\omega}^0 \wedge \underline{\omega}^2 +  (AB) \underline{\omega}^3 \wedge \underline{\omega}^2 + B^2 \underline{\omega}^2 \wedge \underline{ \omega}^1\\
+      %
+      (\partial_r A \underline{d}r + \partial_t A \underline{d}t) \wedge \underline{\omega}^1 + A \underline{d\omega}^1 = (-A^2 + \frac{k}{a(t)^2}) \underline{\omega}^3 \wedge \underline{\omega}^1 - (HA) \underline{\omega}^0 \wedge \underline{\omega}^1 + (HA)\underline{\omega}^0 \wedge \underline{\omega}^1 + A^2\underline{\omega}^3 \wedge \underline{\omega}^1\\
+      %
+      (\partial_r A \underline{d}r  + \partial_t A \underline{d}t) \wedge \underline{\omega}^2 + A \underline{d\omega}^2 = (-A^2 + \frac{k}{a(t)^2}) \underline{\omega}^3 \wedge \underline{\omega}^2 - (HA) \underline{\omega}^0 \wedge \underline{\omega}^2 + (HA) \underline{\omega}^0 \wedge \underline{\omega}^2 + A^2 \underline{\omega}^3 \wedge \underline{\omega}^2 + (AB) \underline{\omega}^1 \wedge \underline{\omega}^2
+    \end{cases}\\
+    &=\begin{cases}
+      (H'+H^2)\underline{\omega}^0 \wedge \underline{\omega}^1 + (HA)\underline{\omega}^3 \wedge \underline{\omega}^1\\
+      %
+      (H' + H^2)\underline{\omega}^0 \wedge \underline{\omega}^2 + (HA)\underline{\omega}^3 \wedge \underline{\omega}^2 + (HB) \underline{\omega}^1 \wedge \underline{\omega}^2\\ 
+      %
+      (H' + H^2) \underline{\omega}^0 \wedge \underline{\omega}^3\\
+      %
+      -\left(\frac{\csc^2(\theta)}{r^2 a(t)^2} + B^2 \right)\underline{\omega}^1 \wedge \underline{\omega}^2\\
+      %
+      \frac{k}{a(t)^2} \underline{\omega}^3 \wedge \underline{\omega}^1\\
+      %
+      \frac{k}{a(t)^2} \underline{\omega}^3 \wedge \underline{\omega}^2 + (AB) \underline{\omega}^1 \wedge \underline{\omega}^2
+    \end{cases}
+  \end{align*}
+  Summing the two terms leads to 
+  \begin{align*}
+    [\underline{R}^a{}_b] =
+    \begin{pmatrix}
+      0 & (H'+H^2)\underline{\omega}^0 \wedge \underline{\omega}^1  & (H' + H^2)\underline{\omega}^0 \wedge \underline{\omega}^2 + (2HB) \underline{\omega}^1 \wedge \underline{\omega}^2 & (H' + H^2) \underline{\omega}^0 \wedge \underline{\omega}^3\\
+      %
+      +[\cdots] & 0 & (H^2-A^2 -B^2 -\frac{\csc^2(\theta)}{r^2 a(t)^2})\underline{\omega}^1 \wedge \underline{\omega}^2 & (H^2-\frac{k}{a(t)^2}) \underline{\omega}^1\wedge \underline{\omega}^3\\
+      %
+      +[\cdots] & -[\cdots] & 0 & (H^2-\frac{k}{a(t)^2})\underline{\omega}^2\wedge \underline{\omega}^3\\
+      %
+      +[\cdots] & -[\cdots] & -[\cdots] & 0
+    \end{pmatrix} 
+  \end{align*}
+  \newpage
+  \item[(d)] From each curvature two-form found above, we can extract the components of the Riemann tensor with $\underline{R}^{a}{ }_{b}=\frac{1}{2} R^{a}{ }_{bcd} \underline{\omega}^{c} \wedge \underline{\omega}^{d}$. To make these components more transparent we use the new notation $0 \to \hat{t}, 1 \to \hat{\theta}, 2 \to \hat{\phi}, 3 \to \hat{r}$ and the only non-vanishing components of the Riemann tensor (up to symmetry property of indices) are 
+  \begin{align*}
+    2R^{\hat{t}}_{\hat{\phi} \hat{t} \hat{\phi}} =  2R^{\hat{t}}_{\hat{\theta} \hat{t} \hat{\theta}} = 2R^{\hat{t}}_{\hat{r} \hat{t} \hat{r}} = H' + H^2, \quad R^{\hat{t}}_{\hat{\phi} \hat{\theta} \hat{\phi}} = HB, \quad  2R^{\hat{\theta}}_{\hat{\phi} \hat{\theta} \hat{\phi}} = H^2-A^2 -B^2 -\frac{\csc^2(\theta)}{r^2 a(t)^2},\quad  2R^{\hat{\theta}}_{\hat{r} \hat{\theta}\hat{r}} = 2R^{\hat{\phi}}_{\hat{r} \hat{\phi}\hat{r}} = H^2-\frac{k}{a(t)^2}.
+  \end{align*}
 \end{enumerate}
 
 \section{Acknowledgement}
 
-Thanks to Luke for help reviewing and understanding the concepts used in this assignement
+Thanks to Luke for help reviewing and understanding the concepts used in this assignment
 
-Thanks to Thomas for a discussion about the subtleties of "reading" connection one-froms from Cartan's structure equation
+Thanks to Thomas for a discussion about the subtleties of "reading" connection one-forms from Cartan's structure equation
+
+Thanks to Thomas for help verifying my answers for (b)
+
 
 }
 
