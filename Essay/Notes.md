@@ -11,7 +11,7 @@ https://physics.stackexchange.com/questions/478518/mermin-wagner-and-graphene
 SSB is usually associated to a degeneracy in the ground state of a system having a continuous symmetry. At low temperature, the system can localize the expectation value for its dynamical symmetry breaking field in the field value sub-manifold minimizing the potential. The Mermin-Wagner theorem theorem describes if this state can stay localised in this sub-manifold or if the goldstone bosons (excitations of the field specifically in the sub-manifold where the potential is flat leaving only the massless kinetic term in the lagrangian) fluctuate too much leading to an impossibility of long range ordering (order means symmetry breaking) at a specific point in the sub-manifold. Quantum tunneling trough the potential barrier defining the ground state sub-manifold is possible, but it is a supressed effect with growing system size: the average value for the field at a given point $x$ is the same everywhere for a transationally symmetric theory. The bigger the volume is the longer it will take for a field prepared in a a localized region of the sub-manifold to tunnel to the other side in a substancial amount of points to make a difference in the expectation value.  
 https://philsci-archive.pitt.edu/14983/1/ssbfinite.pdf
 
-# Fussy sphere relation to division algebra
+# Fuzzy sphere relation to division algebra
 The Fuzzy two sphere (four sphere) has its positions related to the expectation value of pauli matrices (quaternionic pauli matrices) on complex (quaternion) valued spinors. The degree of freedom is the spinor and the position is only known on average as a point on the fuzzy sphere. 
 
 # Projective light cone approach
@@ -41,7 +41,7 @@ J_{AB} =
 \begin{pmatrix}
 0 & D & K_{\mu}\\
 -D & 0 & P_{\mu}\\
--K_{\mu} & P_{\mu} & M_{\mu \nu}
+-K_{\mu} & -P_{\mu} & M_{\mu \nu}
 \end{pmatrix}
 $$
 which encodes $SO(D+1, 1)$ in the light cone coordinates (constructed form cartesian coordinates $X^1 \cdots X^{D+2}$ by replacing the last two by light cone coordinates $X^{-} = X^{D+2}-X^{D+1}$ and $X^{+} = X^{D+2}+X^{D+1}$). To get a $SO(d+1, 1)$ familiar comutation structure, we define $A_a = (D/2, (K_\mu + P_\mu)/2)$ and $B_a = (-D/2, (K_\mu - P_\mu)/2)$ to have 
@@ -72,11 +72,28 @@ $$
 $$
 
 
-
-
-# Scale invariance
-
 ## Papers
+
+### Icosahedron 
+
+The symmetry group of the icosahedron is $I_h \cong A_5 \times \mathbb{Z}_2^{O(3)}$ $A_5$ is a subset of $SO(3)$ (represents rotations but is also the alternating group of even permutations on $5$ letters)
+
+The conjecture done in this paper is that finite size effects can be seen as a perturbation terms from CFT operators (only primaries commute with the CFT hamiltonian). They take the Ising on a Icosahedron to introduce correcting terms that maximize the CFT agreement. 
+
+CFT agreement is measured as a sum on rescales energies subtracted from scaling dimension over all levels that are expected to correspond to the CFT. 
+
+Knowing that the monopole harmonics are rotation invariant, what is the set of hamiltonian terms that preserve the rotation symmetry. 
+
+## Scaling transformation:
+
+The dilation operator $D$ is closely related to the scaling dimension of CFT operators because of the ladder structure in the commutation relations:
+$$
+\left[D, P_\mu\right]=+i P_\mu, \quad\left[D, K_\mu\right]=-i K_\mu.
+$$
+**Pay attention to ladder structures in the future**
+We recall that $P_{\mu} = i \partial_\mu$ (that is the origin of the notation for descendant operators which are constructed from derivatives and their contractions) and $K_\mu=i\left(2 x_\mu\left(x^\nu \partial_\nu\right)-x^2 \partial_\mu\right)$ (Lowers the scaling dimension it is the conjugation of a an inversion by two translations). The transformation generated on $\mathbb{R}^{d+1, 1}$ by $K_\mu$ are boosts: if two boosts are composed than a rotation $P_{\mu}$ is involved. Boosting along the $X^{D+1}$ direction is associated to $D$. 
+
+$P_\mu$ acts as a "derivative": its it increases the scaling dimension byt strenghtening the effect of space volume on the operator
 
 
 ## Ideas
@@ -84,7 +101,9 @@ $$
 1. Instead of icosaedron use stars (multiple covers of the 2-sphere) https://en.wikipedia.org/wiki/Star_polyhedron
 2. Write the set of all finite dimensionnal systems on which SO(3) is represented. Use these states to form models with Z2 symmetry breaking (ordering field). 
 3. Fuzzyfy the fuzzy sphere: put a magnetic monopole at the center of the fuzzy sphere and implement it in the hamiltonian with the same potnetial vector but where the position operator has a truncated representation (containing only monopole harmonics). This amounts to projecting the Hamiltonian for the original sphere to the monopole harmonic basis. Since it is an eigenbasis of the hamiltonian, this projection does not change the eigen states and the fuzification is an idempotent map in this context.
-
+4. Example of systems where the fuzzy sphere might be realised in nature. Lead to the question: Can spherical harmonics of a Rydberg atom behave like a fuzzy sphere? The answer seems to be no because the commutaion relation of the harmonics is not related to position in the same way it is for the monopole harmonics (no non-commutative geometry encoded).
+5. Use state operator correspondance to write a hamiltonian acting on the operator space of the CFT, it should be the same CFT? What makes a CFT unique: https://physics.stackexchange.com/questions/120019/what-uniquely-defines-a-cft (Depends if the CFT is unitary or not). 
+6. The dual ising to the Icosahedron is smaller (dodecahedron), but is is as good numerically?
 
 # Code 
 

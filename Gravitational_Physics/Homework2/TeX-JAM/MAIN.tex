@@ -1,0 +1,98 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\input{math_func}
+
+\usepackage{slashed}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%%
+\title{Homework 2: Monopoles} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Ruth Gregory} % Your teacher's name.
+\class{Gravitational Physics} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty 
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\footnotesize{
+
+\section{Dirac}
+
+\begin{enumerate}
+
+  \item[(a)] We are interested in the relation between the global properties of a manifold $M$ and the structure of diffrential forms taking values on its cotangent bundle $T^\star M$ at each point of $M$.
+
+  \textbf{Poincaré's lemma on $M = \mathbb{R}$:} Let $\omega$ be a $p$-form ($p \in \{0, 1\}$) constructed from the cotengent space $T^\star M$ of $M$. Then $\text{d}\omega = 0$ ($\omega$ is closed) implies $\omega = \text{d}\lambda$ ($\omega$ is closed) where $\lambda$ is a $(p-1)$-form ($0$-form).
+
+  \textbf{Proof:} On $\mathbb{R}$, we can use the identity map as a global coordinate chart. The induced basis on 1-forms is $\{\text{d}x\}$ (a smooth frame field) and any 1-forms can be written as $\omega = g \text{d}x$ with $ g \in C^{\infty}(\mathbb{R})$. Suppose now that $\omega$ is closed: we have $0 = \text{d}\omega = \partial_x g \text{d}x \wedge \text{d}x = 0, \forall g \in C^{\infty}(\mathbb{R})$ ($\omega$ being a 1-form is not restrictive, but would be for $\mathbb{R}^n$ with $n>1$). Then we take the $0$-form $\lambda = G$ where $G$ is any primitive of $g$ ($G(x)$ exists because $g$ is smooth) and apply an exterior derivative to get $\text{d}\lambda = g \text{d}x$. Because there are no $(0-1)$-forms there is no need to check the lemma for $0$-forms. 
+
+  \textbf{Counterexample:} Consider the circle smooth manifold $\mathbb{S}^1 \subset \mathbb{R}^2$ (embeded as $\{x^2 + y^2 = 1|(x, y)\in\mathbb{R}^2\}$ for simplicity). It takes at least two charts to cover this manifold and, although on individual charts all closed 1-forms are exact (charts make the manifold look like $\mathbb{R}$ locally), this property is lost globally. Choose the chart map $\theta = \arctan_2$ sending points $(x, y)$ on the circle to their angle with the $x$ axis excluding the point $(1, 0)$ so that the domain is open. With this chart we have the coordinate induced one form frame field $\text{d}\theta$ which we use to construct the closed form $\omega = \text{d}\theta$. On $(0, 2\pi)$, this form is exact since we have a $0$-form $\lambda =  F \in C^{\infty}((0, 2\pi))$ such that $\omega = \text{d}\lambda = \partial_\theta F \text{d}\theta = \text{d}\theta$ forcing $F = \theta + c$, $c \in \mathbb{R}$ since $F$ has to be a primitive of $1$ in the variable $\theta$. The function $F$ is smooth on the chart, but can never be extended to s smooth function over $\mathbb{S}^1$ globally. Indeed, $0$ and $2\pi$ being identified, a continuous function on $\mathbb{S}^1$ should be consistant at the excluded point $(0, 1)$ and this would requiere  $\lim_{\theta \to 0+} (\theta + c) = \lim_{\theta \to 2\pi^-} (\theta + c)$ which is impossible. Therefore there is a closed form on $\mathbb{S}^1$ that is not exact. 
+  \item[(b)] Let $F^{(2)}$ be a 2-form on the 2-sphere $\mathbb{S}^2$. Suppose $F^{(2)}$ is globally exact implying there is a 1-form $\omega$ such that $F^{(2)} = \text{d}\omega$. Then we can use Stokes theorem in combination with the fact $\mathbb{S}^2$ has no boundary to write $g= \frac{1}{4\pi} \in_{\mathbb{2}} F^{(2)} = \frac{1}{4\pi} \int_{\partial \mathbb{S}^2} \text{d}\omega = 0$. 
+  \item[(c)] Now working in Minkowski space $\mathbb{R}^{1, 3}$ in the coordinate chart $(t, r, \theta, \phi)$ built from spherical coordinates on $\mathbf{R}^3$, we have the 2-form $F^{(4)} = Q \sin(\theta) \text{d}\theta \wedge \text{d}\phi$ with $Q\in \mathbb{R}$. We want to determine if $F^{(4)}$ satisfies Maxwell's equations $\text{d} F^{(4)}=0, \quad \text{d} \star F^{(4)}=0$. We have $\text{d} F^{(4)} =  Q \cos(\theta) \ \text{d}\theta \wedge \text{d}\theta \wedge \text{d}\phi = 0$. To evaluate the Hodge dual of $F^{(4)}$ 
+  \item[(d)] 
+  \item[(e)]
+  \item[(f)]
+  \item[(g)]
+  \item[(h)]
+  \item[(i)] 
+
+\end{enumerate}
+
+\section{Taub-NUT, or the gravitomagnetic monopole}
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)]
+  \item[(c)]
+  \item[(d)]
+\end{enumerate}
+
+}
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

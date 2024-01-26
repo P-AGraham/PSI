@@ -192,7 +192,7 @@
       %
       H'\underline{d}t \wedge \underline{\omega}^3 + H\underline{d\omega}^3 = H'\underline{\omega}^0 \wedge \underline{\omega}^3 + H^2 \underline{\omega}^0 \wedge \underline{\omega}^3\\
       %
-      (\partial_r B \underline{d}r + \partial_\theta B \underline{d}\theta + \partial_t B \underline{d}t) \wedge \underline{\omega}^2 + B \underline{d\omega}^2 = -(AB) \underline{\omega}^3\wedge \underline{\omega}^2 - \frac{\csc^2(\theta)}{r^2 a(t)^2} \underline{\omega}^1\wedge \underline{\omega}^2  -(BH)  \underline{\omega}^0 \wedge \underline{\omega}^2 + (BH) \underline{\omega}^0 \wedge \underline{\omega}^2 +  (AB) \underline{\omega}^3 \wedge \underline{\omega}^2 + B^2 \underline{\omega}^2 \wedge \underline{ \omega}^1\\
+      (\partial_r B \underline{d}r + \partial_\theta B \underline{d}\theta + \partial_t B \underline{d}t) \wedge \underline{\omega}^2 + B \underline{d\omega}^2 = -(AB) \underline{\omega}^3\wedge \underline{\omega}^2 - \frac{\csc^2(\theta)}{r^2 a(t)^2} \underline{\omega}^1\wedge \underline{\omega}^2  -(BH)  \underline{\omega}^0 \wedge \underline{\omega}^2 + (BH) \underline{\omega}^0 \wedge \underline{\omega}^2 +  (AB) \underline{\omega}^3 \wedge \underline{\omega}^2 + B^2 \textcolor{red}{ \underline{\omega}^1 \wedge \underline{ \omega}^2}\\
       %
       (\partial_r A \underline{d}r + \partial_t A \underline{d}t) \wedge \underline{\omega}^1 + A \underline{d\omega}^1 = (-A^2 + \frac{k}{a(t)^2}) \underline{\omega}^3 \wedge \underline{\omega}^1 - (HA) \underline{\omega}^0 \wedge \underline{\omega}^1 + (HA)\underline{\omega}^0 \wedge \underline{\omega}^1 + A^2\underline{\omega}^3 \wedge \underline{\omega}^1\\
       %
@@ -205,7 +205,7 @@
       %
       (H' + H^2) \underline{\omega}^0 \wedge \underline{\omega}^3\\
       %
-      -\left(\frac{\csc^2(\theta)}{r^2 a(t)^2} + B^2 \right)\underline{\omega}^1 \wedge \underline{\omega}^2\\
+      -\left(\frac{\csc^2(\theta)}{r^2 a(t)^2} \textcolor{red}{-} B^2 \right)\underline{\omega}^1 \wedge \underline{\omega}^2\\
       %
       \frac{k}{a(t)^2} \underline{\omega}^3 \wedge \underline{\omega}^1\\
       %
@@ -218,7 +218,7 @@
     \begin{pmatrix}
       0 & (H'+H^2)\underline{\omega}^0 \wedge \underline{\omega}^1  & (H' + H^2)\underline{\omega}^0 \wedge \underline{\omega}^2 + (2HB) \underline{\omega}^1 \wedge \underline{\omega}^2 & (H' + H^2) \underline{\omega}^0 \wedge \underline{\omega}^3\\
       %
-      +[\cdots] & 0 & (H^2-A^2 -B^2 -\frac{\csc^2(\theta)}{r^2 a(t)^2})\underline{\omega}^1 \wedge \underline{\omega}^2 & (H^2-\frac{k}{a(t)^2}) \underline{\omega}^1\wedge \underline{\omega}^3\\
+      +[\cdots] & 0 & (H^2-A^2 \textcolor{red}{+} B^2 -\frac{\csc^2(\theta)}{r^2 a(t)^2})\underline{\omega}^1 \wedge \underline{\omega}^2 & (H^2-\frac{k}{a(t)^2}) \underline{\omega}^1\wedge \underline{\omega}^3\\
       %
       +[\cdots] & -[\cdots] & 0 & (H^2-\frac{k}{a(t)^2})\underline{\omega}^2\wedge \underline{\omega}^3\\
       %
@@ -228,8 +228,26 @@
   \newpage
   \item[(d)] From each curvature two-form found above, we can extract the components of the Riemann tensor with $\underline{R}^{a}{ }_{b}=\frac{1}{2} R^{a}{ }_{bcd} \underline{\omega}^{c} \wedge \underline{\omega}^{d}$. To make these components more transparent we use the new notation $0 \to \hat{t}, 1 \to \hat{\theta}, 2 \to \hat{\phi}, 3 \to \hat{r}$ and the only non-vanishing components of the Riemann tensor (up to symmetry property of indices) are 
   \begin{align*}
-    2R^{\hat{t}}_{\hat{\phi} \hat{t} \hat{\phi}} =  2R^{\hat{t}}_{\hat{\theta} \hat{t} \hat{\theta}} = 2R^{\hat{t}}_{\hat{r} \hat{t} \hat{r}} = H' + H^2, \quad R^{\hat{t}}_{\hat{\phi} \hat{\theta} \hat{\phi}} = HB, \quad  2R^{\hat{\theta}}_{\hat{\phi} \hat{\theta} \hat{\phi}} = H^2-A^2 -B^2 -\frac{\csc^2(\theta)}{r^2 a(t)^2},\quad  2R^{\hat{\theta}}_{\hat{r} \hat{\theta}\hat{r}} = 2R^{\hat{\phi}}_{\hat{r} \hat{\phi}\hat{r}} = H^2-\frac{k}{a(t)^2}.
+    2R^{\hat{t}}{}_{\hat{\phi} \hat{t} \hat{\phi}} =  2R^{\hat{t}}{}_{\hat{\theta} \hat{t} \hat{\theta}} = 2R^{\hat{t}}{}_{\hat{r} \hat{t} \hat{r}} = H' + H^2, \quad R^{\hat{t}}{}_{\hat{\phi} \hat{\theta} \hat{\phi}} = HB, \quad  2R^{\hat{\theta}}{}_{\hat{\phi} \hat{\theta} \hat{\phi}} = H^2-A^2 \textcolor{red}{+}B^2 -\frac{\csc^2(\theta)}{r^2 a(t)^2},\quad  2R^{\hat{\theta}}{}_{\hat{r} \hat{\theta}\hat{r}} = 2R^{\hat{\phi}}{}_{\hat{r} \hat{\phi}\hat{r}} = H^2-\frac{k}{a(t)^2}.
   \end{align*}
+  We want to bring these components to the coordinate basis using $\{\underline{\omega}^a\}_{a=0}^{3} = \{c^a \underline{d}x^a\}_{a=0}^{3}$ (no summation on $a$). The orthonormal indices $R^{\hat{a}}{}_{\hat{b} \hat{c} \hat{d}}$ refer to components in the $e_{a} \otimes \underline{\omega}^b \otimes \underline{\omega}^c \otimes \underline{\omega}^d$ with $e_{a} = e_a^\mu \partial_\mu$ being the dual vector basis element to the one-form $\underline{\omega}^{a}$. Since the coordinate one-forms are dual to the coordinate vector basis we have $\delta_{a}^b = \underline{\omega}^b (e_{a}) = e_a^\mu c^b \underline{d}x^b(\partial_\mu) = e_a^\mu c^b \delta_{\mu}^b = e_a^b c^b$ implies $e_a^b = \delta_a^b/c^b$ (no summation on $b$). With this in mind, we can write $e_{a} \otimes \underline{\omega}^b \otimes \underline{\omega}^c \otimes \underline{\omega}^d = \frac{c^b c^c c^d}{c^a} \partial_{a} \otimes \underline{d}x^b \otimes \underline{d}x^c \otimes \underline{d}x^d$ leading to the components 
+  \begin{align*}
+    &R^{t}{}_{\phi t \phi} = \frac{1}{2}(H' + H^2) a(t)^2 r^2 \sin^2(\theta) = \frac{1}{2}\ddot{a}(t) a(t) r^2 \sin^2(\theta), \\
+    &R^{t}{}_{\theta t \theta} = \frac{1}{2}\ddot{a}(t) a(t) r^2, \\
+    &R^{t}{}_{r t r} = \dfrac{1}{2}\ddot{a}(t) a(t)  \dfrac{1}{1-kr^2}, \\
+    &R^{t}{}_{\phi \theta \phi} = HB a(t)^3 r^3 \sin^2(\theta) =  \dot{a} a(t) r^2 \sin^2(\theta),\\
+    &R^{\theta}{}_{\phi \theta \phi} = a(t)^2 r^2 \sin^2(\theta) \frac{1}{2}\left(H^2-\dfrac{1-kr^2}{a(t)^2 r^2} \textcolor{red}{+} \dfrac{\cot^2(\theta)}{a(t)^2 r^2} -\frac{\csc^2(\theta)}{r^2 a(t)^2}\right) = \sin^2(\theta) \frac{1}{2}\left(r^2 \dot{a}(t)^2- 2 + kr^2\right),\\
+    &R^{\theta}{}_{r \theta r} = \dfrac{a(t)^2}{1-kr^2}\frac{1}{2}\left(H^2-\frac{k}{a(t)^2}\right) = \dfrac{1}{1-kr^2}\frac{1}{2}\left(\dot{a}^2-k\right),\\
+    &R^{\phi}{}_{r \phi r} = \dfrac{a(t)^2}{1-kr^2}\frac{1}{2}\left(H^2-\frac{k}{a(t)^2}\right) = \dfrac{1}{1-kr^2}\frac{1}{2}\left(\dot{a}^2-k\right).
+  \end{align*} 
+  and the Ricci scalar components are 
+  \begin{align*}
+    &R_{\phi \phi} = R^{t}{}_{\phi \phi t} + R^{\theta}{}_{\phi \phi \theta} = -\sin^2(\theta) \frac{1}{2}\left(r^2 \dot{a}(t)^2- 2 + kr^2\right) -\frac{1}{2}\ddot{a}(t) a(t) r^2 \sin^2(\theta)\\
+    &R_{tt} = R^{\phi}{}_{t t\phi} + R^{\theta}{}_{t t\theta} + R^{r}{}_{t t r} = -g^{\phi\phi} g_{tt} R^{t}{}_{\phi t\phi} -g^{\theta\theta} g_{tt} R^{t}{}_{\theta t\theta} -  g^{rr}g_{tt}R^{t}{}_{r t r} = \frac{3}{2} \ddot{a}(t) a(t)\\
+    &R_{\theta\theta} = R^{\phi}{}_{\theta \theta \phi} + R^{r}{}_{\theta \theta r} + R^{t}{}_{\theta \theta t} = - g^{\theta \theta} g_{\phi\phi}  R^{\theta}{}_{\phi \theta \phi} -g^{\theta \theta} g_{rr}  R^{\theta}{}_{r \theta r} - R^{t}_{\theta t \theta} = -\frac{a(t)^2}{2}\left(r^2 \dot{a}(t)^2 - 2 + kr^2\right) - \frac{a(t)^2}{2}\left(r^2\dot{a}^2- k r^2\right) - \frac{1}{2}\ddot{a}(t) a(t) r^2\\
+    &R_{rr} = -R^{\theta}{}_{r \theta r} - R^{\phi}{}_{r \phi r} - R^{t}{}_{rtr} = -\dfrac{1}{1-kr^2}\left(\dot{a}^2-k\right) - \dfrac{1}{2}\ddot{a}(t) a(t) \dfrac{1}{1-kr^2}
+  \end{align*}
+  and the other components are $0$ because the Riemann tensor has pairs of identical indices so making two of them different in the Ricci uncontracted index locations will leave the two others different and insignificant when the Riemann tensor is contracted.
 \end{enumerate}
 
 \section{Acknowledgement}
