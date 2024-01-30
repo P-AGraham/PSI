@@ -200,3 +200,20 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
 
 
    then we can write $\omega = g(x)$ with $g(x) \in C^{\infty}(\mathbb{R})$. This time $\text{d}\omega = 0$ imposes the restriction $\partial_x g(x) \text{d}x = 0 \iff g(x) = c \in \mathbb{R} \ \forall x \in \mathbb{R}$.  
+
+
+   As a first step towards this evaluation, $U\subset\mathbb{S}^2$ is mapped to $V\subset\mathbb{R}^2$ through the spherical chart map $\varphi : p\in U \mapsto (x, y)$ where integration can be performed under the rules of real analysis. To bring the integrand on $U$ to an integrand on $V$, we use the pullback of the diffeomorphism defined by $\varphi^{-1}: (x, y) \to (\sin(x) \cos(y), \sin(x)\sin(y), \cos(x))$. We have that the pullback of $F^{(2)}$ under this map is
+  \begin{align*}
+    \varphi^{-1}_*F^{(2)} = \sin(\theta) (\varphi^{-1}_*\text{d}\theta) \wedge (\varphi^{-1}_*\text{d}\phi) = 
+  \end{align*} 
+
+ $\phi = \arctan_2(v_\pm, u_\pm)$ and $\theta = \arctan_2(\pm \frac{1 - u^2_\pm + v_\pm^2}{1 + u^2_\pm + v_\pm^2}, \sqrt{u^2_\pm + v_\pm^2})$ since our sphere has radius 1 allowing us to get 
+  \begin{align*}
+    u^2_\pm + v_\pm^2 = (1-z^2)/(1\mp z)^2 = (1 \pm z)/(1 \mp z) \implies  z = \pm \frac{1 - u^2_\pm + v_\pm^2}{1 + u^2_\pm + v_\pm^2}.
+  \end{align*}
+  From these expressions, we have the following results 
+  \begin{align*}
+    \sin\theta = \sqrt{1-z^2} = \frac{((1 + u^2_\pm + v_\pm^2)^2 -(1 - u^2_\pm + v_\pm^2)^2)^{1/2}}{1 + u^2_\pm + v_\pm^2} = \frac{2\sqrt{u^2_\pm + v_\pm^2}}{1 + u^2_\pm + v_\pm^2},\quad \text{d}\phi =  \dfrac{-v_\pm \text{d}u_\pm + u_\pm\text{d}v_\pm}{u_\pm^2 + v_\pm^2}
+  \end{align*}
+  Wolfram alpha was used for the last one
+  \item[(g)]

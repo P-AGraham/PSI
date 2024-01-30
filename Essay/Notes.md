@@ -104,6 +104,7 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 4. Example of systems where the fuzzy sphere might be realised in nature. Lead to the question: Can spherical harmonics of a Rydberg atom behave like a fuzzy sphere? The answer seems to be no because the commutaion relation of the harmonics is not related to position in the same way it is for the monopole harmonics (no non-commutative geometry encoded).
 5. Use state operator correspondance to write a hamiltonian acting on the operator space of the CFT, it should be the same CFT? What makes a CFT unique: https://physics.stackexchange.com/questions/120019/what-uniquely-defines-a-cft (Depends if the CFT is unitary or not). 
 6. The dual ising to the Icosahedron is smaller (dodecahedron), but is is as good numerically?
+7. Combine magnetic monopole with charge monopole to get a notion cyclotron harmonic. Spherical harmonics should be the dual to monopole harmonics in some sens 
 
 # Code 
 

@@ -66,11 +66,62 @@
   \textbf{Proof:} On $\mathbb{R}$, we can use the identity map as a global coordinate chart. The induced basis on 1-forms is $\{\text{d}x\}$ (a smooth frame field) and any 1-forms can be written as $\omega = g \text{d}x$ with $ g \in C^{\infty}(\mathbb{R})$. Suppose now that $\omega$ is closed: we have $0 = \text{d}\omega = \partial_x g \text{d}x \wedge \text{d}x = 0, \forall g \in C^{\infty}(\mathbb{R})$ ($\omega$ being a 1-form is not restrictive, but would be for $\mathbb{R}^n$ with $n>1$). Then we take the $0$-form $\lambda = G$ where $G$ is any primitive of $g$ ($G(x)$ exists because $g$ is smooth) and apply an exterior derivative to get $\text{d}\lambda = g \text{d}x$. Because there are no $(0-1)$-forms there is no need to check the lemma for $0$-forms. 
 
   \textbf{Counterexample:} Consider the circle smooth manifold $\mathbb{S}^1 \subset \mathbb{R}^2$ (embeded as $\{x^2 + y^2 = 1|(x, y)\in\mathbb{R}^2\}$ for simplicity). It takes at least two charts to cover this manifold and, although on individual charts all closed 1-forms are exact (charts make the manifold look like $\mathbb{R}$ locally), this property is lost globally. Choose the chart map $\theta = \arctan_2$ sending points $(x, y)$ on the circle to their angle with the $x$ axis excluding the point $(1, 0)$ so that the domain is open. With this chart we have the coordinate induced one form frame field $\text{d}\theta$ which we use to construct the closed form $\omega = \text{d}\theta$. On $(0, 2\pi)$, this form is exact since we have a $0$-form $\lambda =  F \in C^{\infty}((0, 2\pi))$ such that $\omega = \text{d}\lambda = \partial_\theta F \text{d}\theta = \text{d}\theta$ forcing $F = \theta + c$, $c \in \mathbb{R}$ since $F$ has to be a primitive of $1$ in the variable $\theta$. The function $F$ is smooth on the chart, but can never be extended to s smooth function over $\mathbb{S}^1$ globally. Indeed, $0$ and $2\pi$ being identified, a continuous function on $\mathbb{S}^1$ should be consistant at the excluded point $(0, 1)$ and this would requiere  $\lim_{\theta \to 0+} (\theta + c) = \lim_{\theta \to 2\pi^-} (\theta + c)$ which is impossible. Therefore there is a closed form on $\mathbb{S}^1$ that is not exact. 
-  \item[(b)] Let $F^{(2)}$ be a 2-form on the 2-sphere $\mathbb{S}^2$. Suppose $F^{(2)}$ is globally exact implying there is a 1-form $\omega$ such that $F^{(2)} = \text{d}\omega$. Then we can use Stokes theorem in combination with the fact $\mathbb{S}^2$ has no boundary to write $g= \frac{1}{4\pi} \in_{\mathbb{2}} F^{(2)} = \frac{1}{4\pi} \int_{\partial \mathbb{S}^2} \text{d}\omega = 0$. 
-  \item[(c)] Now working in Minkowski space $\mathbb{R}^{1, 3}$ in the coordinate chart $(t, r, \theta, \phi)$ built from spherical coordinates on $\mathbf{R}^3$, we have the 2-form $F^{(4)} = Q \sin(\theta) \text{d}\theta \wedge \text{d}\phi$ with $Q\in \mathbb{R}$. We want to determine if $F^{(4)}$ satisfies Maxwell's equations $\text{d} F^{(4)}=0, \quad \text{d} \star F^{(4)}=0$. We have $\text{d} F^{(4)} =  Q \cos(\theta) \ \text{d}\theta \wedge \text{d}\theta \wedge \text{d}\phi = 0$. To evaluate the Hodge dual of $F^{(4)}$ 
-  \item[(d)] 
-  \item[(e)]
-  \item[(f)]
+  \item[(b)] Let $F^{(2)}$ be a 2-form on the 2-sphere $\mathbb{S}^2$. Suppose $F^{(2)}$ is globally exact implying there is a 1-form $\omega$ such that $F^{(2)} = \text{d}\omega$. Then we can use Stokes theorem in combination with the fact $\mathbb{S}^2$ has no boundary to write $g= \frac{1}{4\pi} \int_{\mathbb{S}^2} F^{(2)} = \frac{1}{4\pi} \int_{\partial \mathbb{S}^2} \text{d}\omega = 0$. 
+  \item[(c)] Now working in Minkowski space $\{\eta,\ \mathbb{R}^{1, 3}\}$ with mostly $+$ signature in the coordinate chart $(t, r, \theta, \phi)$ (this order for the variables provides the notion of positive orientation of a basis) built from spherical coordinates on $\mathbb{R}^3$, we have the 2-form $F^{(4)} = Q \sin(\theta)\ \text{d}\theta \wedge \text{d}\phi$ with $Q\in \mathbb{R}$. We want to determine if $F^{(4)}$ satisfies Maxwell's equations $\text{d} F^{(4)}=0, \quad \text{d} \star F^{(4)}=0$. We have $\text{d} F^{(4)} =  Q \cos(\theta) \ \text{d}\theta \wedge \text{d}\theta \wedge \text{d}\phi = 0$. To evaluate the Hodge dual of $F^{(4)}$, we first calculate 
+  \begin{align*}
+  \star\ \text{d}\theta \wedge \text{d}\phi &= \sqrt{|r^4 \sin^2 \theta|}\frac{1}{2!}\frac{1}{2!}\varepsilon^{\theta \phi}{}_{r t} \text{d} r \wedge \text{d} t + \frac{1}{2!}\frac{1}{2!}\varepsilon^{\theta \phi}{}_{t r} \text{d} t \wedge \text{d} r - \frac{1}{2!}\frac{1}{2!}\varepsilon^{\phi \theta}{}_{r t} \text{d} r \wedge \text{d} t - \frac{1}{2!}\frac{1}{2!}\varepsilon^{\phi \theta}{}_{t r} \text{d} t \wedge \text{d} r \\
+  &= r^2 |\sin \theta|\eta^{\theta \theta}\eta^{\phi \phi}\left(\frac{1}{2!}\frac{1}{2!}\varepsilon_{\theta \phi r t} \text{d} r \wedge \text{d} t + \frac{1}{2!}\frac{1}{2!}\varepsilon_{\theta \phi t r} \text{d} t \wedge \text{d} r - \frac{1}{2!}\frac{1}{2!}\varepsilon_{\phi \theta r t} \text{d} r \wedge \text{d} t - \frac{1}{2!}\frac{1}{2!}\varepsilon_{\phi \theta t r} \text{d} t \wedge \text{d} r\right)\\
+  &= r^2 |\sin \theta|\frac{1}{r^4 \sin^2 \theta}\frac{1}{2!}\frac{1}{2!}\left((-1)\ \text{d} r \wedge \text{d} t + (+1)\ \text{d} t \wedge \text{d} r - (+1)\ \text{d} r \wedge \text{d} t - (-1)\ \text{d} t \wedge \text{d} r\right) = \text{d} t \wedge \text{d} r
+  \end{align*}
+  and it follows that $\text{d} \star F^{(4)} = \text{d} (Q/r^2\ \left(\text{d} t \wedge \text{d} r\right)) =  -Q/r^3\ \left( \text{d} r \wedge \text{d} t \wedge \text{d} r\right) = 0$ where the absolute value was ignored because $\theta \in (0, 2\pi)$ making $\sin(\theta) > 0$. 
+  \item[(d)] We can convert the form $F^{(4)}$ to cartesian coordinates with the relations 
+  \begin{align*}
+      &\phi = \arctan_2\left(y, x\right),\quad
+      \theta = \arctan_2\left(z, \sqrt{x^2 + y^2}\right)
+      \implies
+    \text{d}\phi = \dfrac{-y \text{d}x + x\text{d}y}{x^2 + y^2}, \quad 
+    \text{d}\theta = \dfrac{\sqrt{x^2 + y^2}\text{d}z - (x\text{d}x + y\text{d}y)\frac{z}{\sqrt{x^2 + y^2}}}{r^2}
+  \end{align*} 
+  leading to 
+  \begin{align*}
+    F^{(4)} &= Q \sin(\theta)\ \text{d}\theta \wedge \text{d}\phi = Q \frac{\sqrt{x^2+y^2}}{r}\ \left(\dfrac{\sqrt{x^2 + y^2}\text{d}z - (x\text{d}x + y\text{d}y)\frac{z}{\sqrt{x^2 + y^2}}}{r^2}\right) \wedge \left(\dfrac{-y \text{d}x + x\text{d}y}{x^2 + y^2}\right)\\
+    &= Q \frac{1}{r^3}\ \left(\text{d}z \wedge (-y \text{d}x + x\text{d}y) - (x^2\text{d}x \wedge \text{d} y - y^2\text{d}y \wedge \text{d}x)\frac{z}{x^2 + y^2}\right) = Q \frac{1}{r^3}\ \left(-y\text{d}z \wedge \text{d}x - x\text{d}y \wedge \text{d}z - z\text{d}x \wedge \text{d} y\right). 
+  \end{align*}
+  We note the electric field components (associated to $\text{d}x^{i} \wedge \text{d}t$) all vanish and we only have a magnetic field (associated to $\text{d}x^i \wedge \text{d}x^j$). The magnetic field has the same from has an electric monopole (inverse square law multiplies by a unit "vector").
+  \item[(e)] Since the monopole field is static, we drop the time direction by mapping $F^{(4)}$ to the two-form $F^{(3)}$ in the cotangent bundle over $\mathbb{R}^3$ on a fixed time slice. Going further we can map $F^{(3)}$ on the cotangent bundle over $\mathbb{S}^2$ (embeded in $\mathbb{R}^3$ as a sphere of radius $1$) to get the two-form $F^{(2)}$. To characterize the two-form $F^{(2)}$, we evaluate the integral given in (b) as 
+  \begin{align*}
+  g = \frac{Q}{4\pi}\int_{\mathbb{S}^2} \sin(\theta) \ \text{d} \theta \wedge \text{d}\phi = \frac{Q}{4\pi}\int_{\mathbb{S}^2} \sin(\theta) \ \text{d} \theta (e_\theta) \wedge \text{d}\phi (e_\phi) = Q
+  \end{align*}
+  with $e_{\phi}, e_\theta$ the dual vector basis to $\text{d} \phi, \text{d} \theta$. More formally, this integration on $V\subset\mathbb{S}^2$ is brought to an integral in $U\subset\mathbb{R}^2$ on the pullback of $F^{(2)}$ by a diffeomorphism mapping $U$ to $V$. A convenient choice of diffeomorphism is the coordinate chart already used to write $F^{(2)}$. Under this diffeomrophism, $\text{d}\theta$ and $\text{d}\phi$ are mapped to the exterior derivatives of the coordinate fucntions $\theta, \phi$ over $U$ (the exterior derivative of the projection map on each axis which are aslo named $\text{d}\theta$ and $\text{d}\phi$). This allows us to use regular borns of integration where $\theta$ and $\phi$ range from $0$ to $\pi$ and $0$ to $2\pi$ respectively and use the coordinate representation of the two-form components. Since \textbf{exact} $\implies$ \textbf{vanishing of $g$} as shown in (b), we have \textbf{non vanishing of $g$} $\implies$ \textbf{not exact} and $F^{(2)}$ is not exact. One could say that $g= \frac{1}{4\pi} \int_{\mathbb{S}^2 = \partial \text{Ball}} F^{(2)} = \frac{1}{4\pi} \int_{\text{Ball}} \text{d}F^{(2)} = 0$ forming a contradiction with $F^{(2)}$ not being exact. The solution to this problem can be seen with result (c) where $F^{(2)}$ is shown to be ill-defined at the origin. Therfore we need to puncture $\mathbb{R}^3$ by removing the origin from the domain of definition of $F^{(3)}$ creating a second boundary restoring the result $0 = \frac{1}{4\pi} \int_{\partial \text{Ball} + \text{puncture}} F^{(2)}$. Normally the set added to the boundary would be of zero measure, but comparing with the usual treatement of electric monopoles, we get that a dirac delta at the puncture point will change the value of $g$ from $0$ to $Q$. 
+  \item[(f)] Stereographic projections provide maps from $U_{+} = \mathbb{S}^2-\text{North pole}$ (projecting from the north pole) and $U_{-} = \mathbb{S}^2-\text{South pole}$ (projecting to the south pole) to all of $\mathbb{R}^2$. Expressed in the cartesian coordinates of the embeding space of $\mathbb{S}^2$ in $\mathbb{R}^3$, the associated coordinate maps $\varphi_{\pm}$ are 
+  \begin{align*}
+    \varphi_\pm : (x, y, z) \mapsto (u_\pm, v_\pm) = \left(\frac{x}{1\mp z}, \frac{y}{1\mp z}\right).
+  \end{align*} 
+  This form can be obtained by looking at a cut of the sphere in a $zw$-plane containing the $z$ axis. In this plane, we look for the intersection $u_\pm, v_\pm$ of a line passing trough the relevant pole and the point $x, y, z$ with the $xy$-plane. In the section plane, the line is given by points of coordinates $w_l, z_l$ such that $z_l = 1 - \frac{1+z}{w}w_l$ (North pole) or $z_l = -1 + \frac{1-z}{w} w_l$ (South pole). The intersection with the $xy$-plane is given by $u_\pm =\frac{w}{1\mp z} \frac{x}{w}$ and $v_\pm = \frac{w}{1\mp z} \frac{y}{w}$ ($w$ coordinate projected on the $x$ and $y$ axis respectively).
+
+  To express $F^{(2)}$ in these new coordinates, we notice that $x = u_\pm (1\mp z)$ and $y = v_\pm (1\mp z)$. Since our sphere has radius 1, we have 
+  \begin{align*}
+    u^2_\pm + v_\pm^2 = (1-z^2)/(1\mp z)^2 = (1 \pm z)/(1 \mp z) \implies u^2_\pm + v_\pm^2 \mp z(u^2_\pm + v_\pm^2)  = 1 \pm z\implies  z = \pm \frac{1 - u^2_\pm - v_\pm^2}{1 + u^2_\pm + v_\pm^2}
+  \end{align*}
+  leading to $\text{d}x = (1\mp z) \text{d}u_\pm \mp u_\pm \text{d}z$, $\text{d}y = (1\mp z) \text{d}v_\pm \mp v_\pm \text{d}z$ and $\text{d}z = A \text{d}u_\pm + B \text{d}v_\pm$
+  where 
+  \begin{align*}
+    A = -\pm\frac{2u_\pm (1 + u^2_\pm + v_\pm^2)}{(1 + u^2_\pm + v_\pm^2)^2}-\pm\frac{2u_\pm(1 - u^2_\pm - v_\pm^2)}{(1 + u^2_\pm + v_\pm^2)^2} = \mp\frac{4u_\pm}{(1 + u^2_\pm + v_\pm^2)^2}, \quad B = \mp\frac{4v_\pm}{(1 + u^2_\pm + v_\pm^2)^2}.
+  \end{align*}
+  We can also relate the two-form frame fields in cartesian coordinates to the $\text{d}u \wedge \text{d}v$ frame field as (omitting $\pm$ on $u,v$ symbols from now on)
+  \begin{align*}
+    \text{d}x \wedge \text{d}y &= ((1\mp z) \text{d}u \mp u\text{d}z)\wedge((1\mp z) \text{d}v \mp v \text{d}z)\\ &= (1\mp z)^2 \text{d}u \wedge \text{d}v \mp (1\mp z)(Bv + Au)\text{d}u \wedge \text{d}v\\ &= (1 \mp z)^2 \text{d}u \wedge \text{d}v + 4(1\mp z)\frac{v^2 + u^2}{(1 + u^2 + v^2)^2}\text{d}u \wedge \text{d}v\\
+    \text{d}y \wedge \text{d}z &= (1\mp z) A\text{d}v \wedge \text{d}u = \pm(1\mp z)\frac{4u}{(1 + u^2 + v^2)^2}\text{d}u \wedge \text{d}v\\
+    \text{d}z \wedge \text{d}x &= (1\mp z) B\text{d}v \wedge \text{d}u = \pm(1\mp z)\frac{4v}{(1 + u^2 + v^2)^2}\text{d}u \wedge \text{d}v
+  \end{align*}
+  With these expressions we are ready to express $F^{(3)}$ in the $\text{d}u$ and $\text{d}v$ frame field (we omit the $\pm$ on $u, v$ in what follows) as 
+  \begin{align*}
+    F^{(3)} &=  Q \frac{1}{r^3}\ \left(-y\text{d}z \wedge \text{d}x - x\text{d}y \wedge \text{d}z - z\text{d}x \wedge \text{d} y\right)\\
+    &= -Q \left(z(1 \mp z)^2  + 4z(1\mp z)\frac{v^2 + u^2}{(1 + u^2 + v^2)^2} \pm(1\mp z)^2\frac{4u^2 + 4v^2}{(1 + u^2 + v^2)^2}\right)\\
+    &=-Q \left(z(1 \mp z)^2  + 4(1\pm z)(1\mp z)\frac{v^2 + u^2}{(1 + u^2 + v^2)^2}\right)\\
+    &=-Q (1 \mp z)^2\left(\pm \frac{1 - (u^2 + v^2)^2}{(1 + u^2 + v^2)^2} + 4\frac{(u^2 + v^2)^2}{(1 + u^2 + v^2)^2}\right).
+  \end{align*}
+
   \item[(g)]
   \item[(h)]
   \item[(i)] 
