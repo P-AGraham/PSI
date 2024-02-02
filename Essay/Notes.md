@@ -105,6 +105,8 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 5. Use state operator correspondance to write a hamiltonian acting on the operator space of the CFT, it should be the same CFT? What makes a CFT unique: https://physics.stackexchange.com/questions/120019/what-uniquely-defines-a-cft (Depends if the CFT is unitary or not). 
 6. The dual ising to the Icosahedron is smaller (dodecahedron), but is is as good numerically?
 7. Combine magnetic monopole with charge monopole to get a notion cyclotron harmonic. Spherical harmonics should be the dual to monopole harmonics in some sens 
+8. The dirac string of the monopole fom a topological deffect that can be gauged away. This defect is such that the manifold where the ising model is effectively studied is not $\mathbb{R}^3$ but $\mathbb{R}^3$ with a string deffect.
+9. Use a 4 dimensionnal quaternionic QFT as an "embeding theory" of the fuzzy sphere 
 
 # Code 
 

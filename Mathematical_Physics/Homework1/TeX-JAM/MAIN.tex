@@ -1,0 +1,189 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\input{math_func}
+
+\usepackage{slashed}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%%
+\title{Homework 1} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Giuseppe Sellaroli} % Your teacher's name.
+\class{Mathematical Physics} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\footnotesize{
+
+\section{Hodge star operator and vector calculus}
+We are interested in the spaces $\Omega^k(M)$ of $k$-forms over a smooth manifold $M$ of dimension $n$ equiped with a pseudo-Riemanian metric tensor $g$ represented as $g = \gamma_{ij} \text{d}x^i \otimes \text{d}x^j$ in the frame field induced by the coordinate maps $x_i$ over a open subset $U \subset M$. The Hodge star operator constitutes a linear map $\star : \Omega^k(M) \to \Omega^{n-k}(M)$. In a local frame given by $\text{d}x^i$, its action is specified by 
+\begin{align*}
+  \star 1 = \sqrt{|\det{\gamma}|} \text{d}x^1 \wedge \cdots \wedge \text{d}x^n, \quad \text{d}x^{i_{1}} \wedge \cdots \wedge \text{d}x^{i_k} = \frac{1}{(n-k)!} \sqrt{\det \gamma} (\gamma^{-1})^{i_1 j_1}  \cdots (\gamma^{-1})^{i_1 j_1} \varepsilon_{j_1 \cdots j_n}  \text{d}x^{j_{k+1}} \wedge \cdots \wedge \text{d}x^{j_n} \quad \& \quad \star (f \alpha) = f \star \alpha  
+\end{align*}
+where $\varepsilon$ is the levi-civita symbol, $f\in \Omega^0(M)$ and $\alpha \in \Omega^k(M)$.
+\begin{enumerate}
+  \item[(a)] For now, we treat a cartesian frame field $\text{d}x^1 = \text{d}x, \text{d}x^2 = \text{d}y, \text{d}x^3 = \text{d}z$ in three dimensionnal euclidean space by replacing $\gamma_{ij}$ by $\delta_{ij}$. The Hodge dual of each frame field calculated as follows 
+  \begin{align*}
+    &\star \text{d}x = \frac{\sqrt{|1|}}{(3-1)!}(\delta^{-1})^{11}\epsilon_{123} \text{d}x^2 \wedge \text{d}x^3 + \frac{\sqrt{|1|}}{(3-1)!}(\delta^{-1})^{11}\epsilon_{132} \text{d}x^3 \wedge \text{d}x^2 = \frac{1}{2}(+1) \text{d}x^2 \wedge \text{d}x^3 + \frac{1}{2} (-1)(-1) \text{d}x^2 \wedge \text{d}x^3 = \text{d}x^2 \wedge \text{d}x^3\\
+    &\star \text{d}y = \frac{\sqrt{|1|}}{(3-1)!}(\delta^{-1})^{22}\epsilon_{231} \text{d}x^3 \wedge \text{d}x^1 + \frac{\sqrt{|1|}}{(3-1)!}(\delta^{-1})^{22}\epsilon_{213} \text{d}x^1 \wedge \text{d}x^3 = \frac{1}{2}(+1) \text{d}x^3 \wedge \text{d}x^1 + \frac{1}{2} (-1)(-1) \text{d}x^3 \wedge \text{d}x^1 = \text{d}x^3 \wedge \text{d}x^1\\
+    &\star \text{d}z = \frac{\sqrt{|1|}}{(3-1)!}(\delta^{-1})^{33}\epsilon_{312} \text{d}x^1 \wedge \text{d}x^2 + \frac{\sqrt{|1|}}{(3-1)!}(\delta^{-1})^{33}\epsilon_{321} \text{d}x^2 \wedge \text{d}x^1 = \frac{1}{2}(+1) \text{d}x^1 \wedge \text{d}x^2 + \frac{1}{2} (-1)(-1) \text{d}x^1 \wedge \text{d}x^2 = \text{d}x^1 \wedge \text{d}x^2
+  \end{align*}
+  \item[(b)] Using the metric we can associate a vector $\alpha^\sharp$ to each one-from $\alpha$ such that $g(\alpha^\sharp, v) = v(\alpha)$ for all vector fields $v$. Consider the expansions $\alpha = \alpha_x \text{d}x + \alpha_y \text{d}y + \alpha_z \text{d}z$,  $\alpha^\sharp = \alpha^\sharp_x \frac{\partial}{\partial x} + \alpha^\sharp_y \frac{\partial}{\partial y} + \alpha^\sharp_z \frac{\partial}{\partial z}$ and $v = v_x \frac{\partial}{\partial x} + v_y \frac{\partial}{\partial y} + v_z \frac{\partial}{\partial z}$. If the components of $g$ are $\delta_{ij}$, then $g(\alpha^\sharp, v) = \alpha^\sharp_x v_x + \alpha^\sharp_y v_y + \alpha^\sharp_z v_z$ and $\alpha(v) = \alpha_x v_x + \alpha_y v_y + \alpha_z v_z$. Since these two expressions are equal for all $v$ by definition of $\sharp$, we conclude $\alpha^\sharp_x = \alpha_x,\ \alpha^\sharp_y = \alpha_y,\ \alpha^\sharp_z = \alpha_z$ for the cartesian euclidean metric. We have a correspondance between one-forms and vectors which can be used to recover vector calculus from diferential form operations. 
+  \begin{enumerate}
+    \item[$\bullet$] Suppose $f$ is a smooth function then $\text{d}f = \partial_x f \text{d}x + \partial_y f \text{d}y + \partial_z f \text{d}z$ which maps to the vector $\text{d}f^\sharp = \partial_x f \frac{\partial}{\partial x} + \partial_y f \frac{\partial}{\partial y} + \partial_z f \frac{\partial}{\partial z}$ which corresponds to the usual notion of a gradient $\nabla f$. 
+    
+    \item[$\bullet$] For a one-form $\alpha = \alpha_x \text{d}x + \alpha_y \text{d}y + \alpha_z \text{d}z$, the exterior derivative reads 
+    \begin{align*}
+      \text{d}\alpha &= (\partial_x \alpha_x \text{d}x + \partial_y \alpha_x \text{d}y + \partial_z \alpha_x \text{d}z)\wedge \text{d}x +  (\partial_x \alpha_y \text{d}x + \partial_y \alpha_y \text{d}y + \partial_z \alpha_y \text{d}z)\wedge \text{d}y  +  (\partial_x \alpha_z \text{d}x + \partial_y \alpha_z \text{d}y + \partial_z \alpha_z \text{d}z)\wedge \text{d}z \\
+      &= \partial_y \alpha_x \text{d}y \wedge \text{d}x + \partial_z \alpha_x \text{d}z \wedge \text{d}x + \partial_x \alpha_y \text{d}x \wedge \text{d}y + \partial_z \alpha_y \text{d}z \wedge \text{d}y + \partial_x \alpha_z \text{d}x \wedge \text{d}z + \partial_y \alpha_z \text{d}y \wedge \text{d}z\\
+      &= (\partial_x \alpha_y -\partial_y \alpha_x) \text{d}x \wedge \text{d}y + (\partial_z \alpha_x - \partial_x \alpha_z) \text{d}z \wedge \text{d}x + (\partial_y \alpha_z -  \partial_z \alpha_y) \text{d}y \wedge \text{d}z.
+    \end{align*}
+    From the property $\star \star \alpha = (-1)^{1(3-1)} \text{sgn}(\text{det}(\delta_{ij})) = \alpha$ (for one-forms), applying $\star$ to the results found in (a) should bring us back to the expression on which $\star$ was applied to obtain them. Then it follows that 
+    \begin{align*}
+      \star \text{d}\alpha &= (\partial_x \alpha_y -\partial_y \alpha_x) \star\text{d}x \wedge \text{d}y + (\partial_z \alpha_x - \partial_x \alpha_z) \star\text{d}z \wedge \text{d}x + (\partial_y \alpha_z -  \partial_z \alpha_y) \star\text{d}y \wedge \text{d}z \quad \text{linearity of $\star$ and $\star(\text{coeff}\ \alpha) = \text{coeff}\star \alpha$}\\
+      &= (\partial_x \alpha_y -\partial_y \alpha_x) \text{d}z + (\partial_z \alpha_x - \partial_x \alpha_z) \text{d}y + (\partial_y \alpha_z -  \partial_z \alpha_y) \text{d}x.
+    \end{align*} 
+    Finally, using $\sharp$ this result is mapped to the vector with components resulting from the vector product $\nabla \times \alpha^{\sharp}$. Indeed, we can write $(\star \text{d}\alpha)^{\sharp}  = \nabla \times \alpha^{\sharp}$.
+    \item[$\bullet$] Now consider again a one-form $\alpha = \alpha_x \text{d}x + \alpha_y \text{d}y + \alpha_z \text{d}z$. This time, we start by applying $\star$ followed by an exterior derivative to obtain 
+    \begin{align*}
+      &\text{d}\star \alpha =  \text{d}(\alpha_x \text{d}y \wedge \text{d}z + \alpha_y \text{d}z \wedge \text{d}y + \alpha_z \text{d}x \wedge \text{d}y)\\
+      &= (\partial_x \alpha_x \text{d}x + \partial_y \alpha_x \text{d}y + \partial_z \alpha_x \text{d}z) \wedge \text{d}y \wedge \text{d}z + (\partial_x \alpha_y \text{d}x + \partial_y \alpha_y \text{d}y + \partial_z \alpha_y \text{d}z) \wedge \text{d}z \wedge \text{d}x +  (\partial_x \alpha_z \text{d}x + \partial_y \alpha_z \text{d}y + \partial_z \alpha_z \text{d}z) \wedge \text{d}x \wedge \text{d}y\\
+      &= \partial_x \alpha_x \text{d}x \wedge \text{d}y \wedge \text{d}z + \partial_y \alpha_y \text{d}y \wedge \text{d}z \wedge \text{d}x + \partial_z \alpha_z \text{d}z \wedge \text{d}x \wedge \text{d}y = (\partial_x \alpha_x + \partial_y \alpha_y + \partial_z \alpha_z)\text{d}x \wedge \text{d}y \wedge \text{d}z.
+    \end{align*}
+    Now using the fact $\star$ is an involution in our space (see previous $\bullet$), we have $1 = \star\star 1= \star \sqrt{\text{det}(\delta_{ij})} \text{d}x \wedge \text{d}y \wedge \text{d}z = \star \text{d}x \wedge \text{d}y \wedge \text{d}z$ leading to 
+    \begin{align*}
+      \star \text{d}\star \alpha = \star (\partial_x \alpha_x + \partial_y \alpha_y + \partial_z \alpha_z)\text{d}x \wedge \text{d}y \wedge \text{d}z = \partial_x \alpha_x + \partial_y \alpha_y + \partial_z \alpha_z
+    \end{align*}
+    which is directly the scalar result obtained when taking the divergence $\nabla \cdot \alpha^{\sharp}$. 
+    \item[$\bullet$] Finally, consider two one forms $\alpha = \alpha_x \text{d}x + \alpha_y \text{d}y + \alpha_z \text{d}z$ and $\beta = \beta_x \text{d}x + \beta_y \text{d}y + \beta_z \text{d}z$. The $\star$ of their $\wedge$ product reads 
+    \begin{align*}
+      \star (\alpha \wedge \beta) &= \star((\alpha_x \text{d}x + \alpha_y \text{d}y + \alpha_z \text{d}z) \wedge (\beta_x \text{d}x + \beta_y \text{d}y + \beta_z \text{d}z))\\
+      &= \star(\alpha_x \beta_y \text{d}x\wedge\text{d}y + \alpha_x \beta_z \text{d}x\wedge\text{d}z + \alpha_y \beta_x \text{d}y\wedge\text{d}x + \alpha_y \beta_z \text{d}y\wedge\text{d}z + \alpha_z \beta_x \text{d}z\wedge\text{d}x + \alpha_z\beta_y \text{d}z\wedge\text{d}y)\\
+      &= (\alpha_x \beta_y - \alpha_y \beta_y) \star\text{d}x\wedge\text{d}y + (\alpha_z \beta_x - \alpha_x \beta_z) \star\text{d}z\wedge\text{d}x + (\alpha_y \beta_z - \alpha_z \beta_y)  \star\text{d}y\wedge\text{d}z \\
+      &= (\alpha_x \beta_y - \alpha_y \beta_y) \text{d}z + (\alpha_z \beta_x - \alpha_x \beta_z) \text{d}y + (\alpha_y \beta_z - \alpha_z \beta_y) \text{d}x
+    \end{align*}
+    which matched the component of a vector product and gives the relation $(\star (\alpha \wedge \beta))^\sharp = \alpha^\sharp \times \beta^\sharp$.
+  \end{enumerate}
+\end{enumerate}  
+
+\section{Maxwell's equations}
+To express Maxwell's equations with differential forms, we use the following representations of the electric field $E$, magnetic field $B$, current density $J$
+\begin{align*}
+  & B=B_x \mathrm{d} y \wedge \mathrm{d} z+B_y \mathrm{d} z \wedge \mathrm{d} x+B_z \mathrm{d} x \wedge \mathrm{d} y, \quad E=E_x \mathrm{d} x+E_y \mathrm{d} y+E_z \mathrm{d} z, \quad J=J_x \mathrm{d} x+J_y \mathrm{d} y+J_z \mathrm{d} z. 
+\end{align*}
+and we take the charge density $\rho$ to be a zero-form. 
+\begin{enumerate}
+  \item[(a)] The representation of $B$ as a two-form is motivated by the fact magnetic field components behave as pseudo-vectors under full inversion $(x, y, z) \mapsto (-x, -y, -z)$. To verify that the two-form representation is consistent with this property, we perform a change basis $\{\text{d}x^i\}_{i=1}^3$ to the basis $\{\text{d}\tilde{x}^i\}_{i=1}^3$ generated by fully inverted spatial coordinates. We have $\text{d}\tilde{x}^i = \text{d}(-x) = -\text{d}x^i$ and $\text{d}\tilde{x}^i \wedge \text{d}\tilde{x}^j = (-1)^2 \text{d}x^i \wedge \text{d}x^j$. This implies that at the level of fully spatial two-forms, the full inversion of space leaves the components invariant as expected for a magnetic field.
+  \item[(b)] To connect with the usual vector form of Maxwell's equations, we notice that the usual electric $\tilde{E}$, magnetic $\tilde{B}$ and current density $\tilde{J}$ vector fields are related to the forms given above by $\tilde{E} = E^\sharp, \ \tilde{B} = (\star B)^\sharp = (B_x \text{d}x + B_y \text{d}y + B_z \text{d}z)^\sharp, \ \quad \tilde{J} = J^\sharp$.
+  Using results derived from problem 1, (b) we can use the original set of Maxwell equations to write  
+  \begin{align*}
+    &0 = \nabla \cdot \tilde{B} = \nabla \cdot (\star B)^\sharp = \star \text{d} \star (\star B) = \star \text{d} B \iff \text{d} B = 0 \quad \text{($\star$ is an involution)}\\
+    &\mu_0 \rho =  \nabla \cdot \tilde{E} = \nabla \cdot E^\sharp = \star \text{d} \star E\\
+    &0 = \frac{\partial \tilde{B}}{\partial t} + \nabla \times \tilde{E} = \frac{\partial (\star B)^\sharp}{\partial t} + (\star \text{d}E)^{\sharp} \iff 0 = \frac{\partial \star B}{\partial t} + (\star \text{d}E) \iff 0 = \frac{\partial B}{\partial t} + \text{d}E \quad \text{($\star$ is an involution, $\sharp$ is invertible)}\\
+    &\mu_0 \tilde{J} = \mu_0 J^\sharp = -\frac{\partial \tilde{E}}{\partial t} + \nabla \times \tilde{B} = -\frac{\partial E^\sharp}{\partial t} + \nabla \times (\star B)^\sharp = -\frac{\partial E^\sharp}{\partial t} + (\star \text{d} \star B)^{\sharp} \iff \mu_0 J = -\frac{\partial E^\sharp}{\partial t} + (\star \text{d} \star B)^{\sharp} \quad \text{($\sharp$ is invertible)}
+  \end{align*}
+  where $\mu_0$ is the magnetic permeability (the equations are written in $c = 1$ units)
+  \item[(c)] By Poincaré's lemma, every closed form on $\mathbb{R}^n$ is exact. Maxwell's equations tell us that $B$ is a closed two-form implying $B$ is also exact. Then, there exists a one-form $A$ such that $B = \text{d}A$. Inserting this result in Faraday's law, we get 
+  \begin{align*}
+    0 = \frac{\partial B}{\partial t} + \text{d}E = \frac{\partial \text{d}A}{\partial t} + \text{d}E = \text{d}\left(\frac{\partial A}{\partial t} + E\right). 
+  \end{align*}
+  Since $-\frac{\partial A}{\partial t} + E$ is a closed one-form it is also exact and there must exist zero-form $-\phi$ such that $-\text{d}\phi = \frac{\partial A}{\partial t} + E \iff E = -\text{d}\phi -\frac{\partial A}{\partial t}$.
+  \item[(d)] We now go back to minkowski space (with $-+++$ signature) with coordinates $(x^0, x^1, x^2, x^3) =(x, y, z, t)$ associated to the one-form frame field $\{\text{d}x^\mu\}_{\mu=0}^3$. We define the two-form $F = B + E \wedge \text{d}t$ and combine the current and charge densities into a single one-form $J = -\rho \star \mathrm{d} t+J_x \star \mathrm{d} x+J_y \star \mathrm{d} y+J_z \star \mathrm{d} z$. To write Maxwell's equations in terms of these new objects, we need to determine the effect of $\star$ and its relation to vector calculus in Minkowski space. We start by calculating 
+  \begin{align*}
+    \star \text{d}t &= \frac{\sqrt{|-1|}}{(4-1)!}(\gamma^{-1})^{00}\epsilon_{0123} \text{d}x^1\wedge \text{d}x^2 \wedge \text{d}x^3 + \frac{\sqrt{|-1|}}{(4-1)!}(\gamma^{-1})^{00}\epsilon_{0132} \text{d}x^1 \wedge \text{d}x^3 \wedge \text{d}x^2\\
+    &+ \frac{\sqrt{|-1|}}{(4-1)!}(\gamma^{-1})^{00}\epsilon_{0213} \text{d}x^2\wedge \text{d}x^1 \wedge \text{d}x^3 + \frac{\sqrt{|-1|}}{(4-1)!}(\gamma^{-1})^{00}\epsilon_{0231} \text{d}x^2 \wedge \text{d}x^3 \wedge \text{d}x^1\\
+    &+ \frac{\sqrt{|-1|}}{(4-1)!}(\gamma^{-1})^{00}\epsilon_{0312} \text{d}x^3\wedge \text{d}x^1 \wedge \text{d}x^2 + \frac{\sqrt{|-1|}}{(4-1)!}(\gamma^{-1})^{00}\epsilon_{0321} \text{d}x^3 \wedge \text{d}x^2 \wedge \text{d}x^1\\
+    &= (\gamma^{-1})^{00}\text{d}x^1 \wedge \text{d}x^3 \wedge \text{d}x^2 = -\text{d}x \wedge \text{d}y \wedge \text{d}z
+  \end{align*}
+  For the next calculations, we use the fact $\star$ acting on a $\wedge$ product of basis forms will yield the $\wedge$ product of the basis forms absent of the original product with a sign. The order of the resulting product is such that concatenating it with the original product on the left will produce an even permutation of $txyz$. To fully determine the sign factor, we add multiply by $-1$ if one of the one-forms in the original product is $\text{d}t$. With this in mind, we can write 
+  \begin{align*}
+    &\star \text{d}x = -\text{d}t \wedge \text{d}y \wedge \text{d}z \quad (xtyz\ \text{odd}), \quad \star \text{d}y = \text{d}t \wedge \text{d}x \wedge \text{d}z \quad (ytxz\ \text{even}), \quad \star \text{d}z = -\text{d}t \wedge \text{d}x \wedge \text{d}y\quad (ztxy\ \text{odd})\\
+    &\star (\text{d}x \wedge \text{d}y) = \text{d}t \wedge \text{d}z \quad (xytz\ \text{even}), \quad \star (\text{d}y \wedge \text{d}z) = \text{d}t \wedge \text{d}x \quad (yztx\ \text{even}), \quad \star (\text{d}z \wedge \text{d}x) = \text{d}t \wedge \text{d}y \quad (zxty\ \text{even})\\
+    &\star (\text{d}t \wedge \text{d}x) = (-1)\text{d}y \wedge \text{d}z \quad (txyz\ \text{even}), \quad \star (\text{d}t \wedge \text{d}y) = (-1)\text{d}z \wedge \text{d}x \quad (tyzx\ \text{even})\quad \star (\text{d}t \wedge \text{d}z) = (-1)\text{d}x \wedge \text{d}y \quad (tzxy\ \text{even})\\
+    &\star 1 = \sqrt{|\text{det}(\gamma)|}\text{d}t \wedge \text{d}x \wedge \text{d}y \wedge \text{d}z = \text{d}t \wedge \text{d}x \wedge \text{d}y \wedge \text{d}z.
+  \end{align*}
+  These relations are completed with $\star \star \alpha = (-1)^{k(4-k)} (-1) \alpha$.
+  \item[(e)] If we express $E$ and $B$ with the potentials $A = A_x \text{d}x + A_y \text{d}y + A_z \text{d}z$ and $\phi = -A_t$, $F$ becomes 
+  \begin{align*}
+    F &= \text{d}A +  \left(-\mathrm{d} \phi-\frac{\partial A}{\partial t}\right)\wedge \text{d}t \\
+    &= (\partial_x A_y -\partial_y A_x) \text{d}x \wedge \text{d}y + (\partial_z A_x - \partial_x A_z) \text{d}z \wedge \text{d}x + (\partial_y A_z -  \partial_z A_y) \text{d}y \wedge \text{d}z \\
+    &+ \partial_x A_t \text{d}x\wedge \text{d}t + \partial_y A_t \text{d}y\wedge \text{d}t + \partial_z A_t \text{d}z\wedge \text{d}t - (\partial_t A_x \text{d}x + \partial_t A_y \text{d}y + \partial_t A_z \text{d}z)\wedge \text{d} t\\
+    &= (\partial_x A_y -\partial_y A_x) \text{d}x \wedge \text{d}y + (\partial_z A_x - \partial_x A_z) \text{d}z \wedge \text{d}x + (\partial_y A_z -  \partial_z A_y) \text{d}y \wedge \text{d}z 
+    (\partial_t A_x - \partial_x A_t) \text{d}t\wedge \text{d}x + (\partial_t A_y - \partial_y A_t) \text{d}t\wedge \text{d}y  + (\partial_t A_z - \partial_z A_t) \text{d}t\wedge \text{d}z
+  \end{align*}
+  We see the equality of coefficients of $\text{d}x^{\mu} \wedge \text{d}x^{\nu}$ with components of the covariant Faraday tensor $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$.
+  \item[(f)] The Faraday tensor formulation of Maxwell's equations reads $\partial_\mu F^{\mu \nu} = \mu_0 J^\nu$ and $\partial_{(\mu} F_{\nu \sigma)} = 0$. We first notice that
+  \begin{align*}
+    \partial_{(\mu} F_{\nu \sigma)} = 0 \iff dF = \partial_{\sigma} F_{\mu\nu} \text{d}x^{\sigma} \wedge \text{d}x^{\mu} \wedge \text{d}x^{\nu}/2  = 6\partial_{(\sigma} F_{\mu\nu)} \text{d}x^{\sigma} \wedge \text{d}x^{\mu} \wedge \text{d}x^{\nu}/2 = 0.
+  \end{align*}
+  Then we can explicitly verify that 
+  \begin{align*}
+    \star F_{\mu \nu} \text{d}x^{\mu}\wedge\text{d}x^{\nu} &= F_{01} \star \text{d}x^{0}\wedge\text{d}x^{1} + F_{02} \star \text{d}x^{0}\wedge\text{d}x^{2} + F_{03} \star \text{d}x^{0}\wedge\text{d}x^{3} + F_{12} \star \text{d}x^{1}\wedge\text{d}x^{2} + F_{23} \star \text{d}x^{2}\wedge\text{d}x^{3} + F_{31} \star \text{d}x^{3}\wedge\text{d}x^{1}\\
+    &=  -F_{01}  \text{d}x^{2}\wedge\text{d}x^{3} -F_{02}  \text{d}x^{3}\wedge\text{d}x^{1} - F_{03}  \text{d}x^{1}\wedge\text{d}x^{2} + F_{12} \text{d}x^{0}\wedge\text{d}x^{3} + F_{23}  \text{d}x^{0}\wedge\text{d}x^{1} + F_{31} \text{d}x^{0}\wedge\text{d}x^{2}
+  \end{align*}
+  and apply an exterior derivative to find 
+  \begin{align*}
+   \text{d} \star F &= -\partial_0 F_{01}  \text{d}x^{0} \wedge \text{d}x^{2}\wedge\text{d}x^{3} + \partial_0 F_{02}  \text{d}x^{0} \wedge \text{d}x^{1}\wedge\text{d}x^{3} - \partial_0 F_{03} \text{d}x^{0} \wedge \text{d}x^{1}\wedge\text{d}x^{2} - \partial_1 F_{12}  \text{d}x^{0} \wedge\text{d}x^{1}\wedge\text{d}x^{3} + \partial_2 F_{23}   \text{d}x^{0} \wedge\text{d}x^{1}\wedge\text{d}x^{2} + \partial_3 F_{31}  \text{d}x^{0} \wedge \text{d}x^{2}\wedge\text{d}x^{3}\\
+  &+\partial_1 F_{10}  \text{d}x^{1} \wedge \text{d}x^{2}\wedge\text{d}x^{3} + \partial_2 F_{20}  \text{d}x^{1} \wedge \text{d}x^{2}\wedge\text{d}x^{3} + \partial_3 F_{30}  \text{d}x^{1} \wedge \text{d}x^{2}\wedge\text{d}x^{3} + \partial_2 F_{21}  \text{d}x^{0} \wedge\text{d}x^{2}\wedge\text{d}x^{3} - \partial_3 F_{32}   \text{d}x^{0} \wedge\text{d}x^{1}\wedge\text{d}x^{3} + \partial_1 F_{13}  \text{d}x^{0} \wedge \text{d}x^{1}\wedge\text{d}x^{2}\\
+  &= (\partial_1 F_{10} + \partial_2 F_{20} + \partial_3 F_{30})\text{d}x^{1} \wedge \text{d}x^{2}\wedge\text{d}x^{3} + \cdots = -(\mu_0 J^0) \star \text{d}t  + \cdots = (\mu_0 J_0) \star \text{d}t  + \cdots
+  \end{align*}
+  We see that the $-1$ factors introduced by $\star$ essentially raise the indices of $F_{\mu\nu}$ and the exterior derivative contracts them with a partial derivative. We recover a three-form ($J$ is represented as a three-form).
+  \item[(g)] The result found in (e) can be restated as $F = (\partial_\mu A_\nu - \partial_\nu A_\mu) \text{d}x^{\mu} \wedge \text{d}x^{\nu}/2 = \partial_\mu A_\nu \text{d}x^{\mu} \wedge \text{d}x^{\nu} = \text{d}A$ by definition of the exterior derivative. 
+\end{enumerate}
+
+
+\section{Acknowledgement}
+I worked on this assignment on my own.
+
+
+}
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

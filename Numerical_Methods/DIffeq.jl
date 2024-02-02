@@ -21,6 +21,7 @@ function euler(f, y, h)
     return y
 end
 
+
 U = [1.0, 0.0]
 h = 0.1
 Uall = [U]
