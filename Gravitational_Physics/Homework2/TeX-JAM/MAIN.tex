@@ -149,7 +149,32 @@
     &= f\left(\text{d} t_\sigma + 2 n\cos \theta \text{d}\phi\right)^2-\frac{\text{d} r^2}{f}-\left(r^2+n^2\right)\left(\text{d} \theta^2+\sin ^2 \theta \text{d} \phi^2\right). 
   \end{align*}
   This transformation links metric with different value of $\sigma$ and can be interpreted as a gauge transformation analogous to the gauge transformation treated in the Dirac string analysis. Going from the $\sigma = +1$ chart to the $\sigma = -1$ chart can be done using the time shift $t_{-1} \to t_{+1} = t_{-1} + 4n \phi$. The new time depending on angular coordinates only changes smoothly around $\phi = 0^+$ and $\phi = 2\pi^-$ if we identify times seperated by $4n (2\pi)$. This transformation leads to a shift in the position of the string from the upper half of the $z$ axis to the lower half of the $z$ axis. Since it is only a coordinate (gauge) transformation, we conclude that the dirac string should be unobservable. Since the time coordinate is forced to be periodic by the angular shift making the dirac string unobservable, the associated spacetime has one extra compactified time dimension. This also hapened with the Kaluza-Klein spacetime where one extra dimension is compactified leading to the emergence of electromagnetism on regular $3+1$ dimensionnal spacetime. The difference with this spacetime and the monopole spacetime treated here is the fact the non-compact manifold has a remaining time-like direction. Our manifold only has non compact spacial directions which removes dynamics. Since the magnetic monopole described above is described by a static field, we can expect that the structure of the emergent electromagnetic theory $A_{\pm} = n(\pm 1 +\cos(\theta))\text{d}\phi$ (the gravitomagnetic potential becomes the electromagnetic potential of the emergent theory) matches the structure of a normal magnetic monopole in $\mathbb{R}^3$ up to the space curvature effects of general ralativity.  
-  \item[(d)]
+  \item[(d)] We finally calculate the Komar angular momentum of the spacetime. It involves the killing vector $k = \partial_{\phi}$ and its corresponding form 
+  \begin{align*}
+  k^{\flat} &= g(\partial_\phi, \bullet) = f\left(\text{d} t^2(\partial_\phi)+4 n(\pm 1 + \cos(\theta))\text{d}\phi(\partial_\phi) \text{d}t  +4n^2(\pm 1 + \cos(\theta))^2\text{d}\phi^2(\partial_\phi)\right)-\frac{\text{d} r^2}{f}-\left(r^2+n^2\right)\left(\text{d} \theta^2(\partial_\phi)+\sin ^2 \theta \text{d} \phi^2(\partial_\phi)\right)\\
+  &= 4 f n(\pm 1 + \cos(\theta)) \text{d}t  +4 f n^2(\pm 1 + \cos(\theta))^2\text{d}\phi-\left(r^2+n^2\right) \sin^2 \theta\ \text{d} \phi. 
+  \end{align*}
+  We also need the $k^{\flat}$ for a $m=0$ space time which is given by 
+  \begin{align*}
+    k^{\flat}_{m=0} = 4 \frac{r^2-n^2}{r^2 + n^2} n(\pm 1 + \cos(\theta)) \text{d}t  +4 \frac{r^2-n^2}{r^2 + n^2} n^2(\pm 1 + \cos(\theta))^2\text{d}\phi-\left(r^2+n^2\right) \sin^2 \theta\ \text{d} \phi. 
+  \end{align*}
+  and the difference
+  \begin{align*}
+    k^{\flat} - k^{\flat}_{m=0} &= 4 \left(\frac{r^2-2 m r-n^2}{r^2+n^2}-\frac{r^2-n^2}{r^2 + n^2}\right) n(\pm 1 + \cos(\theta)) \text{d}t  +4 \left(\frac{r^2-2 m r-n^2}{r^2+n^2}-\frac{r^2-n^2}{r^2 + n^2}\right) n^2(\pm 1 + \cos(\theta))^2\text{d}\phi\\
+    &= \frac{-8 nm r}{r^2+n^2} (\pm 1 + \cos(\theta)) \text{d}t  + \frac{-8 n^2 m r}{r^2+n^2} (\pm 1 + \cos(\theta))^2\text{d}\phi. 
+  \end{align*}
+  Then the exterior derivative reads 
+  \begin{align*}
+    \text{d}(k^{\flat} - k^{\flat}_{m=0}) &= \left(\frac{-8 nm (r^2+n^2)}{(r^2+n^2)^2} + \frac{16 nm r^2}{(r^2+n^2)^2}\right) (\pm 1 + \cos(\theta)) \text{d}t\wedge \text{d}r  + \left(\frac{-8 n^2m (r^2+n^2)}{(r^2+n^2)^2} + \frac{16 n^2m r^2}{(r^2+n^2)^2}\right) (\pm 1 + \cos(\theta)) (\pm 1 + \cos(\theta))^2\text{d}\phi \wedge \text{d} r\\
+    &+\frac{-8 nm r}{r^2+n^2} (-\sin(\theta)) \text{d}t\wedge\text{d}\theta  - 2\frac{-8 n^2 m r}{r^2+n^2} \sin(\theta)(\pm 1 + \cos(\theta))\text{d}\phi\wedge\text{d}\theta. 
+  \end{align*}
+  In preparation for the calculation of the Hodge dual of this form, we write 
+  \begin{align*}
+    &\star \text{d}t\wedge \text{d}r = \sqrt{r^4 (r^2 + n^2)^2 \sin^2 \theta }g^{\phi\phi}g^{\theta\theta}\text{d}\phi \wedge \text{d}\theta,\\
+    &\star \text{d}\phi \wedge \text{d}r = \sqrt{r^4 (r^2 + n^2)^2 \sin^2 \theta }g^{tt}g^{\theta\theta}\text{d}t \wedge \text{d}\theta,\\
+    &\star \text{d}t \wedge \text{d}\theta = \sqrt{r^4 (r^2 + n^2)^2 \sin^2 \theta }g^{rr}g^{\phi\phi}\text{d}r \wedge \text{d}\phi,\\
+    &\star \text{d}\phi \wedge \text{d}\theta = \sqrt{r^4 (r^2 + n^2)^2 \sin^2 \theta }g^{rr}g^{tt}\text{d}r \wedge \text{d}t.
+  \end{align*}
 \end{enumerate}
 
 % Thiago 
