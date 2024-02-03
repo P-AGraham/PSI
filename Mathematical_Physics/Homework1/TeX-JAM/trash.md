@@ -197,3 +197,6 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
     \begin{align*}
     \eta_{ca}\underline{\theta}^c{ }_b + \eta_{ca} \underline{\theta}_b{ }^c = 0 \iff  \eta_{ca}\eta^{ad}\underline{\theta}^c{ }_b + \eta_{ca}\eta^{ad} \underline{\theta}_b{ }^c = \underline{\theta}^d{ }_b + \underline{\theta}_b{ }^d = 0.
   \end{align*}
+
+
+  Suppose $I_-(\Omega_0) = 0$, then we can write $I_-(\Omega)  = f(\Omega) (\Omega-\Omega_0)$ which is equivalent

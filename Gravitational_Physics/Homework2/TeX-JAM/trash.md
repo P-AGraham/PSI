@@ -261,3 +261,20 @@ To express $F^{(2)}$ in these new coordinates, we notice that $x = u_\pm (1\mp z
 
 
    $\star F_{\mu\nu} \text{d}x^{\mu} \wedge \text{d}x^{\nu}/2 = (\partial_\mu A_\nu - \partial_\nu A_\mu) \text{d}x^{\mu} \wedge \text{d}x^{\nu}/2 $
+
+
+   &\star \text{d}\phi\wedge \text{d}\theta = \sqrt{(r^2 + n^2)^2 \sin^2 \theta}\varepsilon_{\mu \nu tr} g^{\mu\phi}g^{\nu\theta}\text{d}t \wedge \text{d}r = (r^2 + n^2)\sin \theta \varepsilon_{\phi \theta t r} g^{\phi \phi}g^{\theta \theta}\text{d}\phi \wedge \text{d}\theta = \frac{1}{(r^2 + n^2) \sin \theta} \text{d}t \wedge \text{d}r,\\
+    %
+    &\star \text{d}\phi \wedge \text{d}r = \sqrt{(r^2 + n^2)^2 \sin^2 \theta} \varepsilon_{\mu \nu \phi r} g^{\mu t}g^{\nu \theta} \text{d}t \wedge \text{d}\theta = (r^2 + n^2) \sin {\theta} \varepsilon_{t \theta \phi r} g^{t t}g^{\theta \theta} \text{d}t \wedge \text{d}\theta = -\left(\frac{4 A_\sigma^2}{(r^2 + n^2)\sin \theta} - \frac{\sin\theta}{f}\right)  \text{d}t \wedge \text{d}\theta,\\
+    %
+    &\star \text{d}t \wedge \text{d}\theta = \sqrt{(r^2 + n^2)^2 \sin^2 \theta} \varepsilon_{\mu \nu t\theta} g^{\mu \phi}g^{\nu r} \text{d}\phi \wedge \text{d}r = (r^2 + n^2) \sin \theta \varepsilon_{\phi r t\theta} g^{\phi \phi}g^{r r} \text{d}\phi \wedge \text{d}r = \frac{f}{\sin\theta} \text{d}\phi \wedge \text{d}r,\\
+    %
+    &
+
+    We can now simplify further calculation by taking the limit $r \to \infty$ to get 
+  \begin{align*}
+    &\star \text{d}t\wedge \text{d}r = 0,\\
+    &\star \text{d}\phi \wedge \text{d}r = - \sin\theta \text{d}t \wedge \text{d}\theta,\\
+    &\star \text{d}t \wedge \text{d}\theta = -\frac{1}{\sin\theta} \text{d}\phi \wedge \text{d}r,\\
+    &\star \text{d}\phi \wedge \text{d}\theta = \left(\frac{4 A_\sigma^2}{\sin \theta} + (r^2 + n^2) \sin \theta\right)\text{d}t \wedge \text{d}r
+  \end{align*}
