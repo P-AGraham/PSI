@@ -84,6 +84,11 @@ version = "0.17.38"
 [[Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
+[[BayesHistogram]]
+git-tree-sha1 = "5d5dda960067751bc1534aba765f771325044501"
+uuid = "000d9b38-65fe-4c81-bdb9-69f01f102479"
+version = "1.0.7"
+
 [[BenchmarkTools]]
 deps = ["JSON", "Logging", "Printf", "Profile", "Statistics", "UUIDs"]
 git-tree-sha1 = "f1f03a9fa24271160ed7e73051fba3c1a759b53f"
@@ -488,6 +493,12 @@ deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
 git-tree-sha1 = "c6033cc3892d0ef5bb9cd29b7f2f0331ea5184ea"
 uuid = "f5851436-0d7a-5f13-b9de-f02708fd171a"
 version = "3.3.10+0"
+
+[[FHist]]
+deps = ["BayesHistogram", "LinearAlgebra", "MakieCore", "Measurements", "RecipesBase", "Requires", "Statistics", "StatsBase"]
+git-tree-sha1 = "f7ead789e58f7a3958faa92b1ab53c876e601f52"
+uuid = "68837c9b-b678-4cd5-9925-8a54edc8f695"
+version = "0.10.9"
 
 [[FastBroadcast]]
 deps = ["ArrayInterface", "LinearAlgebra", "Polyester", "Static", "StaticArrayInterface", "StrideArraysCore"]
@@ -1137,6 +1148,12 @@ version = "1.1.9"
 [[MbedTLS_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
+
+[[Measurements]]
+deps = ["Calculus", "LinearAlgebra", "Printf", "RecipesBase", "Requires"]
+git-tree-sha1 = "bdcde8ec04ca84aef5b124a17684bf3b302de00e"
+uuid = "eff96d63-e80a-5855-80a2-b1b0885c5ab7"
+version = "2.11.0"
 
 [[Measures]]
 git-tree-sha1 = "c13304c81eec1ed3af7fc20e75fb6b26092a1102"
