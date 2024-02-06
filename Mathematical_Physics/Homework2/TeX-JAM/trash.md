@@ -200,3 +200,6 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
 
 
   Suppose $I_-(\Omega_0) = 0$, then we can write $I_-(\Omega)  = f(\Omega) (\Omega-\Omega_0)$ which is equivalent
+
+
+  \frac{\partial \hat{L}}{\partial v^j \partial v^i} (\hat{q}, \hat{v})  \text{d}v^{j}_{\mathbf{q}, \mathbf{v}} \wedge \text{d}q^{i}_{\mathbf{q}, \mathbf{v}}
