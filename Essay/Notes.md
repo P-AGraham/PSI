@@ -107,6 +107,8 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 7. Combine magnetic monopole with charge monopole to get a notion cyclotron harmonic. Spherical harmonics should be the dual to monopole harmonics in some sens 
 8. The dirac string of the monopole fom a topological deffect that can be gauged away. This defect is such that the manifold where the ising model is effectively studied is not $\mathbb{R}^3$ but $\mathbb{R}^3$ with a string deffect.
 9. Use a 4 dimensionnal quaternionic QFT as an "embeding theory" of the fuzzy sphere 
+10. Thompson problem algorithm build on a non commutative geometry sequence to the original problem. 
+11. Another way to discretize the sphere (golden ratio spiral): https://extremelearning.com.au/how-to-evenly-distribute-points-on-a-sphere-more-effectively-than-the-canonical-fibonacci-lattice/
 
 # Code 
 
