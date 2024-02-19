@@ -21,3 +21,22 @@ A natural choice of $\dot{\theta}(\tau)$ is then $\omega/\cosh(f(\tau))$ associa
 $$
 a k \cosh(\bar{\omega} \tau) \dfrac{1}{\sqrt{1-\bar{\omega}^2\tau^2}}
 $$
+
+We express the state of the system as $\ket{\psi} = \sum_{s'} c_{s;n} e^{i\Omega [s] t} \ket{s;n}$ ($[s]$ is the number of $e$ minus the number of $g$ over $2$ in $s$). For simplicity we specialize to a single detector in state $\ket{g; 1}$ to get 
+\begin{align*}
+    \frac{\text{d}}{\text{d}\tau} e^{i\Omega t/2} c_{g;1} &= \bra{g;1}\sum_{j = 0}^{N-1} (e^{i\Omega t}\sigma^+_j + e^{-i\Omega t} \sigma^-_j)(e^{-i x^\mu_j k_\mu} a_k + e^{i x_j^\mu k_\mu} a_k^{\dagger})\ket{g;1} = 0\\
+    \frac{\text{d}}{\text{d}\tau} e^{-i\Omega t/2} c_{e;0} &= \bra{e;0}\sum_{j = 0}^{N-1} (e^{i\Omega t}\sigma^+_j + e^{-i\Omega t} \sigma^-_j)(e^{-i x^\mu_j k_\mu} a_k + e^{i x_j^\mu k_\mu} a_k^{\dagger})\ket{g;1} = 
+\end{align*}
+
+\begin{align*}
+    \frac{\text{d}}{\text{d}\tau} e^{i\Omega[s] t/2} c_{s;n} =  
+\end{align*}
+
+
+We express the state of the system as $\ket{\psi} = \sum_{s'} c_{s;n} e^{i\Omega [s] t} \ket{s;n}$ ($[s]$ is the number of $e$ minus the number of $g$ over $2$ in $s$). For simplicity we specialize to a single detector in state $\ket{g; 1}$ to get 
+\begin{align*}
+    \frac{\text{d}}{\text{d}\tau} e^{i\Omega t/2} c_{g;n} &= \bra{g;n}\sum_{m}\sum_{j = 0}^{N-1} e^{-i\Omega t}\sigma^-_j(e^{-i x^\mu_j k_\mu} a_k + e^{i x_j^\mu k_\mu} a_k^{\dagger})c_{e;m}\ket{e;m}\\
+    &= \bra{g;n}\sum_{m}\sum_{j = 0}^{N-1} e^{-i\Omega t}\sigma^-_j(e^{-i x^\mu_j k_\mu} \sqrt{m}c_{e;m}\ket{g;m-1} + e^{i x_j^\mu k_\mu}   \sqrt{m + 1}c_{e;m}\ket{e;m+1})\\
+ &= e^{-i\Omega t-i x^\mu_j k_\mu} \sqrt{n+1}c_{e;n+1} + e^{-i\Omega t + i x_j^\mu k_\mu} \sqrt{n-1}c_{e;n-1}\\
+    \frac{\text{d}}{\text{d}\tau} e^{-i\Omega t/2} c_{e;n} &= \bra{e;n}\sum_{j = 0}^{N-1} e^{i\Omega t}\sigma^+_j (e^{-i x^\mu_j k_\mu} a_k + e^{i x_j^\mu k_\mu} a_k^{\dagger})\ket{g;1} = 
+\end{align*}
