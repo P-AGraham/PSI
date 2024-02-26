@@ -40,3 +40,22 @@ We express the state of the system as $\ket{\psi} = \sum_{s'} c_{s;n} e^{i\Omega
  &= e^{-i\Omega t-i x^\mu_j k_\mu} \sqrt{n+1}c_{e;n+1} + e^{-i\Omega t + i x_j^\mu k_\mu} \sqrt{n-1}c_{e;n-1}\\
     \frac{\text{d}}{\text{d}\tau} e^{-i\Omega t/2} c_{e;n} &= \bra{e;n}\sum_{j = 0}^{N-1} e^{i\Omega t}\sigma^+_j (e^{-i x^\mu_j k_\mu} a_k + e^{i x_j^\mu k_\mu} a_k^{\dagger})\ket{g;1} = 
 \end{align*}
+
+
+def fourier_wrap(f, start, end, delta_tau):
+
+    # see https://stackoverflow.com/questions/24077913/discretized-continuous-fourier-transform-with-numpy
+
+    tau_grid=np.arange(start, end, delta_tau)
+
+    f_eval = np.array([f(tau) for tau in tau_grid])
+
+    #f_inter = interp1d(tau_grid, f_eval)
+
+    
+    g_eval=np.fft.fft(f_eval)
+    Omega_grid = np.fft.fftfreq(f_eval.size) * 2*np.pi/delta_tau
+
+    g_eval *= delta_tau*np.exp(-1j * Omega_grid * delta_tau)
+
+    return g_eval[:-100], Omega_grid[:-100]
