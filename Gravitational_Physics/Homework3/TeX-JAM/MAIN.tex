@@ -11,6 +11,9 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage[font=small,labelfont=bf,
+   justification=justified,
+   format=plain]{caption}
 \input{math_func}
 
 \usepackage{slashed}
@@ -100,7 +103,7 @@ of the equatorial plane. Finally, the $\psi = 0$ direction is aligned with the r
       
       \draw (0,0) node {BH};
     \end{tikzpicture}
-    \caption{Equatorial plane sketch of geodesic motion with three different impact parameters and periastra \label{fig1}. The periastra gets further away from the accretion disk point as we get closer to the outer ring of the accretion disk. If the disk was large, the geodesic starting on the outer ring would approximatively be a straight line starting at the disk point and directed towards the observer. In this limit, the periastron is located exactly in the middle of the line.}
+    \caption{Equatorial plane sketch of geodesic motion with three different impact parameters and periastra \label{fig1}. The periastra gets further away from the accretion disk point as we get closer to the outer ring of the accretion disk. If the disk was large, the geodesic starting on the outer ring would approximatively be a straight line starting at the disk point and directed towards the observer. In this limit, the periastron is located exactly in the middle of the line. In this sketch the example geodesic are curving in the clockwise direction relative to the $\psi = 0$ axis. This is why Figures \ref{fig2} and \ref{fig3} are plotted against $-\psi$ (making the deflexion angles negative)}
   \end{figure}
 \newpage
   \item[(b)] Figure \ref{fig2} compares the total deflexion angle for the two geodesics presented in \ref{fig1}.
@@ -108,21 +111,38 @@ of the equatorial plane. Finally, the $\psi = 0$ direction is aligned with the r
     \centering
     \begin{tikzpicture}[domain=-4:7] [scale=2]
       \draw[thick, ->] (0,0) -- (6,0) node[right] {$r(\psi)$};
-      \draw[thick,->] (0,0) -- (0,4) node[above] {$\psi$};
-      \draw[thick, red, dashed] (0,.35*pi*2) -- (6,.35*pi*2) node[pos=0.2, above] {$\psi = \Delta \psi^1$};
-      \draw[thick, red, dashed] (0,.35*pi*2*1.4) -- (6,.35*pi*2*1.4) node[pos=0.2, above] {$\psi = \Delta \psi^2$};
+      \draw[thick,->] (0,0) -- (0,4) node[above] {$-\psi$};
+      \draw[thick, red, dashed] (0,.35*pi*2) -- (6,.35*pi*2) node[pos=0.2, above] {$\psi = \Delta_T \psi^1$};
+      \draw[thick, red, dashed] (0,.35*pi*2*1.4) -- (6,.35*pi*2*1.4) node[pos=0.2, above] {$\psi = \Delta_T \psi^2$};
       \draw[thick, red, dashed] (0,0) -- (6,0) node[midway, below] {$\psi = 0$};
       \draw[ultra thick,color=blue] plot[domain=-.35*pi:.35*pi] ({1+tan(\x r)*tan(\x r)}, \x+0.35*pi) node[right] {$r\to \infty$};
       \draw[ultra thick,color=green] plot[domain=-.35*pi:.35*pi] ({2+tan(\x r)*tan(\x r)}, 1.4*\x+1.4*0.35*pi) node[right] {$r\to \infty$};
       \draw[thick, dashed] (0, 0.35*pi) -- (1, 0.35*pi) node[pos=0.2, below] {$r_0^1$};
       \draw[thick, dashed] (0, 1.4*0.35*pi) -- (2, 1.4*0.35*pi) node[pos=0.2, above] {$r_0^2$};
     \end{tikzpicture}
-    \caption{$\psi$ coordinate describing geodesics $1$ (blue) and $2$ (green) from \ref{fig1} as a function of the respective radial coordinate $r^1$ and $r^2$. The full geodesics (extended beyond the accretion disc) start at $r \to \infty$ and end again at $r\to \infty$. We choose $\psi = 0$ to represent the observer angle for both geodesic forcing them to coincide on the $\psi = 0$ axis. The other asymptote represents the extended initial direction of motion of light consistent with the initial accretion disc point. The minimal value of $r$ (the periastron) is realized in the middle of the geodesic motion. From the dashed lines in \ref{fig1}, we see that the deflexion angle $\Delta \psi^{1, 2}$ between $\phi = 0$ and the extended motion asymptote is smaller for geodesic $1$ compared to geodesic $2$ (we have $\Delta \psi^{1} < \Delta \psi^{2}$)\label{fig2}. This is consistent with the increasing gravitational pull with decreasing pariastron.}
+    \caption{$\psi$ coordinate describing geodesics $1$ (blue) and $2$ (green) from \ref{fig1} as a function of the respective radial coordinate $r$. The full geodesics (extended beyond the accretion disc) start at $r \to \infty$ and end again at $r\to \infty$. We choose $\psi = 0$ to represent the observer angle for both geodesic forcing them to coincide on the $\psi = 0$ axis. The other asymptote represents the extended initial direction of motion of light consistent with the initial accretion disc point. The minimal value of $r$ (the periastron) is realized in the middle of the geodesic motion. From the dashed lines in \ref{fig1}, we see that the total deflexion angle $\Delta_T \psi^{1, 2}$ between $\phi = 0$ and the extended motion asymptote is smaller for geodesic $1$ compared to geodesic $2$ (we have $\Delta_T \psi^{1} < \Delta_T \psi^{2}$). This is consistent with the increasing gravitational pull with decreasing pariastron. \label{fig2}}
   \end{figure}
-  \item[(c)] 
+  \item[(c)] Figure \ref{fig3} represents the same goedesics as figure \ref{fig2}, but has the radial coordinate $r$ replaced by the inverse radial coordinate $u = 1/r$.
+  \begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[domain=-4:7] [scale=2]
+      \draw[thick, ->] (0,0) -- (6,0) node[right] {$u(\psi)$};
+      \draw[thick,->] (0,0) -- (0,4) node[above] {$-\psi$};
+      \draw[thick, red, dashed] (0,.35*pi*2) -- (6,.35*pi*2) node[pos=1, above] {$\psi = \Delta \psi^2$};
+      \draw[thick, red, dashed] (0,.35*pi*2*1.4-1.3) -- (6,.35*pi*2*1.4-1.3) node[pos=1, below] {$\psi = \Delta \psi^1$};
+      \draw[thick, red, dashed] (0,0) -- (6,0) node[midway, below] {$\psi = 0$};
+      \draw[ultra thick,color=blue] plot[domain=-.35*pi:.35*pi] ({4*(0.2+1-\x*\x)}, \x+0.35*pi) node[left] {$u\to 0$};
+      \draw[ultra thick,color=green] plot[domain=-.35*pi:.35*pi] ({1.5*(0.4+2-1.4*1.4*\x*\x)}, 1.4*\x+1.4*0.35*pi) node[left] {$u\to 0$};
+      %\draw[thick, dashed] (0, 0.35*pi) -- (3*0.2+3, 0.35*pi) node[pos=0, left] {$u_0^1 = 1/r_0^1$};
+      %\draw[thick, dashed] (0, 1.4*0.35*pi) -- (2.5*0.4+5, 1.4*0.35*pi) node[pos=0, left] {$u_0^2 = 1/r_0^2$};
+      \draw[thick, dashed] (3, 0) -- (3, 4) node[pos=1, above] {$u = 1/a$};
+    \end{tikzpicture}
+    \caption{$\psi$ coordinate describing geodesics $1$ (blue) and $2$ (green) from \ref{fig1} as a function of the respective inverse radial coordinate $u = 1/r$. We define the partial deflexion angle $\Delta \psi^{1, 2}$ as the angle between the observer direction ($\psi = 0$) and the first crossing of the $u=1/a$ surface by the geodesic (accretion disk point). Since there are two crossing points, we have to specify which one corresponds to the disk. \label{fig3}}
+  \end{figure}\\
+  Note: The convention used in the previous figures is different from the one used in the assignement. The assignment convention uses the extended motion initial asymptote as the $\psi=0$ direction. This implies that the total deflexion angle consistent with this convention is $-\Delta_T \psi^{1, 2}$ since it is measured between the same asymptotes, but with reversed order. The partial deflexion angle consistent with the assignment convention is $-(\Delta_T\psi^{1, 2}-\Delta\psi^{1, 2})$ where the global sign takes the relative orientations into account.
 \end{enumerate}
 % does this happen with stars ?
-
+\newpage
 \section{Null geodesics in a Schwarzchild's spacetime}
 
 \section{The observer's frame}
