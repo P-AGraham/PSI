@@ -278,3 +278,47 @@ To express $F^{(2)}$ in these new coordinates, we notice that $x = u_\pm (1\mp z
     &\star \text{d}t \wedge \text{d}\theta = -\frac{1}{\sin\theta} \text{d}\phi \wedge \text{d}r,\\
     &\star \text{d}\phi \wedge \text{d}\theta = \left(\frac{4 A_\sigma^2}{\sin \theta} + (r^2 + n^2) \sin \theta\right)\text{d}t \wedge \text{d}r
   \end{align*}
+
+
+
+In the Kepler problem, 
+a geodesic starting at r = \[Infinity] with non - 
+  zero angular velocity is not stopped by the attractive central \
+potential : 
+    it speeds up as it gets closer to the center of attraction and \
+moves back to infinity . Here, for b > 3 Sqrt[3], 
+the effective potential has a zero (two zeros beyond the critical \
+value that merge in a single value at the critical value) and the \
+radial motion slows down as this point is approached from u = 
+ 0. When it is reached through a spiraling process of decreasing \
+\!\(TraditionalForm\`
+OverscriptBox[
+StyleBox["u", "TI"], 
+     "."]\), the energy constant of the motion has to be fully \
+carried by angular motion with fixed radius (circular motion) .
+
+
+Then the angle $\theta(\phi')$ formed between a fixed $\phi'$ point and the $z$ axis can be evaluated with the dot product of $R_{x'}(\theta_0) p(\phi')$ with the $z$ ($z$ component) axis. Indeed, in the spherical coordinate system of the observer the $z$ component at radius $1$ is directly $\cos(\theta)$ and we have
+\begin{align*}
+  \cos(\theta(\phi')) = \begin{pmatrix}
+    \cos(\phi')\\
+    \cos(\theta_0)\sin(\phi')\\
+    \sin(\theta_0)\sin(\phi')\\
+  \end{pmatrix}
+  \cdot 
+  \begin{pmatrix}
+    0\\
+    0\\
+    1
+  \end{pmatrix}
+  =\sin(\theta_0)\sin(\phi')
+\end{align*}
+The angle $\phi(\phi')$ can be evaluated from the ratio of the dot products of $R_{x'}(\theta_0) p(\phi')$ with the $y$ and $x$ axis ($x$ and $y$ components). From the expression of the $x$ and $y$ coordinates in the spherical coordinate system of the observer (respectively $\sin(\theta)\cos(\phi)$ and $\sin(\theta)\sin(\phi)$), we have
+\begin{align*}
+  \begin{cases}
+    \sin(\theta(\phi'))\cos(\phi(\phi')) = \cos(\phi')\\
+    \sin(\theta(\phi'))\sin(\phi(\phi')) = \cos(\theta_0)\sin(\phi')
+  \end{cases}
+\implies \tan(\phi(\phi')) =  \cos(\theta_0)\tan(\phi')
+\end{align*} 
+Combining the two pre
