@@ -82,7 +82,23 @@ The conjecture done in this paper is that finite size effects can be seen as a p
 
 CFT agreement is measured as a sum on rescales energies subtracted from scaling dimension over all levels that are expected to correspond to the CFT. 
 
-Knowing that the monopole harmonics are rotation invariant, what is the set of hamiltonian terms that preserve the rotation symmetry. 
+Knowing that the monopole harmonics are rotation invariant, what is the set of hamiltonian terms that preserve the rotation symmetry. (Precisely all the two body interaction (4-fermion operator) that are rotationnaly invariant are the pseudo potentials)
+
+### Conformal_fields_OPE_Critical_quantum_spin_chains
+
+Why do we say that the **Low** energy physics of a critical point is given by a CFT if the hamiltonian has conformal invariance at all scales at this point? The RG flow takes us Away from the CFT to the Ferromagnetic and Paramagnetic phases, so we have to start exactly at the CFT to stay there under a flow to the IR (It is already an IR fixed point so why do we need to specify a scale?)
+
+In 2D a CFT is fully specified by the central charge, conformal dimensions (what are these? They come in conjugate pairs and the double of their real part for a given pair is the scaling dimension of the associated primary operator), OPE coefficients for primary operators. 
+
+Problem: Finite size converge slowly: exponential growth of hilbert space dimension. Find the date of emergent CFT provided the microscopic model
+
+method 1: Find the critical point+evaluate 2 and 3 point operators-> all CFT Data
+method 2: Use state operator correspondance (Is state operator correspondance only valid on a spherical quantization). Suppose the CFT Data is close to the low energy spectrum of the CFT data
+
+Problem of method 2: Does not provide the OPE coefficients
+Solution: Express the local lattice operators in terms of CFT operators. 
+
+
 
 ## Scaling transformation:
 
@@ -113,3 +129,13 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 # Code 
 
 1. The $\mathbb{Z}_2$ symmetry operator $S$ has to be diagonalized simultaneously to $H$ and $L^2$ which can be acheived by instead diagonalizing $H + s S + t L^2$ (see https://math.stackexchange.com/questions/4387863/simultaneous-diagonalization-and-repeated-eigenvalues) with choices for $s$ and $t$ that lift all degeneracies in the spectrum. We know the spectrum of $L^2$ ($\ge 1$), $S$ ($\in \{-1, 1\}$) and $H$. We can pick $s = 1/2$ and $t = 1$ if we are certain that the hamilonian has no half integer gap between its eigenvalues. We also want to preserve the order of the eigenvalues which is not necessarly done if $S$ shifts by $1/2$. The logic goes as follows: identify smalest non-zero gap in $H$ (noted $a$), $L^2$ ($j(j+1) - (j-1)j = 2j \to 2$) and $Z$ (2). Then the smalest non-zero gap in $H + tL^2$ is $a + 2t$ where we pick $2t < a$. Then the smallest non-zero gap in $H + t L^2 + s S$ is $a + 2t + 2s$ and we want to have $2s < a + 2t$. A consistant choice is $t = a/4$ and $s = (a/2 + t)/2 = (a/2 + t)/2  = 2a/8 + a/8 = 3a/8$. So we diagonalize $H$, find $a$, calculate $H + s S + t L^2$, diagonalize it than remove the eigenvalues of $H$ to find eigenvalues of $s S + t L^2$ which are $V = \pm s + t j(j + 1)$. To extract $j$ try $j^2 + j - (V \mp s)/t = 0$: $j = -1/2 \pm \sqrt{1 + 4 (V \mp s)/t}/2 \to -1/2 + \sqrt{1 + 4 (V \mp s)/t}/2$ (positive root because $j > 0$). Now we need one of the solutions to be an integer. To simplify, we use $V/a$ instead $t \to 1/4$. We then have $1 + 16 (V \mp 3/8)  = 1 \mp 6 + 16 V = (\text{odd})^2$. Supposing the two solutions are valid, we get $(\text{odd})^2 - (\text{odd})^2 = 12 = (2 k + 1)^2 - (2 m + 1)^2 = 4 (k^2 + k - m^2 - m)\implies 3 = (k^2 + k - m^2 - m)$. 
+2. The lanczos algorithm is an adaptation of the power method algorithm to find eigenvalues and eigenvectors useful for hermitian matrices (https://en.wikipedia.org/wiki/Lanczos_algorithm)
+
+## Windows installation of FQHE
+
+1. echo "C:/Program Files (x86)/Intel/oneAPI/setvars.sh" >> ~/.bashrc
+2. bash setvars.bat
+
+# Goal
+
+Finite-size effects in the fuzzy sphere model for the 3D Ising transition: I will look for the two-body spherically symmetric interaction (for fermions on the fuzzy sphere) that leads to the best agreement of the CFT spectrum and the finite-size fuzzy sphere model spectrum. The goal is to understand better why the fuzzy sphere model has such good agreement with the CFT spectrum at a finite size. 
