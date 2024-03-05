@@ -96,7 +96,9 @@ method 1: Find the critical point+evaluate 2 and 3 point operators-> all CFT Dat
 method 2: Use state operator correspondance (Is state operator correspondance only valid on a spherical quantization). Suppose the CFT Data is close to the low energy spectrum of the CFT data
 
 Problem of method 2: Does not provide the OPE coefficients
-Solution: Express the local lattice operators in terms of CFT operators. 
+Solution: Express the local lattice operators in terms of CFT operators. Then, use the OPE coefficients for the lattoce operators to approximate the ope coefficient of the CFT operators involved in the decomposition.
+
+The structure constants (OPE coefficients) show uo in the three point functions of primary operators. 
 
 
 
@@ -135,6 +137,12 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 
 1. echo "C:/Program Files (x86)/Intel/oneAPI/setvars.sh" >> ~/.bashrc
 2. bash setvars.bat
+3. Edited compile.sh file (replaced the compilers)
+4. echo export PATH="/opt/intel/oneapi/intelpython3/bin/python3:$PATH" >> ~/.profile
+5. export PYTHONPATH="${PYTHONPATH}:/opt/intel/oneapi/intelpython3/bin/python3"
+6. /opt/intel/oneapi/intelpython3/bin
+7. /mnt/c/Users/pgraham1/Documents/GitHub/PSI/Essay/Code/Full_code
+
 
 # Goal
 
