@@ -3,8 +3,16 @@ Saying a quantum system has a *discrete* $\mathbb{Z}_2$ symmetry is the same as 
 https://physics.stackexchange.com/questions/497695/naming-symmetries-in-quantum-systems-e-g-mathbbz-2-or-u1
 
 
+# Conformal transformations in 1d
+Since the notion of angle does not exist in one dimension, any smooth invertible transformation "preserves" angles and is conformal. (p. 96 Senech)
+
 # Mermin-Wagner theorem
 https://physics.stackexchange.com/questions/478518/mermin-wagner-and-graphene
+
+Does not apply because we don't have continuous symmetry 
+
+# Chaos in celestial CFT
+https://collaborate.princeton.edu/en/publications/chaos-in-celestial-cft
 
 
 # Spontaneous symmetry breaking
@@ -96,10 +104,72 @@ method 1: Find the critical point+evaluate 2 and 3 point operators-> all CFT Dat
 method 2: Use state operator correspondance (Is state operator correspondance only valid on a spherical quantization). Suppose the CFT Data is close to the low energy spectrum of the CFT data
 
 Problem of method 2: Does not provide the OPE coefficients
-Solution: Express the local lattice operators in terms of CFT operators. Then, use the OPE coefficients for the lattoce operators to approximate the ope coefficient of the CFT operators involved in the decomposition.
+Solution: Express the local lattice operators in terms of CFT operators. Then, use the OPE coefficients for the lattice operators to approximate the ope coefficient of the CFT operators involved in the decomposition.
 
-The structure constants (OPE coefficients) show uo in the three point functions of primary operators. 
+The structure constants (OPE coefficients) show up in the three point functions of primary operators. 
 
+Computed the leading order term in the expansion of all one-site and all two-site operators
+
+Start by fourier decomposing the operator (the decomposition modes create momentum eigenstates when acted on the vaccuum) on the circle at $\tau = 0$. Take the operator to be a primary operator to start with. Then the action of a fourier mode on the vacuum is decomposable in a sum over the nth derivative descendants (derivatives come in conjugate variables pairs (to preserve hermiticity?))
+
+Take the initial decomposed operator to be a derivative descendant. The expansion for this descendant fourier modes can be found by taking the derivatives of the primary expansion. The OPE coefficients can be extracted from $\bra{\text{primary}}\text{primary}(0)\ket{\text{primary}}$ ($0$ is the reference point of the three point function)
+
+Lattice operators as CFT scaling operators : truncate the CFT expansion of a local operator. The accuracy is bounded by the size of the system (number of spins) and lowest scaling dimension of truncated operators $O(1/N^{\Delta_c})$
+
+We then fourier expand the local operators and eveluate the matrix element $\bra{\text{low energy state ~ CFT state}}\text{Decomposed operator mode}\ket{\text{ground state}}$. Using the previous decomposition in terms of **derivative descendants** (not modes) of a **derivative descendant mode operator**, we can evaluate  $\bra{\text{low energy state ~ CFT state}}\text{mode decomposition of low energy state ~ CFT state}\ket{\text{ground state}}$
+
+With the truncated series, the modes of the expanded operators gain a CFT operator expansion and 
+the matrix element $\bra{\text{low energy state ~ CFT state}}\text{mode decomposition of operator}\ket{\text{ground state}}$ is expanded in terms of $\bra{\text{low energy state ~ CFT state}}\text{mode decomposition of low energy state ~ CFT state}\ket{\text{ground state}}$ with **the same coefficients used in the initial truncated expansion**
+
+THe coefficients are found by solving an optimization problem (minimizing the sum of the square of $\left\langle\psi_\beta\left|\mathcal{O}^s\right| 0\right\rangle-\left\langle\psi_\beta^{C F T}\left|\tilde{\mathcal{O}}^{C F T, s}\right| 0^{C F T}\right\rangle$ (the left term is evaluated directly from the **numerical solution** and the right term is evaluated **analytically**) summed on all modes and $\beta$)
+
+This maximizes the agreement between CFT data and the expansion without knowledge of the OPE coefficients (the only CFT data used concerns the low lying states and only "two point functions")
+
+
+### OPE_coeff_3D_Ising_Fuzzy_sphere
+
+The OPE coefficients govern the **Fusion** of two primary fields 
+Note: In the landscape of CFT 2D is the same as 1+1D (infinite dimensionnal algebra?)
+
+Common scenario of scymmetry enhancement happens when scale invariance is enhanced by conformal invariance.
+
+external note: THere is no CFT at the fixed point from the start. We initially have a microscopic Hamiltonian and we flow at the critical point (staying there in phase parameter space, but moving in the space of hamiltonians to a continuum Hamiltonian expressed with fields)
+
+Complete conformal data is enough to calculate universal properties of phase transitions and their stability close to a fixed point : Example thermal and charge conductivity
+
+Bootstrap struggles to make contact with some universalities because it is too general : Alternative study microscopic models that realize the universality of interest ---> Before this approach was limited to two or three OPE coefficients (unsing two body correlators or off-critical two-point correlators)
+
+**is this related to Conformal_fields_OPE_Critical_quantum_spin_chains?**: Yes, Cardy's scheme tries to use microscopic data to get conformal data trough the state-operator correspondance (on the radial quantized cylinder with axis in the time direction). 
+
+The reason $1+1D$ CFT data has been studied more than other CFT data with Cardy's scheme is that there is no lattice regularization of the sphere realizing state operator correspondance. 
+
+External note: The number of electrons at *half filling* on the fuzzy sphere is equal to the degeneracy of the lowest landau level. 
+
+The radius of the sphere is $~\sqrt{s}$ (goes to infinity when we make the commutation relation vanish: its like if $R/s$ ($\left[\tilde{x}_\mu, \tilde{x}_\nu\right]=i \frac{R}{s} \epsilon_{\mu \nu \rho} \tilde{x}_\rho$) was an effctive $\hbar$ for the spin representation of the fuzzy sphere position operators. This is consistent with the commutative ("classical") operator algebra at large $s$). 
+
+The fuzzy sphere microscopic model shares symmetry/symmetry breaking with the $(2+1)D$ dimensionnal Ising model (and can be used to extract CFT data). 
+
+External note: state operator correspondance happens in the IR: It is a field theory feature, but the fuzzy sphere method makes this correspondance establish fast by realizing rotationnal invariance at all system size. Question: Is it possible to define a (1+1D) fuzzificaltion of the lattice realizing exact rotation invariance on the circle.  
+
+Any gapless operator can be expressed on a time slice with CFT operators (primaries and descendants). The operators involved will have the same parity (perticle-hole symmetry that becomes Parity in the CFT ---> this not a CFT symmetry usually so can we say we have en enriched CFT? The added $\mathbb{Z}_2$ symmetry should not add anything to the CFT+P symmetry because CFT is the largest non trivial symmetry group?) 
+
+External note: CFTs can be enriched with global symmetries like $\mathbb{Z}_2$ (asked ChatGPT need a better reference)
+
+The spin weighted spherical harmonics involved in the fuzzy sphere model have $s = l$ $Y_{s, m}^{(s)}$. Spin $s$ wighted spherical harmonics are still seigenfunctions of the Laplace Beltrami operator on the sphere (https://en.wikipedia.org/wiki/Spin-weighted_spherical_harmonics)
+
+At half filling a spin excitation is a particle hole excitation because a hole-hole or particle-particle excitation has total spin contribution $0$ (Pauli exclusion principle)
+
+Use the Spherical harmonics instead of monopole harmonics for the expansion of spin operators because these operators do not see the monopole (they are defined on the full sphere) we are using $2s+1$ different monopole harmonics to expand the landau orbital creation operator. It appears that all the spherical harmonics with $l \in \{0, 2s\}$ are need to form a generatin set of the monopole harmonics used (this is an overcomplete basis). 
+
+Start with the $\tau = 0$ (why do we work in euclidean time) expansion 
+
+$$\hat{\mathcal{O}}(\tau=0, \boldsymbol{\Omega})=\sum_\alpha c_\alpha \hat{\phi}_\alpha(\tau=0, \boldsymbol{\Omega}).$$
+
+Then use the fact $\bra{\phi_\alpha} \phi_\beta \ket{0}$ is $\bra{\phi_\alpha}\ket{\phi_\beta}$ which can be expressed as 
+
+$$\begin{aligned} \bra{0}\phi(z)|\psi\rangle =\bra{0}\phi(z) \psi(0)|0\rangle  =\sum_p C_{\phi \psi p} \bra{0}O_p(0)|0\rangle\end{aligned}$$
+
+(see https://physics.stackexchange.com/questions/209701/operator-state-correspondence-in-cft-computing-operator-for-given-state)
 
 
 ## Scaling transformation:
@@ -111,7 +181,60 @@ $$
 **Pay attention to ladder structures in the future**
 We recall that $P_{\mu} = i \partial_\mu$ (that is the origin of the notation for descendant operators which are constructed from derivatives and their contractions) and $K_\mu=i\left(2 x_\mu\left(x^\nu \partial_\nu\right)-x^2 \partial_\mu\right)$ (Lowers the scaling dimension it is the conjugation of a an inversion by two translations). The transformation generated on $\mathbb{R}^{d+1, 1}$ by $K_\mu$ are boosts: if two boosts are composed than a rotation $P_{\mu}$ is involved. Boosting along the $X^{D+1}$ direction is associated to $D$. 
 
-$P_\mu$ acts as a "derivative": its it increases the scaling dimension byt strenghtening the effect of space volume on the operator
+$P_\mu$ acts as a "derivative": it increases the scaling dimension by strenghtening the effect of space volume on the operator
+
+## Conformal transformations
+
+Chapter 4 of Senech 
+
+1. Define conformal transformation of the metric (structure preserving map for which the structure is given by angles and not distance)
+2. Write and solve the killing equation to get the infinitesimal transformation of spacetime that make the metric undergo conformal transformation. These transformations do not preserve the initial spacetime manifold: they rescale distance locally and $\text{d}s^2$ is not preserved. The topological manifold can stay the same but the Riemannian manifold structure must change. Any conformal transformation is continuous and preserves the topological manifold: For flat space, we can picture it as position dependant rescaling mapping $\methbf{R}^{n}$ to $\mathbf{R}^n$. Comparing the distance between closeby points before rescaling and after, we find the local scale factor changing the metric locally. We can compose this **Weyl** transformation with a diffeomorphism (change of basis induced from change of coordinates as opposed to change of metric) so that the new basis hides the transformation of the metric leavin the components unchanged (This diffeomorphism in combination with a Weyl transformation forms the usual notion of a *Conformal transformation*). The fundamental principle we start with is that conformal transformations rescale the metric locally .... but, from there, we need to find all transformations of spacetime that fit this constraint.     
+3. Consider a field $\phi(x)$ and suppose it has scaling dimension $1$ so that the effect of the conformal transfromation is changing the base point of the field values. We write $\phi'(x')=\phi(x)$ (the actual value in unaffected) implying $\phi'(x') = \phi(g^{-1}x')$ where we precompose with the inverse of the conformal transformation to pull back the field. We can then extract the infinitesimal effect of a flow along each conformal killing vector field. 
+4. From the generators of the killing flow on "scaling singlet" functions indentified from the transformations in 3, we can calculate commutators and extract the conformal algebra of which the Poincare+Scaling algebra is a subalgebra. *A subalgebra is a subvector space wich is closed under the lie bracket on that space: the special conformal transformation is isolated from the Poincare algebra in the sens that $[\text{not}K_\mu, \text{not}K_\nu]$ never involves $K_\mu$ making it impossible to generate a SPT by composing poincare transfromations* 
+5. Knowing the abstract relations between generators provided by the algebra, find the representations of the generators acting on the fields. To remove the spacetime transformations, place the field at the origin and act on it with a set of transformations that preserve the origin (*This discussion is only valid for local operators because we need to evaluate the field at a given point*). We can do this because an operator acting at $x=0$ can be moved to any point $x$ by conjugating with a translation operator. Evaluating the field at $0$ allows to access the internal effect of conformal transformations. *We think of Scaling fields as special objects meant to be used in a path integral formulation or canonical quantization scheme in the continuum (CFTs describe IR fixed points)*. The only conformal transformation we can't study at the origin is translation (*For the same reason a conformal transformation can be removed from the algebra to yield a valid sub algebra, $P_\mu$ can be removed*). The subalgebra of all origin preserving transformations has the set of commutations $[\Delta, S_{\mu\nu}] = 0$ ($\Delta$ is the operator representing the action of $D$ at the origin)
+
+
+## Ward identity
+
+Why do we require conformal invariance of n-point functions? Because of the definition of a symmetry.  
+
+
+
+
+## OPE expansion
+
+### Radial Quantization/State operator correspondance
+
+Reference CFT_Jaume
+
+In radial quantization, we start with $D$ dimensionnal Euclidean space on which we have conformal transformations. Euclidean conformal transformation have the poincare sub-group replaced with $SO(D)$. In this setting "time" is on the exact same footing as space and we are free to quantize our theory with any folitaion of which the elements are labeled by a euclidean time coordinate. Radial quantization foliates Euclidean space with concentric $S^{D-1}$ spheres. Spheres are preserved by rotations and combinations of translation and special conformal transformations (individually these transformations do not preserve the origin and infinity, but composing them with their inverses and exploiting the non commutation of translations and SPTs we can get non trivial transformations preserving spheres). The scale transformation moves a sphere labeled by some radius (playing the role of time after a weyl transformation) to a concentric sphere with different raidus. 
+
+Question: Should we expect all conformal transformaions to preserve the foliation up to relabeling of spheres? 
+
+Potential answer: For the Poincare group, boosts change the foliation by making the equal time surfaces diffenrent in lorentzian geometry. Boosts become rotation in euclidean geometry. IN the radial quantization, boosts become equal euclidean time rotations of the cylinder obtained after the Weyl transformation. Some conformal transformations will break the foliation (after the weyl transformation some sphere will by contractible on the cylinder) 
+
+The foliation comes with an operator generating flow between different spheres ($D$) and a set of operators that commute with it ($M_{\mu \nu}$) : these operators preserve spheres (They include boosts which are indistinguishable from rotations in radial quantization). 
+
+Our quantization is built from states $\ket{\Delta, A}$ with $\Delta$ scaling dimension and $A$ spin label (total spin and projection on an axis). Acting $P_{\mu}$ and $K_{\mu}$ resectively raises and lowers the scaling dimension. 
+
+The weyl transformation maps to a different metric differing from the flat Euclidean metric by a factor of $r^2$
+
+Because of this quantization, we have a state for each spin and scaling dimension. Does this mean that the adjoint representation on the is "identical" to the state representation of the conformal group?
+
+Since our hilbert space has the maximal fully commuting set $D, M_{\mu\nu}$
+
+What do we get when we act $P_{\mu}$ on the vaccum (which has scaling dimension $0$)? We get $P_{\mu}\ket{0}$ which has scaling dimension $1$
+
+Is the stress energy tensor a primary? https://physics.stackexchange.com/questions/550418/ope-energy-momentum-tensor-with-itself says no, but then it is a combination of descendants and transforms like a tensor. 
+
+The energy spectrum of the fuzzy sphere is the spectrum of $D$, which we use to extract the scaling dimension of the $\sigma$ and $\epsilon$ which are local CFT operators corresponding to states. 
+
+The idea behind state-operator correspondance is that local CFT primary operators can be fully specified by scaling dimension and spin (they are tensors). Then having specified the primaries, all descendants can be accessed by acting $P_{\mu}$. Furthermore, the primaries are anihilated by $K_{\mu}$
+
+On the operator side, we compute descendants by commuting with $P_\mu$. 
+
+External note: Commutating the Dilation generator $D$ with operator $O$ havin scaling dimension $\Delta$ yields a descendant with scaling dimension $\Delta+1$. This commutator naturally represents the infinitisemal transformation of an operator under $D$. Indeed $U^\dagger O U = (1 - i \epsilon a) O (1 + i \epsilon a) = O + i [O, a]\epsilon$. If $a = D$ we get $O + i \Delta \epsilon$ with $[O, D] = \Delta$
+
 
 
 ## Ideas
@@ -127,6 +250,10 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 9. Use a 4 dimensionnal quaternionic QFT as an "embeding theory" of the fuzzy sphere 
 10. Thompson problem algorithm build on a non commutative geometry sequence to the original problem. 
 11. Another way to discretize the sphere (golden ratio spiral): https://extremelearning.com.au/how-to-evenly-distribute-points-on-a-sphere-more-effectively-than-the-canonical-fibonacci-lattice/
+12. The bloch theorem should generalize for the Icosahedron
+13. The ISing CFT is at a special angular point in the crossing equation landscape: there are forbidden CFT data points near it and maybe the CFT data agreeent at finite size can be accelerated by forcing some data into the forbidden region leaing very little possibility in the allowed region
+14. The entanglement of the positions of the fermions should be almost minimal and negligible compared to the entanglement of the Ising CFT. This could be acheived by strong localisation effects making the fuzzy sphere model an insulator model. LOcalisation effects are usually due to impurities and here we have a non-commutative impurity
+15. What is supersymmetric localisation ?
 
 # Code 
 
@@ -143,7 +270,47 @@ $P_\mu$ acts as a "derivative": its it increases the scaling dimension byt stren
 6. /opt/intel/oneapi/intelpython3/bin
 7. /mnt/c/Users/pgraham1/Documents/GitHub/PSI/Essay/Code/Full_code
 
+## Notes for Windows installation : 
+
+1. Use wsl
+2. Open a VScode Ubuntu instance 
+3. install intel from wsl
+4. Rename the compilers in compile.sh to their updated names in the intel oneAPI base toolkit (the ones in the installation are from 2022, and are named differently in the 2024 version)
+
 
 # Goal
 
 Finite-size effects in the fuzzy sphere model for the 3D Ising transition: I will look for the two-body spherically symmetric interaction (for fermions on the fuzzy sphere) that leads to the best agreement of the CFT spectrum and the finite-size fuzzy sphere model spectrum. The goal is to understand better why the fuzzy sphere model has such good agreement with the CFT spectrum at a finite size. 
+
+## Step 0
+
+Understand what the TFIM CFT primaries correspond to. 
+
+https://physics.stackexchange.com/questions/391444/primary-operators-in-the-ising-cft
+
+$\sigma_n^x \sigma_{n+1}^x-\sigma_n^z \to \epsilon(x)$ (Energy density field primary, $\methbb{Z}_2$ even, commutes with $P$) This operator is local and depends on a continuous $x$ spacetime position in the IR continuum
+
+$\sigme_n^x$ ($\methbb{Z}_2 \to \sigma(x)$ odd, anticommutes with $P$) (Local order field, the ordered phase has all spins in the $x$ direction and no symetry breaking ground states, related to the magnetization in the $x$ direction)
+
+The position dependance of these operators allow for derivative descendants.
+
+In what follows, we find the approximate expansion of local finite size operators in these IR operators without knowing their explicit forms (they are fields in a CFT so they are described by their $n$-point functions which are not know if we start with a finitesize spectrum, but with state operator correspondance, we can approximate them).  
+
+
+## Step 1
+
+Reproduce figures 2.a from OPE_coeff_3D_Ising_Fuzzy_sphere.  
+
+## Step 2 
+
+Get the conformal field expansion of UV operators on fuzzy sphere.
+
+## Step 3
+
+Express the finite size effect as conformal perturbations from the thermodynamic limit CFT hamiltonian
+
+## Step 4
+
+Find the pseudopotential coefficients canceling the most CFT perturbations to reduce finite size effects
+
+

@@ -257,3 +257,6 @@ print(X_srep)
 print(Y_srep)
 print(Z_srep)
 print(X_srep @ X_srep + Y_srep @ Y_srep + Z_srep @ Z_srep)
+
+
+Any spherically symmetric quantity can be expanded in spherical harmonics or monopole harmonics. For a given $l$, we have non-zero monopole harmonics for $s \in [0, l]$ and their conjugate pair (with negative $l$ in the spherical harmonics used to construct them. I suspect there is a simpler formulation of this adapted to eq. 3 of the paper) so $2s + 1$ times more ... It appears that the combined spherical harmonics in $l\in [0, 2s]$ span the same space as the monopole harmonics with $l = s$ (there are $2s$ of them)  
