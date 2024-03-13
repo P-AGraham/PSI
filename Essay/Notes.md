@@ -2,6 +2,14 @@
 Saying a quantum system has a *discrete* $\mathbb{Z}_2$ symmetry is the same as saying that there exists a symmetry operator $S$ which squares to identity and commutes with the hamiltonian $H$ while not being a generator of a continuous symmetry (which could include $\mathbb{Z}_2$ as a subgroup)
 https://physics.stackexchange.com/questions/497695/naming-symmetries-in-quantum-systems-e-g-mathbbz-2-or-u1
 
+# Subir Sachdev meeting 
+
+1. Why do we refer to the phases around a quantum critical phase as classical ? 
+2. How do strange metal correspond to gravitationnal systems and what computations do this correspondance unlock ?
+3. What is the effect of disorder on the quantum critical point?
+4. Question from a friend 
+5. How does the SYK describe Strange metal 
+
 
 # Conformal transformations in 1d
 Since the notion of angle does not exist in one dimension, any smooth invertible transformation "preserves" angles and is conformal. (p. 96 Senech)
@@ -128,7 +136,7 @@ This maximizes the agreement between CFT data and the expansion without knowledg
 
 ### OPE_coeff_3D_Ising_Fuzzy_sphere
 
-The OPE coefficients govern the **Fusion** of two primary fields 
+The OPE coefficients govern the **Fusion** of two primary fields (The fusion rules are obtained by imporsing that two OPE expansion converging in a common region shoul match in that region. For $n$-point functions this means that each pairing of operators mapped to a single operator iteratively should give the same result)
 Note: In the landscape of CFT 2D is the same as 1+1D (infinite dimensionnal algebra?)
 
 Common scenario of scymmetry enhancement happens when scale invariance is enhanced by conformal invariance.
@@ -139,7 +147,7 @@ Complete conformal data is enough to calculate universal properties of phase tra
 
 Bootstrap struggles to make contact with some universalities because it is too general : Alternative study microscopic models that realize the universality of interest ---> Before this approach was limited to two or three OPE coefficients (unsing two body correlators or off-critical two-point correlators)
 
-**is this related to Conformal_fields_OPE_Critical_quantum_spin_chains?**: Yes, Cardy's scheme tries to use microscopic data to get conformal data trough the state-operator correspondance (on the radial quantized cylinder with axis in the time direction). 
+**Is this related to Conformal_fields_OPE_Critical_quantum_spin_chains?**: Yes, Cardy's scheme tries to use microscopic data to get conformal data trough the state-operator correspondance (on the radial quantized cylinder with axis in the time direction). 
 
 The reason $1+1D$ CFT data has been studied more than other CFT data with Cardy's scheme is that there is no lattice regularization of the sphere realizing state operator correspondance. 
 
@@ -185,29 +193,94 @@ $P_\mu$ acts as a "derivative": it increases the scaling dimension by strenghten
 
 ## Conformal transformations
 
-Chapter 4 of Senech 
+Senech Chapter 4
 
 1. Define conformal transformation of the metric (structure preserving map for which the structure is given by angles and not distance)
-2. Write and solve the killing equation to get the infinitesimal transformation of spacetime that make the metric undergo conformal transformation. These transformations do not preserve the initial spacetime manifold: they rescale distance locally and $\text{d}s^2$ is not preserved. The topological manifold can stay the same but the Riemannian manifold structure must change. Any conformal transformation is continuous and preserves the topological manifold: For flat space, we can picture it as position dependant rescaling mapping $\methbf{R}^{n}$ to $\mathbf{R}^n$. Comparing the distance between closeby points before rescaling and after, we find the local scale factor changing the metric locally. We can compose this **Weyl** transformation with a diffeomorphism (change of basis induced from change of coordinates as opposed to change of metric) so that the new basis hides the transformation of the metric leavin the components unchanged (This diffeomorphism in combination with a Weyl transformation forms the usual notion of a *Conformal transformation*). The fundamental principle we start with is that conformal transformations rescale the metric locally .... but, from there, we need to find all transformations of spacetime that fit this constraint.     
+2. Write and solve the killing equation to get the infinitesimal transformation of spacetime that make the metric undergo conformal transformation. These transformations do not preserve the initial spacetime manifold: they rescale distance locally and $\text{d}s^2$ is not preserved. The topological manifold can stay the same but the Riemannian manifold structure must change. Any conformal transformation is continuous and preserves the topological manifold: For flat space, we can picture it as position dependant rescaling mapping $\mathbf{R}^{n}$ to $\mathbf{R}^n$. Comparing the distance between closeby points before rescaling and after, we find the local scale factor changing the metric locally. We can compose this **Weyl** transformation with a diffeomorphism (change of basis induced from change of coordinates as opposed to change of metric) so that the new basis hides the transformation of the metric leavin the components unchanged (This diffeomorphism in combination with a Weyl transformation forms the usual notion of a *Conformal transformation*). The fundamental principle we start with is that conformal transformations rescale the metric locally .... but, from there, we need to find all transformations of spacetime that fit this constraint.     
 3. Consider a field $\phi(x)$ and suppose it has scaling dimension $1$ so that the effect of the conformal transfromation is changing the base point of the field values. We write $\phi'(x')=\phi(x)$ (the actual value in unaffected) implying $\phi'(x') = \phi(g^{-1}x')$ where we precompose with the inverse of the conformal transformation to pull back the field. We can then extract the infinitesimal effect of a flow along each conformal killing vector field. 
-4. From the generators of the killing flow on "scaling singlet" functions indentified from the transformations in 3, we can calculate commutators and extract the conformal algebra of which the Poincare+Scaling algebra is a subalgebra. *A subalgebra is a subvector space wich is closed under the lie bracket on that space: the special conformal transformation is isolated from the Poincare algebra in the sens that $[\text{not}K_\mu, \text{not}K_\nu]$ never involves $K_\mu$ making it impossible to generate a SPT by composing poincare transfromations* 
-5. Knowing the abstract relations between generators provided by the algebra, find the representations of the generators acting on the fields. To remove the spacetime transformations, place the field at the origin and act on it with a set of transformations that preserve the origin (*This discussion is only valid for local operators because we need to evaluate the field at a given point*). We can do this because an operator acting at $x=0$ can be moved to any point $x$ by conjugating with a translation operator. Evaluating the field at $0$ allows to access the internal effect of conformal transformations. *We think of Scaling fields as special objects meant to be used in a path integral formulation or canonical quantization scheme in the continuum (CFTs describe IR fixed points)*. The only conformal transformation we can't study at the origin is translation (*For the same reason a conformal transformation can be removed from the algebra to yield a valid sub algebra, $P_\mu$ can be removed*). The subalgebra of all origin preserving transformations has the set of commutations $[\Delta, S_{\mu\nu}] = 0$ ($\Delta$ is the operator representing the action of $D$ at the origin)
+4. From the generators of the killing flow on "scaling singlet" functions indentified from the transformations in 3, we can calculate commutators and extract the conformal algebra of which the Poincare+Scaling algebra is a subalgebra. *A subalgebra is a subvector space wich is closed under the lie bracket on that space: the special conformal transformation is isolated from the Poincare algebra in the sens that $[\text{not}K_\mu, \text{not}K_\nu]$ never involves $K_\mu$ making it impossible to generate a SCT by composing poincare transformations* 
+5. Knowing the abstract relations between generators provided by the algebra, find the representations of the generators acting on the fields. To remove the spacetime transformations, place the field at the origin and act on it with a set of transformations that preserve the origin (*This discussion is only valid for local operators because we need to evaluate the field at a given point*). We can do this because an operator acting at $x=0$ can be moved to any point $x$ by conjugating with a translation operator. Evaluating the field at $0$ allows to access the internal effect of conformal transformations. *We think of Scaling fields as special objects meant to be used in a path integral formulation or canonical quantization scheme in the continuum (CFTs describe IR fixed points)*. The only conformal transformation we can't study at the origin is translation (*For the same reason a conformal transformation can be removed from the algebra to yield a valid sub algebra, $P_\mu$ can be removed*). The subalgebra of all origin preserving transformations has the set of commutations $[\Delta, S_{\mu\nu}] = 0$ ($\Delta$ is the operator representing the action of $D$ at the origin). The building blocks of any representations are irreducible representations and we pick the operators to transform with an irreducible spin representation of $S_{\mu\nu}$. This forces (by schur's lemma) the operator $\Delta$ to be a multiple of identity (this multiple has to be imaginary making the representation of the dilation operation on classical fields non-unitary: Any unitary part (hermitian term in $D$), would lead to a trivial representation because $e^{-i\lambda \Delta} O e^{i\lambda \Delta} = O$, however, we have $(e^{\lambda \Delta})^{\dagger} O e^{\lambda \Delta} = O$). At the origin, $D$ is just $\Delta = i \delta \textbf{1}$ and we have $(e^{\delta \lambda})^{\dagger} \phi(0) e^{\delta\lambda} = e^{2\delta\lambda} \phi(0)$ *The scale transformation is non-trivial only for a non-unitary representation consitent with the fact $D$ is used to represent a imaginary time translation generator trough the weyl transformation in radial quantization. Wick rotating the scale parameter seems to lead to a unitary evolution consitent with real time translation. This wick rotation will map the scaling part of the representation to the trivial representation*. In the subalgebra, we also have the commutation $0 = [\Delta, K_{\mu}] \propto K_\mu$ forcing the $K_\mu$ internal representation to be trivial. **Note: The operators transform with conjugation by unitaries which can be evaluated using the CBH formula for dilations, we have $e^{-iD\lambda} \phi(x) e^{iD\lambda} = \phi(x) + i \lambda [\phi(x), D] -\lambda^2 [[\phi(x), D], D]/2! + \cdots$. We know that $D\phi(x) = (-ix^\mu \partial_\mu + \Delta)\phi(x)$.**
+6. The only transformations that have a non-trivial effect on the internal scale of the operators are possibly $K_\mu$ and $\Delta$ (we saw that $K_\mu$ does not act internally and therefore only $\Delta$ can rescale (it is internally proportionnal to the identity so it will rescale) the fields). We want to calculate the scaling effect of a special conformal transformation (The total scale transformation obtained by a composition of transformation will scale by a factor obtained by multiplying factors for each term) *The commutation relation between $P_{\mu}$ and $K_{\mu}$ contains $D$ meaning that the CBH formula used to translate $K$ from $x=0$ to an arbitrary location will introduce a scaling effect in the SCT. Unlike the dilation operator $D$ which has $\Delta$ as a constant term independant of $x$, the transported SCT at $x$ has a $x$ dependant dilation term $2x_\mu D$* 
 
+External note: An integer spin field is a collection of operators and conjugation by lorentz transformations will transform it into a collection of operators like if these operators were components of a tensor. 
+
+External note: The generators of the conformal transformations form a field of generators (at each point $x$, we have different generators collectively providing integral curves of the killing flow on the manifold)
+
+External note: (Senech page 99, 4.2): At the classial level conformal symmetry follows from Scale+Poincare, but at the quantum level the arguments justifying this extension are broken. Almost copied:"A QFT does not make sens without a regularization giving a length scale (or energy scale) to the theory, this scale breaks conformal invariance whcih can only be restored at fixed points"
 
 ## Ward identity
 
 Why do we require conformal invariance of n-point functions? Because of the definition of a symmetry.  
 
+Inspired from QFT 3, tutorial 2:
 
+The global ward identity states that the correlation function of fields $O_1, O_2, \cdots O_n$ at positions $x_1, x_2, \cdots x_n$ is equal to the correlation function of the conformally transformed fields at the same points $\tilde{O}_i(x_i)$. Knowing that scalar fields (trivial internal spin representation) with scalin dimension $\Delta$ transform like
+$$
+\tilde{O}(\tilde{x}) = \left|\frac{\partial \tilde x}{\partial x}\right|^{\Delta/d} O(x)
+$$
+(the value of the transfromed operator at the new base point equals its value at the initial base point multiplied by a rescaling)
 
+This allows us to express the value of $\tilde{O}(\tilde{x})$ at $\tilde{x}$ as $\tilde{O}(\tilde{x}) = \left(\left|\frac{\partial \tilde x}{\partial x}\right|(\tilde{g}^{-1} (\tilde{x}))\right)^{\Delta/d} O(\tilde{g}^{-1} (\tilde{x}))$ with the map $g : x \mapsto \tilde{x}$. Then, on the transformed spacetime the same values for $x$ are available and we can evaluate the transformed functions at the same point. For a rescaling transformation we have $\tilde{x} = \lambda x$ implying $\left(\left|\frac{\partial \tilde x}{\partial x}\right|(\tilde{g}^{-1} (\tilde{x}))\right)^{\Delta/d} = (\lambda^{d})^{\Delta/d} = \lambda^\Delta$ and the relation $\tilde{O}(\tilde{x}) = \lambda^{\Delta} O(\tilde{x}/\lambda)$. The ward identity implies $\langle O_1(x_1) O_2(x_2) \rangle = \lambda^{\Delta_1} \lambda^{\Delta_2} \langle O_1(x_1/\lambda) O_2(x_2/\lambda) \rangle$. From the rotationnaly/translationnaly invariant ansatz we obtain the scale invarient ansatz $\langle O_1(x_1) O_2(x_2) \rangle = \frac{G(\Delta_1, \Delta_2)}{x_{12}^{a}}$ where the power $a$ is such that $\frac{G(\Delta_1, \Delta_2)}{x_{12}^{a}} = \lambda^{\Delta_1+\Delta_2}\frac{G(\Delta_1, \Delta_2)}{\lambda^a x_{12}^{a}}$ forcing $a = \Delta_1 + \Delta_2$. To make the form of $G$ precise, we use the SCT invariance (for simplicity we show the result for inversion invariance knowing that the finite SCT argument follows the same logic). The inversion map defined by $\tilde{x}^{\mu} = x^\mu/x^2$ satisfies 
+
+$$
+\frac{1}{(\tilde{x}_1-\tilde{x}_2)^2} = \frac{x_1^2 x_2^2}{(x_1-x_2)^2}
+$$
+
+Indeed $\tilde{x}_1^{\mu}-\tilde{x}_2^{\mu} = x_1^\mu/x_1^2 - x_2^\mu/x_2^2 = (x_2^2 x_1^\mu - x_1^2 x_2^\mu)/(x_2^2 x_1^2)$ and $(x_2^2 x_1^\mu - x_1^2 x_2^\mu)^2 = x_2^4 x_1^2 +2 x_1^2 x_2^2 x_1^\mu (x_2)_{\mu}  + x_1^4 x_2^2 = x_1^2 x_2^2 (x_1-x_2)^2$. Combining these results, we have 
+
+$$
+(\tilde{x}_1^{\mu}-\tilde{x}_2^{\mu})^2 = (x_2^2 x_1^2)(x_1^\mu - x_2^\mu)^2/(x_2^4 x_1^4)
+$$
+
+Now the scale factor (Jaccobian) can be derived from the metric (starting with the minkowski metric which can be done without loss of generality for conformally flat spacetimes) transformation by writting 
+
+$$
+\Omega(\tilde{x}(x))\eta_{\alpha\beta} = \frac{\partial \tilde x^{\alpha}}{\partial x^{\mu}}(x) \frac{\partial \tilde x^{\beta}}{\partial x^{\nu}}(x) \eta_{\mu\nu}
+$$
+and taking the determinant on both sides to get $\Omega(\tilde{x}(x))^{d/2} = |\frac{\partial \tilde x^{\alpha}}{\partial x^{\mu}}(x)|$. For inversion, we have 
+$$
+\frac{\partial \tilde x^{\beta}}{\partial x^{\nu}}(x) = -2 x^\nu x^{\beta}/x^4 + \delta^{\beta}_{\nu}/x^2 
+$$
+
+Question: is the Ward identity stating $\langle O_1(x_1) O_2(x_2) \rangle = \langle \tilde{O}_1(\tilde{x}(x_1)) \tilde{O}_2(\tilde{x}(x_2)) \rangle$ meaning the correlation between two points is the same as the correlation between the image of these two points for the same operators?
 
 ## OPE expansion
 
+Lectures_on_Conformal_Field_Theory_D_ge3
+
+Goal: Replace product of pairs of nearby local operators by a series of operators evaluated at the midpoint 
+
+Question: often one point function vanish, how does that align with the non vanishing two point function? Identity term in the series? 
+
+The CFT OPE is more powerful than the QFT one. Consider two operators at $x$ and $0$.  These operators generate a state $\phi_1(x)\phi_2(x)\ket{0} = \ket{\psi}$. This state has an expansion in the basis of scalings as 
+$$
+\ket{\psi} = \sum_n c_n \ket{E_n}, \quad c_n = c_n(x) 
+$$
+(The coefficients depend on the location of the represented operators). Using the state-operator correspondance, we can associate all the $\ket{E_n}$ states to primaries of descendants. We can write the previous expansion 
+$$
+\ket{\psi} = \sum_{\text{primary} O} c_O(x, \partial_y) O(y)|_{y = 0}\ket{0},
+$$
+(we evaluate at $y=0$ at the end to have derivatives yield non-trivial contributions)
+This result was not obtained using short distance asymptotics (it is more powerful from the QFT result), its was obtained using state operator correspondance. The $c_O(x, \partial_y)$ can be taylor expanded in $\partial_y$ to fully include a general expansion in descendant operators. 
+
+Question: Can we interpret the asymptotic nature of QFT OPE as a pertrubation theory from the CFT OPE? 
+
+If a QFT lives between two (UV and IR) CFTs, it is possible to do OPE with confromal perturbation theory from both sides and if their domain of convergence overlap the expansions should agree in the overlap. If two CFTs are closeby this should happen (Wilson Fischer fixed point vs gaussian fixed point). *Note: in general it is not possible to write the OPE as a perturbation of the IR CFT so that it is valid for the same lagrangian parameters as the UV CFT OPE perturbative correction because the number of perturbative corrections is infinite from the IR side.*
+
+Question: How can we extract the operators from the state in state operator correspondance ? All the states created by acting primaries and their descendants are orthogonal because of the two-point SCT constraint:
+$\langle O_1(x_1) O_2(x_2) \rangle \equiv \bra{0} O_1(x_1) O_2(x_2) \ket{0} = \frac{\delta_{1, 2}}{x_{12}}$ for scalar operators (primaries are usually scalar operators). What about the descendants ? We can show that $(P_\mu\ket{\psi})^\dagger = (\underbrace{\bra{0}I O_\psi I}_{\bra{\psi}}) I P_\mu I = \bra{\psi} K_\mu$ (conjugation conjugates with inversion to match real time quantum mechanics). Then 
+$$
+\begin{aligned}\left\langle\psi_1\left|K_\mu P_\nu\right| \psi_2 \right\rangle & =\left\langle\psi_1|[K_\mu, P_\nu\right]|\psi_2 \rangle+\left\langle\psi_1\left|P_\nu K_\mu\right| \psi_2\right\rangle \\ & =\left\langle\psi_1\left|2 i\left(D \delta_{\mu \nu}-M_{\mu \nu}\right)\right| \psi_2\right\rangle \\ & =\Delta \delta_{\mu \nu}\langle\psi_1 \mid \psi_2\rangle= 0\end{aligned}
+$$
+where we used the fact $K_\mu \ket{\text{Primary}} = 0$ note that $\bra{\text{Primary}} K_\mu \neq 0$ (bringin us to use the commutation of $P_\mu$ and $K_\mu$). Since the primaries are scalar assumed to be scalar fields (are they always scalar fields?) they form a trivial representation of $M_{\mu\nu}$ which anihilates the states they create. Any $P_\mu$, $K_\mu$ commutation will bring a $D$ term and a $M_{\mu\nu}$ term. If the number of $K$ is greater than the number of $P$ (descendants of different wieghts), then after commuting all pairs some $K$ remain but no $P$ remains in the only possible non vanishing terms. Note that after the first pair, we need to deal with the commutator of $K$ with $D$ and $M_{\mu\nu}$. All these commutators involve only $K$ and the "$K$" passes trough each commutation with the commutator $[P, K]$ : only commutations of $K$ with $P$ can remove $K$ from the chain and prevent its anihilation. Therfore, we can move the unpaired $K$ all the way and get anihilation no matter what the scaling dimension of the unbalanced descendants were. The same reasining applies for a chain with to many $P$. In this case, we have to move $P$ to the left to anihilate with $\bra{\psi}$. Note that in the balanced case with the same primary, there is still a $\delta_{\mu\nu}$ making the expectation value vanish for $\mu \neq \nu$ consistently with the fact each primary/descendant generates an orthogonal state. 
+
+Note: We usually don't have many primaries so a tensor primary would be unexpected. Is it allowed at all? https://physics.stackexchange.com/questions/563164/can-a-cft-have-multiple-primary-operators-with-same-scaling-dimension-and-or-spi *In some model there are primaries why non zero spin and different primaries with exaclty the same scaling dimension and spin*
+
 ### Radial Quantization/State operator correspondance
 
-Reference CFT_Jaume
+#### Reference CFT_Jaume
 
-In radial quantization, we start with $D$ dimensionnal Euclidean space on which we have conformal transformations. Euclidean conformal transformation have the poincare sub-group replaced with $SO(D)$. In this setting "time" is on the exact same footing as space and we are free to quantize our theory with any folitaion of which the elements are labeled by a euclidean time coordinate. Radial quantization foliates Euclidean space with concentric $S^{D-1}$ spheres. Spheres are preserved by rotations and combinations of translation and special conformal transformations (individually these transformations do not preserve the origin and infinity, but composing them with their inverses and exploiting the non commutation of translations and SPTs we can get non trivial transformations preserving spheres). The scale transformation moves a sphere labeled by some radius (playing the role of time after a weyl transformation) to a concentric sphere with different raidus. 
+In radial quantization, we start with $D$ dimensionnal Euclidean space on which we have conformal transformations. Euclidean conformal transformation have the poincare sub-group replaced with $SO(D)$. In this setting "time" is on the exact same footing as space and we are free to quantize our theory with any folitaion of which the elements are labeled by a euclidean time coordinate. Radial quantization foliates Euclidean space with concentric $S^{D-1}$ spheres. Spheres are preserved by rotations and combinations of translation and special conformal transformations (individually these transformations do not preserve the origin and infinity, but composing them with their inverses and exploiting the non commutation of translations and SCTs we can get non trivial transformations preserving spheres). The scale transformation moves a sphere labeled by some radius (playing the role of time after a weyl transformation) to a concentric sphere with different raidus. 
 
 Question: Should we expect all conformal transformaions to preserve the foliation up to relabeling of spheres? 
 
@@ -231,17 +304,48 @@ The energy spectrum of the fuzzy sphere is the spectrum of $D$, which we use to 
 
 The idea behind state-operator correspondance is that local CFT primary operators can be fully specified by scaling dimension and spin (they are tensors). Then having specified the primaries, all descendants can be accessed by acting $P_{\mu}$. Furthermore, the primaries are anihilated by $K_{\mu}$
 
-On the operator side, we compute descendants by commuting with $P_\mu$. 
+On the operator side, we compute descendants by commuting with $P_\mu$. On the sate side, we directly act $P_{\mu}$ on the state. 
+
+The Vacuum of $D$ is anihilated by both the $P_\mu$ and $K_{\mu}$ operators so it is a primary with no descendants. 
 
 External note: Commutating the Dilation generator $D$ with operator $O$ havin scaling dimension $\Delta$ yields a descendant with scaling dimension $\Delta+1$. This commutator naturally represents the infinitisemal transformation of an operator under $D$. Indeed $U^\dagger O U = (1 - i \epsilon a) O (1 + i \epsilon a) = O + i [O, a]\epsilon$. If $a = D$ we get $O + i \Delta \epsilon$ with $[O, D] = \Delta$
 
+External note: In 2D, the Ising CFT has a finite number of primaries and is exactly solvable, but there are CFTs with an infinite number of primaries requiering more symmetries to be exactly solvable in 2D. There is a notion of a Viasoro primary associated to the generator $L_{m>0}$. 
+
+Question: We define primaries as $K_{\mu}\ket{\phi} = 0$, but is it possible to have states for which only certain $K_{\mu}$ vanish without having all of the vanish? 
+
+
+#### Lectures_on_Conformal_Field_Theory_D_ge3
+
+For a given foliation, we have Hilbert scpaces on each leaf. Correlation functions are the overlap between states created by acting an operator in the past and states created by acting an operator in the future. To connect operators living on two different leafs, we need to use the evolution operator provided by the Hamiltonian. 
+
+Choosing a foliation that respects the symmetry of the theory (Leafs related by a symmetry transfromation ex: weyl transformed scaling) has the advantage of making the hilbert space on each leaf identical and connected to all others by a symmetry transformation. The Weyl cylinder foliation is preserved by Weyl transformed scaling. *In general, it seems we want to pick a foliation for which there is an orthogonal killing flows with all other killing flows internal to the foliation*. 
+
+Forming a fully commuting set of states in radial quantization requires using a $D$ (hamiltonian, convinient to label states with how they evolve in imaginary time). We have $D\ket{\Delta} = i \Delta \ket{\Delta}$ (consitently with the fact the cylinder manifold is euclidean and not Lorentzian--- *is it lorentzian after a wick rotation? A compact lorentzian space lorentzian manifold has issues with ddefinition of simultaneity and might have no well defined foliation...*). 
+
+There exists another useful way to quantize the $\mathbb{R}^n$ Euclidean space using the operator $K_1 + P_1$ (it does not requiere a Weyl transformation, it looks like radial quantization by with $\infty$ and $0$ moved to points both at finite coordinates called N and S probably in analogy with the rieman sphere poles). 
+
+A tricky point is that, since $D$ is non-hermitian, it is not self-adjoint. *Is $K_\mu + P_\mu$ self-adjoint?*. In the NS map, the dual $\bra{\psi}$ of $\ket{\psi}$ is obtained by applying the reflexion swapping the north and south poles to the ket. This map sends time $\tau$ to time $-\tau$: this has the same effect as conjugating a hermitian field $\phi(x, \tau)$. Indeed, the conjugate of a field can be evaluated in the real time picture and then wick rotated to get the Euclidean time   
+$$
+\phi(x, t)=e^{-i H t} \phi(x, 0) e^{i H t} \rightarrow \phi\left(x, t_E\right)=e^{-H t_E} \phi(x, 0) e^{H t_E}
+$$
+implying $\phi\left(x, t_E\right)^{\dagger}=e^{H t_E} \phi(x, 0)^{\dagger} e^{-H t_E}=\phi\left(x,-t_E\right)$. (What is the interpretation of this adjoint). Note that the conjugate field lives at a different time. The operation that swaps the north and south pole in the Cylinder picture is the inversion operation $I$ (note: $K_\mu = I P_\mu I$). Still computing the dual vector to $\ket{\psi}$ in the real time picture and Wick rotating it, we have the natural notion of adjoint $\langle\Psi|=\langle 0|[\phi(x)]^{\dagger},[\phi(x)]^{\dagger}=r^{-2 \Delta_\phi} \phi(I x) \equiv I[\phi(x)]$ (The $r$ factor is obtained by having a representation of the inversion which is a global conformal transformation). With this definition $P_\mu = K_\mu^\dagger$
+
+
+Hermitian conjugation in radial quantization: 
+https://physics.stackexchange.com/questions/87789/hermitian-conjugation-in-radial-quantization#:~:text=As%20you%20said%2C%20when%20you,just%20send%20%CF%84%E2%86%92%E2%88%92%CF%84.
+
+
+### More remarks 
+
+Important for OPE coefficients: The action of a field on a primary/descendant might not be a primary or descendant : it might have components in both primary and descendant operators which end up being the OPE coefficients
 
 
 ## Ideas
 
-1. Instead of icosaedron use stars (multiple covers of the 2-sphere) https://en.wikipedia.org/wiki/Star_polyhedron
+1. Instead of icosaedron use stars (multiple covers of the 2-sphere) https://en.wikipedia.org/wiki/Star_polyhedron *This would introduce enough topological defects to destroy the CFT*
 2. Write the set of all finite dimensionnal systems on which SO(3) is represented. Use these states to form models with Z2 symmetry breaking (ordering field). 
-3. Fuzzyfy the fuzzy sphere: put a magnetic monopole at the center of the fuzzy sphere and implement it in the hamiltonian with the same potnetial vector but where the position operator has a truncated representation (containing only monopole harmonics). This amounts to projecting the Hamiltonian for the original sphere to the monopole harmonic basis. Since it is an eigenbasis of the hamiltonian, this projection does not change the eigen states and the fuzification is an idempotent map in this context.
+3. Fuzzyfy the fuzzy sphere: put a magnetic monopole at the center of the fuzzy sphere and implement it in the hamiltonian with the same potnetial vector but where the position operator has a truncated representation (containing only monopole harmonics). This amounts to projecting the Hamiltonian for the original sphere to the monopole harmonic basis. Since it is an eigenbasis of the hamiltonian, this projection does not change the eigenstates and the fuzification is an idempotent map in this context.
 4. Example of systems where the fuzzy sphere might be realised in nature. Lead to the question: Can spherical harmonics of a Rydberg atom behave like a fuzzy sphere? The answer seems to be no because the commutaion relation of the harmonics is not related to position in the same way it is for the monopole harmonics (no non-commutative geometry encoded).
 5. Use state operator correspondance to write a hamiltonian acting on the operator space of the CFT, it should be the same CFT? What makes a CFT unique: https://physics.stackexchange.com/questions/120019/what-uniquely-defines-a-cft (Depends if the CFT is unitary or not). 
 6. The dual ising to the Icosahedron is smaller (dodecahedron), but is is as good numerically?
@@ -251,9 +355,13 @@ External note: Commutating the Dilation generator $D$ with operator $O$ havin sc
 10. Thompson problem algorithm build on a non commutative geometry sequence to the original problem. 
 11. Another way to discretize the sphere (golden ratio spiral): https://extremelearning.com.au/how-to-evenly-distribute-points-on-a-sphere-more-effectively-than-the-canonical-fibonacci-lattice/
 12. The bloch theorem should generalize for the Icosahedron
-13. The ISing CFT is at a special angular point in the crossing equation landscape: there are forbidden CFT data points near it and maybe the CFT data agreeent at finite size can be accelerated by forcing some data into the forbidden region leaing very little possibility in the allowed region
+13. The Ising CFT is at a special angular point in the crossing equation landscape: there are forbidden CFT data points near it and maybe the CFT data agreeent at finite size can be accelerated by forcing some data into the forbidden region leaing very little possibility in the allowed region
 14. The entanglement of the positions of the fermions should be almost minimal and negligible compared to the entanglement of the Ising CFT. This could be acheived by strong localisation effects making the fuzzy sphere model an insulator model. LOcalisation effects are usually due to impurities and here we have a non-commutative impurity
 15. What is supersymmetric localisation ?
+16. Dynamical moiree Floquet effective Scale invariance. 
+17. A polyhedron is fully specified by angles and is therefore a conformal object (how right is this). 
+18. https://en.wikipedia.org/wiki/Lee_conformal_world_in_a_tetrahedron
+19. Rotate a lattice without rotating it ... sequence of transformations of grid lines that result in a rotation (more precisely multiple skew transformation give a rotation)
 
 # Code 
 
@@ -288,9 +396,9 @@ Understand what the TFIM CFT primaries correspond to.
 
 https://physics.stackexchange.com/questions/391444/primary-operators-in-the-ising-cft
 
-$\sigma_n^x \sigma_{n+1}^x-\sigma_n^z \to \epsilon(x)$ (Energy density field primary, $\methbb{Z}_2$ even, commutes with $P$) This operator is local and depends on a continuous $x$ spacetime position in the IR continuum
+$\sigma_n^x \sigma_{n+1}^x-\sigma_n^z \to \epsilon(x)$ (Energy density field primary, $\mathbb{Z}_2$ even, commutes with $P$) This operator is local and depends on a continuous $x$ spacetime position in the IR continuum
 
-$\sigme_n^x$ ($\methbb{Z}_2 \to \sigma(x)$ odd, anticommutes with $P$) (Local order field, the ordered phase has all spins in the $x$ direction and no symetry breaking ground states, related to the magnetization in the $x$ direction)
+$\sigma_n^x$ ($\mathbb{Z}_2 \to \sigma(x)$ odd, anticommutes with $P$) (Local order field, the ordered phase has all spins in the $x$ direction and no symetry breaking ground states, related to the magnetization in the $x$ direction)
 
 The position dependance of these operators allow for derivative descendants.
 

@@ -1,3 +1,6 @@
+C:\Users\pgraham1\Documents\GitHub\PSI\Essay\Code
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -300,6 +303,10 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
-C:\Users\pgraham1\Documents\GitHub\PSI\Essay\Code\Full_code\lib
-C:\Users\pgraham1\Documents\GitHub\PSI\Essay\Code\Full_code\lib64
-C:\Users\pgraham1\Documents\GitHub\PSI\Essay\Code\Full_code\venv
+
+Essay/Code/Full_code/lib64/
+Essay/Code/Full_code/
+.gitignore
+Essay/Code/Full_code/venv/bin/python
+Essay/Code/Full_code/venv/bin/python3
+

@@ -11,3 +11,7 @@
 9. Measurements destroy entanglement and coherence (restores to the prepared state)
 10. Make $I_+ = -I_-$
 11. Use switching to make the time interval finite in spirit and thus remove the time dependance of transparency of the modes (the idea is switch the coupling on when you want to apply a gate, but this does not allow a constant protection from stray fields)
+
+
+# Floquet Theory 
+
