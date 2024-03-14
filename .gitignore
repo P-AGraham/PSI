@@ -304,9 +304,6 @@ TSWLatexianTemp*
 #*Notes.bib
 
 
-Essay/Code/Full_code/lib64/
-Essay/Code/Full_code/
+Essay/Code/Full_code/lib64/*
+Essay/Code/Full_code/venv/*
 .gitignore
-Essay/Code/Full_code/venv/bin/python
-Essay/Code/Full_code/venv/bin/python3
-
