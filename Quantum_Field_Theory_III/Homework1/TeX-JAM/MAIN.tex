@@ -1,0 +1,141 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\input{math_func}
+
+\usepackage{slashed}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+\usetikzlibrary{positioning}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%%
+\title{Homework 1} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Jaume Gomis and Mykola Semenyakin} % Your teacher's name.
+\class{Quantum Field Theory III} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\footnotesize{
+
+\section{Conformal invariance of the Maxwell action for $D=4$}
+
+\begin{enumerate}
+  \item[(a)] Consider a classical abelian gauge field $A_\mu$ on $D=3+1$ dimensionnal Minkowski spacetime. Under an infinitesimal conformal transformation, spacetime undergoes the transformation $\tilde{x}^{\mu} = f(x) = x^{\mu} + \xi^{\mu}(x)$ where $\xi^\mu(x)$ is a smal deformation. We want to calculate the effect of this transformation on the gauge field $A_\mu$. The starting point is that we expect $A_\mu$ to transform as a tensor under the lorenz transformation subgroup of the conformal group. This implies that $A_\mu$ is a primary operator and we denote its scaling dimension $\Delta$. The transformed field $\tilde{A}_\mu$ at $\tilde{x}$ is related to the original field $A_\mu$ at $x$ by an internal rotation, scaling, and special conformal transformation. The rotation operation acts on the components $A_\mu$ through its spin $1$ representation which is the defnining representation of rotations. The scaling and special conformal transformation act together through the multiplication of $A_\mu$ by the jacobian factor $|\partial x/\partial \tilde{x}|_{x}^{\Delta/D}$. Finally, translations act trivially internally. This can be summarized with the relation $\tilde{A}_\mu(\tilde x) = |\partial x/\partial \tilde{x}|_{x}^{\Delta/D} R_{\mu}^{\nu} A_{\nu}(x)$ where $R_{\mu}^{\nu}$ is the rotation matrix associated with $\xi^\mu(x)$. With this in mind, we calculate the jacobian of the infinitesimal transformation to be 
+  \begin{align*}
+    \left|\frac{\partial x^\mu }{\partial \tilde{x}^\nu}\right|_{x} = \left|\frac{\partial \tilde{x}^\mu }{\partial x^\nu}\right|_{x}^{-1} = |\delta_\nu^\mu + \partial_\nu \xi^\mu|_{x}^{-1} \approx |e^{-\partial_\nu \xi^\mu}|_{x} = e^{-\text{Tr} \partial_\nu \xi^\mu(x)} = 1- \partial_\mu \xi^\mu(x) + O(\xi^2). 
+  \end{align*}
+  The rotation matrix $R_{\mu}^{\nu} (x)$ can be extracted by dividing the matrix $(\partial x/\partial \tilde{x})_{x}$ by its jacobian to extract the $SO(3)$ operation (we have a positive determinant transformation since it is infinitesimally close to identity). We have 
+  \begin{align*}
+    R_{\mu}^{\nu} (x) = \frac{1}{1- \partial_\sigma \xi^\sigma(x) + O(\xi^2)} \left(\frac{\partial x^\nu }{\partial \tilde{x}^\mu}\right)_{x} = (1 + \partial_\sigma \xi^\sigma(x) + O(\xi^2))(\delta_\nu^\mu + \partial_\mu \xi^\nu(x) + O(\xi^2))^{-1} = \delta_\nu^\mu(1 + \partial_\sigma \xi^\sigma(x))  - \partial_\mu \xi^\nu(x) +  O(\xi^2). 
+  \end{align*} 
+  For a spacial conformal transformation, we have $\xi^\mu = -2 x^\mu x_\lambda b^\lambda$ paramatrized by the transaltion vector $b^\lambda$ around $\infty$. For this vector, we have 
+  \begin{align*}
+    R_{\mu}^{\nu} (x) = \delta_\nu^\mu + \partial_\sigma \xi^\sigma(x)  - \partial_\mu \xi^\nu(x) +  O(\xi^2) = \delta_\nu^\mu 
+  \end{align*}
+  As expected for a special conformal transformation. With these results, we can write the effect of the infinitesimal transformation as 
+  \begin{align*}
+    \tilde{A}_\mu(\tilde{x}) &= (1-\partial_\rho \xi^\rho(f^{-1}(\tilde{x})) + O(\xi^2))^{\Delta/D} (A_\mu(f^{-1}(\tilde{x})) + A_\mu(f^{-1}(\tilde{x})) \partial_\sigma \xi^\sigma(f^{-1}(\tilde{x}))  - A_\nu(f^{-1}(\tilde{x})) \partial_\mu \xi^\nu(f^{-1}(\tilde{x})) +  O(\xi^2)) \\
+    &=  \left(1-\frac{\Delta}{D}\partial_\rho \xi^\rho(f^{-1}(\tilde{x})) + O(\xi^2)\right) (A_\mu(f^{-1}(\tilde{x})) + A_\mu(f^{-1}(\tilde{x})) \partial_\sigma \xi^\sigma(f^{-1}(\tilde{x}))  - A_\nu(f^{-1}(\tilde{x})) \partial_\mu \xi^\nu(f^{-1}(\tilde{x})) +  O(\xi^2))\\
+    &= A_\mu(f^{-1}(\tilde{x}))-A_\mu(f^{-1}(\tilde{x})) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(f^{-1}(\tilde{x}))+A_\mu(f^{-1}(\tilde{x})) \partial_\sigma \xi^\sigma(f^{-1}(\tilde{x}))  - A_\nu(f^{-1}(\tilde{x})) \partial_\mu \xi^\nu(f^{-1}(\tilde{x})) + O(\xi^2). 
+  \end{align*}
+  Since $\xi(f^{-1}(\tilde{x}))$ is already first order in $\xi$, the only term contribution to its expansion around $\xi = 0$ at $O(\xi)$ is $\xi(\tilde{x})$. To go further, we expand $f^{-1}(\tilde{x})$ at first order in $\xi(\tilde{x})$ with the ansatz $f^{-1}(\tilde{x})^{\nu} = \tilde{x}^{\nu} + B_{\mu}^{\nu}(\tilde{x}) \xi^{\mu}(\tilde{x})$ (the first term of this ansatz is justified by noticing the transformation reduces to identity at $\xi = 0$).  From $f(f^{-1}(\tilde{x})) = \tilde{x}$, we find 
+  \begin{align*}
+    \tilde{x}^{\nu} = \tilde{x}^{\nu} + B_\mu^{\nu}(\tilde{x}) \xi^\mu(\tilde{x}) + \xi(\tilde{x}^{\nu} +  B_\mu^{\nu}(\tilde{x}) \xi^\mu(\tilde{x})) + O(\xi^2) \implies B_\mu^{\nu}(\tilde{x}) \xi^\mu(\tilde{x}) + \xi^{\nu}(\tilde{x}) = 0, \quad  \forall \xi(\tilde{x}) \implies B_\mu^{\nu}(\tilde{x}) = -\delta_{\mu}^{\nu}.
+  \end{align*}
+  Using this result, we can expand $A_\mu(f^{-1}(\tilde{x}))$ as 
+  \begin{align*}
+    A_\mu(f^{-1}(\tilde{x})) = A_\mu(\tilde{x}^\nu-\xi^{\nu}(\tilde{x}) + O(\xi^2)) = A_\mu(\tilde{x}) - \xi^{\nu}(\tilde{x}) \partial_\nu A_\mu(\tilde{x}) + O(\xi^2)
+  \end{align*}
+  Combining this expression with the internal transformation at first order in $\xi$, we get 
+  \begin{align*}
+    \tilde{A}_\mu(\tilde{x}) &= \left(1-\frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x})+\partial_\sigma \xi^\sigma(\tilde{x})  - \partial_\mu \xi^\nu(\tilde{x})\right)(A_\mu(\tilde{x}) - \xi^{\nu}(\tilde{x}) \partial_\nu A_\mu(\tilde{x})) + O(\xi^2)\\
+    &= A_\mu(\tilde{x})-A_\mu(\tilde{x}) \frac{\Delta-D}{D}\partial_\sigma \xi^\sigma(\tilde{x}) - A_\nu(\tilde{x})\partial_\mu \xi^\nu(\tilde{x}) - \xi^{\nu}(\tilde{x}) \partial_\nu A_\mu(\tilde{x})+ O(\xi^2)
+  \end{align*}
+  with $\xi(f^{-1}(\tilde{x})) = \xi(\tilde{x}) + O(\xi^2)$. Form this transformed gauge field, we calculate the transformation of gauge field strength $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ to $\tilde{F}_{\mu\nu}$. We start by writting the transformation law of the derivatives used to construct $F_{\mu\nu}$. The chain rule yields
+  \begin{align*}
+    \tilde{\partial}_{\mu} \equiv \frac{\partial }{\partial \tilde{x}^\mu} = \left(\frac{\partial f^{-1}(\tilde{x})^\nu}{\partial \tilde{x}^\mu}\right)_{\tilde{x}}\left(\frac{\partial }{\partial x^\nu}\right)_{\tilde{x}} = \left(\frac{\partial \tilde{x}^{\nu} - \xi^{\nu}(\tilde{x})}{\partial \tilde{x}^\mu}\right)_{\tilde{x}}\left(\frac{\partial }{\partial x^\nu}\right)_{\tilde{x}} = \left(\frac{\partial \xi^{\nu}(\tilde{x})}{\partial \tilde{x}^\mu}\right)_{\tilde{x}}\left(\frac{\partial }{\partial x^\nu}\right)_{\tilde{x}} + \left(\frac{\partial }{\partial x^\mu}\right)_{\tilde{x}} \equiv \partial_\mu \xi^{\nu}(\tilde{x}) \partial_\nu + \partial_\mu. 
+  \end{align*}
+  Now we can calculate the transformed transformed field strength to be 
+  \begin{align*}
+    \tilde{F}_{\mu\nu} &= \tilde{\partial}_\mu \tilde{A}_{\nu} - (\mu \leftrightarrow \nu) \\
+    &= \left(\partial_\mu \xi^{\rho}(\tilde{x}) \partial_\rho + \partial_\mu\right)\left(A_\nu(\tilde{x})-A_\nu(\tilde{x}) \frac{\Delta-D}{D}\partial_\sigma \xi^\sigma(\tilde{x}) - A_\lambda(\tilde{x})\partial_\nu \xi^\lambda(\tilde{x}) - \xi^{\lambda}(\tilde{x}) \partial_\lambda A_\nu(\tilde{x})\right)- (\mu \leftrightarrow \nu)\\
+    &= \partial_\mu A_\nu(\tilde{x}) + \partial_\mu \xi^{\lambda}(\tilde{x}) \partial_\lambda A_\nu(\tilde{x}) -\partial_\mu \left(A_\nu(\tilde{x}) \frac{\Delta-D}{D}\partial_\lambda \xi^\lambda(\tilde{x})\right) - \partial_\mu\left(A_\lambda(\tilde{x})\partial_\nu \xi^\lambda(\tilde{x})\right) - \partial_\mu\left(\xi^{\lambda}(\tilde{x}) \partial_\lambda A_\nu(\tilde{x})\right) - (\mu \leftrightarrow \nu)\\
+    &= \partial_\mu A_\nu(\tilde{x}) -\partial_\mu \left(A_\nu(\tilde{x}) \frac{\Delta-D}{D}\partial_\lambda \xi^\lambda(\tilde{x})\right) - \partial_\mu A_\lambda(\tilde{x})\partial_\nu \xi^\lambda(\tilde{x}) - A_\lambda(\tilde{x})\partial_\mu\partial_\nu \xi^\lambda(\tilde{x}) - \xi^{\lambda}(\tilde{x}) \partial_\lambda \partial_\mu A_\nu(\tilde{x}) - (\mu \leftrightarrow \nu)\\
+    &= \partial_\mu A_\nu(\tilde{x}) -\partial_\mu \left(A_\nu(\tilde{x}) \frac{\Delta-D}{D}\partial_\lambda \xi^\lambda(\tilde{x})\right) - \partial_\mu A_\lambda(\tilde{x})\partial_\nu \xi^\lambda(\tilde{x}) - \xi^{\lambda}(\tilde{x}) \partial_\lambda \partial_\mu A_\nu(\tilde{x}) - (\mu \leftrightarrow \nu)\\
+    &= F_{\mu \nu}(\tilde{x}) - F_{\mu \nu}(\tilde{x}) \frac{\Delta-D}{D}\partial_\lambda \xi^\lambda(\tilde{x}) - A_{(\nu}(\tilde{x}) \frac{\Delta-D}{D}\partial_{\mu)} \partial_\lambda \xi^\lambda(\tilde{x}) - \partial_{(\mu} A_\lambda(\tilde{x})\partial_{\nu)} \xi^\lambda(\tilde{x}) - \xi^{\lambda}(\tilde{x}) \partial_\lambda F_{\mu\nu}(\tilde{x}) 
+  \end{align*}
+  \item[(b)] 
+\end{enumerate}
+
+\section{Axial anomaly}
+
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)] 
+  \item[(c)]
+  \item[(d)] 
+\end{enumerate}
+
+\section{OPE coefficients from three point functions}
+
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)] 
+  \item[(c)]
+  \item[(d)] 
+\end{enumerate}
+
+
+\section{Acknowledgement}
+
+
+}
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
