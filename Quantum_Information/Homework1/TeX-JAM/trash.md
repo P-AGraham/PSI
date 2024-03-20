@@ -272,3 +272,27 @@ For a spacial conformal transformation, we have $\xi^\mu = x^2 b^\mu -2 x^\mu x_
     F_{\mu\nu}(x)
     &= \tilde{F}_{\mu \nu}(x) - \tilde{F}_{\mu \nu}(x) \frac{\Delta}{D}\partial_\lambda \xi^\lambda(x) - \tilde{A}_{(\nu}(x) \frac{\Delta}{D}\partial_{\mu)} \partial_\lambda \xi^\lambda(x)  - (\partial_{(\mu} \tilde{A}_\lambda(x))M^{\lambda}_{\nu)} - \xi^{\lambda}(\tilde{x}) \partial_\lambda F_{\mu\nu}(\tilde{x})
   \end{align*}
+
+
+  which reads 
+  \begin{align*}
+   \begin{pmatrix}
+      1 & 1\\
+      -1 & 1\\
+   \end{pmatrix}^{1/2}
+    = \left(\begin{pmatrix}
+      2 & 0\\
+      0 & 0\\
+   \end{pmatrix}
+   \begin{pmatrix}
+    1 & 1\\
+    1 & -1\\
+ \end{pmatrix}
+   \right)
+
+  \end{align*}
+  where we used the symmetry of the block to deduce its eigenvactor have components $(1, -1)$ and $(1, 1)$ with respective eigenvalues $0$ and $2$. 
+
+
+
+  As before, we simplify the calculation by applying the $\sigma_x$ local operation to subsystem $A$ to work with $\rho = \ket{\Psi^{+}_{AB}}\bra{\Psi^{+}_{AB}}$.

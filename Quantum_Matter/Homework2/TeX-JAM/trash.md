@@ -254,21 +254,3 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
 
 
     Through a local unitary mapping (this unitary might affect entanglement within each component of the bipartition, but does not entangle/disentangle the components), we can send $\ket{u_i}$, $\ket{v_i}$ to states in our original basis $\ket{S_i}$, $\ket{S_i'}$. The state we obtain is $\ket{\psi} = \sum_{i} \alpha_i \ket{S_i}\ket{S_i'}$.
-
-
-
-For a spacial conformal transformation, we have $\xi^\mu = x^2 b^\mu -2 x^\mu x_\lambda b^\lambda$ paramatrized by the transaltion vector $b^\lambda$ around $\infty$. For this vector, we have 
-  \begin{align*}
-    R_{\mu}^{\nu} (x) &= \delta_\nu^\mu + \delta_\nu^\mu \partial_\sigma (x_\lambda x^\lambda b^\sigma)  -2 \delta_\nu^\mu \partial_\sigma  (x^\sigma x_\lambda b^\lambda) + 2\partial_\mu  x^\nu x_\lambda b^\lambda - \partial_\mu  (x^\lambda x_\lambda b^\nu) +  O(\xi^2)\\
-    &= \delta_\nu^\mu + 2\delta_\nu^\mu x_\sigma b^\sigma -2 (3) \delta_\nu^\mu x_\lambda b^\lambda -2 \delta_\nu^\mu x^\sigma  \eta_{\rho \lambda}  \delta^\rho_\sigma b^\lambda + 2  \delta^\nu_\mu x_\lambda b^\lambda + 2 x^\nu \eta_{\rho\lambda} \delta^{\rho}_{\mu} b^{\lambda} - \partial_\mu  (x^\lambda x_\lambda b^\nu) +  O(\xi^2) \\
-    &= \delta_\nu^\mu + 2\delta_\nu^\mu x_\sigma b^\sigma -2 (3) \delta_\nu^\mu x_\lambda b^\lambda -2 \delta_\nu^\mu x_\sigma b^\sigma + 2 \delta^\nu_\mu x_\lambda b^\lambda + 2 x^\nu b_{\mu} - \partial_\mu  (x^\lambda x_\lambda b^\nu) +  O(\xi^2)  \\
-    &= \delta_\nu^\mu +  O(\xi^2)
-  \end{align*}
-  As expected for a special conformal transformation.
-
-
-  The inverse transformation (given at first order in $\xi$ by ${x}^{\mu} = f^{-1}(\tilde{x}) = \tilde{x}^{\mu} - \xi^{\mu}(\tilde{x})$) reads 
-  \begin{align*}
-    F_{\mu\nu}(x)
-    &= \tilde{F}_{\mu \nu}(x) - \tilde{F}_{\mu \nu}(x) \frac{\Delta}{D}\partial_\lambda \xi^\lambda(x) - \tilde{A}_{(\nu}(x) \frac{\Delta}{D}\partial_{\mu)} \partial_\lambda \xi^\lambda(x)  - (\partial_{(\mu} \tilde{A}_\lambda(x))M^{\lambda}_{\nu)} - \xi^{\lambda}(\tilde{x}) \partial_\lambda F_{\mu\nu}(\tilde{x})
-  \end{align*}

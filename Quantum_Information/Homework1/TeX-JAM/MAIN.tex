@@ -1,0 +1,286 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\input{math_func}
+
+\usepackage{slashed}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+\usetikzlibrary{positioning}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%%
+\title{Homework 1} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Eduardo Martín-Martínez, Bindiya Arora } % Your teacher's name.
+\class{Quantum Information} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\footnotesize{
+
+\section{Concurrence and negativity}
+
+\begin{enumerate}
+  \item[(a)] We are interested in the faithful measure of entanglement of two qubits provided by the concurrence. The individual states of the qubits are elements of the hilbert space $\mathcal{H}_{A} = \mathbb{C}^2$ and $\mathcal{H}_{B} = \mathbb{C}^2$ and their joint state is described with most generality through the density matrix $\rho \in \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ \footnote{$\mathcal{D}$ denotes the space of hermitian operators of trace one acting on $\mathcal{H}_A \otimes \mathcal{H}_B$ with positive or zero eigenvalues. We have this restriction on eigenvalues because they provide the probabilities of each outcome of the statistical mixture represented by the diagonalized $\rho$} representing their classical and quantum correlations. We work from a basis $\{\ket{0}, \ket{1}\}$ of $\mathcal{H}_{A, B}$ associated with the Pauli matrices denoted $\sigma_x$, $\sigma_y$ and $\sigma_z$. For states in $\mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$, the concurence can be expressed as $C[p] := \text{max}\{0, \lambda_1 - \lambda_2 - \lambda_3 - \lambda_4\}$ for the set $\{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ (ordered in decreasing order) of eigenvalues of $R = \sqrt{\sqrt{\rho} \tilde{\rho} \sqrt{\rho}}$ with $\tilde{\rho} = (\sigma_y \otimes \sigma_y) \rho^{\star}(\sigma_y \otimes \sigma_y)$. We start by computing the concurrence for a Bell state $\ket{\Phi^{+}_{AB}} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$. To make the calculation more transparent, we use a local operation $\sigma_x$ on the second qubit to get the state $\ket{\Psi^{+}_{AB}} = \frac{1}{\sqrt{2}}(\ket{01} + \ket{10})$\footnote{Starting with $\ket{\rho_0} = \ket{\Phi^{+}_{AB}}\bra{\Phi^{+}_{AB}}$ and express the associated concurrence in terms of $\rho = \ket{\Psi^{+}_{AB}} \bra{\Psi^{+}_{AB}}$: we have 
+  \begin{align*}
+    R = \sqrt{\sqrt{\rho_0} (\sigma_y \otimes \sigma_y) \rho_0^{\star}(\sigma_y \otimes \sigma_y) \sqrt{\rho_0}} &= \sigma_x\sqrt{\sqrt{\rho} (\sigma_x\sigma_y\sigma_x \otimes \sigma_y) \rho^{\star}(\sigma_x\sigma_y\sigma_x \otimes \sigma_y) \sqrt{\rho}}\sigma_x \\&= \sigma_x\sqrt{\sqrt{\rho} (-\sigma_y \otimes \sigma_y) \rho^{\star}(-\sigma_y \otimes \sigma_y) \sqrt{\rho}}\sigma_x = \sigma_x\sqrt{\sqrt{\rho} \tilde{\rho} \sqrt{\rho}}\sigma_x
+  \end{align*}
+  which shows what effect the real local unitary $\sigma_x \otimes 1$ has on $R$. The $\sigma_x \otimes 1$ operation does not change the eigenvalues of $R$ because it preserve the caracteristic polynomial $\text{det}(\sigma_x (R - \lambda)\sigma_x) = (-1)^2 \text{det}(R - \lambda)$ brought to $0$ by the eigenvalues of $R$. This property is a feature of any operator $U$ having $U^\dagger U = 1$ (unitary operators preserve eigenvalue). we note that the transformation considered preserves the concurrence because its components are all real (if they were not, there would be complications regarding the complex conjugation of $\rho$)}
+  , their concurrences are the same. We have 
+  \begin{align*}
+    \rho = \ket{\Psi^{+}_{AB}} \bra{\Psi^{+}_{AB}} = \frac{1}{2}(\ket{01}\bra{01} + \ket{01}\bra{10}  + \ket{10}\bra{01} + \ket{10}\bra{10}) = \frac{1}{2}
+    \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}
+  \end{align*}
+  Since $\rho$ is block diagonal with two vanishing blocks, the calculation of its quare root reduces to the calculation of the square root of the non-zero block. This square root con be infered through 
+  \begin{align*} 
+    \begin{pmatrix}
+      1 & 1\\
+      1 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 1\\
+      1 & 1
+    \end{pmatrix}
+    = 2
+    \begin{pmatrix}
+      1 & 1\\
+      1 & 1
+    \end{pmatrix} \implies \begin{pmatrix}
+      1 & 1\\
+      1 & 1
+    \end{pmatrix}^{1/2} = \frac{1}{\sqrt{2}}\begin{pmatrix}
+      1 & 1\\
+      1 & 1
+    \end{pmatrix}
+  \end{align*}
+  where we selected the positive branch of the square root. Next, we calculate $\tilde{\rho}$ as follows 
+  \begin{align*}
+    \tilde{\rho} =  (\sigma_y \otimes \sigma_y) \rho^{\star}(\sigma_y \otimes \sigma_y) &= \frac{1}{2}
+    \begin{pmatrix}
+      0 & 0 & 0 & -i(-i)\\
+      0 & 0 & -i(i) & 0\\
+      0 & i(-i) & 0 & 0\\
+      i(i) & 0 & 0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}^{\star}
+    \begin{pmatrix}
+      0 & 0 & 0 & -i(-i)\\
+      0 & 0 & -i(i) & 0\\
+      0 & i(-i) & 0 & 0\\
+      i(i) & 0 & 0 & 0
+    \end{pmatrix}\\
+    &= \frac{1}{2}\begin{pmatrix}
+      0 & 0 & 0 & -1\\
+      0 & 0 & 1 & 0\\
+      0 & 1 & 0 & 0\\
+      -1 & 0 & 0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & 0 & 0 & -1\\
+      0 & 0 & 1 & 0\\
+      0 & 1 & 0 & 0\\
+      -1 & 0 & 0 & 0
+    \end{pmatrix}
+    = 
+    \frac{1}{2}
+    \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}
+  \end{align*}
+  and we finally obtain the following $R$ matrix
+  \begin{align*}
+    R = (\sigma_x\otimes 1) \sqrt{\sqrt{\rho} \tilde{\rho} \sqrt{\rho}} (\sigma_x\otimes 1)  &= (\sigma_x\otimes 1) \left(\frac{1}{\sqrt{2}\sqrt{2}}\begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix} 
+    \frac{1}{2}
+     \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}
+    \frac{1}{\sqrt{2}\sqrt{2}}\begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix} \right)^{1/2} (\sigma_x\otimes 1)\\
+    &= 
+    (\sigma_x\otimes 1) \left(\frac{1}{4} 
+    \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix}^2 \right)^{1/2} (\sigma_x\otimes 1)  = 
+    (\sigma_x\otimes 1)\frac{1}{2} 
+    \begin{pmatrix}
+      0 & 0 & 0 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 1 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{pmatrix} (\sigma_x\otimes 1)
+  \end{align*}
+  Since the determinant of the non-zero block of $R$ is $0$, one of its eigenvalues is $0$ and the other is forced to equal the trace and is $1$. We have the sequence $\{\lambda_1, \lambda_2, \lambda_3, \lambda_4\} = \{1, 0, 0, 0\}$ leading to the concurrence $C[\rho] = \text{max}(0, 1/\sqrt{2}) = 1/\sqrt{2}$. For the product state $\ket{00}$ the calculation of concurrence is simplified. We have that $\rho = \ket{00}\bra{00}$ which is a projector implying $\rho = \rho^2 \implies \sqrt{\rho} = \rho$. The matrix $\tilde{\rho}$ also has a simple expression $\tilde{\rho} = (\sigma_y \otimes \sigma_y)(1^\star)\ket{00} ((\sigma_y \otimes \sigma_y) \ket{00})^{\dagger} = (i)^2 ((i)^2)^\star \ket{11}\bra{11} = \ket{11}\bra{11}$. For this preoduct state, we get $R^2 = \ket{00}\bra{00}\ket{11}\bra{11}\ket{00}\bra{00} = 0 \implies R = 0$ and $\{\lambda_1, \lambda_2, \lambda_3, \lambda_4\} = \{0, 0, 0, 0\}$ leading to the concurrence $C[\rho] = \text{max}(0, 0) = 0$.
+  \item[(b)] For states in $\mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$, we can measure entanglement with negativity defined as $\mathcal{N}[\rho] = (\text{tr}(\sqrt{(\rho^\Gamma)^{\dagger} \rho^\Gamma}) - 1)/2$ where $\rho^\Gamma$ is the partial transpose of $\rho$ taken with respect to its subsystem $A$ indices. Here we want to calculate the negativity of $\rho = \ket{\Phi^{+}_{AB}}\bra{\Phi^{+}_{AB}}$. We start by calculating the partial transpose 
+  \begin{align*}
+    \rho^{\Gamma} = \frac{1}{2}\begin{pmatrix}
+      \begin{pmatrix}
+        1 & 0\\
+        0 & 0
+      \end{pmatrix} &
+      \begin{pmatrix}
+        0 & 1\\
+        0 & 0
+      \end{pmatrix}\\
+      \begin{pmatrix}
+        0 & 0\\
+        1 & 0
+      \end{pmatrix} &
+      \begin{pmatrix}
+        0 & 0\\
+        0 & 1
+      \end{pmatrix}
+    \end{pmatrix}^{\Gamma}
+    = \frac{1}{2}
+    \begin{pmatrix}
+    \begin{pmatrix}
+      1 & 0\\
+      0 & 0
+    \end{pmatrix} &
+    \begin{pmatrix}
+      0 & 0\\
+      1 & 0
+    \end{pmatrix}\\
+    \begin{pmatrix}
+      0 & 1\\
+      0 & 0
+    \end{pmatrix} &
+    \begin{pmatrix}
+      0 & 0\\
+      0 & 1
+    \end{pmatrix}
+  \end{pmatrix}
+  \end{align*}
+  We then calculate the matrix norm 
+  \begin{align*}
+    \text{tr}(\sqrt{(\rho^\Gamma)^{\dagger} \rho^\Gamma}) = \text{tr}\left(\left(
+    \frac{1}{2}
+    \begin{pmatrix}
+      1 & 0 & 0 & 0\\
+      0 & 0 & 1 & 0\\
+      0 & 1 & 0 & 0\\
+      0 & 0 & 0 & 1
+    \end{pmatrix}
+    \frac{1}{2}
+    \begin{pmatrix}
+      1 & 0 & 0 & 0\\
+      0 & 0 & 1 & 0\\
+      0 & 1 & 0 & 0\\
+      0 & 0 & 0 & 1
+    \end{pmatrix}
+    \right)^{1/2}\right)
+    =
+    \frac{1}{2}\text{tr}\left(
+    \begin{pmatrix}
+      1 & 0 & 0 & 0\\
+      0 & 1 & 0 & 0\\
+      0 & 0 & 1 & 0\\
+      0 & 0 & 0 & 1
+    \end{pmatrix}^{1/2}\right) = 2
+  \end{align*}
+  leading to a negativity $\mathcal{N}[\rho] = (2-1)/2 = 1/2$ which is half of the concurrence calculated for the same state in (a) as expected of a two-qubit system. Repeating the calculation for the state $\rho = \ket{00}\bra{00}$, we find $\rho^\Gamma = \rho$ and $\text{tr}(\sqrt{\ket{00}\bra{00} (\ket{00}\bra{00})^{\dagger}}) = 1  + 0 \times 3$ leading to the negativity $\mathcal{N}[\rho] = (1-1)/2 = 0$ as expected for a separable state. 
+  \item[(c)] Here we are interested in the negativity of the bipartite state $\rho = 1_A \times 1_B/4$. We have $\rho^\Gamma = 1_A \times 1_B^T/4 = \rho^\Gamma$ and $\text{tr}(1_A \times 1_B/4) = 1$ implying $\mathcal{N}[\rho] = (1-1)/2 = 0$ which is again expected for a separable state. Vanishing of negativity for separable states is a property differenciating it from Von Neumann entropy which fails to distinguish separable states from states that are not because it also grows with classical correlations. 
+\end{enumerate}
+
+\section{POVM accounts for errors}
+
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)]
+  \item[(c)]  
+\end{enumerate}
+
+\section{Entanglement-breaking channel}
+
+\begin{enumerate}
+  \item[(a)]
+  \item[(b)]
+  \item[(c)]  
+\end{enumerate}
+
+
+\section{Acknowledgement}
+
+
+}
+
+% References
+\makereferences
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
