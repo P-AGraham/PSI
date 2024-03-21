@@ -256,7 +256,19 @@
 \section{POVM accounts for errors}
 
 \begin{enumerate}
-  \item[(a)]
+  \item[(a)] We consider a source producing a statistical mix of qubit pure sates described in the basis $\{\ket{0}, \ket{1}\}$ by the fully general density matrix $\rho = \frac{1}{2}(1 + \mathbf{r} \cdot \mathbf{\sigma})$ where $\mathbf{r} = (r_x, r_y, r_z)$ and $\mathbf{\sigma} = (\sigma_x, \sigma_y, \sigma_z)$ (vector of Pauli matrices associated to the chosen basis). Since the trace of all Pauli matrices vanishes, the only term contributing to the trace of $\rho$ is $\frac{1}{2}$ which ensures $\text{tr}(\rho) = 1$. Through as basis transformation, we can alsway bring the density matrix to the form $\rho = \frac{1}{2}\text{diag}(1+|\mathbf{r}|, 1-|\mathbf{r}|)$ showing that $\rho$ has positive or zero probability eigenvalues if and only iff $0 \leq |\mathbf{r}| \leq 1$. The $|\mathbf{r}| = 1$ saturation produces states with purity $1$ and we can identify the surface of a ball of radius $1$ in the $\mathbf{r}$ parameter space with the bloch sphere of pure qubit states. The $|\mathbf{r}| = 1$ state produces a unique maximally mixed state living at the origin of the $\mathbf{r}$ parameter space. We see that in the ball of allowed parametres, we interpolate between maximally mixed at the origin and pure on the surface. Using the fact $\sigma_{i}\sigma{j} = i \epsilon_{ijk} \sigma_k$ and $\sigma_{i}^2 = 1$ we have 
+  \begin{align*}
+    \text{tr}(\sigma_i \sigma_j) =
+    \begin{cases}
+      \text{tr}(\sigma_i^2) = 2, \quad i = j\\
+      \text{tr}(i \epsilon_{ijk} \sigma_k) = i \epsilon_{ijk}\text{tr}(\sigma_k) = 0, \quad i \neq j
+    \end{cases} 
+    = 2 \delta_{ij}.
+  \end{align*}
+  This property allow to extract the components of $\mathbf{r}$ from $\rho$ with 
+  \begin{align*}
+    r_i = \text{tr}(\rho \sigma_i) &= \text{tr}\left(\frac{1}{2}(1 + r_x \sigma_x + r_y \sigma_y + r_z \sigma_z) \sigma_i\right)\\ &= \frac{1}{2}\text{tr}\left(\sigma_i\right) + \frac{1}{2} r_x \text{tr}\left(\sigma_x \sigma_i\right) + \frac{1}{2} r_y \text{tr}\left(\sigma_y \sigma_i\right) + \frac{1}{2} r_z \text{tr}\left(\sigma_z \sigma_i\right) = r_x \delta_{ix} + r_y \delta_{iy} + r_z \delta_{iz}
+  \end{align*}
   \item[(b)]
   \item[(c)]  
 \end{enumerate}
