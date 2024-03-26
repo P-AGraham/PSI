@@ -272,3 +272,43 @@ For a spacial conformal transformation, we have $\xi^\mu = x^2 b^\mu -2 x^\mu x_
     F_{\mu\nu}(x)
     &= \tilde{F}_{\mu \nu}(x) - \tilde{F}_{\mu \nu}(x) \frac{\Delta}{D}\partial_\lambda \xi^\lambda(x) - \tilde{A}_{(\nu}(x) \frac{\Delta}{D}\partial_{\mu)} \partial_\lambda \xi^\lambda(x)  - (\partial_{(\mu} \tilde{A}_\lambda(x))M^{\lambda}_{\nu)} - \xi^{\lambda}(\tilde{x}) \partial_\lambda F_{\mu\nu}(\tilde{x})
   \end{align*}
+
+
+
+
+
+  For a $D$-dimensionnal spacetime, the Maxwell action reads 
+  \begin{align*}
+    S = \int \text{d}^D x \sqrt{|g|} \frac{1}{4} F_{\mu\nu} F^{\mu \nu} = \int \text{d}^D x \sqrt{|g|} \ g^{\mu \sigma} g^{\nu \rho}\frac{1}{4} F_{\mu\nu} F_{\sigma \rho}.  
+  \end{align*}
+  where $g$ is the metric (which we suppose conformaly flat). We aim to apply the results found in (a) to determine when this action gains conformal symmetry. Under a conformal transformation given by the killing vector $\xi^{\mu}(x)$ and the scaling $\Omega(x) = 1 + \partial_\mu \xi^\mu(x)/D + O(\xi^2)$ of the metric components, we have 
+  \begin{align*}
+    &g_{\nu \rho}(x) = \Omega(f(x))^{-2} \tilde{g}_{\nu \rho}(f(x)) = \Omega(\tilde{x})^{-2} \tilde{g}_{\nu \rho}(\tilde{x}) \quad \text{Defining property of a conformal transformation}\\
+    &|g|(x) = \Omega(f(x))^{-2D} |\tilde{g}|(f(x)), \quad g^{\nu \rho}(x) = \Omega(f(x))^{+2} \tilde{g}^{\nu \rho}(f(x)) = \Omega(\tilde{x})^{2} \tilde{g}^{\nu \rho}(\tilde{x}), \quad  \text{d}^D x \sqrt{|g|} = \text{d}^D \tilde{x}\ \Omega(\tilde{x})^{-D} \sqrt{|\tilde{g}|(\tilde{x})}
+  \end{align*}
+  Without loss of generality, we take the traget metric $\tilde{g}$ to be the Minkowski metric.
+  Inverting the result found in (a) for the transformation of the gauge field, we write 
+  \begin{align*}
+    A_{\mu}(x) =  |\partial x/\partial \tilde{x}|_{\tilde{x}}^{-\Delta/D} (R^{-1})_{\mu}^{\nu} \tilde{A}_{\nu}(\tilde{x}) &= \tilde{A}_\mu(\tilde{x})+\tilde{A}_\mu(\tilde{x}) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x})-\tilde{A}_\mu(\tilde{x}) \partial_\sigma \xi^\sigma(\tilde{x}) \frac{1}{D}  + \tilde{A}_\nu(\tilde{x}) \partial_\mu \xi^\nu(\tilde{x}) + O(\xi^2) \\
+    &= \tilde{A}_\mu(\tilde{x})+\tilde{A}_\mu(\tilde{x}) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x}) + \frac{1}{2}\tilde{A}_\nu(\tilde{x}) \left(\partial_\mu \xi^\nu(\tilde{x}) - \partial^\nu \xi_\mu(\tilde{x})\right) + O(\xi^2). 
+  \end{align*}
+  Then, with the derivative $(\partial_{\mu})_{\tilde{x}} = \tilde{\partial}_\mu \xi^{\nu}(\tilde{x}) \tilde{\partial}_\nu + \tilde{\partial}_\mu$, the field strength transforms as 
+  \begin{align*}
+    F_{\mu \nu} = \partial_\mu A_{\nu}(x) - (\mu \leftrightarrow \nu) &= \left( \tilde{\partial}_\mu \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda + \tilde{\partial}_\mu\right)\left(\tilde{A}_\nu(\tilde{x})+\tilde{A}_\nu(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{A}_\lambda(\tilde{x}) M_\nu{}^{\lambda}\right) - (\mu \leftrightarrow \nu)\\
+    &=  \tilde{\partial}_\mu\left(\tilde{A}_\nu(\tilde{x})+\tilde{A}_\nu(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{A}_\lambda(\tilde{x}) M_\nu{}^{\lambda}\right) + \tilde{\partial}_\mu \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_\nu(\tilde{x}) - (\mu \leftrightarrow \nu)\\
+    &= \tilde{F}_{\mu\nu}(\tilde{x})+\tilde{F}_{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x}) +   \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})   + \tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x})) M_{\nu)}{}^{\lambda} + \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x})\\
+  \end{align*}
+  The contravariant equivalent of this result is given by 
+  \begin{align*}
+    F^{\mu \nu} = g^{\mu \sigma} g^{\nu \rho} F_{\sigma \rho} &= \Omega(\tilde{x})^{4}  \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} F_{\sigma \rho} \\
+    &=\Omega(\tilde{x})^{4}  \left( \tilde{F}^{\mu\nu}(\tilde{x})+\tilde{F}^{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) +  \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho}    \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})   + \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma}(\tilde{A}_{\lambda}(\tilde{x})) M_{\rho)}{}^{\lambda}+ \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\rho)}(\tilde{x})  \right)
+  \end{align*}
+  
+  Next, we calculate 
+  \begin{align*}
+    F_{\mu\nu} F^{\mu\nu} &= \left(\tilde{F}_{\mu\nu}(\tilde{x})+\tilde{F}_{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x})) M_{\nu)}{}^{\lambda} + \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x}) + O(\xi^2)\right)\\
+    &\times \Omega(\tilde{x})^{4}  \left( \tilde{F}^{\mu\nu}(\tilde{x})+\tilde{F}^{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) +   \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma}(\tilde{A}_{\lambda}(\tilde{x})) M_{\rho)}{}^{\lambda}+ \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\rho)}(\tilde{x})  \right)\\
+    &= \Omega(\tilde{x})^4\left(\tilde{F}_{\mu\nu}(\tilde{x}) \tilde{F}^{\mu \nu}(\tilde{x}) + \tilde{F}_{\mu\nu}(\tilde{x})\tilde{F}^{\mu \nu}(\tilde{x}) \frac{2\Delta}{D} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + 2 \tilde{F}^{\mu\nu}\tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x}) ) M_{\nu)}{}^{\lambda}  + 2 \tilde{F}^{\mu\nu} \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x}) +  2\tilde{F}^{\mu\nu}   \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})\right)\\
+    &=  \Omega(\tilde{x})^4\left(\tilde{F}_{\mu\nu}(\tilde{x}) \tilde{F}^{\mu \nu}(\tilde{x}) + \tilde{F}_{\mu\nu}(\tilde{x})\tilde{F}^{\mu \nu}(\tilde{x}) \frac{2\Delta}{D} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + 2 \tilde{F}^{\mu\nu}\tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x}) ) M_{\nu)}{}^{\lambda}  + 2 \tilde{F}^{\mu\nu} \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x}) +  4\tilde{F}^{\mu\nu} \tilde{A}_\nu(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\mu \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})\right)
+  \end{align*}
+  We want to show that the last line vanishes or is a total derivative.  

@@ -59,7 +59,7 @@
 \section{Concurrence and negativity}
 
 \begin{enumerate}
-  \item[(a)] We are interested in the faithful measure of entanglement of two qubits provided by the concurrence. The individual states of the qubits are elements of the hilbert space $\mathcal{H}_{A} = \mathbb{C}^2$ and $\mathcal{H}_{B} = \mathbb{C}^2$ and their joint state is described with most generality through the density matrix $\rho \in \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ \footnote{$\mathcal{D}$ denotes the space of hermitian operators of trace one acting on $\mathcal{H}_A \otimes \mathcal{H}_B$ with positive or zero eigenvalues. We have this restriction on eigenvalues because they provide the probabilities of each outcome of the statistical mixture represented by the diagonalized $\rho$} representing their classical and quantum correlations. We work from a basis $\{\ket{0}, \ket{1}\}$ of $\mathcal{H}_{A, B}$ associated with the Pauli matrices denoted $\sigma_x$, $\sigma_y$ and $\sigma_z$. For states in $\mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$, the concurence can be expressed as $C[p] := \text{max}\{0, \lambda_1 - \lambda_2 - \lambda_3 - \lambda_4\}$ for the set $\{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ (ordered in decreasing order) of eigenvalues of $R = \sqrt{\sqrt{\rho} \tilde{\rho} \sqrt{\rho}}$ with $\tilde{\rho} = (\sigma_y \otimes \sigma_y) \rho^{\star}(\sigma_y \otimes \sigma_y)$. We start by computing the concurrence for a Bell state $\ket{\Phi^{+}_{AB}} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$. To make the calculation more transparent, we use a local operation $\sigma_x$ on the second qubit to get the state $\ket{\Psi^{+}_{AB}} = \frac{1}{\sqrt{2}}(\ket{01} + \ket{10})$\footnote{Starting with $\ket{\rho_0} = \ket{\Phi^{+}_{AB}}\bra{\Phi^{+}_{AB}}$ and express the associated concurrence in terms of $\rho = \ket{\Psi^{+}_{AB}} \bra{\Psi^{+}_{AB}}$: we have 
+  \item[(a)] We are interested in the faithful measure of entanglement of two qubits provided by the concurrence. The individual states of the qubits are elements of the Hilbert space $\mathcal{H}_{A} = \mathbb{C}^2$ and $\mathcal{H}_{B} = \mathbb{C}^2$ and their joint state is described with most generality through the density matrix $\rho \in \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ \footnote{$\mathcal{D}$ denotes the space of hermitian operators of trace one acting on $\mathcal{H}_A \otimes \mathcal{H}_B$ with positive or zero eigenvalues. We have this restriction on eigenvalues because they provide the probabilities of each outcome of the statistical mixture represented by the diagonalized $\rho$} representing their classical and quantum correlations. We work from a basis $\{\ket{0}, \ket{1}\}$ of $\mathcal{H}_{A, B}$ associated with the Pauli matrices denoted $\sigma_x$, $\sigma_y$ and $\sigma_z$. For states in $\mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$, the concurence can be expressed as $C[p] := \text{max}\{0, \lambda_1 - \lambda_2 - \lambda_3 - \lambda_4\}$ for the set $\{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ (ordered in decreasing order) of eigenvalues of $R = \sqrt{\sqrt{\rho} \tilde{\rho} \sqrt{\rho}}$ with $\tilde{\rho} = (\sigma_y \otimes \sigma_y) \rho^{\star}(\sigma_y \otimes \sigma_y)$. We start by computing the concurrence for a Bell state $\ket{\Phi^{+}_{AB}} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$. To make the calculation more transparent, we use a local operation $\sigma_x$ on the second qubit to get the state $\ket{\Psi^{+}_{AB}} = \frac{1}{\sqrt{2}}(\ket{01} + \ket{10})$\footnote{Starting with $\ket{\rho_0} = \ket{\Phi^{+}_{AB}}\bra{\Phi^{+}_{AB}}$ and express the associated concurrence in terms of $\rho = \ket{\Psi^{+}_{AB}} \bra{\Psi^{+}_{AB}}$: we have 
   \begin{align*}
     R = \sqrt{\sqrt{\rho_0} (\sigma_y \otimes \sigma_y) \rho_0^{\star}(\sigma_y \otimes \sigma_y) \sqrt{\rho_0}} &= \sigma_x\sqrt{\sqrt{\rho} (\sigma_x\sigma_y\sigma_x \otimes \sigma_y) \rho^{\star}(\sigma_x\sigma_y\sigma_x \otimes \sigma_y) \sqrt{\rho}}\sigma_x \\&= \sigma_x\sqrt{\sqrt{\rho} (-\sigma_y \otimes \sigma_y) \rho^{\star}(-\sigma_y \otimes \sigma_y) \sqrt{\rho}}\sigma_x = \sigma_x\sqrt{\sqrt{\rho} \tilde{\rho} \sqrt{\rho}}\sigma_x
   \end{align*}
@@ -74,7 +74,7 @@
       0 & 0 & 0 & 0
     \end{pmatrix}
   \end{align*}
-  Since $\rho$ is block diagonal with two vanishing blocks, the calculation of its quare root reduces to the calculation of the square root of the non-zero block. This square root con be infered through 
+  Since $\rho$ is a block diagonal with two vanishing blocks, the calculation of its square root reduces to the calculation of the square root of the non-zero block. This square root can be inferred through 
   \begin{align*} 
     \begin{pmatrix}
       1 & 1\\
@@ -250,13 +250,13 @@
     \end{pmatrix}^{1/2}\right) = 2
   \end{align*}
   leading to a negativity $\mathcal{N}[\rho] = (2-1)/2 = 1/2$ which is half of the concurrence calculated for the same state in (a) as expected of a two-qubit system. Repeating the calculation for the state $\rho = \ket{00}\bra{00}$, we find $\rho^\Gamma = \rho$ and $\text{tr}(\sqrt{\ket{00}\bra{00} (\ket{00}\bra{00})^{\dagger}}) = 1  + 0 \times 3$ leading to the negativity $\mathcal{N}[\rho] = (1-1)/2 = 0$ as expected for a separable state. 
-  \item[(c)] Here we are interested in the negativity of the bipartite state $\rho = 1_A \times 1_B/4$. We have $\rho^\Gamma = 1_A \times 1_B^T/4 = \rho^\Gamma$ and $\text{tr}(1_A \times 1_B/4) = 1$ implying $\mathcal{N}[\rho] = (1-1)/2 = 0$ which is again expected for a separable state. Vanishing of negativity for separable states is a property differenciating it from Von Neumann entropy which fails to distinguish separable states from states that are not because it also grows with classical correlations. 
+  \item[(c)] Here we are interested in the negativity of the bipartite state $\rho = 1_A \times 1_B/4$. We have $\rho^\Gamma = 1_A \times 1_B^T/4 = \rho^\Gamma$ and $\text{tr}(1_A \times 1_B/4) = 1$ implying $\mathcal{N}[\rho] = (1-1)/2 = 0$ which is again expected for a separable state. Vanishing of negativity for separable states is a property differentiating it from Von Neumann entropy which fails to distinguish separable states from states that are not because it also grows with classical correlations. 
 \end{enumerate}
 
 \section{POVM accounts for errors}
 
 \begin{enumerate}
-  \item[(a)] We consider a source producing a statistical mix of qubit pure sates described in the basis $\{\ket{0}, \ket{1}\}$ by the fully general density matrix $\rho = \frac{1}{2}(1 + \mathbf{r} \cdot \mathbf{\sigma})$ where $\mathbf{r} = (r_x, r_y, r_z)$ and $\mathbf{\sigma} = (\sigma_x, \sigma_y, \sigma_z)$ (vector of Pauli matrices associated to the chosen basis). Since the trace of all Pauli matrices vanishes, the only term contributing to the trace of $\rho$ is $\frac{1}{2}$ which ensures $\text{tr}(\rho) = 1$. Through as basis transformation, we can alsway bring the density matrix to the form $\rho = \frac{1}{2}\text{diag}(1+|\mathbf{r}|, 1-|\mathbf{r}|)$ showing that $\rho$ has positive or zero probability eigenvalues if and only iff $0 \leq |\mathbf{r}| \leq 1$. The $|\mathbf{r}| = 1$ saturation produces states with purity $1$ and we can identify the surface of a ball of radius $1$ in the $\mathbf{r}$ parameter space with the bloch sphere of pure qubit states. The $|\mathbf{r}| = 1$ state produces a unique maximally mixed state living at the origin of the $\mathbf{r}$ parameter space. We see that in the ball of allowed parametres, we interpolate between maximally mixed at the origin and pure on the surface. Using the fact $\sigma_{i}\sigma{j} = i \epsilon_{ijk} \sigma_k$ and $\sigma_{i}^2 = 1$ we have 
+  \item[(a)] We consider a source producing a statistical mix of qubit pure sates described in the basis $\{\ket{0}, \ket{1}\}$ by the fully general density matrix $\rho = \frac{1}{2}(1 + \mathbf{r} \cdot \mathbf{\sigma})$ where $\mathbf{r} = (r_x, r_y, r_z)$ and $\mathbf{\sigma} = (\sigma_x, \sigma_y, \sigma_z)$ (vector of Pauli matrices associated to the chosen basis). Since the trace of all Pauli matrices vanishes, the only term contributing to the trace of $\rho$ is $\frac{1}{2}$ which ensures $\text{tr}(\rho) = 1$. Through a basis transformation, we can always bring the density matrix to the form $\rho = \frac{1}{2}\text{diag}(1+|\mathbf{r}|, 1-|\mathbf{r}|)$ showing that $\rho$ has positive or zero probability eigenvalues if and only iff $0 \leq |\mathbf{r}| \leq 1$. The $|\mathbf{r}| = 1$ saturation produces states with purity $1$ and we can identify the surface of a ball of radius $1$ in the $\mathbf{r}$ parameter space with the Bloch sphere of pure qubit states. The $|\mathbf{r}| = 1$ state produces a unique maximally mixed state living at the origin of the $\mathbf{r}$ parameter space. We see that in the ball of allowed parameters, we interpolate between maximally mixed at the origin and pure on the surface. Using the fact $\sigma_{i}\sigma_{j} = i \epsilon_{ijk} \sigma_k$ and $\sigma_{i}^2 = 1$ we have 
   \begin{align*}
     \text{tr}(\sigma_i \sigma_j) =
     \begin{cases}
@@ -267,28 +267,106 @@
   \end{align*}
   This property allow to extract the components of $\mathbf{r}$ from $\rho$ with 
   \begin{align*}
-    r_i = \text{tr}(\rho \sigma_i) &= \text{tr}\left(\frac{1}{2}(1 + r_x \sigma_x + r_y \sigma_y + r_z \sigma_z) \sigma_i\right)\\ &= \frac{1}{2}\text{tr}\left(\sigma_i\right) + \frac{1}{2} r_x \text{tr}\left(\sigma_x \sigma_i\right) + \frac{1}{2} r_y \text{tr}\left(\sigma_y \sigma_i\right) + \frac{1}{2} r_z \text{tr}\left(\sigma_z \sigma_i\right) = r_x \delta_{ix} + r_y \delta_{iy} + r_z \delta_{iz}
+    r_i = \text{tr}(\rho \sigma_i) &= \text{tr}\left(\frac{1}{2}(1 + r_x \sigma_x + r_y \sigma_y + r_z \sigma_z) \sigma_i\right) = \frac{1}{2}\left(\text{tr}\left(\sigma_i\right) +  r_x \text{tr}\left(\sigma_x \sigma_i\right) + r_y \text{tr}\left(\sigma_y \sigma_i\right) +  r_z \text{tr}\left(\sigma_z \sigma_i\right)\right) = r_x \delta_{ix} + r_y \delta_{iy} + r_z \delta_{iz}
   \end{align*}
-  \item[(b)]
-  \item[(c)]  
+  which shows $r_i$ can be interpreted as the average outcome of a $\sigma_i$ measurement on $\rho$. Repeating many experiments on qubits prepared in the state $\rho$ for each direction allows to statistically determine $\rho$. 
+  \newpage
+  \item[(b)] The method for determining $\rho$ described in (a) can be brought closer to the experiment by replacing the notion of projective measurements of $\sigma_i$ with a POVM. More precisely, we use a POVM to model a measurement wich has probability $1/2$ to be performed in the desired basis $\{\ket{0}, \ket{1}\}$ and probability $1/2$ to be performed in a closeby accidental basis $\{\ket{0'} = \sqrt{1-\epsilon}|0\rangle+\sqrt{\epsilon}|1\rangle, \ket{1'} = -\sqrt{1-\epsilon}|1\rangle+\sqrt{\epsilon}|0\rangle\}$ where $0 < \epsilon \ll 1$ is a small parameter representing how far the accidental basis is from the desired basis. The POVM element associated with a measurement of $0$ is formed by summing the $0$ projector in each basis weighted by the probability of measuring in that basis and actually applying this projector. We have $E_0 = \frac{1}{2}(\ket{0}\bra{0} + \ket{0'}\bra{0'})$. The same construction can be done for a measurement of $1$ to write the POVM element $E_1 = \frac{1}{2}(\ket{1}\bra{1} + \ket{1'}\bra{1'})$. Next, we verify that the proposed $E_0, E_0$ representing the imperfect measurement satisfies the required properties for POVM elements. We have $E_1 + E_0 = \frac{1}{2}(\ket{0}\bra{0} + \ket{0'}\bra{0'} + \ket{1}\bra{1} + \ket{1'}\bra{1'}) = 1$ and from the matrix representation, 
+  \begin{align*}
+    E_0 = \frac{1}{2}
+    \begin{pmatrix}
+      2 - \epsilon & \sqrt{\epsilon(1-\epsilon)}\\
+      \sqrt{\epsilon(1-\epsilon)} & \epsilon
+    \end{pmatrix},\quad  
+     E_1 = \frac{1}{2}
+    \begin{pmatrix}
+      \epsilon & -\sqrt{\epsilon(1-\epsilon)}\\
+      -\sqrt{\epsilon(1-\epsilon)} & 2-\epsilon
+    \end{pmatrix}
+  \end{align*}
+  we see that we have positive trace $1/2$ and determinant $\epsilon/4 > 0$ implying that their two eigenvalues have positive sum and positive product. The positive product forces the eigenvalues to share their sign and the positive trace can never be realized if they are both negative. We conclude that for $\epsilon>0$, $E_0, E_1$ are positive definite (they would be positive semidefinite at $\epsilon = 0$ as expected for projectors) and are valid POVM elements. If we apply this POVM to the state $\ket{0}\bra{0}$, the probability of measuring $1$ is given by $\text{tr}(E_1 \ket{0}\bra{0}) = \frac{1}{2}\text{tr}(\ket{1'}\bra{1'} \ket{0}\bra{0}) = \frac{1}{2} \bra{0}\ket{1'}\bra{1'} \ket{0}\bra{0}\ket{0} + \frac{1}{2}\bra{1}\ket{1'}\bra{1'} \ket{0}\bra{0}\ket{1} = \epsilon/2$. 
+  \item[(c)] We now consider the effect of the faulty measurement described in (b) on the coefficients of $\mathbf{r}$ effectively extracted from an adaptation of the method described in (a). We consider that only the measurement in the $z$ direction is faulty (the $x$ and $y$ directions are still associated with projective measurements). As before we will suppose $r_z$ (now denoted $r_z'$ for the faulty measurement) is the expectation value of the $z$ direction measurement outcome. In terms of the POVM elements defined in (b), this expectation value is 
+  \begin{align*}
+    r_z' &= 1\times \text{tr}(E_0 \rho) - 1 \times \text{tr}(E_1 \rho) \\
+    &= \text{tr}\left[\frac{1}{2}
+    \begin{pmatrix}
+      2 - \epsilon & \sqrt{\epsilon(1-\epsilon)}\\
+      \sqrt{\epsilon(1-\epsilon)} & \epsilon
+    \end{pmatrix} \frac{1}{2}
+    \begin{pmatrix}
+      1 + r_z & r_x - i r_y\\
+      r_x + i r_y & 1 - r_z
+    \end{pmatrix}\right] 
+    - \text{tr}\left[\frac{1}{2}
+    \begin{pmatrix}
+      \epsilon & -\sqrt{\epsilon(1-\epsilon)}\\
+      -\sqrt{\epsilon(1-\epsilon)} & 2-\epsilon
+    \end{pmatrix} \frac{1}{2}
+    \begin{pmatrix}
+      1 + r_z & r_x - i r_y\\
+      r_x + i r_y & 1 - r_z
+    \end{pmatrix}\right]\\
+    &= 
+    \text{tr}\left[\frac{1}{4}
+    \begin{pmatrix}
+      (2 - \epsilon)(1 + r_z) + \sqrt{\epsilon(1-\epsilon)} (r_x + i r_y) & \cdots\\
+      \cdots  & \epsilon(1 - r_z) + \sqrt{\epsilon(1-\epsilon)} (r_x - i r_y)
+    \end{pmatrix}\right] \\
+    &
+    - \text{tr}\left[\frac{1}{4}
+    \begin{pmatrix}
+      \epsilon (1 + r_z) -\sqrt{\epsilon(1-\epsilon)} (r_x + i r_y) & \cdots\\
+      \cdots & (2-\epsilon)(1-r_z) -\sqrt{\epsilon(1-\epsilon)} (r_x - i r_y)
+    \end{pmatrix}\right]\\
+    &= \frac{1}{4}\left[(2 - \epsilon)(1 + r_z) + \epsilon(1 - r_z) + 2\sqrt{\epsilon(1-\epsilon)} r_x - \left((2-\epsilon)(1-r_z) + \epsilon (1 + r_z) -\sqrt{\epsilon(1-\epsilon)} r_x\right)\right]\\
+    &= \frac{1}{4}\left[2 (2 - \epsilon)r_z - 2\epsilon r_z + 4\sqrt{\epsilon(1-\epsilon)} r_x\right] =  (1 - \epsilon)r_z + \sqrt{\epsilon(1-\epsilon)} r_x.
+  \end{align*} 
 \end{enumerate}
 
 \section{Entanglement-breaking channel}
 
 \begin{enumerate}
-  \item[(a)]
-  \item[(b)]
-  \item[(c)]  
+  \item[(a)] Provided two Hilbert spaces $\mathcal{H}$ and $\mathcal{H}'$ and their respective density matrix spaces $\mathcal{D}(\mathcal{H})$ and $\mathcal{D}(\mathcal{H}')$, a quantum channel $\Phi : \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H}')$ is a linear completely-positive trace-preserving map representing quantum state manipulation in a general way. To study the entanglement breaking of a quantum channel, we consider a system with Hilbert space $\mathcal{H}_A$ and its environment with Hilbert space $\mathcal{H}_B$ represented by a density matrix $\rho_{AB} \in \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$.  Given a quantum channel $\Phi : \mathcal{D}(\mathcal{H}_A) \to \mathcal{D}(\mathcal{H}'_A)$ with target Hilbert space $\mathcal{H}_A'$ we construct an extended channel $\Phi_E : \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B) \to \mathcal{D}(\mathcal{H}'_A \otimes \mathcal{H}_B)$ applying $\Phi$ to the system part of a density matrix and applying the identity channel to the environment part. The map $\Phi$ is said to be entanglement breaking if an extension $\Phi_E$ by any environment is such that $\Phi_E(\rho_{AB}) = \rho_{A'B}$ is a separable state. In other words, this channel produces a density matrix featuring no entanglement between the environment state and the target state in $\mathcal{H}_{A}'$ of the system. \\
+  
+  To build an example of an entanglement breaking channel, we study the combination of a qubit system $S$ (with Hilbert space $\mathcal{H}_S$) with a toy environment $E$ (with Hilbert space $\mathcal{H}_E$) also modeled as a qubit. Initially, $S$ and $E$ are respectively in states $\rho_S$ and $\rho_E$. We then act on them with the unitary $U = e^{i \theta \sigma_z \otimes \sigma_z}$ parametrised by $\theta$ with the pauli matrices $\sigma_z$ on $S$ and $E$ associated to the respective basis $\{\ket{0}, \ket{1}\}_S$ and $\{\ket{0}, \ket{1}\}_E$. A quantum channel $\Phi : \mathcal{D}(\mathcal{H}_S) \to \mathcal{D}(\mathcal{H}_E)$ acting on $\rho_S$ is constructed by tracing the system $S$ out the result of the action of $U$ on $\rho_S\otimes\rho_E$. Explicitly, we have 
+  \begin{align*}
+    \rho_E' := \Phi(\rho_S) = \text{tr}_S (U \rho_S\otimes\rho_E U^\dagger) &= \bra{0} e^{i \theta \sigma_z \otimes \sigma_z}   \rho_S\otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{0} + \bra{1} e^{i \theta \sigma_z \otimes \sigma_z}   \rho_S\otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{1} \\
+    &=   \bra{0}\rho_S \ket{0} \otimes e^{+i \theta \sigma_z} \rho_E e^{-i \theta \sigma_z} +   \bra{1}\rho_S\ket{1} \otimes e^{-i \theta \sigma_z} \rho_E  e^{+i \theta \sigma_z}.
+  \end{align*}
+
+  \newpage
+  \item[(b)] To simplify further calculation, we set $\rho_E = \ket{0}\bra{0}$. Combining system $S$  with second system $S'$ with qubit Hilbert space $\mathcal{H}_{S'}$, we can form the joint state $\rho_{SS'} \in \mathcal{D}(\mathcal{H}_S \otimes \mathcal{H}_{S'})$ which we take to be the maximally entangled state $\rho_{SS'} = \ket{\Phi^+}\bra{\Phi^+}$ where $\ket{\Phi^+} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$ ($\{\ket{0}, \ket{1}\}_{S'}$ is a basis of $\mathcal{H}_{S'}$). Extending the action of $\Phi$ on $\mathcal{D}(\mathcal{H}_S)$ to the action of $\Phi_{S'}$ on $\mathcal{D}(\mathcal{H}_S \otimes \mathcal{H}_{S'})$ as described above, we get 
+  \begin{align*}
+    \rho_{ES'}' := \Phi_{S'}(\rho_{SS'}) = \text{tr}_S (U \rho_{SS'} \otimes\rho_E U^\dagger) &= \bra{0} e^{i \theta \sigma_z \otimes \sigma_z} \rho_{SS'} \otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{0} + \bra{1} e^{i \theta \sigma_z \otimes \sigma_z} \rho_{SS'}\otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{1} \\
+    &=   \bra{0}\rho_{SS'} \ket{0} \otimes e^{+i \theta \sigma_z} \rho_E e^{-i \theta \sigma_z} +   \bra{1}\rho_{SS'}\ket{1} \otimes e^{-i \theta \sigma_z} \rho_E  e^{+i \theta \sigma_z}\\
+    &=  \bra{0}\ket{\Phi^+}\bra{\Phi^+} \ket{0} \otimes e^{+i \theta \sigma_z} \ket{0}\bra{0} e^{-i \theta \sigma_z} +   \bra{1}\ket{\Phi^+}\bra{\Phi^+}\ket{1} \otimes e^{-i \theta \sigma_z} \ket{0}\bra{0}  e^{+i \theta \sigma_z}\\
+    &= \left(\frac{1}{2}\ket{0}\bra{0}  + \frac{1}{2}\ket{1}\bra{1}\right) \otimes \ket{0}\bra{0}
+  \end{align*}
+  which is separable making $\Phi$ an entanglement breaking channel.
+
+  \item[(c)] A classical-quantum channel (QC) acting on the density matrices $\rho \in \mathcal{D}(\mathcal{H})$ associated to the Hilbert space $\mathcal{H}$ is defined by $\Phi_{qc}(\rho) := \sum_j \operatorname{tr}\left(\hat{E}_j \rho\right) \sigma_j$ where $\sigma_j$ are density operators and $E_j$ are POVM elements. This channel takes a quantum system and returns the mixed state resulting from a POVM where the measurement output is not recorded. It can be shown that all QC channels are entanglement breaking. We are interested in the channel $\Phi(\rho_S) = \text{tr}_S(U \rho_S \rho_E U^\dagger)$ which is a generalization of the qubit channel described in (b) with $\mathcal{H}_S$ and $\mathcal{H}_E$ general Hilbert spaces and $U = e^{i \theta \hat{A} \otimes \hat{B}}$ for $A, B$ arbitrary Hermitian operators respectively acting on $S$ and $E$. To show that $\Phi$ as an entanglement breaking map is also a QC map, we write the spectral decomposition $A = \sum_i A_i \ket{A_i}\bra{A_i}$ with $A_i$ the eigenvalues of $A$ and $\ket{A_i}$ their associated eigenvectors. With this decomposition, we have 
+  \begin{align*}
+    U = e^{i \theta \hat{A} \otimes \hat{B}} =  e^{i \theta \sum_j A_j \ket{A_j}\bra{A_j} \otimes \hat{B}} = \sum_j \ket{A_j}\bra{A_j} e^{i \theta  A_j \times 1 \otimes \hat{B}}
+  \end{align*}
+  and 
+  \begin{align*}
+    \Phi(\rho_S) = \text{tr}_S (U \rho_S\otimes\rho_E U^\dagger) &= \sum_k \bra{A_k}    \sum_j \ket{A_j}\bra{A_j} e^{i \theta  A_j \times 1 \otimes \hat{B}} \rho_S\otimes\rho_E \sum_l \ket{A_l}\bra{A_l} e^{-i \theta  A_l \times 1 \otimes \hat{B}} \ket{A_k}  \\
+    &= \sum_k  \bra{A_k}\rho_S\ket{A_k}\otimes  e^{i \theta  A_k \hat{B}}\rho_E e^{-i \theta  A_k \hat{B}} 
+  \end{align*}
+  which is a separable state and shows the considered entanglement breaking map is a QC map consitently with the fact all QC channels are entanglement breaking.
 \end{enumerate}
 
 
 \section{Acknowledgement}
 
+Thanks to Nikhil for a discussion about the interpretation of POVM from the perspective of the Dilation. 
+
+Thanks to Luke for the discussion about entanglement-breaking channels. 
 
 }
 
-% References
-\makereferences
+% References C
+
 %-------------------------------------------------------
 
 
