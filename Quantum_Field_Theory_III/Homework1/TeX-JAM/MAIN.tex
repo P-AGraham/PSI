@@ -191,24 +191,82 @@
   \begin{align*}
     0 = F[\langle  \partial^\mu  j_{\mu}^{V}(x_1) j_{\nu}^{V}(x_2) \rangle](q, p) 
     &= \int \text{d}^2x_1 e^{-i q \cdot  x_1} \int \text{d}^2x_2 e^{-i p \cdot  x_2} \langle \partial^{\mu} j_{\mu}^{V}(x_1) j_{\nu}^{V}(x_2) \rangle\\
-    &=  \langle (+iq^{\mu})  \int \text{d}^2x_1 e^{-i q \cdot  x} j_{\mu}^{V}(x_1)   \int \text{d}^2x_2 e^{-i p \cdot  x}  j_{\nu}^{V}(x_2) \rangle\quad \text{with integration by parts}\\
+    &=  \langle (+iq^{\mu})  \int \text{d}^2x_1 e^{-i q \cdot  x_1} j_{\mu}^{V}(x_1)   \int \text{d}^2x_2 e^{-i p \cdot  x_2}  j_{\nu}^{V}(x_2) \rangle\quad \text{with integration by parts}\\
     &= iq^{\mu} \langle  j_{\mu}^{V}(q)   j_{\nu}^{V}(p) \rangle
   \end{align*}
   At $q = -p$, we find $p^\mu \langle j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle = 0$ wich implies 
   \begin{align*}
     0=p^\mu \langle \ j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle &= p^\mu  \left(F_2(p^2)\eta_{\mu\nu} + F_3(p^2) p_\mu p_\nu\right) + F_{5}(p^2)p^\mu\left(\gamma_\mu p_\nu - \gamma_\nu p_\mu\right) \\
     &= \left(F_2(p^2) + F_3(p^2) p^2 \right)p_\nu + F_{5}(p^2) \left(p^\mu \gamma_\mu p_\nu - \gamma_\nu p^2\right), \forall p\\
-    &\implies F_2(p^2) = -F_3(p^2) p^2, \quad F_5(p^2) = 0
+    &\implies F_2(p^2) = -F_3(p^2) p^2, \quad F_5(p^2) = 0.
   \end{align*}
-  \item[(b)] 
-  \item[(c)]
-  \item[(d)] 
+  More explicitly, starting with the constraint $F_5(p^2)(p^\mu \gamma_\mu p_\nu - \gamma_\nu p^2) = 0 $, we can have either $F_5(p^2) = 0$ or $p^\mu \gamma_\mu p_\nu - \gamma_\nu p^2$. The latter case is associated with $0 = \gamma_0 + \gamma_1$ for $p^\mu = (1, 1)$ showing it can't hold for all $p$ and forcing $F_5(p^2)$. 
+  The updated expression for the 2-momentum curent correlator is
+  \begin{align*}
+    \langle j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle =  F_3(p^2)\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right). 
+  \end{align*}
+  \newpage
+  The form of $F_3(p^2)$ can be made more precise by imposing scale invariance. To use scale invariance, we first relate scale invariance in position space to scale invariance in momentum space. Since the conserved current operators have no anomalous scaling dimension (leaving the scaling dimension $\Delta = D = 2$), we have 
+  \begin{align*}
+    \langle j_\mu (x_1) j_\nu (x_2 ) \rangle = \lambda^{2 + 2}\langle j_\mu (x_1 \lambda) j_\nu (x_2 \lambda) \rangle \implies \langle j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle &=  \lambda^{2 + 2} F[\langle  \partial^\mu  j_{\mu}^{V}(\lambda x_1) j_{\nu}^{V}(\lambda x_2) \rangle](-p, p)\\ &= \lambda^4 \langle \int \text{d}^2x_1 e^{-i q \cdot  x_1} j_{\mu}^{V}(\lambda x_1)   \int \text{d}^2x_2 e^{-i p \cdot  x_2}  j_{\nu}^{V}(\lambda x_2) \rangle\\
+    &=  \lambda^4 \langle \frac{1}{\lambda^2}\int \text{d}^2x_1 e^{-i q \cdot  x_1/\lambda} j_{\mu}^{V}(x_1) \frac{1}{\lambda^2}\int \text{d}^2x_2 e^{-i p \cdot  x_2/\lambda}  j_{\nu}^{V}(x_2) \rangle\\
+    &= \langle j_{\mu}^{V}(-p/\lambda) \ j_{\nu}^{V}(p/\lambda) \rangle.
+  \end{align*} 
+  Applying this constraint to the 2-momentum curent correlator yields
+  \begin{align*}
+    F_3(p^2)\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right) = \frac{1}{\lambda^4} F_3(p^2/\lambda^2)\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right) \implies F_3(p^2) = \frac{1}{\lambda^2}F_3(p^2/\lambda^2). 
+  \end{align*}
+  The previous implication suggests the powerlaw ansatz $F_3 = a p^b$ depending on constants $a, b$. Substituting this ansatz, we get $a p^b = a p^b \lambda^{-b-2} \implies b=-2$. The final form for the correlator is 
+  \begin{align*}
+    \langle j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle = \frac{a}{p^2}\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right).
+  \end{align*} 
+  \item[(b)] We consider the axial current defined by $j^A_\mu = \epsilon_{\mu\nu} j^{V, \nu}$. In $D=2$, the non zero components of the levi-civita tensor are $\epsilon_{01} = -\epsilon_{10} = 1$. To determine if the axial current is classicaly conserved, we calculate its divergence as follows 
+  \begin{align*}
+    \partial^\mu j^A_\mu &= \partial^\mu \epsilon_{\mu\nu} j^{V, \nu} = \partial^\mu (\bar{\psi} \epsilon_{\mu\nu} \gamma^{\nu} \psi) = \partial^\mu (\bar{\psi} \eta_{\mu \sigma} \gamma^1 \gamma^0 \gamma^{\sigma} \psi) = \partial_\mu (\bar{\psi} \gamma^1 \gamma^0 \gamma^{\mu} \psi)\\
+    &= (\partial_\mu \bar{\psi}) \gamma^1 \gamma^0 \gamma^{\mu} \psi +  \bar{\psi} \gamma^1 \gamma^0 \gamma^{\mu} (\partial_\mu \psi) = 0
+  \end{align*}
+  where we used the property $\epsilon_{\mu\nu} \gamma^{\nu} =\eta_{\mu \sigma} \gamma^1 \gamma^0 \gamma^{\sigma}$, the classical equation of motion for a free massless fermion field $0 = \gamma^1 \gamma^0 \gamma^{\mu} \partial_\mu \psi$ and its conjugate $0 =  \partial_\mu \psi^\dagger \gamma^0 \gamma^1 \gamma^0 \gamma^{\mu} \gamma^0 = \partial_\mu \bar{\psi} \gamma^1 \gamma^0 \gamma^{\mu} \gamma^0$. We explicitly check 
+  \begin{align*}
+    \gamma^{1} &= \epsilon_{01} \gamma^{1} =  \eta_{00} \gamma^1 \gamma^0 \gamma^{0} = (\eta_{00}\eta^{00}) \gamma^1 = \gamma^1,\\
+    -\gamma^{0} &= \epsilon_{10} \gamma^{0} = \eta_{11} \gamma^1 \gamma^0 \gamma^{1} = -(\eta_{11} \eta^{11})\gamma^0 = -\gamma^0.
+  \end{align*}
+  We conclude that the classical equations of motion imply both the classical conservation of the vector current and the classical conservation of the axial current. 
+  \item[(c)] To test if the classical conservation of the axial current survives quantum effects, we calculate 
+  \begin{align*}
+    p^\mu \langle j^A_\mu (-p) j^V_\nu (p) \rangle = \eta^{\sigma \rho}\epsilon_{\mu\sigma}p^\mu \langle j^V_\rho (-p) j^V_\nu (p) \rangle &= \eta^{\sigma \rho}\epsilon_{\mu\sigma}p^\mu \frac{a}{p^2}\left(-p^2\eta_{\rho\nu} + p_\rho p_\nu\right)\\
+    &= \epsilon_{\mu\sigma} \frac{a}{p^2}\left(-p^2 p^\mu \delta_{\nu}^{\sigma} + p^\mu p^\sigma p_\nu \right)\\
+    &= \frac{a}{p^2}(-p^2  \epsilon_{\mu\nu} p^\mu + \underbrace{\epsilon_{\mu\sigma} p^\mu p^\sigma}_{p^0 p^1 - p^1 p^0 = 0} p_\nu ) = -a\epsilon_{\mu\nu} p^\mu
+  \end{align*}
+  and Fourier transfrom the result to get 
+  \begin{align*}
+    \frac{1}{2\pi}\int \text{d}p\ e^{i p \cdot x}  p^\mu \langle j^A_\mu (-p) j^V_\nu (p) \rangle &= \frac{-i}{2\pi} \partial^\mu \langle \int \text{d}p \ e^{i p \cdot x} \int \text{d}x_1 \ e^{+ i p \cdot x_1} j_{\mu}^{A}(x_1)  \int \text{d}x_2\ e^{- i p \cdot x_2} j_{\nu}^{V}(x_2) \rangle \\
+    &= -i \partial^\mu \langle \int \text{d}x_1 \text{d}x_2 \  j_{\mu}^{A}(x_1) j_{\nu}^{V}(x_2) \delta(x + x_1 - x_2)\rangle \\
+    &= -i  \langle \int \text{d}x_1 \  \partial^\mu j_{\mu}^{A}(x_1) j_{\nu}^{V}(x + x_1)\rangle = -i   \langle  \  \partial^\mu j_{\mu}^{A}(0) j_{\nu}^{V}(x)\rangle \int \text{d}x_1
+  \end{align*}
+  and 
+  \begin{align*}
+    - \frac{1}{2\pi}\int \text{d}p\ e^{i p \cdot x} a\epsilon_{\mu\nu} p^\mu = a\ i\ \epsilon_{\mu\nu} \partial^\mu \delta(x)
+  \end{align*}
+  which shows that the divergence of the axial current has a non-vanishing correlator (can't be explained by contact terms since they would vanish through $\delta j_\nu(x) = 0$) with the vector current contradicting the Ward identity for the axial current. 
+  
+  \item[(d)] When a background gauge field $A^{\mu}$ is added, the axial anomaly affects the expectation value of the axial current divergence dirrectly. This expectation value is evaluated at first non-trivial order 
+  \begin{align*}
+    \left\langle\partial_\mu j^{A, \mu}(0)\right\rangle_{A^\mu} \equiv\left\langle\partial_\mu j^{A, \mu}(0) e^{\int d x A^\nu j_\nu^V}\right\rangle &\approx \left\langle\partial_\mu j^{A, \mu}(0) 1\right\rangle  +   \left\langle\partial_\mu j^{A, \mu}(0) \int d x A^\nu j_\nu^V\right\rangle \\
+    &\approx \left\langle\partial_\mu j^{A, \mu}(0) \int d x A^\nu j_\nu^V\right\rangle 
+  \end{align*}
 \end{enumerate}
 
 \section{OPE coefficients from three-point functions}
 
 \begin{enumerate}
-  \item[(a)]
+  \item[(a)] Given scalar CFT operators $O_{\Delta_1}$, $O_{\Delta_2}$ et $O_{\Delta_3}$ with respective scaling dimensions $\Delta_1$, $\Delta_2$ and $\Delta_3$, there is only one two-point function consistent with conformal symmetry given by 
+  \begin{align*}
+    \left\langle\mathcal{O}_{\Delta_1}(x_1) \mathcal{O}_{\Delta_2}(x_2)\right\rangle=\frac{\delta_{\Delta_1, \Delta_2}}{x^{2 \Delta_1}_{12}}
+  \end{align*}
+  where $x_{ij} = |x_i - x_j|$. The three-point function has residual freedom in the coefficients $C_{123}$ depending on the operators involved. The most general expression reads 
+  \begin{align*}
+    \left\langle\mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) \mathcal{O}_{\Delta_3}\left(x_3\right)\right\rangle=\frac{C_{123}}{x_{12}^{\Delta_1+\Delta_2-\Delta_3} x_{23}^{\Delta_2+\Delta_3-\Delta_1} x_{31}^{\Delta_3+\Delta_1-\Delta_2}}
+  \end{align*}
   \item[(b)] 
   \item[(c)]
   \item[(d)] 

@@ -1,0 +1,273 @@
+\documentclass[10pt, a4paper]{article}
+
+%%%%%%%%%%%%%%
+%  Packages  %
+%%%%%%%%%%%%%%
+
+
+\usepackage{page_format}
+\usepackage{special}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{quantikz}
+\usepackage{cprotect}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\input{math_func}
+
+\usepackage{slashed}
+
+% References
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+\usetikzlibrary{positioning}
+
+
+%%%%%%%%%%%%
+%  Colors  %
+%%%%%%%%%%%%
+% ! EDIT HERE !
+\colorlet{chaptercolor}{red!70!black} % Foreground color.
+\colorlet{chaptercolorback}{red!10!white} % Background color
+
+%%%%%%%%%%%%%%
+% Page titre %
+%%%%%%%%%%%%%%%
+\title{Homework 2} % Title of the assignement.
+\author{\PA} % Your name(s).
+\teacher{Eduardo Martín-Martínez, Bindiya Arora } % Your teacher's name.
+\class{Quantum Information} % The class title.
+
+\university{Perimeter Institute for Theoretical Physics} % University
+\faculty{Perimeter Scholars International} % Faculty
+%\departement{<Departement>} % Departement
+\date{\today} % Date.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Begin the document %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Make the title page.
+\maketitlepage
+
+% Make table of contents
+\maketableofcontents
+
+% Assignment starts here ----------------------------
+
+\footnotesize{
+
+\section{Back to basics: quantum circuits}
+In what follows, we evaluate the matrix expressions representing a quantum circuit unitary acting on a sequence of qubit input. We work in the computational basis $\{\ket{0}, \ket{1}\}$ and use the notation $X, Y, Z$ for the Pauli gates in this basis. 
+\begin{enumerate}
+  \item[(a)] First we consider the conjugation of a \verb|CNOT| by two \verb|CNOT| with control and target qubit reversed:
+  \begin{align*}
+  \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+    \lstick{$1$} & \targ{}  & \ctrl{1}  & \targ{}  & \qw\\
+    \lstick{$2$} & \ctrl{-1}  & \targ{}  & \ctrl{-1} & \qw
+  \end{quantikz}
+  &= 
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 0 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 0 & 1\\
+    0 & 0 & 1 & 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 0 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 0
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 0 & 1
+  \end{pmatrix}
+  \end{align*}
+  which exchanges the qubits ($\ket{00} \to \ket{00}, \ket{01} \to \ket{10},  \ket{10} \to \ket{01}, \ket{11} \to \ket{11}$) and constitutes a \verb|SWAP| gate. The matrix expression for the reversed \verb|CNOT| was obtained by writing its action on the computational basis which reads $\ket{00} \to \ket{00}, \ket{01} \to \ket{11},  \ket{10} \to \ket{10}, \ket{11} \to \ket{01}$. 
+  \item[(b)] Then we calculate the matrix expression of the entanglement-generating circuit 
+  \begin{align*}
+    &\begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+      \lstick{$1$} &      &   & \targ{}  & \qw\\
+      \lstick{$2$} & \gate{H}  & \gate{R_{\pi/4}}  & \ctrl{-1} & \qw
+    \end{quantikz} = (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes \ket{1}\bra{1}_2)  R_{\pi/4, 2} \left( 1_1 \otimes \frac{1}{\sqrt{2}} (X_2 + Z_2) \right) \\
+    &= (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes e^{i\pi/4} \ket{1}\bra{1}_2)\left( 1_1 \otimes \frac{1}{\sqrt{2}} (X_2 + Z_2) \right) \\
+    &= \frac{1}{\sqrt{2}} \left(1_1 \otimes \ket{0}_2(\bra{0}_2 + \bra{1}_2) + X_1 \otimes e^{i\pi/4} \ket{1}_2(\bra{0}_2 - \bra{1}_2)\right) = \frac{1}{\sqrt{2}} \left(\begin{pmatrix}
+      1 & 0\\ 
+      0 & 1 
+    \end{pmatrix} \otimes 
+    \begin{pmatrix}
+      1 & 1 \\
+      0 & 0 
+    \end{pmatrix}
+       + \begin{pmatrix}
+        0 & 1\\
+        1 & 0
+      \end{pmatrix} \otimes  \begin{pmatrix}
+        0 & 0\\
+        e^{i\pi/4} & -e^{i\pi/4}
+      \end{pmatrix}\right)\\
+      &= \frac{1}{\sqrt{2}} \begin{pmatrix}
+        1 & 1 & 0 & 0 \\ 
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 0 
+      \end{pmatrix} +
+      \frac{1}{\sqrt{2}}
+      \begin{pmatrix}
+        0 & 0 & 0 & 0 \\ 
+        0 & 0 & e^{i\pi/4} & -e^{i\pi/4} \\
+        0 & 0 & 0 & 0\\ 
+        e^{i\pi/4} & -e^{i\pi/4} & 0 & 0 \\
+      \end{pmatrix} = 
+      \frac{1}{\sqrt{2}}
+      \begin{pmatrix}
+        1 & 1 & 0 & 0 \\ 
+        0 & 0 & e^{i\pi/4} & -e^{i\pi/4} \\
+        0 & 0 & 1 & 1\\
+        e^{i\pi/4} & -e^{i\pi/4} &  0 & 0
+      \end{pmatrix}.
+  \end{align*}
+  If we set the phases to $1$, we recover the Bell state mapping $\ket{00} \to (\ket{00} + \ket{11})/\sqrt{2}$, $\ket{01} \to (\ket{00} - \ket{11})/\sqrt{2}$, $\ket{10} \to (\ket{01} + \ket{10})/\sqrt{2}$ and $\ket{11} \to (-\ket{01} + \ket{10})/\sqrt{2}$. 
+  \item[(c)]  Finally, we calculate the matrix expression associated with a three-qubit circuit as follows:
+  \begin{align*}
+    &\begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+      \lstick{$1$} &  \gate{H}         & \ctrl{1} &          & \ctrl{1} & \qw\\
+      \lstick{$2$} &                   & \targ{1} & \gate{H} & \ctrl{1} & \qw\\
+      \lstick{$3$} &  \gate{R_{\pi/4}} &          &          & \targ{1} & \qw
+    \end{quantikz}
+    = \verb!TOFFOLI!\  R_{\pi/4, 3} H_2 (\ket{0}\bra{0}_1 \otimes 1_2 + \ket{1}\bra{1}_1 \otimes X_2) H_1\\
+    &= \verb!TOFFOLI! \ R_{\pi/4, 3}\frac{1}{\sqrt{2}}(\ket{0}_1 (\bra{0}_1 + \bra{1}_1) \otimes H_2 +  \ket{1}_1 (\bra{0}_1 - \bra{1}_1) \otimes H_2 X_2)\\
+    &= \verb!TOFFOLI! \ R_{\pi/4, 3}\frac{1}{2}\left(
+      \begin{pmatrix}
+        1 & 1 \\
+        0 & 0
+      \end{pmatrix}
+       \otimes \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+      \end{pmatrix} + \begin{pmatrix}
+        0 &  0 \\
+        1 & -1
+      \end{pmatrix} \otimes \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{pmatrix}\begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+      \end{pmatrix}\right)\\
+      & = \verb!TOFFOLI! \ R_{\pi/4, 3}\frac{1}{2}\left(
+      \begin{pmatrix}
+        1 & 1 & 1 & 1\\
+        1 & - 1 & 1 & - 1\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+      \end{pmatrix}
+      +
+      \begin{pmatrix}
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        1 & 1 & -1 & -1\\
+        -1 & 1 & 1 & -1\\
+      \end{pmatrix}\right)\\ &= \verb!TOFFOLI! \ R_{\pi/4, 3}\frac{1}{2}
+        \begin{pmatrix}
+          1 & 1 & 1 & 1\\
+          1 & - 1 & 1 & -1\\
+          1 & 1 & -1 & -1\\
+          -1 & 1 & 1 & -1
+        \end{pmatrix} = \frac{1}{2}
+        \begin{pmatrix}
+          1_3 & 0 & 0 & 0\\
+          0 & 1_3 & 0 & 0\\
+          0 & 0 & 1_3 & 0\\
+          0 & 0 & 0 & X_3
+        \end{pmatrix}
+        R_{\pi/4, 3}
+        \begin{pmatrix}
+          1_3 & 1_3 & 1_3 & 1_3\\
+          1_3 & - 1_3 & 1_3 & -1_3\\
+          1_3 & 1_3 & -1_3 & -1_3\\
+          -1_3 & 1_3 & 1_3 & -1_3
+        \end{pmatrix}.
+  \end{align*}
+
+
+\end{enumerate}
+
+\section{Quantum Adder}
+
+\begin{enumerate}
+  \item[(a)] The \verb|TOFFOLI| gate can be generalized to $n$ qubits by increasing the number of control qubit to $n-1$ conditioning a \verb|NOT| operation on qubit $n$. The circuit corresponding to this generalisation is presented in Fig. 1 (a).
+  
+
+  \begin{figure}[h!]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+        \lstick{$1$} & \ctrl{1}    & \\
+        \lstick{$2$} & \ctrl{1}    & \\
+        \lstick{$\cdots$} & \ctrl{1}     &\\
+        \lstick{$n$} & \targ{}     &
+      \end{quantikz}
+      \cprotect\caption{$n$-qubit generalisation of the \verb|TOFFOLI| gate. \label{toffoli}}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+        \lstick{$a$} & \ctrl{1}  & \ctrl{1} & \rstick{$a$} \\
+        \lstick{$b$} & \ctrl{1} & \targ{}  & \rstick{$a \ {\tt XOR}\  b$} \\
+        \lstick{$c$} & \targ{}   &         & \rstick{$a \ {\tt AND}\  b$}
+      \end{quantikz}
+      \caption{Circuit for the addition of two single bit numbers $a$ and $b$. \label{adder}}
+    \end{subfigure}
+    \caption{Circuits for 2 (a) and 2 (b).}
+    \end{figure}
+  \item[(b)] Given two single digit binary numbers $a$ and $b$, we can calculate $a+b$ with a quantum circuit by encoding them in input numbers in qubit states $\ket{a}$ and $\ket{b}$ where the digit forms the $0, 1$ label of a computation basis element. In other words, the classical bit adder algorithm can be implemented with a quantum circuit. This algorithm requires qubits for inputs $a$ and $b$ and a qubit initialized to $\ket{0}$ that will eventually be updated to store the carry on of $a+b$ (if we add $1 + 1$ we get $10$ which is represented here by having $1$ stored in the carry on qubit, and $0$ stored in the output state for the $b$ qubit hilbert space. The state of $a$ is unchanged to allow for reversibility of calculation and its implementation as a sequence of unitary operations).  The Quantum circuit implementing the single is presented in Fig. 1 (b). On one hand the \verb|TOFFOLI| gate flips the carry on $c$ to $1$ iff both $a$ and $b$ are initialized to $1$. On the other hand the \verb|CNOT| gate replaces the value of $b$ by $a \ \verb|XOR|\ b$ storing the first digit of the adition output in $b$. 
+
+  \item[(c)] If we consider adding $4$ binary numbers $a, b, c, d$ together, we need an additionnal carry on qubit to represent the result since $1+1+1+1 = 100$ requires $3$ qubits to describe its digits. In this case we name the carry on $c_1$ and $c_2$. The circuit performing the addition of $4$ single bit numbers together is presented in Fig. 2
+  \begin{figure}[h!]
+    \centering
+      \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+        \lstick{$a$}  & \ctrl{1}    & \ctrl{1}&          &          &         &          &      &\\
+        \lstick{$b$}  & \ctrl{3}    & \targ{} & \ctrl{1} & \ctrl{1} & \ctrl{1}&          &      &   \\
+        \lstick{$c$}&             &           & \ctrl{2} & \ctrl{2} & \targ{} & \ctrl{1} & \ctrl{1} &  \ctrl{1}  \\
+        \lstick{$d$}  &             &         &          &          &         & \ctrl{1} &  \ctrl{1}  & \targ{}   \\
+        \lstick{$c_1$}  & \targ{}    &        & \ctrl{1} &  \targ{} &         & \ctrl{1} &  \targ{}  &     \\
+        \lstick{$c_2$}&             &         & \targ{}  &          &         & \targ{}  & &
+      \end{quantikz}
+      \caption{Circuit for the addition of four single bit numbers $a, b, c, d$. The output is stored in qubit $d$ (first digit), $c_1$, $c_2$ (last digit) \label{A}}
+  \end{figure}
+  The first two layers of this circuit add $a$ and $b$ in the way explained in (b). At the second layer the \verb|CNOT| operation shifts the last digit output to the $b$ qubit. The next group of operations uses the value stored in $b, c, c_1$ to add the updated $b$ and $c$ while taking the $c_1$ carry on into account. The first gate of the third layed flips $c_2$ iff $b, c, c_1$  are all one (in our case this does not happen because $c_1 = 0$ implies $b = 0$). The fourth and fifth layers are copies of the operations described in (b) acting on $b, c, c_1$. At the fifth layer, the \verb|CNOT| operation shifts the last digit output to the $c$ qubit. At layer six, a generalised \verb|TOFFOLI| is applied to possibly flip the $c_2$ carry on if $c, d, c_1$ are all $1$ (which is a real possibility in this case). The seventh layer updated the value of the $c_1$ carry on from the values of $c, d$ (if it was $1$ and gets a $1$ contribution from $c,d$, it is flipped to $0$. The requiered carry on to $c_2$ associated with this flip was allready done by the sixth layer). At the last layer the \verb|CNOT| operation shifts the last digit output to the $d$ qubit. The final output of the addition is stored in qubits $d, c_1, c_2$. 
+\end{enumerate}
+
+\newpage
+
+\section{Grover's algorithm on IBM composer}
+
+
+\section{Acknowledgement}
+
+}
+
+% References 
+
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Terminer le document %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

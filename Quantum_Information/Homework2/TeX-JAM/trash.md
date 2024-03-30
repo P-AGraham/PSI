@@ -274,82 +274,217 @@ For a spacial conformal transformation, we have $\xi^\mu = x^2 b^\mu -2 x^\mu x_
   \end{align*}
 
 
+  which reads 
+  \begin{align*}
+   \begin{pmatrix}
+      1 & 1\\
+      -1 & 1\\
+   \end{pmatrix}^{1/2}
+    = \left(\begin{pmatrix}
+      2 & 0\\
+      0 & 0\\
+   \end{pmatrix}
+   \begin{pmatrix}
+    1 & 1\\
+    1 & -1\\
+ \end{pmatrix}
+   \right)
+
+  \end{align*}
+  where we used the symmetry of the block to deduce its eigenvactor have components $(1, -1)$ and $(1, 1)$ with respective eigenvalues $0$ and $2$. 
 
 
 
-  For a $D$-dimensionnal spacetime, the Maxwell action reads 
-  \begin{align*}
-    S = \int \text{d}^D x \sqrt{|g|} \frac{1}{4} F_{\mu\nu} F^{\mu \nu} = \int \text{d}^D x \sqrt{|g|} \ g^{\mu \sigma} g^{\nu \rho}\frac{1}{4} F_{\mu\nu} F_{\sigma \rho}.  
-  \end{align*}
-  where $g$ is the metric (which we suppose conformaly flat). We aim to apply the results found in (a) to determine when this action gains conformal symmetry. Under a conformal transformation given by the killing vector $\xi^{\mu}(x)$ and the scaling $\Omega(x) = 1 + \partial_\mu \xi^\mu(x)/D + O(\xi^2)$ of the metric components, we have 
-  \begin{align*}
-    &g_{\nu \rho}(x) = \Omega(f(x))^{-2} \tilde{g}_{\nu \rho}(f(x)) = \Omega(\tilde{x})^{-2} \tilde{g}_{\nu \rho}(\tilde{x}) \quad \text{Defining property of a conformal transformation}\\
-    &|g|(x) = \Omega(f(x))^{-2D} |\tilde{g}|(f(x)), \quad g^{\nu \rho}(x) = \Omega(f(x))^{+2} \tilde{g}^{\nu \rho}(f(x)) = \Omega(\tilde{x})^{2} \tilde{g}^{\nu \rho}(\tilde{x}), \quad  \text{d}^D x \sqrt{|g|} = \text{d}^D \tilde{x}\ \Omega(\tilde{x})^{-D} \sqrt{|\tilde{g}|(\tilde{x})}
-  \end{align*}
-  Without loss of generality, we take the traget metric $\tilde{g}$ to be the Minkowski metric.
-  Inverting the result found in (a) for the transformation of the gauge field, we write 
-  \begin{align*}
-    A_{\mu}(x) =  |\partial x/\partial \tilde{x}|_{\tilde{x}}^{-\Delta/D} (R^{-1})_{\mu}^{\nu} \tilde{A}_{\nu}(\tilde{x}) &= \tilde{A}_\mu(\tilde{x})+\tilde{A}_\mu(\tilde{x}) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x})-\tilde{A}_\mu(\tilde{x}) \partial_\sigma \xi^\sigma(\tilde{x}) \frac{1}{D}  + \tilde{A}_\nu(\tilde{x}) \partial_\mu \xi^\nu(\tilde{x}) + O(\xi^2) \\
-    &= \tilde{A}_\mu(\tilde{x})+\tilde{A}_\mu(\tilde{x}) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x}) + \frac{1}{2}\tilde{A}_\nu(\tilde{x}) \left(\partial_\mu \xi^\nu(\tilde{x}) - \partial^\nu \xi_\mu(\tilde{x})\right) + O(\xi^2). 
-  \end{align*}
-  Then, with the derivative $(\partial_{\mu})_{\tilde{x}} = \tilde{\partial}_\mu \xi^{\nu}(\tilde{x}) \tilde{\partial}_\nu + \tilde{\partial}_\mu$, the field strength transforms as 
-  \begin{align*}
-    F_{\mu \nu} = \partial_\mu A_{\nu}(x) - (\mu \leftrightarrow \nu) &= \left( \tilde{\partial}_\mu \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda + \tilde{\partial}_\mu\right)\left(\tilde{A}_\nu(\tilde{x})+\tilde{A}_\nu(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{A}_\lambda(\tilde{x}) M_\nu{}^{\lambda}\right) - (\mu \leftrightarrow \nu)\\
-    &=  \tilde{\partial}_\mu\left(\tilde{A}_\nu(\tilde{x})+\tilde{A}_\nu(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{A}_\lambda(\tilde{x}) M_\nu{}^{\lambda}\right) + \tilde{\partial}_\mu \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_\nu(\tilde{x}) - (\mu \leftrightarrow \nu)\\
-    &= \tilde{F}_{\mu\nu}(\tilde{x})+\tilde{F}_{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\partial_\sigma \xi^\sigma(\tilde{x}) +   \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})   + \tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x})) M_{\nu)}{}^{\lambda} + \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x})\\
-  \end{align*}
-  The contravariant equivalent of this result is given by 
-  \begin{align*}
-    F^{\mu \nu} = g^{\mu \sigma} g^{\nu \rho} F_{\sigma \rho} &= \Omega(\tilde{x})^{4}  \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} F_{\sigma \rho} \\
-    &=\Omega(\tilde{x})^{4}  \left( \tilde{F}^{\mu\nu}(\tilde{x})+\tilde{F}^{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) +  \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho}    \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})   + \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma}(\tilde{A}_{\lambda}(\tilde{x})) M_{\rho)}{}^{\lambda}+ \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\rho)}(\tilde{x})  \right)
-  \end{align*}
+  As before, we simplify the calculation by applying the $\sigma_x$ local operation to subsystem $A$ to work with $\rho = \ket{\Psi^{+}_{AB}}\bra{\Psi^{+}_{AB}}$.
+
+
+  (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes \ket{1}\bra{1}_2)(\ket{0}\bra{0}_1 \otimes 1_2  + \ket{1}_1\bra{1}_1 \otimes X_2)(1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes \ket{1}\bra{1}_2)\\
+  &= (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes \ket{1}\bra{1}_2)(\ket{0}\bra{0}_1 \otimes 1_2  + \ket{1}_1\bra{1}_1 \otimes X_2)
   
-  Next, we calculate 
-  \begin{align*}
-    F_{\mu\nu} F^{\mu\nu} &= \left(\tilde{F}_{\mu\nu}(\tilde{x})+\tilde{F}_{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x})) M_{\nu)}{}^{\lambda} + \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x}) + O(\xi^2)\right)\\
-    &\times \Omega(\tilde{x})^{4}  \left( \tilde{F}^{\mu\nu}(\tilde{x})+\tilde{F}^{\mu\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) +   \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma}(\tilde{A}_{\lambda}(\tilde{x})) M_{\rho)}{}^{\lambda}+ \tilde{g}^{\mu \sigma} \tilde{g}^{\nu \rho} \tilde{\partial}_{(\sigma} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\rho)}(\tilde{x})  \right)\\
-    &= \Omega(\tilde{x})^4\left(\tilde{F}_{\mu\nu}(\tilde{x}) \tilde{F}^{\mu \nu}(\tilde{x}) + \tilde{F}_{\mu\nu}(\tilde{x})\tilde{F}^{\mu \nu}(\tilde{x}) \frac{2\Delta}{D} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + 2 \tilde{F}^{\mu\nu}\tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x}) ) M_{\nu)}{}^{\lambda}  + 2 \tilde{F}^{\mu\nu} \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x}) +  2\tilde{F}^{\mu\nu}   \tilde{A}_{(\nu}(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_{\mu)} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})\right)\\
-    &=  \Omega(\tilde{x})^4\left(\tilde{F}_{\mu\nu}(\tilde{x}) \tilde{F}^{\mu \nu}(\tilde{x}) + \tilde{F}_{\mu\nu}(\tilde{x})\tilde{F}^{\mu \nu}(\tilde{x}) \frac{2\Delta}{D} \tilde{\partial}_\sigma \xi^\sigma(\tilde{x}) + 2 \tilde{F}^{\mu\nu}\tilde{\partial}_{(\mu}(\tilde{A}_{\lambda}(\tilde{x}) ) M_{\nu)}{}^{\lambda}  + 2 \tilde{F}^{\mu\nu} \tilde{\partial}_{(\mu} \xi^{\lambda}(\tilde{x}) \tilde{\partial}_\lambda \tilde{A}_{\nu)}(\tilde{x}) +  4\tilde{F}^{\mu\nu} \tilde{A}_\nu(\tilde{x}) \frac{\Delta}{D}\tilde{\partial}_\mu \tilde{\partial}_\sigma \xi^\sigma(\tilde{x})\right)
-  \end{align*}
-  We want to show that the last line vanishes or is a total derivative.  
+  \ket{0}\bra{0}_1 \otimes \ket{0}\bra{0}_2  + \ket{1}_1\bra{1}_1 \otimes \ket{0}\bra{1}_2 + \ket{0}\bra{0}_1 \otimes 1_2  + \ket{1}_1\bra{1}_1 \otimes X_2
+
+  
+  
+  
+  (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes \ket{1}\bra{1}_2)
 
 
 
-   The latter corresponds to the matrix equation 
-  \begin{align*}
-    \begin{pmatrix}
-      p^0 p_\nu & p^1 p_\nu\\
-      p^1 p_\nu & -p^0 p_\nu
+
+  \begin{pmatrix}
+      1 & 0 & 0 & 0\\
+      0 &  e^{i \pi/4} & 0 & 0\\
+      0 & 0 & 1 & 0\\
+      0 & 0 & 0 & e^{i \pi/4}
     \end{pmatrix}
-    =
     \begin{pmatrix}
-      p^0 p_\nu & p^1 p_\nu\\
-      p^1 p_\nu & -p^0 p_\nu
+      1 & 0 & 0 & 0\\
+      0 & 0 & 0 & 1\\
+      0 & 0 & 1 & 0\\
+      0 & 1 & 0 & 0
     \end{pmatrix}
-  \end{align*}
 
 
-
-
-We can extract the axial current from the vector current by acting $\gamma_0 \gamma_1$ on it. We have 
+    In what follows, we evaluate the matrix expressions representing a quantum circuit unitary acting on a sequence of qubit input. We work in the computationnal basis $\{\ket{0}, \ket{1}\}$ and use the notation $X, Y, Z$ for the Pauli gates in this basis. 
+\begin{enumerate}
+  \item[(a)] First we consider the conjugation of a \verb|CNOT| by two \verb|CNOT| with control and target qubit reversed:
   \begin{align*}
-    \gamma_0 \gamma_1 j_{\mu}^V = \gamma_0 \gamma_1 \bar{\psi} \gamma_{\mu} \psi = 
-    \begin{cases}
-      \gamma_0 \gamma_1 \bar{\psi} \gamma_{0} \psi,  \mu = 0 \\
-      \gamma_0 \gamma_1 \bar{\psi} \gamma_{1} \psi,  \mu = 1
-    \end{cases}
-    =
-    \begin{cases}
-      - \bar{\psi} \gamma_1 \psi,  \mu = 0 \\
-      \gamma_0 \bar{\psi} \gamma_{1} \psi,  \mu = 1
-    \end{cases}
+  \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+    \lstick{$1$} & \targ{}  & \ctrl{1}  & \targ{}  & \qw\\
+    \lstick{$2$} & \ctrl{-1}  & \targ{}  & \ctrl{-1} & \qw
+  \end{quantikz}
+  &= 
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 0 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 0 & 1\\
+    0 & 0 & 1 & 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 0 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 0
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 0 & 1
+  \end{pmatrix}
   \end{align*}
-
-
-  The classical conservation of the vector current is provided by the continuity equation $\partial^\mu j^V_\mu = 0$. To show classical conservation of the axial current follows from classical conservation of the vector curent, we write
+  which exchanges the qubits ($\ket{00} \to \ket{00}, \ket{01} \to \ket{10},  \ket{10} \to \ket{01}, \ket{11} \to \ket{11}$) and constitutes a \verb|SWAP| gate. The matrix expression for the reversed \verb|CNOT| was obtained by writting its action on the computationnal basis wich reads $\ket{00} \to \ket{00}, \ket{01} \to \ket{11},  \ket{10} \to \ket{10}, \ket{11} \to \ket{01}$. 
+  \item[(b)] Then we calculate the matrix expression of the entanglement generating circuit 
   \begin{align*}
-    0 = \partial^\mu j^V_\mu = (\partial^\mu \bar{\psi}) \gamma_{\mu} \psi +  \bar{\psi} \gamma_{\mu} (\partial^\mu \psi) = (\partial^\mu \bar{\psi}) \gamma_{\mu} \psi, \quad \gamma_{\mu} (\partial^\mu \psi) = 0
+    \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+      \lstick{$1$} &      &   & \targ{}  & \qw\\
+      \lstick{$2$} & \gate{H}  & \gate{R_{\pi/4}}  & \ctrl{-1} & \qw
+    \end{quantikz} &= \left( 1_1 \otimes \frac{1}{\sqrt{2}} (X_2 + Z_2) \right) R_{\pi/4, 2} (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes \ket{1}\bra{1}_2)\\
+    &= \left( 1_1 \otimes \frac{1}{\sqrt{2}} (X_2 + Z_2) \right) (1_1 \otimes \ket{0}\bra{0}_2 + X_1 \otimes e^{i\pi/4} \ket{1}\bra{1}_2)\\
+    &= \frac{1}{\sqrt{2}} \left(1_1 \otimes (\ket{0}_2 + \ket{1}_2)\bra{0}_2 + X_1 \otimes e^{i\pi/4} (\ket{0}_2 - \ket{1}_2)\bra{1}_2\right)\\
+    &= \frac{1}{\sqrt{2}} \left(\begin{pmatrix}
+      1 & 0\\ 
+      0 & 1 
+    \end{pmatrix} \otimes 
+    \begin{pmatrix}
+      1 & 0 \\
+      1 & 0 
+    \end{pmatrix}
+       + \begin{pmatrix}
+        0 & 1\\
+        1 & 0
+      \end{pmatrix} \otimes  \begin{pmatrix}
+        0 & e^{i\pi/4} \\
+        0 & -e^{i\pi/4}
+      \end{pmatrix}\right)\\
+      &= \frac{1}{\sqrt{2}} \begin{pmatrix}
+        1 & 0 & 0 & 0 \\ 
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 1 & 0 
+      \end{pmatrix} +
+      \frac{1}{\sqrt{2}}
+      \begin{pmatrix}
+        0 & 0 & 0 & e^{i\pi/4} \\ 
+        0 & 0 & 0 & -e^{i\pi/4} \\
+        0 & e^{i\pi/4} & 0 & 0 \\
+        0 & -e^{i\pi/4} & 0 & 0 
+      \end{pmatrix} = 
+      \frac{1}{\sqrt{2}}
+      \begin{pmatrix}
+        1 & 0 & 0 & e^{i\pi/4} \\ 
+        1 & 0 & 0 & -e^{i\pi/4} \\
+        0 & e^{i\pi/4} &  1 & 0 \\
+        0 & -e^{i\pi/4} & 1 & 0 
+      \end{pmatrix}.
   \end{align*}
+  If we set the phases to $1$, we recover the Bell state mapping $\ket{00} \to (\ket{00} + \ket{11})/\sqrt{2}$, $\ket{01} \to (\ket{00} - \ket{11})/\sqrt{2}$, $\ket{10} \to (\ket{01} + \ket{10})/\sqrt{2}$ and $\ket{11} \to (-\ket{01} + \ket{10})/\sqrt{2}$. 
+  \item[(c)]  Finally, we calculate the matrix expression associated with a three qubit circuit as follows:
+  \begin{align*}
+    \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+      \lstick{$1$} &  \gate{H}         & \ctrl{1} &          & \ctrl{1} & \qw\\
+      \lstick{$2$} &                   & \targ{1} & \gate{H} & \ctrl{1} & \qw\\
+      \lstick{$3$} &  \gate{R_{\pi/4}} &          &          & \targ{1} & \qw
+    \end{quantikz}
+    &= H_1 (\ket{0}\bra{0}_1 \otimes 1_2 + \ket{1}\bra{1}_1 \otimes X_2) H_2 R_{\pi/4, 3}\verb!TOFFOLI!\\
+    &= \frac{1}{\sqrt{2}}((\ket{0} + \ket{1})\bra{0}_1 \otimes H_2 +  (\ket{0} - \ket{1})\bra{1}_1 \otimes X_2 H_2)R_{\pi/4, 3}\verb!TOFFOLI!\\
+    &= \frac{1}{2}\left(
+      \begin{pmatrix}
+        1 & 0 \\
+        1 & 0
+      \end{pmatrix}
+       \otimes \begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+      \end{pmatrix} + \begin{pmatrix}
+        0 & 1 \\
+        0 & -1
+      \end{pmatrix} \otimes \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{pmatrix}\begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+      \end{pmatrix}\right)R_{\pi/4, 3}\verb!TOFFOLI!\\
+      & = \frac{1}{2}\left(
+      \begin{pmatrix}
+        1 & 1 & 0 & 0\\
+        1 & - 1 & 0 & 0\\
+        1 & 1 & 0 & 0\\
+        1 & - 1 & 0 & 0
+      \end{pmatrix}
+      +
+      \begin{pmatrix}
+        0 & 0 & 1 & -1\\
+        0 & 0 & 1 & 1\\
+        0 & 0 & -1 & 1\\
+        0 & 0 & -1 & -1\\
+      \end{pmatrix}\right)R_{\pi/4, 3}\verb!TOFFOLI!\\ &= \frac{1}{2}
+        \begin{pmatrix}
+          1 & 1 & 1 & -1\\
+          1 & - 1 & 1 & 1\\
+          1 & 1 & -1 & 1\\
+          \textcolor{blue}{1} & \textcolor{blue}{-1} & \textcolor{blue}{-1} & \textcolor{blue}{-1}
+        \end{pmatrix}
+       R_{\pi/4, 3}\verb!TOFFOLI!
+  \end{align*}
+Where the blue elements contribute to the $\ket{11}$ component of the output of the matrix. This component is assocated with the only state on qubits $1, 2$ that activates the \verb|TOFFOLI| gate on qubit $3$. We can explicit the effect of the \verb|TOFFOLI| gate as follows 
+\begin{align*}
+  \frac{1}{2}
+        \begin{pmatrix}
+          1 & 1 & 1 & -1\\
+          1 & - 1 & 1 & 1\\
+          1 & 1 & -1 & 1\\
+          1 & - 1 & -1 & \textcolor{blue}{-1}
+        \end{pmatrix}
+       R_{\pi/4, 3}\verb!TOFFOLI!
+\end{align*}
+\end{enumerate}
 
 
-  we start with the classical equation of motion for a free fermion field which reads $ \gamma_\mu \partial^\mu \psi = 0$ and its conjugate $\partial^\mu \psi^\dagger \gamma_\mu^\dagger = \partial^\mu \psi^\dagger \gamma_\mu = 0$ (the gamma matrices are selected to only have real components). Multiplying the equation 
+We can explicit the effect of the \verb|TOFFOLI| gate as follows 
+\begin{align*}
+  \verb!TOFFOLI! \ R_{\pi/4, 3}\frac{1}{2}
+  \begin{pmatrix}
+    1 & 1 & 1 & 1\\
+    1 & - 1 & 1 & -1\\
+    1 & 1 & -1 & -1\\
+    -1 & 1 & 1 & -1
+  \end{pmatrix}
+  =
+  .
+\end{align*}
+
+
+ \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
+    \lstick{$a$} & \ctrl{1}  & \ctrl{1} & \\
+    \lstick{$b$} & \ctrl{1} & \targ{}  & \\
+    \lstick{$c$} & \targ{}   &          &
+  \end{quantikz}
