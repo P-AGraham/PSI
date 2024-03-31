@@ -209,7 +209,7 @@ In what follows, we evaluate the matrix expressions representing a quantum circu
 \section{Quantum Adder}
 
 \begin{enumerate}
-  \item[(a)] The \verb|TOFFOLI| gate can be generalized to $n$ qubits by increasing the number of control qubit to $n-1$ conditioning a \verb|NOT| operation on qubit $n$. The circuit corresponding to this generalisation is presented in Fig. 1 (a).
+  \item[(a)] The \verb|TOFFOLI| gate can be generalized to $n$ qubits by increasing the number of control qubit to $n-1$ conditioning a \verb|NOT| operation on qubit $n$. The circuit corresponding to this generalization is presented in Fig. 1 (a).
   
 
   \begin{figure}[h!]
@@ -231,13 +231,13 @@ In what follows, we evaluate the matrix expressions representing a quantum circu
         \lstick{$b$} & \ctrl{1} & \targ{}  & \rstick{$a \ {\tt XOR}\  b$} \\
         \lstick{$c$} & \targ{}   &         & \rstick{$a \ {\tt AND}\  b$}
       \end{quantikz}
-      \caption{Circuit for the addition of two single bit numbers $a$ and $b$. \label{adder}}
+      \caption{Circuit for the addition of two single-bit numbers $a$ and $b$. \label{adder}}
     \end{subfigure}
     \caption{Circuits for 2 (a) and 2 (b).}
     \end{figure}
-  \item[(b)] Given two single digit binary numbers $a$ and $b$, we can calculate $a+b$ with a quantum circuit by encoding them in input numbers in qubit states $\ket{a}$ and $\ket{b}$ where the digit forms the $0, 1$ label of a computation basis element. In other words, the classical bit adder algorithm can be implemented with a quantum circuit. This algorithm requires qubits for inputs $a$ and $b$ and a qubit initialized to $\ket{0}$ that will eventually be updated to store the carry on of $a+b$ (if we add $1 + 1$ we get $10$ which is represented here by having $1$ stored in the carry on qubit, and $0$ stored in the output state for the $b$ qubit hilbert space. The state of $a$ is unchanged to allow for reversibility of calculation and its implementation as a sequence of unitary operations).  The Quantum circuit implementing the single is presented in Fig. 1 (b). On one hand the \verb|TOFFOLI| gate flips the carry on $c$ to $1$ iff both $a$ and $b$ are initialized to $1$. On the other hand the \verb|CNOT| gate replaces the value of $b$ by $a \ \verb|XOR|\ b$ storing the first digit of the adition output in $b$. 
+  \item[(b)] Given two single-digit binary numbers $a$ and $b$, we can calculate $a+b$ with a quantum circuit by encoding them in input numbers in qubit states $\ket{a}$ and $\ket{b}$ where the digit forms the $0, 1$ label of a computation basis element. In other words, the classical bit adder algorithm can be implemented with a quantum circuit. This algorithm requires qubits for inputs $a$ and $b$ and a qubit initialized to $\ket{0}$ that will eventually be updated to store the carry-on of $a+b$ (if we add $1 + 1$ we get $10$ which is represented here by having $1$ stored in the carry on qubit, and $0$ stored in the output state for the $b$ qubit Hilbert space. The state of $a$ is unchanged to allow for the reversibility of calculation and its implementation as a sequence of unitary operations).  The Quantum circuit implementing the single is presented in Fig. 1 (b). On one hand, the \verb|TOFFOLI| gate flips the carry-on $c$ to $1$ iff both $a$ and $b$ are initialized to $1$. On the other hand, the \verb|CNOT| gate replaces the value of $b$ by $a \ \verb|XOR|\ b$ storing the first digit of the addition output in $b$. 
 
-  \item[(c)] If we consider adding $4$ binary numbers $a, b, c, d$ together, we need an additionnal carry on qubit to represent the result since $1+1+1+1 = 100$ requires $3$ qubits to describe its digits. In this case we name the carry on $c_1$ and $c_2$. The circuit performing the addition of $4$ single bit numbers together is presented in Fig. 2
+  \item[(c)] If we consider adding $4$ binary numbers $a, b, c, d$ together, we need an additional carry-on qubit to represent the result since $1+1+1+1 = 100$ requires $3$ qubits to describe its digits. In this case, we name the carry-on $c_1$ and $c_2$. The circuit performing the addition of $4$ single-bit numbers together is presented in Fig. 2
   \begin{figure}[h!]
     \centering
       \begin{quantikz}[baseline={([yshift=-.5ex]current bounding box.center)}]
@@ -250,15 +250,23 @@ In what follows, we evaluate the matrix expressions representing a quantum circu
       \end{quantikz}
       \caption{Circuit for the addition of four single bit numbers $a, b, c, d$. The output is stored in qubit $d$ (first digit), $c_1$, $c_2$ (last digit) \label{A}}
   \end{figure}
-  The first two layers of this circuit add $a$ and $b$ in the way explained in (b). At the second layer the \verb|CNOT| operation shifts the last digit output to the $b$ qubit. The next group of operations uses the value stored in $b, c, c_1$ to add the updated $b$ and $c$ while taking the $c_1$ carry on into account. The first gate of the third layed flips $c_2$ iff $b, c, c_1$  are all one (in our case this does not happen because $c_1 = 0$ implies $b = 0$). The fourth and fifth layers are copies of the operations described in (b) acting on $b, c, c_1$. At the fifth layer, the \verb|CNOT| operation shifts the last digit output to the $c$ qubit. At layer six, a generalised \verb|TOFFOLI| is applied to possibly flip the $c_2$ carry on if $c, d, c_1$ are all $1$ (which is a real possibility in this case). The seventh layer updated the value of the $c_1$ carry on from the values of $c, d$ (if it was $1$ and gets a $1$ contribution from $c,d$, it is flipped to $0$. The requiered carry on to $c_2$ associated with this flip was allready done by the sixth layer). At the last layer the \verb|CNOT| operation shifts the last digit output to the $d$ qubit. The final output of the addition is stored in qubits $d, c_1, c_2$. 
+  The first two layers of this circuit add $a$ and $b$ in the way explained in (b). At the second layer, the \verb|CNOT| operation shifts the last digit output to the $b$ qubit. The next group of operations uses the value stored in $b, c, c_1$ to add the updated $b$ and $c$ while taking the $c_1$ carry-on into account. The first gate of the third layer flips $c_2$ iff $b, c, c_1$  are all one (in our case this does not happen because $c_1 = 0$ implies $b = 0$). The fourth and fifth layers are copies of the operations described in (b) acting on $b, c, c_1$. At the fifth layer, the \verb|CNOT| operation shifts the last digit output to the $c$ qubit. At layer six, a generalized \verb|TOFFOLI| is applied to possibly flip the $c_2$ carry-on if $c, d, c_1$ are all $1$ (which is a real possibility in this case). The seventh layer updated the value of the $c_1$ carry on from the values of $c, d$ (if it was $1$ and gets a $1$ contribution from $c,d$, it is flipped to $0$. The required carry-on to $c_2$ associated with this flip was already done by the sixth layer). At the last layer, the \verb|CNOT| operation shifts the last digit output to the $d$ qubit. The final output of the addition is stored in qubits $d, c_1, c_2$. 
 \end{enumerate}
 
 \newpage
 
-\section{Grover's algorithm on IBM composer}
+\section{Grover's algorithm on IBM composer (\textcolor{blue}{Work in progress})}
 
+\begin{enumerate}
+  \item[(1)] The Grover algorithm is implemented in three parts. The first part is a layer of Hadamard gates perparion the qubits initialized to $0$ in a unifor superposition of all binary string in which we need to search. The second part consists in applying \verb|NOT| gates to go to a basis where the target string is mapped to $1\cdots 1$. Then, in that basis a generalized \verb|CZ| operation is applied to the last qubit and controlled by all other qubits. This Operation plays the role of the oracle applying a $-1$ factor to the desired state only. To go back to the initial computationnal basis, we then apply \verb|NOT| gates to undo the previous basis transformation. In practice a generalized \verb|CZ| gate can be contructed by congugating a generalized \verb|CNOT| by two Hadamard gates on the target qubit space. Since $H^2 = 1$ (if controls do not activate, we apply $1$) and $HXH = Z$ (if controls activate, we apply $Z$), this indeed realizes a generalized \verb|CZ|. The third step consists in applying a reflection with respect to state $\ket{s}$ which is a uniform superposition of all states. To perform that replection, we first move to a basis where this state is moved to $1\cdots 1$. This is done by first applying Hadamard gates to all qubits (mapping $\ket{s}$ to the state with binary string  $0 \cdots 0$) and then applying \verb|NOT| to all of them (mapping $0 \cdots 0$ to $1 \cdots 1$). In this basis a generalized \verb|CZ| (with target on the last qubit and controlled by all other qubits) is applied to add a $-1$ phase only to the $1 \cdots 1$. We finally return to the computationnal basis by applying a layer of \verb|NOT| gates followed by a layer of Hadamard gates. The circuit for three qubits is given \href{quantum.ibm.com/composer/files/new?initial=N4IgdghgtgpiBcICKBJA%2BgCQOoCY0EY0AGEkAGhABMYBnAYwCcBLABwBcmB7MBEckAI4QaUXgHkACgFEAckgCCAZQCyAAhwA6IgG4AOmCZg6AGwCu1VbsExjTAEb4Nhulb1h9AhjADmqgQG0AZgBdN0YfVTp-ABZQ-X0ACz9-IjiwJID8NIz-HDS7CAZmGAZk1LcCoqYS5KyKwuLSgLy3AA8ytPbMzuSW-UrGjvqqmu63HL6jOi6U4LJaud78huqm2eHBscSltqH9Gbr9nf6V0fWTkbXDsAHV4-S9h62n3J6A8qPnmcnbs4%2Bb05XbL3OjTDrzboQ14bO7vZaXBbje4zf4HN7Q7ZwpHPCbwzbnAEI56-NaTFHo67fPGwgkkxGYjFTclQrJQn6Ax50nHIx5o3bNal-QVAmFnSY5f45a64-kEvmfRlc2kc7kCsJguEsxZqi74-5K6U8rEKyn3CXA1WM-QAemtqgAAnROGYoGAaKoUmQiF6yPhff6cGRA4HAmRQ6HomQAKzR2MANjICYTAHYyKnUwAOMhZrMATjI%2Bfz%2BG9xd9Jb9%2BEDld9VdD%2BDrdcj%2BCbTZj%2BDbbYT%2BC7XdT%2BD7faz%2BCLI6D3pw4-Hfpw0%2BnwfnQdDOCXS8jODXa5jOAT26DO9TOAPB6zOBPGeC%2BhAAF8gA}{here} (this circuit has the optimal number of repetion of the oracle and amplification phases to maximize the propability of finding the state with binary string $000$ at measurement).  
+  \item[(2)]
+  \item[(3)] 
+\end{enumerate}
 
+% Work in progress
 \section{Acknowledgement}
+
+Thanks to Jonathan for a discussion about the quantum adder. 
 
 }
 
