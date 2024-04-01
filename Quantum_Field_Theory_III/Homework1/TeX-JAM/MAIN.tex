@@ -259,14 +259,32 @@
 \section{OPE coefficients from three-point functions}
 
 \begin{enumerate}
-  \item[(a)] Given scalar CFT operators $O_{\Delta_1}$, $O_{\Delta_2}$ et $O_{\Delta_3}$ with respective scaling dimensions $\Delta_1$, $\Delta_2$ and $\Delta_3$, there is only one two-point function consistent with conformal symmetry given by 
+  \item[(a)] Given scalar CFT operators $O_{\Delta_1}$ and $O_{\Delta_2}$ with respective scaling dimensions $\Delta_1$ and $\Delta_2$, there is only one two-point function consistent with conformal symmetry given by 
   \begin{align*}
     \left\langle\mathcal{O}_{\Delta_1}(x_1) \mathcal{O}_{\Delta_2}(x_2)\right\rangle=\frac{\delta_{\Delta_1, \Delta_2}}{x^{2 \Delta_1}_{12}}
   \end{align*}
-  where $x_{ij} = |x_i - x_j|$. The three-point function has residual freedom in the coefficients $C_{123}$ depending on the operators involved. The most general expression reads 
+  where $x_{ij} = |x_i - x_j|$. Adding a third operator $O_{\Delta_3}$ with scaling dimension $\Delta_3$, the three-point function has residual freedom in the coefficients $C_{123}$ depending on the operators involved. The most general expression reads 
   \begin{align*}
-    \left\langle\mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) \mathcal{O}_{\Delta_3}\left(x_3\right)\right\rangle=\frac{C_{123}}{x_{12}^{\Delta_1+\Delta_2-\Delta_3} x_{23}^{\Delta_2+\Delta_3-\Delta_1} x_{31}^{\Delta_3+\Delta_1-\Delta_2}}
+    \left\langle\mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) \mathcal{O}_{\Delta_3}\left(x_3\right)\right\rangle=\frac{C_{123}}{x_{12}^{\Delta_1+\Delta_2-\Delta_3} x_{23}^{\Delta_2+\Delta_3-\Delta_1} x_{31}^{\Delta_3+\Delta_1-\Delta_2}}.
   \end{align*}
+  Assumming\footnote{This assumption can be seen to hold with the state-operator correspondance of the radial quantization of the CFT. This state operator correspondance associates each CFT operator (primary and descendants) at a point $x$ to an eigensate of the dilation operator. Using these states, we can write a resolution of identity allowing to decompose any other state as a sum of states corresponding to primary and descendant CFT operators. This decomposition can then be brought back to operators using the state operator correspondance in the reverse direction.} that the operator algebra of the CFT is closed (multiplying operators produces an algebra operator which is in the same vector space) and has the primary and their descendants as a vector basis, we have that any product of CFT operators can be decomposed as a sum of primary and descendants operators. Explicitly we have the general operator product expansion
+  \begin{align*}
+    \mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) = \sum_{\Delta'} \sum_l \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1}, x_{2}) \partial_{l} O_\Delta'(x_2)
+  \end{align*}
+  where $l$ is a string representing the sequence of components of $x_2$\footnote{This point is the point at which we take our asymptotic radial quandized states for usage of the state operator correspondance} with respect to which we differentciate to reach all descendants, $\alpha$ represents linear combinations of CFT operators with full generality. We sum over $\Delta'$ to include all conformal towers and we sum over $l$ to reach all the members of a given tower. We can make the depedance on $x_1$ and $x_2$ more precise by imposing the transformation properties of each operator. We first use the translation symmetry. Having fixed the expansion point $x_2$ (it will not be affected by a translation of the operators involved in the product), the uniqueness of the expansion imposes that we find the same coefficients if we translate $x_1$ and $x_2$ by the same amount $a$ (this gives us back the same operator because it consists in a \textit{representation} of the translation operation on the operator product). We conclude that translationnal symmetry forces $\alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1}, x_{2}) = \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1} + a, x_{2} + a) =  \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12})$. Then, for a scale transformation with scale factor $\lambda$, we have 
+  \begin{align*}
+    \mathcal{O}_{\Delta_1}\left(x_1\right)\mathcal{O}_{\Delta_2}\left(x_2\right) = \lambda^{\Delta_1 + \Delta_2} \mathcal{O}_{\Delta_1}\left(\lambda x_1\right)\mathcal{O}_{\Delta_2}\left(\lambda x_2\right) &\implies \sum_{\Delta'} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12}) \partial_{l} O_\Delta'(x_2) = \sum_{\Delta'} \sum_l \lambda^{\Delta_1 + \Delta_2} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (\lambda x_{12}) \partial_{l} O_\Delta'(\lambda x_2)\\
+    &\implies \sum_{\Delta'} \alpha^{\Delta', l}_{\Delta_1, \Delta_2}(x_{12})\partial_{l} O_\Delta'(x_2) = \sum_{\Delta'} \sum_l \lambda^{\Delta_1 + \Delta_2-\Delta'} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (\lambda x_{12}) \lambda^{|l|} \partial_{l} O_\Delta'(x_2)\\
+    &\implies \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12}) = \lambda^{\Delta_1 + \Delta_2-\Delta' + |l|} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (\lambda x_{12})
+  \end{align*} 
+  where we used the uniqueness of the expansion provided a point $x_2$ and denoted $|l|$ the number of elements in $l$. To apply the scale transfromation to the descendant operators we used 
+  \begin{align*}
+    \left.\frac{\partial }{\partial x^{l}} O_{\Delta'}(x)\right|_{x = \lambda x_2} = \left.\frac{\partial \lambda x}{\partial x^{l}}  \frac{\partial }{\partial y^{l}} O_{\Delta'}\left(\lambda y\right)\right|_{y = x/\lambda, y = x_2} = \left.\lambda^{|l|} \lambda^{-\Delta'} \frac{\partial }{\partial y^{l}} O_{\Delta'}\left(y\right)\right|_{y = x_2} = \lambda^{|l|} \lambda^{-\Delta'} \frac{\partial }{\partial y^{l}} \partial_{l} O_{\Delta'}(x_2). 
+  \end{align*}
+  We can also extract constraints using the rotational invariance of the product. Supposing the operators in the product are scalar primaries, we can write $\mathcal{O}_{\Delta_1}\left(x_1\right)\mathcal{O}_{\Delta_2}\left(x_2\right) = \mathcal{O}_{\Delta_1}\left(R(x_1)\right)\mathcal{O}_{\Delta_2}\left(R(x_2)\right)$ where $R$ is a rotation in $\mathbb{R}^D$. Substituting this relation in the expansion yields 
+  \begin{align*}
+    f
+  \end{align*} 
   \item[(b)] 
   \item[(c)]
   \item[(d)] 

@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \input{math_func}
+\usepackage{xcolor}
 
 \usepackage{slashed}
 
@@ -334,7 +335,13 @@
     &=   \bra{0}\rho_S \ket{0} \otimes e^{+i \theta \sigma_z} \rho_E e^{-i \theta \sigma_z} +   \bra{1}\rho_S\ket{1} \otimes e^{-i \theta \sigma_z} \rho_E  e^{+i \theta \sigma_z}.
   \end{align*}
 
-  \newpage
+  \textcolor{blue}{Precision}: Here, the spectral decomposition $\sigma_z = \ket{0}\bra{0} - \ket{1}\bra{1}$ was used in the same way it is used in part (c). We write $U = e^{i \theta (\ket{0}\bra{0} - \ket{1}\bra{1}) \otimes \sigma_z} = \ket{0}\bra{0} \otimes e^{i\theta \sigma_z} +  \ket{1}\bra{1} \otimes  e^{-i \theta  \sigma_z} $ to simplify the calculation of the trace to  
+  \begin{align*}
+    \rho_E' &= \bra{0} e^{i \theta \sigma_z \otimes \sigma_z}   \rho_S\otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{0} + \bra{1} e^{i \theta \sigma_z \otimes \sigma_z}   \rho_S\otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{1}\\
+    &= \bra{0}  \ket{0}\bra{0} \otimes e^{i\theta \sigma_z}    \rho_S\otimes\rho_E  \ket{0}\bra{0} \otimes e^{i\theta \sigma_z}  \ket{0} + \bra{1} \ket{1}\bra{1} \otimes  e^{-i \theta  \sigma_z} \rho_S\otimes\rho_E \ket{1}\bra{1} \otimes  e^{-i \theta  \sigma_z}  \ket{1}\\
+    &= \bra{0}\rho_S \ket{0} \otimes e^{+i \theta \sigma_z} \rho_E e^{-i \theta \sigma_z} +   \bra{1}\rho_S\ket{1} \otimes e^{-i \theta \sigma_z} \rho_E  e^{+i \theta \sigma_z}
+  \end{align*}
+  
   \item[(b)] To simplify further calculation, we set $\rho_E = \ket{0}\bra{0}$. Combining system $S$  with second system $S'$ with qubit Hilbert space $\mathcal{H}_{S'}$, we can form the joint state $\rho_{SS'} \in \mathcal{D}(\mathcal{H}_S \otimes \mathcal{H}_{S'})$ which we take to be the maximally entangled state $\rho_{SS'} = \ket{\Phi^+}\bra{\Phi^+}$ where $\ket{\Phi^+} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$ ($\{\ket{0}, \ket{1}\}_{S'}$ is a basis of $\mathcal{H}_{S'}$). Extending the action of $\Phi$ on $\mathcal{D}(\mathcal{H}_S)$ to the action of $\Phi_{S'}$ on $\mathcal{D}(\mathcal{H}_S \otimes \mathcal{H}_{S'})$ as described above, we get 
   \begin{align*}
     \rho_{ES'}' := \Phi_{S'}(\rho_{SS'}) = \text{tr}_S (U \rho_{SS'} \otimes\rho_E U^\dagger) &= \bra{0} e^{i \theta \sigma_z \otimes \sigma_z} \rho_{SS'} \otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{0} + \bra{1} e^{i \theta \sigma_z \otimes \sigma_z} \rho_{SS'}\otimes\rho_E e^{i \theta \sigma_z \otimes \sigma_z} \ket{1} \\
@@ -353,7 +360,8 @@
     \Phi(\rho_S) = \text{tr}_S (U \rho_S\otimes\rho_E U^\dagger) &= \sum_k \bra{A_k}    \sum_j \ket{A_j}\bra{A_j} e^{i \theta  A_j \times 1 \otimes \hat{B}} \rho_S\otimes\rho_E \sum_l \ket{A_l}\bra{A_l} e^{-i \theta  A_l \times 1 \otimes \hat{B}} \ket{A_k}  \\
     &= \sum_k  \bra{A_k}\rho_S\ket{A_k}\otimes  e^{i \theta  A_k \hat{B}}\rho_E e^{-i \theta  A_k \hat{B}} 
   \end{align*}
-  which is a separable state and shows the considered entanglement breaking map is a QC map consitently with the fact all QC channels are entanglement breaking.
+  which is a separable state and shows the considered entanglement breaking map is a QC map consistently with the fact all QC channels are entanglement breaking.\\
+  \textcolor{blue}{Precision}: $\Phi(\rho_S)$ is a density matrix because it has trace $1$ ($\text{tr}_E(\Phi(\rho_S)) = \text{tr}_E \text{tr}_S (U \rho_S\otimes\rho_E U^\dagger) = \text{tr}(\rho_S\otimes\rho_E) = 1$ using the cyclic property of the total trace), is positive semidefinite ($\bra{A_k}\rho_S\ket{A_k}$ is positive because $\rho_S$ is a density matrix and each term in the $k$ sum is the product $M_k$ of a positive number by a basis transformation on a positive semidefinite matrix $\rho_E$ and constitute a positive semidefinite matrix. For any vector $\ket{\psi}$, we have the inner product $\bra{\psi} M_k \ket{\psi} \geq 0$ leading to $\bra{\psi}\Phi(\rho_S)\ket{\psi} = \bra{\psi} \sum_k M_k \ket{\psi} \geq 0$ which shows $\Phi(\rho_S)$ is positive semidefinite) and is because it is the sum of Hermitian operator $(e^{i \theta  A_k \hat{B}}\rho_E e^{-i \theta  A_k \hat{B}})^\dagger = e^{-(-i) \theta  A_k \hat{B}}\rho_E e^{+(-i) \theta  A_k \hat{B}}$ weighted by positive real numbers $\bra{A_k}\rho_S\ket{A_k}$. 
 \end{enumerate}
 
 
