@@ -254,3 +254,31 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
 
 
     Through a local unitary mapping (this unitary might affect entanglement within each component of the bipartition, but does not entangle/disentangle the components), we can send $\ket{u_i}$, $\ket{v_i}$ to states in our original basis $\ket{S_i}$, $\ket{S_i'}$. The state we obtain is $\ket{\psi} = \sum_{i} \alpha_i \ket{S_i}\ket{S_i'}$.
+
+
+    Hm = -np.exp(1j * (0 + 1/2) * m * n/(2 * np.pi)) * interaction(1,0,1,n)
+
+
+
+  def Gamma(states, max_state_idx):
+	"""
+	a function using the eigenstates "states" of H to construct the projector on the space spanned by the eigenstates of H with energy lower than the energy of the provided max_state_idx (index of the maximal energy state)
+	"""
+	S = sp.csc_matrix(states[:, 0]) 
+	print(S.shape)
+	Proj = S.T @ np.conj(S)
+	#print(Proj.shape)
+	#print(max_state_idx)
+	for i in range(1, max_state_idx):
+		S = sp.csc_matrix(states[:, i])
+		#print(S)
+		Proj = Proj + S.T @ np.conj(S)
+		
+	return Proj
+
+
+  Hm = - np.exp(1j * (0 + 1/2) * m * n/(2 * np.pi)) * interaction(1,0,1,n)
+    Hm = Hm - g * np.exp(1j * 0 * m * n/(2 * np.pi)) * Sxi(0,n)
+
+
+print(np.all(sp.csc_matrix(Hmode(n, 0)) == H), "test")

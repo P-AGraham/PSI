@@ -353,3 +353,68 @@ We can extract the axial current from the vector current by acting $\gamma_0 \ga
 
 
   we start with the classical equation of motion for a free fermion field which reads $ \gamma_\mu \partial^\mu \psi = 0$ and its conjugate $\partial^\mu \psi^\dagger \gamma_\mu^\dagger = \partial^\mu \psi^\dagger \gamma_\mu = 0$ (the gamma matrices are selected to only have real components). Multiplying the equation 
+
+  We note that this expansion does not depend explictly on $|x_{13}|$ as expected from the expression of the three-point function given above. To make this dependance explicit, we express $x_{23} = x_2 - x_3 = x_2 - x_1 + x_1 - x_3$ and find 
+  \begin{align*}
+    \left\langle\mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) \mathcal{O}_{\Delta_3}\left(x_3\right)\right\rangle
+    &= \frac{1}{|x_{12}|^{\Delta_1 + \Delta_2 - \Delta_3}}\sum_l \beta^{\Delta_3, l}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{13}-x_{12}|^{2 \Delta_3}}. 
+  \end{align*}
+  The sum on $l$ consists in a Taylor 
+
+
+  \\
+    &= \frac{1}{|x_{12}|^{\Delta_1 + \Delta_2 - \Delta_3}}\sum_l \beta^{\Delta_3, l}_{\Delta_1, \Delta_2}  (x_{12})^{l} \frac{\partial}{\partial x^l_3} \frac{1}{|x_{23}|^{2 \Delta_3}}
+
+
+behave the same way as the derivatives with respect to $x_2$ of $x_{23}$. This can be made more precise by writting 
+  \begin{align*}
+    \left(\frac{\partial}{\partial x^l_{1}}  \frac{1}{|x_{13}|^{\Delta_3 + \Delta_1 - \Delta_2}}\right)_{x_1 = x_2} = \left(\frac{\partial}{\partial x^l_{3}}  \frac{1}{|x_{13}|^{\Delta_3 + \Delta_1 - \Delta_2}}\right)_{x_1 = x_2} = \frac{\partial}{\partial x^l_{3}}  \frac{1}{|x_{23}|^{\Delta_3 + \Delta_1 - \Delta_2}}
+  \end{align*}
+
+  Dividing the derivative by its common $|x_{13}|^{-\Delta_3 - \Delta_1 + \Delta_2}$ factor leads to 
+  \begin{align*}
+    \left(|x_{13}|^{\Delta_3 + \Delta_1 - \Delta_2} \frac{\partial}{\partial x^l_{1}}  \frac{1}{|x_{13}|^{\Delta_3 + \Delta_1 - \Delta_2}}\right)_{x_1 = x_2} = -\left(\frac{\partial}{\partial x^l_{1}}  \ln\left(|x_{13}|^{\Delta_3 + \Delta_1 - \Delta_2}\right)\right)_{x_1 = x_2} = \left(\frac{\partial}{\partial x^l_{1}}  \ln\left(|x_{13}|^{\Delta_3 + \Delta_1 - \Delta_2}\right)\right)_{x_1 = x_2}
+  \end{align*}
+
+
+  We can resum all the $l$ that correspond to the same polynomial factor to put our expansion in the form of a Taylor series. We have 
+  \begin{align*}
+    \mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) = \sum_{\Delta'} \sum_l \beta^{\Delta', l}_{\Delta_1, \Delta_2} |x_{12}|^{-\Delta_1 - \Delta_2+\Delta'} (x_{12})^{l} \partial_{l} O_{\Delta'}(x_2)
+  \end{align*}
+  where $l$ is now an ordered multiplet and $\beta^{\Delta', l}_{\Delta_1, \Delta_2}$ regroups the contributions from the previous unordered multiplets corresponding to the same ordered multiplet $l$. 
+
+
+  &= \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{23} - x_{12}|^{\Delta_3+\Delta_1-\Delta_2}} \\
+    &= \sum_{l} C_l^{-1} (x_{12})^{l}\left(\frac{\partial}{\partial x^l_{12}}  \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{23}-x_{12}|^{\Delta_3+\Delta_1-\Delta_2}}\right)_{x_{12} = 0}\\
+    &= \sum_{l} C_l^{-1} \frac{1}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1}} (x_{12})^{l}\left(\frac{\partial}{\partial x_{12}^l}  \frac{C_{123}}{|x_{23} - x_{12}|^{\Delta_3 + \Delta_1 - \Delta_2}}\right)_{x_{12} = 0}
+  \end{align*}
+  where $C_l$ is the number of permutations leaving the ordered $l$ invariant. We note that the derivatives with respect to $x_1$ of $|x_{13}|^{-\Delta_3 - \Delta_1 + \Delta_2}$ substituted with $x_1 = x_2$ will have $|x_{13}|^{-\Delta_3 - \Delta_1 + \Delta_2}$ as a common factor. This factor combines with $|x_{13}|^{-\Delta_3 - \Delta_2 + \Delta_1}$ leading to a global factor $|x_{23}|^{-2\Delta_3}$ expected from the OPE expansion. For $|l| = 2$ we have the two ways to compute the three-point function explicitly compare with
+  \begin{align*}
+    \frac{1}{2} \beta^{\Delta_3, 2}_{\Delta_1, \Delta_2}  (x_{12})^{\mu_1 \mu_2} \frac{\partial}{\partial x^{\mu_2}_2} \frac{(x_{23})_{\mu_1}}{|x_{23}|^{2 \Delta_3}} = \frac{1}{2} \beta^{\Delta_3, (\mu_1 \mu_2)}_{\Delta_1, \Delta_2}  (x_{12})^{\mu_1 \mu_2} \frac{\partial}{\partial x^{\mu_2}_2} \frac{(x_{23})_{\mu_1}}{|x_{23}|^{2 \Delta_3}} + \frac{(x_{23})_{\mu_1}}{|x_{23}|^{2 \Delta_3}}
+  \end{align*}
+
+
+
+Comparing with the expected expression for the three-point function, we find 
+  \begin{align*}
+    &\sum_l \beta^{\Delta_3, l}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{23}|^{2 \Delta_3}} = \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}} \\
+    &\implies \frac{1}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1}} \left. \frac{\partial}{\partial x_{1}^{\mu}} \left(\frac{C_{123}}{|x_{31}|^{\Delta_3+\Delta_1-\Delta_2}}\right)\right|_{x_1 = x_2} = \sum_l \beta^{\Delta_3, |l|}_{\Delta_1, \Delta_2} C_l \delta^{l}_\mu \partial_{l} \frac{1}{|x_{23}|^{2 \Delta_3}} = N_{\mu} C_{\mu} \beta^{\Delta_3, |\mu|}_{\Delta_1, \Delta_2} \frac{\partial}{\partial x^{\mu}_2} \frac{1}{|x_{23}|^{2 \Delta_3}}
+  \end{align*}
+  where $C_\mu$ contains the factorials from differentciation of $x_{12}$ and $N_{\mu}$ represents the number of multi-index $l$ that are equivalent to $\mu$ under reordering. For $|\mu| = 2$, we extract the coefficient by considering the multi index $(1, 1)$ for which $N_\mu = 1$ and $C_\mu = 1$. Using the previous expression, we get 
+  \begin{align*}
+    &\left. \frac{\partial}{\partial x_{1}^{1}} \frac{\partial}{\partial x_{1}^{1}} \left(\frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}}\right)\right|_{x_1 = x_2} =  \left. (-\Delta_3-\Delta_1+\Delta_2)\frac{\partial}{\partial x_{1}^{1}}  \left(\frac{C_{123} x_{31}^1}{ |x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2 + 1}}\right)\right|_{x_1 = x_2}\\
+    &= \left. \left(\frac{C_{123} (-\Delta_3-\Delta_1+\Delta_2)(-\Delta_3-\Delta_1+\Delta_2-1) x_{13}^1}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2 + 2}}\right)\right|_{x_1 = x_2} + \left. \left(\frac{C_{123} (-\Delta_3-\Delta_1+\Delta_2)}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2 + 1}}\right)\right|_{x_1 = x_2}\\
+    &= \frac{C_{123} (-\Delta_3-\Delta_1+\Delta_2)(-\Delta_3-\Delta_1+\Delta_2-1) (x_{23}^1)^2}{|x_{23}|^{2\Delta_3 + 2}} + \frac{C_{123} (-\Delta_3-\Delta_1+\Delta_2)}{|x_{23}|^{2\Delta_3 + 1}}
+  \end{align*}
+
+
+  
+
+  We note that this expansion does not depend explictly on $|x_{13}|$ as expected from the expression of the three-point function given above. To make this dependance explicit, we express $x_{23} = x_2 - x_3 = x_2 - x_1 + x_1 - x_3$ and find 
+  \begin{align*}
+    \left\langle\mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) \mathcal{O}_{\Delta_3}\left(x_3\right)\right\rangle
+    &= \frac{1}{|x_{12}|^{\Delta_1 + \Delta_2 - \Delta_3}}\sum_l \beta^{\Delta_3, l}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{13}-x_{12}|^{2 \Delta_3}}. 
+  \end{align*}
+
+
+  
