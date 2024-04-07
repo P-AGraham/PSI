@@ -417,4 +417,14 @@ Comparing with the expected expression for the three-point function, we find
   \end{align*}
 
 
+\partial^\mu \langle \int \text{d}x_1 \text{d}x_2 \  j_{\mu}^{A}(x_1) j_{\nu}^{V}(x_2) \delta(x + x_1 - x_2)\rangle \\
+    &= i  \langle \int \text{d}x_1 \  \partial^\mu j_{\mu}^{A}(x_1) j_{\nu}^{V}(x + x_1)\rangle = i   \langle  \  \partial^\mu j_{\mu}^{A}(0) j_{\nu}^{V}(x)\rangle \int \text{d}x_1
+
+
+
+  \begin{align*}
+    &\frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}} \approx  \frac{C_{123}}{|x_{23}|^{2\Delta_3}} + (x_{12})^{\mu} \frac{-(\Delta_3+\Delta_1-\Delta_2) C_{123} (x_{23})_\mu}{|x_{23}|^{2\Delta_3 + 1}}\\
+    &+ \frac{C_{123}}{|x_{23}|^{2\Delta_3}} + (x_{12})^{\mu} (x_{12})^{\nu} -(\Delta_3+\Delta_1-\Delta_2)  C_{123} \left(\frac{-(\Delta_3+\Delta_1-\Delta_2 + 1)(x_{23} + x_{12})_\mu (x_{23} + x_{12})_\nu}{|x_{23} + x_{12}|^{\Delta_3+\Delta_1-\Delta_2 + 2}} + \frac{\eta_{\mu\nu}}{|x_{23} + x_{12}|^{\Delta_3+\Delta_1-\Delta_2 + 1}}\right)
+  \end{align*}
+
   

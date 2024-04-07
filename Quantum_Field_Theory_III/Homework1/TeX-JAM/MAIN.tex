@@ -165,11 +165,11 @@
 \begin{enumerate}
   \item[(a)] We consider a $D=2$-dimensionnal fermion field $\psi$ with vector current $j_{\mu}^V = \bar{\psi} \gamma_{\mu} \psi$ where $\gamma_\mu$ are matrices forming a 2-dimensionnal clifford algebra. We are interested in the 2-point correlator of the vector current $\langle j_{\mu}^{V}(x_1) j_{\nu}^{V}(x_2) \rangle$. By translational symmetry, the 2-point function is forced to be a function of the relative coordinates $x = (x_1-x_2)/2$. Translating by $-X_{12} = -(x_1 + x_2)/2$, we can bring the midpoint of the $x_1, x_2$ segment to the origin without changing the value of the 2-point function. Explicitly, we have $\langle j_{\mu}^{V}(x_1) j_{\nu}^{V}(x_2) \rangle = \langle j_{\mu}^{V}(x) j_{\nu}^{V}(-x) \rangle$. This property allows us to expand the 2-point function with a Fourier transform with respect to $x$ as 
   \begin{align*}
-    F[\langle j_{\mu}^{V}(x_1) j_{\nu}^{V}(x_2) \rangle](q)  = \frac{1}{(2\pi)^2}\int \text{d}^2x e^{-i q \cdot  x} \langle j_{\mu}^{V}(x) j_{\nu}^{V}(-x) \rangle &= \frac{1}{(2\pi)^2}\int \text{d}^2x e^{-i q \cdot  x} \langle  \int \text{d}^2 k\  e^{+i k \cdot x} j_{\mu}^{V}(k) \int \text{d}^2 p\  e^{-i p \cdot x} j_{\nu}^{V}(p) \rangle\\
-    &=  \frac{1}{2\pi} \langle  \int \text{d}^2 k\ \text{d}^2 p\ \delta(-q + k - p)  j_{\mu}^{V}(k) \  j_{\nu}^{V}(p) \rangle\\
-    &= \frac{1}{2\pi}\int \ \text{d}^2 p \ \langle \ j_{\mu}^{V}(q-p) \ j_{\nu}^{V}(p) \rangle
+    F[\langle j_{\mu}^{V}(x_1) j_{\nu}^{V}(x_2) \rangle](q)  = \frac{1}{(2\pi)^4}\int \text{d}^2x e^{-i q \cdot  x} \langle j_{\mu}^{V}(x) j_{\nu}^{V}(-x) \rangle &= \frac{1}{(2\pi)^4}\int \text{d}^2x e^{-i q \cdot  x} \langle  \int \text{d}^2 k\  e^{+i k \cdot x} j_{\mu}^{V}(k) \int \text{d}^2 p\  e^{-i p \cdot x} j_{\nu}^{V}(p) \rangle\\
+    &=  \frac{1}{(2\pi)^2} \langle  \int \text{d}^2 k\ \text{d}^2 p\ \delta(-q + k - p)  j_{\mu}^{V}(k) \  j_{\nu}^{V}(p) \rangle\\
+    &= \frac{1}{(2\pi)^2}\int \ \text{d}^2 p \ \langle \ j_{\mu}^{V}(q-p) \ j_{\nu}^{V}(p) \rangle
   \end{align*}
-  where the fourier decomposition $j_{\rho}^{V}(x_i) = \frac{1}{2\pi} \int \text{d}^2 p\ e^{i p \cdot x_i} j_{\rho}^{V}(p)$ of the vector current was used. In what follows, we focus on the Fourier space 2-point functions $\langle \ j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle$ contribution to the $q = 0$ Fourier component of the spacetime 2-point function. Lorentz invariance requires that $\langle \ j_{\mu}^{V}(q-p) \ j_{\nu}^{V}(p) \rangle$ is a sum of tensors (it can be extracted from a Fourier transform linearly combining tensor so it is a tensor). Furthermore, it only depends on components $p_\mu$ of $p$. The only tensors with two indices built can be constructed by combining the Minkowski metric $\eta_{\mu\nu}$, the components  $p_\mu$, the norm $p^2$ and the matrices $\gamma^\mu$ (we only need to include a term $\gamma_\mu \gamma_nu$ since the anticommutator $\{\gamma_\mu, \gamma_\nu\} = 2 \eta_{\mu \nu}$ relates it to $\gamma_\nu \gamma_\mu$). The most general form for the Fourier space 2-point function consistent with Lorentz invariance reads 
+  where the fourier decomposition $j_{\rho}^{V}(x_i) = \frac{1}{(2\pi)^2} \int \text{d}^2 p\ e^{i p \cdot x_i} j_{\rho}^{V}(p)$ (\textcolor{blue}{this definition does not have the proper normalization and leads to divergences. In (c), we use an alternate definition of the Fourier modes of the currents through correlators}) of the vector current was used. In what follows, we focus on the Fourier space 2-point functions $\langle \ j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle$ contribution to the $q = 0$ Fourier component of the spacetime 2-point function. Lorentz invariance requires that $\langle \ j_{\mu}^{V}(q-p) \ j_{\nu}^{V}(p) \rangle$ is a sum of tensors (it can be extracted from a Fourier transform linearly combining tensor so it is a tensor). Furthermore, it only depends on components $p_\mu$ of $p$. The only tensors with two indices built can be constructed by combining the Minkowski metric $\eta_{\mu\nu}$, the components  $p_\mu$, the norm $p^2$ and the matrices $\gamma^\mu$ (we only need to include a term $\gamma_\mu \gamma_nu$ since the anticommutator $\{\gamma_\mu, \gamma_\nu\} = 2 \eta_{\mu \nu}$ relates it to $\gamma_\nu \gamma_\mu$). The most general form for the Fourier space 2-point function consistent with Lorentz invariance reads 
   \begin{align*}
     \langle \ j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle = F_1(p^2)\epsilon_{\mu\nu} + F_2(p^2)\eta_{\mu\nu} + F_3(p^2) p_\mu p_\nu + F_{4}(p^2) \gamma_\mu \gamma_\nu + F_{5}(p^2)\gamma_\mu p_\nu + F_{6}(p^2) \gamma_\nu p_\mu
   \end{align*}
@@ -201,7 +201,7 @@
     &\implies F_2(p^2) = -F_3(p^2) p^2, \quad F_5(p^2) = 0.
   \end{align*}
   More explicitly, starting with the constraint $F_5(p^2)(p^\mu \gamma_\mu p_\nu - \gamma_\nu p^2) = 0 $, we can have either $F_5(p^2) = 0$ or $p^\mu \gamma_\mu p_\nu - \gamma_\nu p^2$. The latter case is associated with $0 = \gamma_0 + \gamma_1$ for $p^\mu = (1, 1)$ showing it can't hold for all $p$ and forcing $F_5(p^2)$. 
-  The updated expression for the 2-momentum curent correlator is
+  The updated expression for the 2-momentum current correlator is
   \begin{align*}
     \langle j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle =  F_3(p^2)\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right). 
   \end{align*}
@@ -216,11 +216,11 @@
   \begin{align*}
     F_3(p^2)\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right) = \frac{1}{\lambda^4} F_3(p^2/\lambda^2)\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right) \implies F_3(p^2) = \frac{1}{\lambda^2}F_3(p^2/\lambda^2). 
   \end{align*}
-  The previous implication suggests the powerlaw ansatz $F_3 = a p^b$ depending on constants $a, b$. Substituting this ansatz, we get $a p^b = a p^b \lambda^{-b-2} \implies b=-2$. The final form for the correlator is 
+  The previous implication suggests the power-law ansatz $F_3 = a p^b$ depending on constants $a, b$. Substituting this ansatz, we get $a p^b = a p^b \lambda^{-b-2} \implies b=-2$. The final form for the correlator is 
   \begin{align*}
     \langle j_{\mu}^{V}(-p) \ j_{\nu}^{V}(p) \rangle = \frac{a}{p^2}\left(-p^2\eta_{\mu\nu} + p_\mu p_\nu\right).
   \end{align*} 
-  \item[(b)] We consider the axial current defined by $j^A_\mu = \epsilon_{\mu\nu} j^{V, \nu}$. In $D=2$, the non zero components of the levi-civita tensor are $\epsilon_{01} = -\epsilon_{10} = 1$. To determine if the axial current is classicaly conserved, we calculate its divergence as follows 
+  \item[(b)] We consider the axial current defined by $j^A_\mu = \epsilon_{\mu\nu} j^{V, \nu}$. In $D=2$, the non zero components of the levi-civita tensor are $\epsilon_{01} = -\epsilon_{10} = 1$. To determine if the axial current is classically conserved, we calculate its divergence as follows 
   \begin{align*}
     \partial^\mu j^A_\mu &= \partial^\mu \epsilon_{\mu\nu} j^{V, \nu} = \partial^\mu (\bar{\psi} \epsilon_{\mu\nu} \gamma^{\nu} \psi) = \partial^\mu (\bar{\psi} \eta_{\mu \sigma} \gamma^1 \gamma^0 \gamma^{\sigma} \psi) = \partial_\mu (\bar{\psi} \gamma^1 \gamma^0 \gamma^{\mu} \psi)\\
     &= (\partial_\mu \bar{\psi}) \gamma^1 \gamma^0 \gamma^{\mu} \psi +  \bar{\psi} \gamma^1 \gamma^0 \gamma^{\mu} (\partial_\mu \psi) = 0
@@ -237,23 +237,31 @@
     &= \epsilon_{\mu\sigma} \frac{a}{p^2}\left(-p^2 p^\mu \delta_{\nu}^{\sigma} + p^\mu p^\sigma p_\nu \right)\\
     &= \frac{a}{p^2}(-p^2  \epsilon_{\mu\nu} p^\mu + \underbrace{\epsilon_{\mu\sigma} p^\mu p^\sigma}_{p^0 p^1 - p^1 p^0 = 0} p_\nu ) = -a\epsilon_{\mu\nu} p^\mu
   \end{align*}
-  and Fourier transfrom the result to get 
+  and Fourier transform the result to get (\textcolor{blue}{An alternate definition of the current Fourier modes is used here})
   \begin{align*}
-    \frac{1}{2\pi}\int \text{d}p\ e^{i p \cdot x}  p^\mu \langle j^A_\mu (-p) j^V_\nu (p) \rangle &= \frac{-i}{2\pi} \partial^\mu \langle \int \text{d}p \ e^{i p \cdot x} \int \text{d}x_1 \ e^{+ i p \cdot x_1} j_{\mu}^{A}(x_1)  \int \text{d}x_2\ e^{- i p \cdot x_2} j_{\nu}^{V}(x_2) \rangle \\
-    &= -i \partial^\mu \langle \int \text{d}x_1 \text{d}x_2 \  j_{\mu}^{A}(x_1) j_{\nu}^{V}(x_2) \delta(x + x_1 - x_2)\rangle \\
-    &= -i  \langle \int \text{d}x_1 \  \partial^\mu j_{\mu}^{A}(x_1) j_{\nu}^{V}(x + x_1)\rangle = -i   \langle  \  \partial^\mu j_{\mu}^{A}(0) j_{\nu}^{V}(x)\rangle \int \text{d}x_1
+      &p_1^\mu \langle j^A_\mu (p_1) j^V_\nu (p_2) \rangle \delta(p_1 + p_2) = i \partial^\mu_1 \langle \int \text{d}x_1 \ e^{- i p_1 \cdot x_1} j_{\mu}^{A}(x_1)  \int \text{d}x_2\ e^{- i p_2 \cdot x_2} j_{\nu}^{V}(x_2) \rangle\\
+      %
+      &\implies 
+      \frac{1}{(2\pi)^2}\int \text{d}p_2\ e^{i p_2 \cdot x} p_1^\mu \langle j^A_\mu (p_1) j^V_\nu (p_2) \rangle \delta(p_1 + p_2) = \frac{i}{(2\pi)^2} \partial^\mu_1 \langle \int \text{d}x_1 \ e^{- i p_1 \cdot x_1} j_{\mu}^{A}(x_1)  \int \text{d}x_2\ \left(\int \text{d}p_2\ e^{i p_2 \cdot x}  e^{- i p_2 \cdot x_2} \right) j_{\nu}^{V}(x_2) \rangle\\
+      %
+       &\implies 
+       e^{-i p_1 \cdot x} p_1^\mu \langle j^A_\mu (p_1) j^V_\nu (-p_1) \rangle = i \partial^\mu_1 \langle \int \text{d}x_1 \ e^{- i p_1 \cdot x_1} j_{\mu}^{A}(x_1)  j_{\nu}^{V}(x) \rangle, \quad \text{$\longrightarrow$ change of variables $p_1= - p$}\\
+       %
+    &\implies -\frac{1}{(2\pi)^2}\int \text{d}p \ e^{i p \cdot x}  p^\mu \langle j^A_\mu (-p) j^V_\nu (p) \rangle = \frac{i}{(2\pi)^2} \partial^\mu_1 \langle \int \text{d}p \int \text{d}x_1 \ e^{+ i p \cdot x_1} j_{\mu}^{A}(x_1)  j_{\nu}^{V}(x) \rangle = i\partial^\mu_1 \langle j_{\mu}^{A}(0)  j_{\nu}^{V}(x) \rangle 
   \end{align*}
   and 
   \begin{align*}
-    - \frac{1}{2\pi}\int \text{d}p\ e^{i p \cdot x} a\epsilon_{\mu\nu} p^\mu = a\ i\ \epsilon_{\mu\nu} \partial^\mu \delta(x)
+    - \frac{1}{(2\pi)^2}\int \text{d}p\ e^{i p \cdot x} a\epsilon_{\mu\nu} p^\mu = a\ i\ \epsilon_{\mu\nu} \partial^\mu_1 \delta(x) \implies  \langle \partial^\mu_1 j_{\mu}^{A}(0)  j_{\nu}^{V}(x) \rangle  = a\ \epsilon_{\mu\nu} \partial^\mu_1 \delta(x)  
   \end{align*}
   which shows that the divergence of the axial current has a non-vanishing correlator (can't be explained by contact terms since they would vanish through $\delta j_\nu(x) = 0$) with the vector current contradicting the Ward identity for the axial current. 
   
-  \item[(d)] When a background gauge field $A^{\mu}$ is added, the axial anomaly affects the expectation value of the axial current divergence dirrectly. This expectation value is evaluated at first non-trivial order 
+  \item[(d)] When a background gauge field $A^{\mu}$ is added, the axial anomaly affects the expectation value of the axial current divergence directly. This expectation value is evaluated at first non-trivial order 
   \begin{align*}
-    \left\langle\partial_\mu j^{A, \mu}(0)\right\rangle_{A^\mu} \equiv\left\langle\partial_\mu j^{A, \mu}(0) e^{\int d x A^\nu j_\nu^V}\right\rangle &\approx \left\langle\partial_\mu j^{A, \mu}(0) 1\right\rangle  +   \left\langle\partial_\mu j^{A, \mu}(0) \int d x A^\nu j_\nu^V\right\rangle \\
-    &\approx \left\langle\partial_\mu j^{A, \mu}(0) \int d x A^\nu j_\nu^V\right\rangle 
+    \left\langle\partial_\mu j^{A, \mu}(0)\right\rangle_{A^\mu} \equiv\left\langle\partial_\mu j^{A, \mu}(0) e^{\int d x \ A^\nu (x) j_\nu^V (x)}\right\rangle &\approx \left\langle\partial_\mu j^{A, \mu}(0) 1\right\rangle  +   \left\langle\partial_\mu j^{A, \mu}(0) \int d x\  A^\nu(x) j_\nu^V(x)\right\rangle \\
+    &\approx \int d x \ A^\nu(x) \left\langle\partial_\mu j^{A, \mu}(0)  j_\nu^V (x)\right\rangle = a\int d x \ A^\nu(x) \ \epsilon_{\mu\nu} \partial^\mu \delta(x)\\
+    &\approx -a\int d x \  \partial^\mu \ (\epsilon_{\mu\nu} A^\nu(x)\delta(x)) + a \int d x \   \ (\delta(x) \epsilon_{\mu\nu} \partial^\mu A^\nu(x)) = a \epsilon_{\mu\nu} \partial^\mu A^\nu(0)
   \end{align*}
+  where we supposed $\delta(x\neq 0) = 0$ to remove the boundary term in the integration by parts. 
 \end{enumerate}
 
 \section{OPE coefficients from three-point functions}
@@ -267,17 +275,17 @@
   \begin{align*}
     \left\langle\mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) \mathcal{O}_{\Delta_3}\left(x_3\right)\right\rangle=\frac{C_{123}}{|x_{12}|^{\Delta_1+\Delta_2-\Delta_3} |x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}}.
   \end{align*}
-  Assumming\footnote{This assumption can be seen to hold with the state-operator correspondance of the radial quantization of the CFT. This state operator correspondance associates each CFT operator (primary and descendants) at a point $x$ to an eigensate of the dilation operator. Using these states, we can write a resolution of identity allowing to decompose any other state as a sum of states corresponding to primary and descendant CFT operators. This decomposition can then be brought back to operators using the state operator correspondance in the reverse direction.} that the operator algebra of the CFT is closed (multiplying operators produces an algebra operator which is in the same vector space) and has the primary and their descendants as a vector basis, we have that any product of CFT operators can be decomposed as a sum of primary and descendants operators. Explicitly we have the general operator product expansion
+  Assumming\footnote{This assumption can be seen to hold with the state-operator correspondence of the radial quantization of the CFT. This state operator correspondence associates each CFT operator (primary and descendants) at a point $x$ to an eigenstate of the dilation operator. Using these states, we can write a resolution of identity allowing us to decompose any other state as a sum of states corresponding to primary and descendant CFT operators. This decomposition can then be brought back to operators using the state operator correspondence in the reverse direction.} that the operator algebra of the CFT is closed (multiplying operators produces an algebra operator which is in the same vector space) and has the primary and their descendants as a vector basis, we have that any product of CFT operators can be decomposed as a sum of primary and descendants operators. Explicitly we have the general operator product expansion
   \begin{align*}
     \mathcal{O}_{\Delta_1}\left(x_1\right) \mathcal{O}_{\Delta_2}\left(x_2\right) = \sum_{\Delta'} \sum_l \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1}, x_{2}) \partial_{l} O_{\Delta'}(x_2)
   \end{align*}
-  where $l$ is a string representing the sequence of components of $x_2$\footnote{This point is the point at which we take our asymptotic radial quandized states for usage of the state operator correspondance} with respect to which we differentciate to reach all descendants, $\alpha$ represents linear combinations of CFT operators with full generality. We sum over $\Delta'$ to include all conformal towers and we sum over $l$ to reach all the members of a given tower. We can make the depedance on $x_1$ and $x_2$ more precise by imposing the transformation properties of each operator. We first use the translation symmetry. Having fixed the expansion point $x_2$ (it will not be affected by a translation of the operators involved in the product), the uniqueness of the expansion imposes that we find the same coefficients if we translate $x_1$ and $x_2$ by the same amount $a$ (this gives us back the same operator because it consists in a \textit{representation} of the translation operation on the operator product). We conclude that translationnal symmetry forces $\alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1}, x_{2}) = \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1} + a, x_{2} + a) =  \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12})$. Then, for a scale transformation with scale factor $\lambda$, we have 
+  where $l$ is a string representing the sequence of components of $x_2$\footnote{This point is the point at which we take our asymptotic radial quantized states for the usage of the state operator correspondance} with respect to which we differentiate to reach all descendants, $\alpha$ represents linear combinations of CFT operators with full generality. We sum over $\Delta'$ to include all conformal towers and we sum over $l$ to reach all the members of a given tower. We can make the dependence on $x_1$ and $x_2$ more precise by imposing the transformation properties of each operator. We first use the translation symmetry. Having fixed the expansion point $x_2$ (it will not be affected by a translation of the operators involved in the product), the uniqueness of the expansion imposes that we find the same coefficients if we translate $x_1$ and $x_2$ by the same amount $a$ (this gives us back the same operator because it consists in a \textit{representation} of the translation operation on the operator product). We conclude that translationnal symmetry forces $\alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1}, x_{2}) = \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{1} + a, x_{2} + a) =  \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12})$. Then, for a scale transformation with scale factor $\lambda$, we have 
   \begin{align*}
     \mathcal{O}_{\Delta_1}\left(x_1\right)\mathcal{O}_{\Delta_2}\left(x_2\right) = \lambda^{\Delta_1 + \Delta_2} \mathcal{O}_{\Delta_1}\left(\lambda x_1\right)\mathcal{O}_{\Delta_2}\left(\lambda x_2\right) &\implies \sum_{\Delta'} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12}) \partial_{l} O_{\Delta'}(x_2) = \sum_{\Delta'} \sum_l \lambda^{\Delta_1 + \Delta_2} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (\lambda x_{12}) \partial_{l} O_{\Delta'}(\lambda x_2)\\
     &\implies \sum_{\Delta'} \alpha^{\Delta', l}_{\Delta_1, \Delta_2}(x_{12})\partial_{l} O_{\Delta'}(x_2) = \sum_{\Delta'} \sum_l \lambda^{\Delta_1 + \Delta_2-\Delta'} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (\lambda x_{12}) \lambda^{-|l|} \partial_{l} O_{\Delta'}(x_2)\\
     &\implies \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (x_{12}) = \lambda^{\Delta_1 + \Delta_2-\Delta' - |l|} \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (\lambda x_{12})
   \end{align*} 
-  where we used the uniqueness of the expansion provided a point $x_2$ and denoted $|l|$ the number of elements in $l$. To apply the scale transfromation to the descendant operators we used 
+  where we used the uniqueness of the expansion to provide a point $x_2$ and denoted $|l|$ the number of elements in $l$. To apply the scale transformation to the descendant operators we used 
   \begin{align*}
     \left.\frac{\partial }{\partial x^{l}} O_{\Delta'}(x)\right|_{x = \lambda x_2} = \left.\frac{\partial x/\lambda}{\partial x^{l}}  \frac{\partial }{\partial y^{l}} O_{\Delta'}\left(\lambda y\right)\right|_{y = x/\lambda, y = x_2} = \left.\lambda^{|l|} \lambda^{-\Delta'} \frac{\partial }{\partial y^{l}} O_{\Delta'}\left(y\right)\right|_{y = x_2} = \lambda^{-|l|} \lambda^{-\Delta'} \frac{\partial }{\partial y^{l}} \partial_{l} O_{\Delta'}(x_2). 
   \end{align*}
@@ -291,7 +299,7 @@
     &\implies \sum_{\Delta'} \sum_{l'} \alpha^{\Delta', l'}_{\Delta_1, \Delta_2} (x_{12}) \partial_{l'} O_{\Delta'}(x_2) = \sum_{\Delta'}  \sum_{l'} \left(\sum_l \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (R(x_{12})) L(R^{-1})^{l'}_{l}\right) \partial_{l'} O_{\Delta'}(x_2)\\
     &\implies \alpha^{\Delta', l'}_{\Delta_1, \Delta_2} (x_{12}) = \sum_l \alpha^{\Delta', l}_{\Delta_1, \Delta_2} (R(x_{12})) L(R^{-1})^{l'}_{l}
   \end{align*} 
-  which shows that $\alpha^{\Delta', l}_{\Delta_1, \Delta_2}$ transforms like a $(0, l)$ tensor under rotation. Since the only translationnaly invariant tensor accessible is $x_{12}$ we have to build $ \alpha^{\Delta', l}_{\Delta_1, \Delta_2}$ as a product of the components $x_{12}^{l_i}$ for $l_i\in l$ with some power of the scalar $|x_{12}|$ to account for scaling. In other words, we build a tensor \textit{density} representation from the tensor product of the spin $1$ vector representations (the only tensor building block available). As a result of the rotation constraint, we have $\alpha^{\Delta', l}_{\Delta_1, \Delta_2} = \gamma^{\Delta', l}_{\Delta_1, \Delta_2} |x_{12}|^\Delta (x_{12})^{l}$ (where $\gamma^{\Delta', l}_{\Delta_1, \Delta_2}$ is now a set of $x_{12}$ independant coefficients). We could include (but we do not for simplication) contractions of the derivatives with each other and contractions of the $x_{12}^\mu$ with each other which both consists in singlet contributions. Substituting this ansatz in the scaling constraint found above, we find 
+  which shows that $\alpha^{\Delta', l}_{\Delta_1, \Delta_2}$ transforms like a $(0, l)$ tensor under rotation. Since the only translationnaly invariant tensor accessible is $x_{12}$ we have to build $ \alpha^{\Delta', l}_{\Delta_1, \Delta_2}$ as a product of the components $x_{12}^{l_i}$ for $l_i\in l$ with some power of the scalar $|x_{12}|$ to account for scaling. In other words, we build a tensor \textit{density} representation from the tensor product of the spin $1$ vector representations (the only tensor building block available). As a result of the rotation constraint, we have $\alpha^{\Delta', l}_{\Delta_1, \Delta_2} = \gamma^{\Delta', l}_{\Delta_1, \Delta_2} |x_{12}|^\Delta (x_{12})^{l}$ (where $\gamma^{\Delta', l}_{\Delta_1, \Delta_2}$ is now a set of $x_{12}$ independant coefficients). We could include (but we do not for simplification) contractions of the derivatives with each other and contractions of the $x_{12}^\mu$ with each other which both consists in singlet contributions. Substituting this ansatz in the scaling constraint found above, we find 
   \begin{align*}
     \beta^{\Delta', l}_{\Delta_1, \Delta_2} |x_{12}|^\Delta (x_{12})^{l} = \lambda^{\Delta_1 + \Delta_2-\Delta' - |l|} \gamma^{\Delta', l}_{\Delta_1, \Delta_2} \lambda^{\Delta} |x_{12}|^\Delta \lambda^{|l|} (x_{12})^{l} \implies \Delta = -\Delta_1 - \Delta_2+\Delta'
   \end{align*}
@@ -310,13 +318,32 @@
   \end{align*}
   Comparing this result with the first expression given for the three-point function, we get 
   \begin{align*}
-    \frac{C_{123}}{|x_{12}|^{\Delta_1+\Delta_2-\Delta_3} |x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}}
-    &= \frac{1}{|x_{12}|^{\Delta_1 + \Delta_2 - \Delta_3}}\sum_l \beta^{\Delta_3, l}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{13}-x_{12}|^{2 \Delta_3}}. \\
-    &\iff \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}} =  \sum_l \beta^{\Delta_3, l}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{13}-x_{12}|^{2 \Delta_3}}
+    &\frac{C_{123}}{|x_{12}|^{\Delta_1+\Delta_2-\Delta_3} |x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}}
+    = \frac{1}{|x_{12}|^{\Delta_1 + \Delta_2 - \Delta_3}}\sum_l \beta^{\Delta_3, |l|}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{23}|^{2 \Delta_3}}. \\
+    &\iff \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}} =  \sum_l \beta^{\Delta_3, |l|}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{23}|^{2 \Delta_3}}.
   \end{align*}
-
-
-  \item[(d)] 
+  \newpage
+  To bring the two sides of this relation to a form explicitly constraining the $\beta^{\Delta_3, |l|}_{\Delta_1, \Delta_2}$ for $|l|=0, 1, 2$, we write $|x_{31}| = |x_{12} - x_{23}|$ and perform an expansion of the left-hand side in components of $x_{12}$ to get 
+  \begin{align*}
+    \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}} =\frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1}} \sum_{l} \frac{1}{N_l M_l} (x_{12})^l \left.\frac{\partial}{\partial x_{12}^{l}} \frac{1}{|x_{23} + x_{12}|^{\Delta_3+\Delta_1-\Delta_2}}\right|_{x_{12} = 0}
+  \end{align*}
+  where $N_l$ is the number of distinguishable permutations of the multi-index $l$ (this factor accounts for the overcounting associated with the commutation of derivatives summed over all orderings of $l$) and $M_l= m_{l_1}! \cdots $ ($m_{l_1}$ is the multiplicity of the index $l_1$ in $l$) is the Taylor series factor. For $l = \mu \nu$, $N_l = 2$  if $\mu \neq \nu$ ($N_l = 1$ if $\mu = \nu$) and $M_l = 1$ if $\mu \neq \nu$ ($M_l = 2$ if $\mu = \nu$) and the global factor is $1/(N_l M_l) = 1/2$ in all cases.  Up to second order in $x_{12}$, we have 
+  \begin{align*}
+    \frac{C_{123}}{|x_{23}|^{\Delta_2+\Delta_3-\Delta_1} |x_{31}|^{\Delta_3+\Delta_1-\Delta_2}} &\approx  \frac{C_{123}}{|x_{23}|^{2\Delta_3}} + (x_{12})^{\mu} \frac{-(2/2)(\Delta_3+\Delta_1-\Delta_2) C_{123} (x_{23})_\mu}{|x_{23}|^{2\Delta_3 + 2}}\\
+    &-\frac{1}{2} (x_{12})^{\mu} (x_{12})^{\nu} (2/2)(\Delta_3+\Delta_1-\Delta_2)  C_{123} \left(\frac{-(2/2)(\Delta_3+\Delta_1-\Delta_2 + 1)(x_{23})_\mu (x_{23})_\nu}{|x_{23}|^{2\Delta_3 + 4}} + \frac{\eta_{\mu\nu}}{|x_{23}|^{2\Delta_3 + 2}}\right) + O(x_{12}^{l}, |l|=3)
+  \end{align*}
+  On the OPE side, we expand to second order in $x_{12}$ to get 
+  \begin{align*}
+    \sum_l \beta^{\Delta_3, |l|}_{\Delta_1, \Delta_2}  (x_{12})^{l} \partial_{l} \frac{1}{|x_{23}|^{2 \Delta_3}} &\approx \beta^{\Delta_3, 0}_{\Delta_1, \Delta_2} \frac{1}{|x_{23}|^{2 \Delta_3}} - \beta^{\Delta_3, 1}_{\Delta_1, \Delta_2} (x_{12})^{\mu} \frac{(4/2)\Delta_3 (x_{23})_\mu}{|x_{23}|^{2 \Delta_3+2}}\\
+    &- \beta^{\Delta_3, 2}_{\Delta_1, \Delta_2} (x_{12})^{\mu}(x_{12})^{\nu} (4/2)\Delta_3  \left(\frac{- (2/2) (2 \Delta_3 + 2)(x_{23})_\nu (x_{23})_\mu}{|x_{23}|^{2 \Delta_3+4}} + \frac{\eta_{\mu\nu}}{|x_{23}|^{2 \Delta_3+2}}\right) \\
+    &- \beta^{\Delta_3, \star}_{\Delta_1, \Delta_2} (x_{12})^{\mu}(x_{12})^{\nu} \eta_{\mu \nu} (4/2)\Delta_{3}\left(\frac{- (2/2)(2 \Delta_3 + 2)|x_{23}|^2 }{|x_{23}|^{2 \Delta_3+4}} + \frac{\eta^{\mu\nu}\eta_{\mu\nu}}{|x_{23}|^{2 \Delta_3+2}}\right) + O(x_{12}^{l}, |l|=3)
+  \end{align*}
+  where we included the additional allowed singlet terms with free coefficient $\beta^{\Delta_3, \star}_{\Delta_1, \Delta_2}$ mentioned above to avoid a contradiction regarding the expression of $\beta^{\Delta_3, 2}_{\Delta_1, \Delta_2}$. Comparing the coefficients, we have the relations 
+  \begin{align*}
+    &\beta^{\Delta_3, 0}_{\Delta_1, \Delta_2} = C_{123},\\
+    &\beta^{\Delta_3, 1}_{\Delta_1, \Delta_2} = C_{123}\frac{2(\Delta_3+\Delta_1-\Delta_2)}{2\Delta_3},\\
+    & \beta^{\Delta_3, 2}_{\Delta_1, \Delta_2}  = C_{123} \frac{(\Delta_3+\Delta_1-\Delta_2)   (\Delta_3+\Delta_1-\Delta_2 + 1)}{4 \Delta_3 (2 \Delta_3 + 2)}. 
+  \end{align*}
 \end{enumerate}
 
 
@@ -324,9 +351,11 @@
 
 Thanks to Thiago for a discussion about question 1 (b)
 
+Thanks to Maitá for help with the Fourier transform in 2 (c) and the expansion in 3 (c). 
+
 }
 
-% References c
+% References cc
 %\makereferences
 %-------------------------------------------------------
 

@@ -291,16 +291,16 @@ plt.rcParams.update({
 fig, ax = plt.subplots(1, 1, layout='constrained', figsize=[7, 4])
 
 c_list = []
-for L in range(7, 20):
+for L in range(7, 17):
 	val, vecs, a, b, H = rescale_shift(L, 1)
 	ground_state = vecs[:, 0]
 
-	H2 = Hmode(L, 2)/a
+	H2 = Hmode(L, -2)
 	
-	c = np.linalg.norm(H2 @ ground_state)**2 * 2 
+	c = np.linalg.norm(H2 @ ground_state)**2 
 	c_list.append(c)
 
-ax.plot(list(range(7, 20)), c_list, ".")
+ax.plot(list(range(7, 17)), c_list, ".")
 	
 
 
