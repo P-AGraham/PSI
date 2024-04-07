@@ -71,7 +71,7 @@
   \begin{align*}
     H_n = -\frac{N}{2 \pi} \sum_{j=1}^L \exp \left(\mathrm{i}(j+1 / 2) n \frac{2 \pi}{N}\right) Z_j Z_{j+1}-\frac{N}{2 \pi} \sum_{j=1}^L \exp \left(\mathrm{i} j n \frac{2 \pi}{N}\right) X_j
   \end{align*}
-  where $N$ is the number of modes. \textcolor{red}{how many modes are there} This operator is affected by finite size effects and the connection between finite size approximations of descendants and primaries states is made stronger with the operator 
+  where $N = L$ is the number of modes. This operator is affected by finite size effects and the connection between finite size approximations of descendants and primaries states is made stronger with the operator 
   \begin{align*}
     O_n=\frac{H_n+H_{-n}}{2} \to_{L\to \infty} \frac{L_n^{\rm C F T}+\bar{L}_{-n}^{\rm C F T}+L_{-n}^{\rm C F T}+\bar{L}_n^{\rm C F T}}{2} \quad \text { for } n>0
   \end{align*}
@@ -96,8 +96,54 @@
   \end{align*}
   where we removed the $L_{-n}^{\rm C F T}$ and $\bar{L}_{-n}^{\rm C F T}$ terms because they increase the energy beyond the projector scope (this is true if $\ket{\varphi}$ is a primary \textit{or} a descendant). The last implication is supported by the fact acting $L_n^{\rm C F T}, \bar{L}_n^{\rm C F T}$ on a descendant will lower its energy (possibly to a primary state) to the scope of the projector leading to a non-zero contribution. Only primaries escape the scope of the projecter because they are mapped to zero directly by $L_n^{\rm C F T}, \bar{L}_n^{\rm C F T}$.\\
   
-  In the finite size spectrum of $H$, the approximate primaries can be found by numerically computing the norm $\epsilon^{(n)}_\varphi \equiv |\Gamma_{\varphi} O_n\ket{\varphi}|$. This norm is zero in the limit $L\to \infty$ iff we have a primary state. For finite $L$, we relax the zero norm condition to a small norm condition. More precisely, we introduce a threshold $\epsilon_{\rm max}$ and declare an eigenstate of $H$ "primary candidate" iff $\epsilon^{(1)}_\varphi + \epsilon^{(2)}_\varphi \leq \epsilon_{\rm max}$. 
-  \item[(b)] Using the criterion described in (a) we can extract primary candidates for the TFIM CFT. We use a sparse exact diagonalization python code to find the 22 lowest energy states in the spectrum of $H$ at size $L = 16$ and look for the three lowest primary states. 
+  In the finite size spectrum of $H$, the approximate primaries can be found by numerically computing the norm $\epsilon^{(n)}_\varphi \equiv |\Gamma_{\varphi} O_n\ket{\varphi}|$. This norm is zero in the limit $L\to \infty$ iff we have a primary state. For finite $L$, we relax the zero norm condition to a small norm condition. More precisely, we introduce a threshold $\epsilon_{\rm max}$ and declare an eigenstate of $H$ "primary candidate" iff $\epsilon \equiv \epsilon^{(1)}_\varphi + \epsilon^{(2)}_\varphi \leq \epsilon_{\rm max}$. 
+  \item[(b)] Using the criterion described in (a) we can extract primary candidates for the TFIM CFT. We use a sparse exact diagonalization python code to find the $22$ lowest energy states in the spectrum of $H$ at size $L = 16$ and look for the three lowest primary states. The scaling dimension obtained after shifting and rescaling the spectrum of $H$ (see (c)) are associated to the values of $\epsilon$ displayed in Table \ref{spectrum_eps}. We note that only the first three states meet the condition $\epsilon \leq 10^{-12}$ and we associated the with the primary operators $I$ (identity) $\sigma$ and $\varepsilon$. 
+  \begin{table}
+    \centering
+        \begin{minipage}{.5\linewidth}
+          \flushright
+          \begin{tabular}{lr}
+            \toprule
+            $\Delta$ & $\log \epsilon$ \\
+            \midrule
+            0.0000 & -$\infty$\\
+            0.1265 & -32.83 \\
+            1.0097 & -31.09 \\
+            1.1314 & -1.00 \\
+            1.1314 & -1.08 \\
+            2.0000 & 0.28 \\
+            2.0000 & 0.15 \\
+            2.0000 & -1.00 \\
+            2.0000 & -0.19 \\
+            2.0976 & 0.70 \\
+            2.0976 & 0.84 \\
+            \bottomrule
+            \end{tabular}
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+          \flushleft
+          \begin{tabular}{lr}
+            \toprule
+            $\Delta$ & $\log \epsilon$ \\
+            \midrule
+            2.1362 & -0.69 \\
+            2.9328 & 0.95 \\
+            2.9328 & 1.30 \\
+            2.9328 & 0.95 \\
+            2.9328 & 1.01 \\
+            2.9881 & 1.47 \\
+            2.9881 & 1.47 \\
+            2.9903 & 0.34 \\
+            3.1024 & -0.15 \\
+            3.1024 & 0.43 \\
+            3.1024 & 0.10 \\
+            \bottomrule
+            \end{tabular}
+        \end{minipage} 
+
+      \caption{Approximate $H^{\rm CFT}$ spectrum and associated primary test $\epsilon$ for the $22$ lowest scaling dimension states at size $L=16$ \label{spectrum_eps}}
+  \end{table}
+  
   \item[(c)] The TFIM Hamiltonian is related in the $L\to \infty$ limit to the CFT Hamiltonian by the affine transformation $H^{\rm CFT} = a H  + b$ for real constants $a, b$. At finite size, we can determine the values of $a, b$ leading to an optimal agreement between the eigenvalues of the low energy states and expected scaling dimensions. We first note that the ground state $\ket{0}$ (with $H \ket{0} = E_0 \ket{0}$) has scaling dimension $\Delta_I = 0$ since it corresponds to the identity $I$. We choose $b = -a E_0$ to shift the eigenvalue of $\ket{0}$ to $0$. At this point we have $H^{\rm CFT} \approx a (H  - E_0)$. To fix $a$ we use the fact $L^{\rm CFT}_{-2} \ket{0}$ (resp. $\bar{L}^{\rm CFT}_{-2} \ket{0}$) is a state $\ket{I, 2}$ (resp. $\ket{\bar{I, 2}}$) with scaling dimension $\Delta_{2}^{I} = 0 + 2$ (shifted by $2$ from $\Delta_I$). To produce an approximation of the effect of $L_{-2}^{\rm CFT}$ at finite size, we use $O_2$ and write 
   \begin{align*}
     O_2 \ket{0} \approx \frac{L_2^{\rm C F T}+\bar{L}_{-2}^{\rm C F T}+L_{-2}^{\rm C F T}+\bar{L}_2^{\rm C F T}}{2} \ket{0} = \frac{\bar{L}_{-2}^{\rm C F T}+L_{-2}^{\rm C F T}}{2} \ket{0} = \frac{\ket{I, 2} + \ket{\bar{I, 2}}}{2}.
@@ -106,12 +152,43 @@
   \begin{align*}
     (H - E_0) O_2 \ket{0} \approx \frac{1}{a} \times H^{\rm CFT} O_2 \ket{0} = \frac{1}{a} \times \frac{2\Delta_2^I}{2}(O_2 \ket{0}) \implies \frac{1}{a} = \frac{|(H - E_0) O_2 \ket{0}|}{\Delta_2^I|O_2 \ket{0}|}
   \end{align*}
-  where whe chose $a > 0$ to ensure positive scaling dimensions (the spectrum is bounded from below implying the shifted spectrum is positive). This way to calculate $a$ can be implemented numerically. We find the value $a = 0$
+  where whe chose $a > 0$ to ensure positive scaling dimensions (the spectrum is bounded from below implying the shifted spectrum is positive). This way to calculate $a$ can be implemented numerically. We find the values $a \approx 1.2877$ and $b = 26.2741$. 
   
-  \item[(d)]
-  \item[(e)]
-  \item[(f)]
-  \item[(g)]     
+  \item[(d)] The scaling dimensions extracted form the shifted and rescales Hamiltonian (c) are presented in Table. \ref{spectrum_eps}. For the previoulsy identified primaries (see (b)), the scaline dimension match the analytical expectations. Explicitly, we have $\Delta_{\sigma} = 0.1265$ (close to the exact value $\Delta_{\sigma} = 1/8$) and $\Delta_{\varepsilon} = 1.0097$ (close to the exact value $\Delta_{\varepsilon} = 1$). 
+  \newpage
+  \item[(e)] Table \ref{crit_exp} presents a comparison of the exact value of Ising critical exponents \cite{crit_exp} of the 1+1D TFIM phase transition. We see that the calculated exponents approach the exact ones as the system size is increased. 
+  \begin{table}
+    \centering
+    \begin{tabular}{lrrrrrr}
+      \toprule
+       & $\alpha$ & $\beta$ & $\gamma$ & $\delta$ & $\eta$ & $\nu$ \\
+      \midrule
+      Exact & 0.000 & 0.125 & 1.750 & 15.000 & 0.250 & 1.000 \\
+      $L=16$ & -0.020 & 0.128 & 1.892 & 14.810 & 0.253 & 1.010 \\
+      $L=18$ & -0.020 & 0.127 & 1.888 & 14.848 & 0.252 & 1.008 \\
+      \bottomrule
+      \end{tabular}
+
+      \caption{Calculation of the approximative critical exponents of the 1+1D TFIM phase transition using the approximative scaling dimensions $\Delta_{\sigma}$ and $\Delta_{\varepsilon}$ for two finite system size $L=16$ and $L=18$. The exact values for these exponents are known and compared with the approximative results to show an improvement of the agreement with increasing system size. The expression in terms of primary scaling dimensions and exact values for these exponents can be found at \cite{crit_exp}. \label{crit_exp}}
+  \end{table}
+  \item[(f)] Using the operators $O_n$ for $n =1, 2$ we can obtain states corresponding to descendants in the conformal towers of the primaries ($I, \sigma, \varepsilon$) found in (b). For $I$ we already studied a descendant $O_2\ket{0}$ with scaling dimension $\Delta_2^I$ in (c). We note that $O_1\ket{0}$ has large finite size effects and it is not studied here. To numerically extract approximation of the scaling dimensions $\Delta_{n}^{I, \sigma, \varepsilon}$ of the states $O_n \ket{I, \sigma, \varepsilon}$, we calculate
+  \begin{align*}
+     \frac{|(a H + b) O_n \ket{I, \sigma, \varepsilon}|}{|O_n \ket{I, \sigma, \varepsilon}|} \approx \frac{| H^{\rm CFT} O_n \ket{I, \sigma, \varepsilon}|}{|O_n \ket{I, \sigma, \varepsilon}|} = \Delta_{n}^{I, \sigma, \varepsilon}. 
+  \end{align*}
+  The numerical results of this method are presented in Table \ref{des}. Comparing the obtained scaling dimensions with manual integer shifts expetect for descendants, we observe devisations of the order of $0.1$ due to finite size effects. 
+  \begin{table}
+    \centering
+    \begin{tabular}{lcccc}
+      \toprule
+            $n$ & $\Delta_\sigma + n$ & $\Delta_{n}^\sigma$ & $\Delta_\varepsilon + n$ & $\Delta_{n}^\varepsilon$ \\
+      \midrule
+      $1$ & 1.131 & 1.127 & 2.000 & 2.010 \\
+      $2$ & 2.098 & 2.127 & 2.933 & 3.010 \\
+      \bottomrule
+      \end{tabular}
+    \caption{Comparison of the scaling dimsension obtained by acting the operators $O_1$  (resp. $O_2$) on the primary states $\ket{\sigma}$ and $\ket{\varepsilon}$ with the scaling dimensions $\Delta_\sigma$ and $\Delta_\varepsilon$ increased by $1$ (resp. $2$). \label{des}}
+  \end{table}
+  \item[(g)]  We finally approximate the central charge $c$ of the 1+1D Ising CFT with the finite size operators. As stated in \cite{spinchain}, $c \approx 2 \bra{I}H_2^{\dagger} H_2 \ket{I}$ (here $H_2$ differs from the expression given above. It is assocated to the rescaled and shifted Hamiltonian. Since only the $n=0$ Fourier mode features dependance on the constant shift $b$, the $n=2$ mode corresponding to the ajusted spectrum is obtained by applyin the $a$ rescaling). By combining the approximate central charge obteained numerically for different system size, we can extrapolate to $L\to \infty$ and compare with the value $c = 1/2$ expected for the 1+1D Ising CFT. 
 \end{enumerate}
 
 

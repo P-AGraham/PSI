@@ -116,27 +116,29 @@ def rescale_shift(n, k, g=1):
 
 	Delta_I2 = 2
 
+	new_H = H - val[0] * sp.csc_matrix(Id(n))
+
 	num = O2 @ ground_state
-	den = (H - val[0] * sp.csc_matrix(Id(n))) @ num 
+	den = new_H @ num 
 
 	a = np.linalg.norm(num) * Delta_I2/np.linalg.norm(den) 
 	
 	# Rescaling the spectrum 
  
-	rescaled_shifted_val = val * a
+	rescaled_shifted_val = val_shifted * a
 
 	b = - a * val[0]
 
-	return rescaled_shifted_val, vecs, a, b
+	new_H = a * new_H
+	return rescaled_shifted_val, vecs, a, b, new_H
 
 def primary_test(n, k, eps_max = 1e-12, g = 1):
 	"""
 	a function testing all k lowest energy eigenstates of the TFIM of size n to find primary candidates consistent with the threshold eps_max
 	"""
-	val, vecs, a, b = rescale_shift(n, k, g=g)
+	val, vecs, a, b, _ = rescale_shift(n, k, g=g)
 
 	print(a, b)
-
 
 	O1 = (Hmode(n, 1, g=g) + Hmode(n, -1, g=g))/2
 	O2 = (Hmode(n, 2, g=g) + Hmode(n, -2, g=g))/2
@@ -164,15 +166,143 @@ def primary_test(n, k, eps_max = 1e-12, g = 1):
 			eps = np.linalg.norm(state1)
 			eps = eps + np.linalg.norm(state2)
 
-			test.append(eps < eps_max)
+			test.append(eps)
 
-	return dict(zip((val-val[0]), test))
+	return np.round(val, 4), np.round(np.log(test), 2)
 
 
 #%%
-primary_test(16, 22)
+
+# Shifted and rescaled spectrum
+spectrum, eps = primary_test(16, 22)
+
+print(spectrum, eps)
+
+spectrum2, eps = primary_test(18, 3)
+
+# Critical exponents calculations
+
+D = 2 # spacetime dimension
+
+Delta_sigma = spectrum[1]
+Delta_eps = spectrum[2]
+
+Delta_sigma2 = spectrum2[1]
+Delta_eps2 = spectrum2[2]
+
+## alpha 
+
+alpha = 2-D/(D-Delta_eps)
+alpha2 = 2-D/(D-Delta_eps)
+
+## beta
+
+beta = Delta_sigma/(D - Delta_eps)
+beta2 = Delta_sigma2/(D - Delta_eps2)
+
+## gamma
+
+gamma = (D - Delta_sigma)/(D - Delta_eps)
+gamma2 = (D - Delta_sigma2)/(D - Delta_eps2) 
+
+## delta
+
+delta = (D - Delta_sigma)/Delta_sigma
+delta2 = (D - Delta_sigma2)/Delta_sigma2
+
+## eta
+
+eta = 2 * Delta_sigma - D + 2
+eta2 = 2 * Delta_sigma2 - D + 2
+
+## nu
+
+nu = 1/(D - Delta_eps)
+nu2 = 1/(D - Delta_eps2)
+ 
+
+exp_exact = [0, 1/8, 7/4, 15, 1/4, 1]
+
+exp_1 = [alpha, beta, gamma, delta, eta, nu]
+exp_2 = [alpha2, beta2, gamma2, delta2, eta2, nu2]
+
+print(exp_exact, exp_1, exp_2)
 
 
 # %%
+# Numerical identification of descendant operators
+val, vecs, _, _, H = rescale_shift(16, 22, g = 1)
+
+ket_I = vecs[:, 0]
+ket_sigma = vecs[:, 1]
+ket_eps = vecs[:, 2]
+
+O1 = (Hmode(16, 1) + Hmode(16, -1))/2
+O2 = (Hmode(16, 2) + Hmode(16, -2))/2
+
+
+# sigma descendants
+
+den_sigma1 = O1 @ ket_sigma
+den_sigma2 = O2 @ ket_sigma
+
+num_sigma1 = H @ den_sigma1
+num_sigma2 = H @ den_sigma2
+
+Delta_sigma1 = np.linalg.norm(num_sigma1)/np.linalg.norm(den_sigma1)
+Delta_sigma2 = np.linalg.norm(num_sigma2)/np.linalg.norm(den_sigma2)
+
+Delta_sigma1_exact =  val[1] + 1
+Delta_sigma2_exact =  val[1] + 2
+
+# epsilon descendants
+
+den_eps1 = O1 @ ket_eps
+den_eps2 = O2 @ ket_eps
+
+num_eps1 = H @ den_eps1
+num_eps2 = H @ den_eps2
+
+Delta_eps1 = np.linalg.norm(num_eps1)/np.linalg.norm(den_eps1)
+Delta_eps2 = np.linalg.norm(num_eps2)/np.linalg.norm(den_eps2)
+#%%
+Delta_eps1_exact =  val[2] + 1
+Delta_eps2_exact =  val[2] + 2
+
+
+# reuslts 
+
+c1 = [Delta_sigma1, Delta_sigma2]
+c2 = [Delta_sigma1_exact, Delta_sigma2_exact]
+c3 = [Delta_eps1, Delta_eps2]
+c4 = [Delta_eps1_exact, Delta_eps2_exact]
+
+
+# %%
+
+# Central charge culculation through finite size scaling 
+plt.style.use(["tableau-colorblind10",
+                "C:/Users/pgraham1/Documents/GitHub/PSI/Quantum_Matter/Homework1/Essay.mplstyle"])
+
+plt.rcParams.update({
+    "text.usetex": True,
+})
+
+fig, ax = plt.subplots(1, 1, layout='constrained', figsize=[7, 4])
+
+c_list = []
+for L in range(7, 20):
+	val, vecs, a, b, H = rescale_shift(L, 1)
+	ground_state = vecs[:, 0]
+
+	H2 = Hmode(L, 2)/a
+	
+	c = np.linalg.norm(H2 @ ground_state)**2 * 2 
+	c_list.append(c)
+
+ax.plot(list(range(7, 20)), c_list, ".")
+	
+
+
 
 # %%

@@ -282,3 +282,25 @@ Decomposing the connection one-form as $\underline{\theta}^a{ }_b = c^a_{db} \un
 
 
 print(np.all(sp.csc_matrix(Hmode(n, 0)) == H), "test")
+
+
+import pandas as pd
+df = pd.DataFrame(eps[0:11], spectrum[0:11], eps[11:22], spectrum[11:22])
+
+print(df.to_latex(formatters={"name": "{:.2f}".format}, float_format="{:.2f}".format))
+
+
+
+import pandas as pd
+df = pd.DataFrame([exp_exact, exp_1, exp_2])
+
+print(df.to_latex(formatters={"name": "{:.3f}".format}, float_format="{:.3f}".format))
+
+
+
+
+import pandas as pd
+df = pd.DataFrame(np.array([c1, c2, c3, c4]).T)
+
+print(df.to_latex(formatters={"name": "{:.3f}".format}, float_format="{:.3f}".format))
+
