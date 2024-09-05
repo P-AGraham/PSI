@@ -59,19 +59,19 @@
 \section{2D CFT and the 1D Transverse-Field Ising Chain}
 
 \begin{enumerate}
-  \item[(a)] We want to study the 2D CFT that underlies the quantum critical behavior at the 1D transverse field Ising model (TFIM) phase transition. Putting this 2D CFT on the plane, we have a natural parametrisation of the fields with the complex variable $z = x+iy$ and its conjugate $\bar{z}$. Each primary field is caracterized by the way it transforms under a dilation $z \to \lambda z$ with factor $\lambda \in \mathbb{R}^+$ and rotation $z \to e^{i \theta} z$ at angle $\theta \in [0, 2\pi)$. For a primary field $\varphi_\alpha$, these transformations respectively have the effects $\varphi_\alpha(z) \to \lambda^{\Delta_\alpha}\varphi_{\alpha}(\lambda z)$ and $\varphi_{\alpha}(z) = e^{- i \theta S_\alpha} \varphi_{\alpha}(e^{i \theta} z)$ where $\Delta_\alpha$ is the scaling dimension and $S_\alpha$ is the spin of the primary. Using the properties of the Virasoro algebra, we can construct conformal towers from each primary by regrouping them with their descendants. \\
+  \item[(a)] We want to study the 2D CFT that underlies the quantum critical behavior at the 1D transverse field Ising model (TFIM) phase transition. Putting this 2D CFT on the plane, we have a natural parametrization of the fields with the complex variable $z = x+iy$ and its conjugate $\bar{z}$. Each primary field is characterized by the way it transforms under a dilation $z \to \lambda z$ with factor $\lambda \in \mathbb{R}^+$ and rotation $z \to e^{i \theta} z$ at angle $\theta \in [0, 2\pi)$. For a primary field $\varphi_\alpha$, these transformations respectively have the effects $\varphi_\alpha(z) \to \lambda^{\Delta_\alpha}\varphi_{\alpha}(\lambda z)$ and $\varphi_{\alpha}(z) = e^{- i \theta S_\alpha} \varphi_{\alpha}(e^{i \theta} z)$ where $\Delta_\alpha$ is the scaling dimension and $S_\alpha$ is the spin of the primary. Using the properties of the Virasoro algebra, we can construct conformal towers from each primary by regrouping them with their descendants. \\
   
-  It is possible to use quantization to extract the CFT data $\{\Delta_\alpha, S_\alpha, c\}$ where $c$ is the central charge. We start by applying a Weyl transformation to the complex plane to bring it to a cylinder: each concentric circle with $z=0$ at its center is mapped to a circle of length $L$ at differents heights on the cylinder. We then quantize the CFT by associating an Hilbert space to each circle. The Hamiltonian $H^{\rm CFT}$ connecting these Hilbert spaces at different heights (times) is connecting circles of different radius in the original space and is related to the Dilation operator through an affine transformation. In this quantization, there is a correspondance between each CFT operator and states on a circle Hilbert space. The states $\ket{\varphi_\alpha}$ corresponding to operators with well defined spins and scaling dimensions (more general than primaries and descendants, the stress energy tensor is included but is qasi-primary in 2D) are accessible through the spectrum of the dilation operator and inderictly through the spectrum $\{E_{\alpha} = \frac{2\pi}{L} (\Delta_\alpha - \frac{c}{12})\}$ of $H^{\rm CFT}$. \\
+  It is possible to use quantization to extract the CFT data $\{\Delta_\alpha, S_\alpha, c\}$ where $c$ is the central charge. We start by applying a Weyl transformation to the complex plane to bring it to a cylinder: each concentric circle with $z=0$ at its center is mapped to a circle of length $L$ at different heights on the cylinder. We then quantize the CFT by associating a Hilbert space to each circle. The Hamiltonian $H^{\rm CFT}$ connecting these Hilbert spaces at different heights (times) is connecting circles of different radii in the original space and is related to the Dilation operator through an affine transformation. In this quantization, there is a correspondence between each CFT operator and states on a circle Hilbert space. The states $\ket{\varphi_\alpha}$ corresponding to operators with well-defined spins and scaling dimensions (more general than primaries and descendants, the stress-energy tensor is included but is quasi-primary in 2D) are accessible through the spectrum of the dilation operator and indirectly through the spectrum $\{E_{\alpha} = \frac{2\pi}{L} (\Delta_\alpha - \frac{c}{12})\}$ of $H^{\rm CFT}$. \\
 
-  We can construct a sequence of finite size Hamiltonians (finite dimensionnal Hilbert space) that approach $H^{\rm CFT}$ for the 2D Ising CFT as size increases. The most natural family of Hamiltonians acheiveing this is the TFIM Hamiltonian given by 
+  We can construct a sequence of finite size Hamiltonians (finite dimensional Hilbert space) that approach $H^{\rm CFT}$ for the 2D Ising CFT as size increases. The most natural family of Hamiltonians achieving this is the TFIM Hamiltonian given by 
   \begin{align*}
     H=-\sum_{i=1}^L Z_i Z_{i+1}-\sum_{i=1}^L X_i
   \end{align*}
-  where $Z_i, X_i$ are Pauli operators acting at site $i$ of a system with $L \in \mathbb{N}$ sites associated to a two-dimensionnal Hilbert space. We use the identification $L \sim 0$ to have the model defined on a circle and eventually have its Hilbert space match the CFT Hilbert space in the $L \to \infty$ limit. We note that the values of transverse field and ferromagnetic coupling are set equal to $1$ so that the Hamiltonian is associated with the quantum critical point of the TFIM. From $H$, we can build operators that produce (in the $L \to \infty$ limit) states corresponding to descendants when acted on states corresponding to primaries. These operators are Fourier modes of $H$ and are expressed at 
+  where $Z_i, X_i$ are Pauli operators acting at site $i$ of a system with $L \in \mathbb{N}$ sites associated to a two-dimensionnal Hilbert space. We use the identification $L \sim 0$ to have the model defined on a circle and eventually have its Hilbert space match the CFT Hilbert space in the $L \to \infty$ limit. We note that the values of transverse field and ferromagnetic coupling are set equal to $1$ so that the Hamiltonian is associated with the quantum critical point of the TFIM. From $H$, we can build operators that produce (in the $L \to \infty$ limit) states corresponding to descendants when acting on states corresponding to primaries. These operators are Fourier modes of $H$ and are expressed at 
   \begin{align*}
     H_n = -\frac{N}{2 \pi} \sum_{j=1}^L \exp \left(\mathrm{i}(j+1 / 2) n \frac{2 \pi}{N}\right) Z_j Z_{j+1}-\frac{N}{2 \pi} \sum_{j=1}^L \exp \left(\mathrm{i} j n \frac{2 \pi}{N}\right) X_j
   \end{align*}
-  where $N = L$ is the number of modes. This operator is affected by finite size effects and the connection between finite size approximations of descendants and primaries states is made stronger with the operator 
+  where $N = L$ is the number of modes. This operator is affected by finite size effects and the connection between finite size approximations of descendants and primary states is made stronger with the operator 
   \begin{align*}
     O_n=\frac{H_n+H_{-n}}{2} \to_{L\to \infty} \frac{L_n^{\rm C F T}+\bar{L}_{-n}^{\rm C F T}+L_{-n}^{\rm C F T}+\bar{L}_n^{\rm C F T}}{2} \quad \text { for } n>0
   \end{align*}
@@ -94,10 +94,10 @@
   \begin{align*}
     0 &= \Gamma_{\varphi} O_n \implies 0 = \sum_{\varphi_\alpha: E_\alpha<E_{\varphi}}\left|\varphi_\alpha\right\rangle\left\langle\varphi_\alpha\right|\frac{L_n^{\rm C F T} + \bar{L}_n^{\rm C F T}}{2} \ket{\varphi} \implies \ket{\varphi} \text{ is primary}
   \end{align*}
-  where we removed the $L_{-n}^{\rm C F T}$ and $\bar{L}_{-n}^{\rm C F T}$ terms because they increase the energy beyond the projector scope (this is true if $\ket{\varphi}$ is a primary \textit{or} a descendant). The last implication is supported by the fact acting $L_n^{\rm C F T}, \bar{L}_n^{\rm C F T}$ on a descendant will lower its energy (possibly to a primary state) to the scope of the projector leading to a non-zero contribution. Only primaries escape the scope of the projecter because they are mapped to zero directly by $L_n^{\rm C F T}, \bar{L}_n^{\rm C F T}$.\\
+  where we removed the $L_{-n}^{\rm C F T}$ and $\bar{L}_{-n}^{\rm C F T}$ terms because they increase the energy beyond the projector scope (this is true if $\ket{\varphi}$ is a primary \textit{or} a descendant). The last implication is supported by the fact acting $L_n^{\rm C F T}, \bar{L}_n^{\rm C F T}$ on a descendant will lower its energy (possibly to a primary state) to the scope of the projector leading to a non-zero contribution. Only primaries escape the scope of the projector because they are mapped to zero directly by $L_n^{\rm C F T}, \bar{L}_n^{\rm C F T}$.\\
   
   In the finite size spectrum of $H$, the approximate primaries can be found by numerically computing the norm $\epsilon^{(n)}_\varphi \equiv |\Gamma_{\varphi} O_n\ket{\varphi}|$. This norm is zero in the limit $L\to \infty$ iff we have a primary state. For finite $L$, we relax the zero norm condition to a small norm condition. More precisely, we introduce a threshold $\epsilon_{\rm max}$ and declare an eigenstate of $H$ "primary candidate" iff $\epsilon \equiv \epsilon^{(1)}_\varphi + \epsilon^{(2)}_\varphi \leq \epsilon_{\rm max}$. 
-  \item[(b)] Using the criterion described in (a) we can extract primary candidates for the TFIM CFT. We use a sparse exact diagonalization python code to find the $22$ lowest energy states in the spectrum of $H$ at size $L = 16$ and look for the three lowest primary states. The scaling dimension obtained after shifting and rescaling the spectrum of $H$ (see (c)) are associated to the values of $\epsilon$ displayed in Table \ref{spectrum_eps}. We note that only the first three states meet the condition $\epsilon \leq 10^{-12}$ and we associated the with the primary operators $I$ (identity) $\sigma$ and $\varepsilon$. 
+  \item[(b)] Using the criterion described in (a) we can extract primary candidates for the TFIM CFT. We use a sparse exact diagonalization Python code to find the $22$ lowest energy states in the spectrum of $H$ at size $L = 16$ and look for the three lowest primary states. The scaling dimension obtained after shifting and rescaling the spectrum of $H$ (see (c)) are associated with the values of $\epsilon$ displayed in Table \ref{spectrum_eps}. We note that only the first three states meet the condition $\epsilon \leq 10^{-12}$ and we associate them with the primary operators $I$ (identity) $\sigma$ and $\varepsilon$. 
   \begin{table}
     \centering
         \begin{minipage}{.5\linewidth}
@@ -152,9 +152,9 @@
   \begin{align*}
     (H - E_0) O_2 \ket{0} \approx \frac{1}{a} \times H^{\rm CFT} O_2 \ket{0} = \frac{1}{a} \times \frac{2\Delta_2^I}{2}(O_2 \ket{0}) \implies \frac{1}{a} = \frac{|(H - E_0) O_2 \ket{0}|}{\Delta_2^I|O_2 \ket{0}|}
   \end{align*}
-  where whe chose $a > 0$ to ensure positive scaling dimensions (the spectrum is bounded from below implying the shifted spectrum is positive). This way to calculate $a$ can be implemented numerically. We find the values $a \approx 1.2877$ and $b = 26.2741$. 
+  where we chose $a > 0$ to ensure positive scaling dimensions (the spectrum is bounded from below implying the shifted spectrum is positive). This way to calculate $a$ can be implemented numerically. We find the values $a \approx 1.2877$ and $b = 26.2741$. 
   
-  \item[(d)] The scaling dimensions extracted form the shifted and rescales Hamiltonian (c) are presented in Table. \ref{spectrum_eps}. For the previoulsy identified primaries (see (b)), the scaline dimension match the analytical expectations. Explicitly, we have $\Delta_{\sigma} = 0.1265$ (close to the exact value $\Delta_{\sigma} = 1/8$) and $\Delta_{\varepsilon} = 1.0097$ (close to the exact value $\Delta_{\varepsilon} = 1$). 
+  \item[(d)] The scaling dimensions extracted from the shifted and rescales Hamiltonian (c) are presented in Table. \ref{spectrum_eps}. For the previously identified primaries (see (b)), the scaling dimensions match the analytical expectations. Explicitly, we have $\Delta_{\sigma} = 0.1265$ (close to the exact value $\Delta_{\sigma} = 1/8$) and $\Delta_{\varepsilon} = 1.0097$ (close to the exact value $\Delta_{\varepsilon} = 1$). 
   \newpage
   \item[(e)] Table \ref{crit_exp} presents a comparison of the exact value of Ising critical exponents \cite{crit_exp} of the 1+1D TFIM phase transition. We see that the calculated exponents approach the exact ones as the system size is increased. 
   \begin{table}
@@ -175,7 +175,7 @@
   \begin{align*}
      \frac{|(a H + b) O_n \ket{I, \sigma, \varepsilon}|}{|O_n \ket{I, \sigma, \varepsilon}|} \approx \frac{| H^{\rm CFT} O_n \ket{I, \sigma, \varepsilon}|}{|O_n \ket{I, \sigma, \varepsilon}|} = \Delta_{n}^{I, \sigma, \varepsilon}. 
   \end{align*}
-  The numerical results of this method are presented in Table \ref{des}. Comparing the obtained scaling dimensions with manual integer shifts expetect for descendants, we observe devisations of the order of $0.1$ due to finite size effects. 
+  The numerical results of this method are presented in Table \ref{des}. Comparing the obtained scaling dimensions with manual integer shifts expected for descendants, we observe deviations of the order of $0.1$ due to finite size effects. 
   \begin{table}
     \centering
     \begin{tabular}{lcccc}
@@ -188,15 +188,20 @@
       \end{tabular}
     \caption{Comparison of the scaling dimsension obtained by acting the operators $O_1$  (resp. $O_2$) on the primary states $\ket{\sigma}$ and $\ket{\varepsilon}$ with the scaling dimensions $\Delta_\sigma$ and $\Delta_\varepsilon$ increased by $1$ (resp. $2$). \label{des}}
   \end{table}
-  \item[(g)]  We finally approximate the central charge $c$ of the 1+1D Ising CFT with the finite size operators. As stated in \cite{spinchain}, $c \approx 2 \bra{I}H_2^{\dagger} H_2 \ket{I}$ (here $H_2$ differs from the expression given above. It is assocated to the rescaled and shifted Hamiltonian. Since only the $n=0$ Fourier mode features dependance on the constant shift $b$, the $n=2$ mode corresponding to the ajusted spectrum is obtained by applyin the $a$ rescaling). By combining the approximate central charge obteained numerically for different system size, we can extrapolate to $L\to \infty$ and compare with the value $c = 1/2$ expected for the 1+1D Ising CFT. 
+  \item[(g)]  We finally approximate the central charge $c$ of the 1+1D Ising CFT with the finite size operators. As stated in \cite{spinchain}, $c \approx c_L = 2 \bra{I}H_2^{\dagger} H_2 \ket{I}$ (here $H_2$ differs from the expression given above. It is associated with the rescaled and shifted Hamiltonian. Since only the $n=0$ Fourier mode features dependence on the constant shift $b$, the $n=2$ mode corresponding to the adjusted spectrum is obtained by applying the $a$ rescaling). By combining the approximate central charge obtained numerically for different system sizes, we can extrapolate to $L\to \infty$ and compare with the value $c = 1/2$ expected for the 1+1D Ising CFT. The results obtained are presented in Figure \ref{central_c} 
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{central_charge_fit.pdf}
+    \caption{Approximate central charge $c_L = 2 \bra{I}H_2^{\dagger} H_2 \ket{I}$ as a function of $L^{-2}$. A linear fit was used to extrapolate the $L^{-2} \to 0$ ($L\to \infty$) limit of $c_L$. We obtain a value close to the exact $c=1/2$. \textcolor{red}{The formula used in the calculations has no $a$ rescaling for $H_2$ and has $\bra{I}H_2^{\dagger} H_2 \ket{I}/\textcolor{red}{2}$} \label{central_c}.}
+  \end{figure}
 \end{enumerate}
 
 
 \section{Acknowledgement}
-
+Thanks to Nikhil for a discussion about quasi primaries. 
 }
 
-% References
+% References c
 \makereferences
 %-------------------------------------------------------
 
